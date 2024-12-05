@@ -1,0 +1,13 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.principal{
+	overflow:hidden;
+	width:100%;
+}body {
+  background-color:rgb(235, 228, 255); /* Color de fondo opcional */
+}
+
+

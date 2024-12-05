@@ -1,0 +1,7 @@
+.container{
+	border:2px solid black;
+}.titulo{
+	color:black;
+	text-align: center;
+	padding:2rem 0;
+}

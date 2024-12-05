@@ -1,0 +1,54 @@
+
+ .permisos,.asignarPermisos{
+	border:3px solid grey;
+	width:40%;
+	height:200px;
+	overflow:auto;
+}.titulo{
+	width:70%;
+	margin:0 !important;
+}.inputNombre{
+	padding:.5rem 0;
+	width:15%;
+	margin-left:1rem;
+}.privilegios{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:2rem;
+	margin:2rem auto;
+}.flechas{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:2rem;
+}.menuU{
+	list-style: none;
+}.menuU li{
+	border:2px solid grey;
+	padding:.5rem;
+    background:rgb(255,255,255);
+    cursor:pointer;
+}.menuU li:hover{
+	background: rgb(235, 228, 255);
+}.tituloInput{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:2rem;
+}
+input[type="text"] { z-index: 2; /* Asegúrate de que el campo de entrada esté en un nivel superior */ }
+.buttonCrear{
+	cursor:pointer;
+	margin-right:7rem;
+	padding:.5rem 2rem;
+	background:rgb(76, 175, 80);
+	color:white;
+}.sectionButtonCrear{
+	display:flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-bottom:2rem;
+
+}

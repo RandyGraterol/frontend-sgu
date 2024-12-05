@@ -1,0 +1,14 @@
+.footer {
+    background-color: #0053a0;
+    color: white;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer .column a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    }
+  
