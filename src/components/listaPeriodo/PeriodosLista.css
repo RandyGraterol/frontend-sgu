@@ -1,0 +1,151 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: max-content;
+}
+
+.tabla-container {
+  width: 96%;
+  height: max-content;
+  padding: 20px 0;
+}
+
+.tabla-periodos {
+  width: 100%;
+  height: max-content;
+  border-collapse: collapse;
+}
+
+.tabla-periodos th,
+.tabla-periodos td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; 
+}
+
+.tabla-periodos th {
+  background-color: #f2f2f2;
+}
+
+
+
+.tabla-periodos-eliminar {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
+  background-color: #ff484e;
+  border: 0.1px solid #2d2d2d; 
+  border-radius: 4px; 
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-left: 1%;
+}
+.tabla-periodos-eliminar:hover {
+  background-color: #f92c36;
+  transition: background-color 0.1s;
+}
+
+.tabla-periodos-estado {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
+}
+.form-busqueda {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 0.5%;
+}
+.periodos {
+  font-weight: bold;
+}
+.input-busqueda {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid 2d2d2d;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.boton-busqueda {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #0892ff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.8s;
+}
+
+.boton-busqueda:hover {
+  background-color: #0056b3;
+}
+
+.boton-crear {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #0892ff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.8s;
+  margin-left: 1%;
+}
+
+.boton-crear:hover {
+  background-color: #0056b3;
+  transition: background-color 0.1s;
+}
+
+.bg-activo {
+  color: #2d2d2d;
+  font-weight: bold;
+  background-color: #0892ff;
+  transition: background-color 0.8s;
+}
+.bg-inactivo {
+  color: #2d2d2d;
+  font-weight: bold;
+  background-color: #ff484e;
+  transition: background-color 0.8s;
+}
+.bg-activo-boton {
+  margin: 0 5px;
+  padding: 7px 10px;
+  cursor: pointer;
+  float: right;
+  background-color: #1b9cff;
+   border: 0.1px solid #2d2d2d; 
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.8s;
+  margin-left: 1%;
+}
+.bg-inactivo-boton {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
+  background-color: #ff484e;
+   border: 0.1px solid #2d2d2d; 
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.8s;
+  margin-left: 1%;
+}
+
+.bg-activo-boton:hover {
+  background-color: #3c82cd;
+  transition: background-color 0.1s;
+}
+.bg-inactivo-boton:hover {
+  background-color: #f92c36;
+  transition: background-color 0.1s;
+}

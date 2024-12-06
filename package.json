@@ -17,7 +17,8 @@
     "react-datepicker": "^7.5.0",
     "react-dom": "^18.3.1",
     "react-router": "^7.0.1",
-    "react-router-dom": "^7.0.1"
+    "react-router-dom": "^7.0.1",
+    "sonner": "^1.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
