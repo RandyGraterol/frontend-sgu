@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import './TipoDeAutoridad.css';
 
 
 const RegistroAcademico = () => {
+  <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+
   const [anoRegistro, setAnoRegistro] = useState("");
   const [modalidad, setModalidad] = useState("");
 
@@ -16,11 +19,14 @@ const RegistroAcademico = () => {
   };
 
   return (
-    <div className="p-5 container-xl mt-5 bg-light">
-      <h2>Registro de Periodo Académico</h2>
+    <center>
+              <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+
+    <div className="nice-form-group" id="nice">
+    <h2>Registro de Periodo Académico</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group mb-3">
-          <label htmlFor="anoRegistro" className="form-label">
+      <div className="nice-form-group">
+      <label htmlFor="anoRegistro" className="form-label">
             Año del Periodo
           </label>
           <input
@@ -35,8 +41,8 @@ const RegistroAcademico = () => {
             required
           />
         </div>
-        <div className="form-group mb-3">
-          <label htmlFor="modalidad" className="form-label">
+        <div className="nice-form-group" id="nice-2">
+        <label htmlFor="modalidad" className="form-label">
             Seleccionar Numero
           </label>
           <select
@@ -54,12 +60,13 @@ const RegistroAcademico = () => {
             <option value="III">III</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="button1">
           <i className="bi bi-plus-circle-fill p-1"></i>
           Registrar
         </button>
       </form>
     </div>
+    </center>
   );
 };
 

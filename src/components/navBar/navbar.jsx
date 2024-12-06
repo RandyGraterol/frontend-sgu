@@ -1,52 +1,64 @@
 import React, { useState } from 'react';
 import './navbar.css';
-//iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync,faUser,faUserTimes,faArrowCircleRight,faUserCheck,faUserSecret,faUserShield,faUserCog,faUserTie,faUserGraduate,faClipboardList,faBook,faEllipsisH,faUserLock,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-
-const Navbar = ({onNavClick}) => {
-  const [activeMenu, setActiveMenu] = useState(null); // Estado para controlar qué submenú está activo
+const Navbar = ({ onNavClick }) => {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [userRole, setUserRole] = useState('Superuser'); // Estado para el rol del usuario
 
   const toggleSubMenu = (menu) => {
-    setActiveMenu(activeMenu === menu ? null : menu); // Alterna entre mostrar/ocultar el submenú
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
+
+  const handleRoleChange = (e) => {
+    setUserRole(e.target.value);
   };
 
   return (
     <header className="navbar-container">
+      <div className='elementTop'>
+        <div className="title-container">
+          <h1>Sistema de Gestión Universitaria</h1>
+        </div>
+        <div className="social-icons">
+          <FontAwesomeIcon icon={faUser} style={{ height: 30 }} color="rgb(0, 174, 240)" />
+          <h4>
+            Rafael Oliveros<br />
+            <div className="custom-select">
+          <select name="select" onChange={handleRoleChange} value={userRole}>
+            <option value="Superuser">Superuser</option>
+            <option value="Estudiante">Estudiante</option>
+          </select>
+        </div>
 
-     <div className='elementTop'> 
-
-      <div className="title-container">
-        <h1>Sistema de Gestión Universitaria</h1>
+          </h4>
+        </div>
       </div>
-      
 
-      <div className="social-icons">
-         <FontAwesomeIcon icon={faUser} size="2x" color="rgb(0, 174, 240)" />
-        <h4>Mark Zuckerberg</h4>
-      </div>
-
-      </div>
-      {/* <div className="social-icons">
-        <a id='firstfoto' href="#"><img className='socialIcon' src="fb.png" alt="Facebook" /></a>
-        <a  href="#"><img className='socialIcon' src="X_icon.svg.png" alt="Twitter" /></a>
-        <a  href="#"><img className='socialIcon' src="ig.png" alt="Instagram" /></a>
-      </div> */}
-      <nav className="navbar">
+      {userRole !== 'Estudiante' ? (
+        <nav className="navbar">
         <div className="navbar-logo">
           <img src="/icon/logo.png" alt="Logo" className="logo" />
         </div>
         <ul className='listaD'>
           {/* Menú Instituto */}
-          <li className='LImenuPrincipal'>
+          <li>
             <a href="#" onClick={() => toggleSubMenu('Instituto')}>Instituto</a>
             <ul className={`sub-menu ${activeMenu === 'Instituto' ? 'show' : ''}`}>
               <li><a style={{ fontSize: "medium" }} href="#">Registrar sedes</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar carreras</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar Áreas</a></li>
+              <li><a style={{ fontSize: "medium" }} href="#">Registrar carreras</a>
+              <ul className="nested-sub-menu">
+            <li><a href="#">Pensum</a></li>
+              </ul>
+              </li>
+              <li><a onClick={()=>onNavClick('Registro Áreas')} style={{ fontSize: "medium" }} href="#">Registrar Áreas</a></li>
               <li><a style={{ fontSize: "medium" }} href="#">Asignar sede-carrera</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar autoridades</a></li>
+              <li><a style={{ fontSize: "medium" }} href="#">Registrar autoridades</a>
+              <ul className="nested-sub-menu">
+            <li><a onClick={()=> onNavClick('Registro Tipo de Autoridad')} style={{ fontSize: "medium" }} href="#">Tipo de autoridad</a></li>
+              </ul>
+              </li>
             </ul>
           </li>
 
@@ -73,12 +85,47 @@ const Navbar = ({onNavClick}) => {
               <li><a style={{ fontSize: "medium" }} href="#">Administrar procesos</a></li>
 
               <li><a onClick={()=> onNavClick('Registro Periodo')} style={{ fontSize: "medium" }} href="#">Registro Periodo</a></li>
-              <li><a onClick={()=> onNavClick('Registro Tipo de Autoridad')} style={{ fontSize: "medium" }} href="#">Tipo de autoridad</a></li>
-
             </ul>
           </li>
         </ul>
       </nav>
+      ) : (
+        <nav className="navbar">
+        <div className="navbar-logo">
+          <img src="/icon/logo.png" alt="Logo" className="logo" />
+        </div>
+        <ul className='listaD'>
+          {/* Menú Instituto */}
+          <li>
+            <a href="#" onClick={() => toggleSubMenu('Instituto')}>Perfil</a>
+            <ul className={`sub-menu ${activeMenu === 'Instituto' ? 'show' : ''}`}>
+              <li><a style={{ fontSize: "medium" }} href="#">Carrera activa: ingenieria informatica</a></li>
+            </ul>
+          </li>
+
+          {/* Menú Usuarios */}
+          <li className='LImenuPrincipal'>
+            <a href="#" onClick={() => toggleSubMenu('Usuarios')}>Procesos</a>
+            <ul className={`sub-menu ${activeMenu === 'Usuarios' ? 'show' : ''}`}>
+              <li><a style={{ fontSize: "medium" }} href="#">Inscripcion</a></li>
+
+            </ul>
+          </li>
+
+          {/* Menú Procesos */}
+          <li className='LImenuPrincipal'>
+            <a href="#" onClick={() => toggleSubMenu('Procesos')}>Reportes</a>
+            <ul className={`sub-menu ${activeMenu === 'Procesos' ? 'show' : ''}`}>
+            <li><a style={{ fontSize: "medium" }} href="#">Descargar pensum</a></li>
+            <li><a style={{ fontSize: "medium" }} href="#">Planilla de incripcion</a></li>
+            <li><a style={{ fontSize: "medium" }} href="#">Constancia de Estudios</a></li>
+            <li><a style={{ fontSize: "medium" }} href="#">Constancia de Buena Conducta</a></li>
+            <li><a style={{ fontSize: "medium" }} href="#">Record Académico</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      )}
     </header>
   );
 };

@@ -19,6 +19,8 @@ import RegistroPeriodo from './components/registroPeriodo/registroPeriodo.jsx';
 import RegistroTipoAutoridad from './components/tipoAutoridad/TipoDeAutoridad.jsx/';
 //importar componente asignarGU (randis graterol) equipo B 
 import AsignarGU from './screens/asignarGU.jsx';
+//importar componente formulario registro de areas RICARDO equipo (B)
+
 
 //iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

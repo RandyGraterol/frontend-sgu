@@ -1,0 +1,19 @@
+.InputBox{
+    position: relative;
+    width: 100%;
+    height: 35px;
+    padding: 3px 8px 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+svg{
+    transition: .3s;
+    font-size: 1.1em;
+}
+.InputBox input:focus ~ svg,
+.InputBox input:valid ~ svg{
+    color: #5277ff;
+    filter: drop-shadow(3px 3px 2px #5277ff);
+}

@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+}
+#root{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+}
+h1{
+	text-align: center;
+	font-family: sans-serif;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
