@@ -15,7 +15,7 @@ import RgrupoUsuario from './particulas/rGrupoUsuario/rGrupoUsuario.jsx';
 //importar particula crear Grupo de usuario
 import CrearGU from './particulas/crearGU/crearGU.jsx';
 //importando componente (luis) equipo A 
-import RegistroPeriodo from './components/registroPeriodo/registroPeriodo.jsx';
+import RegistroPeriodo from './components/registroPeriodo/RegistroPeriodo.jsx';
 import RegistroTipoAutoridad from './components/tipoAutoridad/TipoDeAutoridad.jsx/';
 //importar componente asignarGU (randis graterol) equipo B 
 import AsignarGU from './screens/asignarGU.jsx';

@@ -10,7 +10,7 @@ const RegistroTipoAutoridad = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const Autoridad = autoridadRegistro.toLowerCase();
+    const Autoridad = autoridadRegistro.toUpperCase();
     console.log(Autoridad);
     setAutoridad("")
     

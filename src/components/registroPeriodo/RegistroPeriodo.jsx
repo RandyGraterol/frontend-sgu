@@ -55,9 +55,9 @@ const RegistroAcademico = () => {
             <option value="" disabled>
               Numero
             </option>
-            <option value="I">I</option>
-            <option value="II">II</option>
-            <option value="III">III</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
         <button type="submit" className="button1">

@@ -3,13 +3,13 @@ import Botonera from '../botonera/botonera.jsx';
 import React, { useState } from 'react';
 
 // Componentes a renderizar 
-import SuperAdmin from '../../screens/superAdmin';
-import Admin from '../../screens/Admin';
-import Operador from '../../screens/Operador';
-import Estudiante from '../../screens/Estudiante';
-import Pensum from '../../screens/Pensum';
-import OfertaA from '../../screens/OfertaA';
-import ControlAcceso from '../../screens/controlA.jsx';
+import SuperAdmin from "../../screens/superAdmin";
+import Admin from "../../screens/admin";
+import Operador from "../../screens/operador";
+import Estudiante from "../../screens/estudiante";
+import Pensum from "../../screens/pensum";
+import OfertaA from "../../screens/ofertaA";
+import ControlAcceso from "../../screens/controlA.jsx";
 
 //importar componente registro de reactBoy (registro de usuarios)
 import RegistroUsuario from '../registroUsuariosForm/registroUsuariosForm.jsx';
