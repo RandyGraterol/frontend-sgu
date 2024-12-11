@@ -138,14 +138,14 @@ const CrearProceso = () => {
           <option value="" disabled>
             Carrera seleccionada previamente
           </option>
-          <option value="Ing. Informática - San Juan de los Morros">
-            Ing. Informática - San Juan de los Morros
+          <option value="Ing. Informática">
+            Ing. Informática
           </option>
-          <option value="Ing. Informática - Calabozo">
-            Ing. Informática - Calabozo
+          <option value="Ing. Informática">
+            Ing. civil
           </option>
-          <option value="Medicina - San Juan de los Morros">
-            Medicina - San Juan de los Morros
+          <option value="Medicina">
+            Medicina
           </option>
         </select>
       </label>
