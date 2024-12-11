@@ -5,6 +5,8 @@ import "./Crearprocesos.css";
 import { Toaster, toast } from "sonner";
 import { es } from "date-fns/locale/es";
 import { registerLocale } from "react-datepicker";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
 const CrearProceso = () => {
   registerLocale("es", es);
@@ -138,20 +140,14 @@ const CrearProceso = () => {
           <option value="" disabled>
             Carrera seleccionada previamente
           </option>
-          <option value="Ing. Informática">
-            Ing. Informática
-          </option>
-          <option value="Ing. Informática">
-            Ing. civil
-          </option>
-          <option value="Medicina">
-            Medicina
-          </option>
+          <option value="Ing. Informática">Ing. Informática</option>
+          <option value="Ing. Informática">Ing. civil</option>
+          <option value="Medicina">Medicina</option>
         </select>
       </label>
 
       <label className="label" htmlFor="fechas">
-        Fechas
+        <FontAwesomeIcon icon={faCalendar} size="lg" />
         <DatePicker
           selectsRange={true}
           minDate={new Date()}
