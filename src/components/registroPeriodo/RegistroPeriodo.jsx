@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './TipoDeAutoridad.css';
+//import './TipoDeAutoridad.css';
 
 
 const RegistroAcademico = () => {

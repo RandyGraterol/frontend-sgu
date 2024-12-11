@@ -19,20 +19,19 @@
 	color: var(--text);
 }
 .Form{
-	height:auto;
 	display: flex;
-	justify-content: space-around;
-	flex-flow: wrap;
-	gap: 1em;
+	justify-content: space-between;
+	flex-flow: wrap row-reverse;
+	gap: 3em;
 	background: var(--background);
 	padding: 16px;
 	border-radius: 0px 0px 20px 20px;
 }
 .Form_Input{
+	width: 19em;
+	height: 3em;
 	font-size: 0.9em;
 	font-family: Roboto;
-	width: 15em;
-	height: 2.3em;
 	padding: 0.6em;
 	border: none;
 	border-radius: 1em;
@@ -46,16 +45,16 @@
 .Date_Input{
 	font-size: 0.9em;
 	font-family: Roboto;
-	width: 7em;
+	width: 10em;
 	height: 2.33em;
-	padding: 0.6em;
+	padding: 1.5em;
 	border: none;
 	border-radius: 0 1em 1em 0;
 }
 .Date_Label{
 	background: white;
 	color: var(--text);
-	padding: 0.3em;
+	padding: 0.8em;
 	border-radius: 1em 0 0 1em;
 }
 .File{
@@ -106,7 +105,7 @@
 	padding-left: 1em;
 	gap: 1em;
 	border-radius: 1em;
-	width: 13.5em;
+	width: 17.4em;
 	background: white;
 }
 .Radius_Label{
