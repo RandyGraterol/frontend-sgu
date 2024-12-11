@@ -1,0 +1,66 @@
+/* Crearprocesos.css */
+
+/* Estilo general del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los encabezados */
+.form-title {
+  text-align: center;
+  color: #333;
+}
+
+/* Estilo de las etiquetas */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Estilo de los selectores */
+.select-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilo del botón */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el DatePicker */
+.date-picker {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para el Toaster */
+.sonner {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
