@@ -1,0 +1,18 @@
+form{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 100%;
+    max-width: 450px;
+    gap: 10px;
+    padding: 30px;
+    background: #efefef;
+    box-shadow: -9px 9px 7px #acacac;
+    border-right: 1px solid #767676;
+    border-top: 1px solid #767676;
+    border-radius:   5px 5px  5px 0;
+    transition: .3s;
+}
+form div{
+    border-radius: 10px;
+}

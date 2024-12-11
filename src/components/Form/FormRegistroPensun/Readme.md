@@ -1,0 +1,1 @@
+Este es el formulario de Registro de Pensum donde los campos solicitados son: Semestre de la carrera, codigo de asignatura, Horas Teoricas, Horas Preacticas, Unidades de Creadito, Prelacion de la Materia si es el caso  .!

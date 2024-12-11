@@ -1,0 +1,1 @@
+Este es el formulario de Registro de institutos, donde los campos solicitados son: Codigo de OPSU, Nombre del Institutos, Descripcion del instituto, Direccion del Instituto, Telefono de contacto del Instituto, Correo donde se puedan comunicar con el instituto.!

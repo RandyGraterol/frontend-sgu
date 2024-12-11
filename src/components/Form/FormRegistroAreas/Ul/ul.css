@@ -1,0 +1,44 @@
+ul{
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  top: 10px;
+  background: #aaaaaa8f;
+  border-radius: 0 0 7px 7px;
+  border: 1px solid;
+  border-top: none;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+  overflow: hidden;
+}
+.listactive {
+  transform: translateY(0) scaleY(1);
+  animation: displaces.2s linear; 
+}
+.lista{
+  transform: translateY(-50%) scaleY(0);
+}
+
+@keyframes displaces {
+  0%{
+    height: 0%;
+  }
+  25%{
+    height: 25%;
+  }
+  50%{
+    height: 50%;
+
+  }
+  75%{
+    height: 75%;
+
+  }
+  100%{
+    height: 100%;
+  }
+}

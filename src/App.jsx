@@ -15,12 +15,16 @@ import RgrupoUsuario from './particulas/rGrupoUsuario/rGrupoUsuario.jsx';
 //importar particula crear Grupo de usuario
 import CrearGU from './particulas/crearGU/crearGU.jsx';
 //importando componente (luis) equipo A 
-import RegistroPeriodo from './components/registroPeriodo/RegistroPeriodo.jsx';
+import RegistroPeriodo from './components/registroPeriodo/registroPeriodo.jsx';
 import RegistroTipoAutoridad from './components/tipoAutoridad/TipoDeAutoridad.jsx/';
 //importar componente asignarGU (randis graterol) equipo B 
 import AsignarGU from './screens/asignarGU.jsx';
-//importar componente formulario registro de areas RICARDO equipo (B)
-
+//importar componente formulario registro de carrera RICARDO equipo (B)
+import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/form.jsx';
+import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
+import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
+//importar  formulario de registro de usuarios 
+import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 
 //iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -58,6 +62,14 @@ function App() {
         return <CrearGU name='Asignar Privilegios/Crear Grupo Usuario'/>
     case 'Asignar grupo de usuario':
         return <AsignarGU name={selectedComponent} />
+    case 'Registrar carreras':
+        return <RegistroCarreras/>
+    case 'Pensum':
+        return <RegistrarPensum/>
+    case 'Registrar usuario':
+        return <RegistroUsuario/>
+    case 'Registro Instituto':
+        return <RegistroInstituto/>
     default:
         return null;
 }//fin de caso multiple

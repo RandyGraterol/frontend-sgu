@@ -47,18 +47,24 @@ const Navbar = ({ onNavClick }) => {
             <a href="#" onClick={() => toggleSubMenu('Instituto')}>Instituto</a>
             <ul className={`sub-menu ${activeMenu === 'Instituto' ? 'show' : ''}`}>
               <li><a style={{ fontSize: "medium" }} href="#">Registrar sedes</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar carreras</a>
+              <li><a onClick={()=> onNavClick('Registrar carreras')} style={{ fontSize: "medium" }} href="#">Registrar carreras</a>
               <ul className="nested-sub-menu">
-            <li><a href="#">Pensum</a></li>
+            <li><a onClick={()=>onNavClick('Pensum')} href="#">Pensum</a></li>
               </ul>
               </li>
-              <li><a onClick={()=>onNavClick('Registro Áreas')} style={{ fontSize: "medium" }} href="#">Registrar Áreas</a></li>
+
+              <li>
+              <a onClick={()=>onNavClick('Registro Áreas')} style={{ fontSize: "medium" }} href="#">Registrar Áreas
+              </a>
+              </li>
+
               <li><a style={{ fontSize: "medium" }} href="#">Asignar sede-carrera</a></li>
               <li><a style={{ fontSize: "medium" }} href="#">Registrar autoridades</a>
               <ul className="nested-sub-menu">
             <li><a onClick={()=> onNavClick('Registro Tipo de Autoridad')} style={{ fontSize: "medium" }} href="#">Tipo de autoridad</a></li>
               </ul>
               </li>
+               <li><a onClick={()=>onNavClick('Registro Instituto')} style={{ fontSize: "medium" }}>Registro Instituto</a></li>
             </ul>
           </li>
 
@@ -66,7 +72,7 @@ const Navbar = ({ onNavClick }) => {
           <li className='LImenuPrincipal'>
             <a href="#" onClick={() => toggleSubMenu('Usuarios')}>Usuarios</a>
             <ul className={`sub-menu ${activeMenu === 'Usuarios' ? 'show' : ''}`}>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar usuario</a></li>
+              <li><a onClick={()=>onNavClick('Registrar usuario')} style={{ fontSize: "medium" }} href="#">Registrar usuario</a></li>
               <li><a onClick={()=>onNavClick('Grupos de usuarios')} style={{ fontSize: "medium" }} href="#">Grupos de usuarios</a></li>
 
               <li>
