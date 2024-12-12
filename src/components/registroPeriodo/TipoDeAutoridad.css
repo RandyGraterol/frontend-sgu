@@ -1,4 +1,4 @@
-select{
+.select1{
     border-radius: 0px !important;
     width: 50% !important;
     background-color: white !important;
@@ -12,10 +12,9 @@ select{
     margin-top: 1%;
     font-weight:600;
     margin-bottom: 1%;
+    
+  top: 50%;
+  left: 50%;
+  
   }
 
-/*  input{
-    border-radius: 0px !important;
-    background-color: white !important;
-    height: auto !important;
-}*/  

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import './TipoDeAutoridad.css';
+import './TipoDeAutoridad.css';
 
 
 const RegistroAcademico = () => {
@@ -23,15 +23,15 @@ const RegistroAcademico = () => {
               <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
 
     <div className="nice-form-group" id="nice">
-    <h2>Registro de Periodo Académico</h2>
       <form onSubmit={handleSubmit}>
+    <h2>Registro de Periodo Académico</h2>
       <div className="nice-form-group">
       <label htmlFor="anoRegistro" className="form-label">
             Año del Periodo
           </label>
           <input
             type="number"
-            className="form-control form-control-sm"
+            className="select1"
             id="anoRegistro"
             min="1990"
             max="2100"
@@ -46,7 +46,7 @@ const RegistroAcademico = () => {
             Seleccionar Numero
           </label>
           <select
-            className="form-control form-control-sm"
+            className="select1"
             id="modalidad"
             value={modalidad}
             onChange={(e) => setModalidad(e.target.value)}
@@ -55,9 +55,9 @@ const RegistroAcademico = () => {
             <option value="" disabled>
               Numero
             </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
           </select>
         </div>
         <button type="submit" className="button1">
