@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './TipoDeAutoridad.css';
-
+import { toast, Toaster } from "sonner";
 
 const RegistroAcademico = () => {
   <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
@@ -12,6 +12,7 @@ const RegistroAcademico = () => {
     e.preventDefault();
     const periodo = `${anoRegistro}-${modalidad}`;
     console.log(`periodo: ${periodo}`);
+    toast.success(`Se registro el periodo: ${periodo}`)
 
     setAnoRegistro("");
     setModalidad("");
@@ -65,7 +66,8 @@ const RegistroAcademico = () => {
           Registrar
         </button>
       </form>
-    </div>
+      </div>
+      <Toaster richColors/>
     </center>
   );
 };

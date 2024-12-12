@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./TipoDeAutoridad.css";
+import { toast,Toaster } from "sonner";
 
 const RegistroTipoAutoridad = () => {
   <link
@@ -12,7 +13,7 @@ const RegistroTipoAutoridad = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const Autoridad = autoridadRegistro.toUpperCase();
-    console.log(Autoridad);
+    toast.success(`Se registro el tipo de autoridad: ${Autoridad}`);
     setAutoridad("");
   };
 
@@ -45,6 +46,7 @@ const RegistroTipoAutoridad = () => {
           </button>
         </form>
       </div>
+      <Toaster richColors />
     </center>
   );
 };

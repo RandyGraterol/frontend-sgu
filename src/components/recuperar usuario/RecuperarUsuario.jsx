@@ -21,14 +21,14 @@ const RecuperarUsuario = () => {
 
   return (
     <div className="recuperar-container">
-      <h2>RESTABLECER CONTRASEÑA</h2>
+      <h2 className="res">RESTABLECER CONTRASEÑA</h2>
       <p className="mensaje">
         ¿Olvidó su contraseña? Ingrese su correo electrónico y le enviaremos las instrucciones para el establecimiento de una
         nueva contraseña
       </p>
       <form onSubmit={handleSubmit} className="recuperar-formulario">
         <div className="formulario-grupo">
-          <label htmlFor="email">Correo Electrónico:</label>
+          <label htmlFor="email"className="lab">Correo Electrónico:</label>
           <input
             type="email"
             id="email"
