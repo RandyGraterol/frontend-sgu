@@ -18,7 +18,7 @@ import RegistroTipoAutoridad from './components/tipoAutoridad/TipoDeAutoridad.js
 //importar componente asignarGU (randis graterol) equipo B 
 import AsignarGU from './screens/asignarGU.jsx';
 //importar componente formulario registro de carrera RICARDO equipo (B)
-import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/form.jsx';
+import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
 //importar  formulario de registro de usuarios 

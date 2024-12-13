@@ -1,5 +1,4 @@
-	
-button{
+.botonInstituto{
 	width: 30%;
 	height: 35px;
 	border: none;
@@ -8,14 +7,14 @@ button{
 	border-radius: 3px;
 	transition: .3s;
 }
-.boton1{
+.botonInstituto1{
 	background: #5277ff;
 }
-.boton2{
+.botonInstituto2{
 	background: transparent;
 	border: 2px solid #5277ff;
 }
-button:hover{
+.botonInstituto:hover{
 	background: transparent;
 	border: 2px solid #5277ff;
 	letter-spacing: .05em;
