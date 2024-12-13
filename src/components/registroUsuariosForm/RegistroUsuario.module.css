@@ -36,39 +36,30 @@
 	border: none;
 	border-radius: 1em;
 }
+.Form_Input[type=number]::-webkit-inner-spin-button,
+.Form_Input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+}
 .Form_Img{
 	position: absolute;
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	margin: 0.5em 0 0 -2em;
 }
 .Date_Input{
 	font-size: 0.9em;
 	font-family: Roboto;
-	width: 10em;
-	height: 2.33em;
-	padding: 1.5em;
+	width: 9em;
+	height: 0em;
+	padding: 1.4em;
 	border: none;
 	border-radius: 0 1em 1em 0;
 }
 .Date_Label{
 	background: white;
 	color: var(--text);
-	padding: 0.8em;
+	padding: 0.7em;
 	border-radius: 1em 0 0 1em;
-}
-.File{
-	display: flex;
-	margin: 0 0 0 4em;
-	justify-content: center;
-	align-content: center;
-}
-.File_Input{
-	opacity: 2;
-	background: white;
-	padding: 1em;
-	font-size: 1em;
-	border-radius: 1em;
 }
 .Select{
 	display: flex;
@@ -79,7 +70,6 @@
 .Select_Group{
 	width: 15em;
 	padding: 0.2em;
-	margin: 0 0 0 10wm;
 }
 .Select_Input{
 	width: 100%;
@@ -100,6 +90,7 @@
 }
 .Radius{
 	display: flex;
+	justify-content: space-around;
 	align-content: center;
 	flex-flow: wrap;
 	padding-left: 1em;
@@ -115,6 +106,51 @@
 .Button_Group{
 	display: flex;
 }
+.PreBox{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.Preview{
+	display: flex;
+	background: white;
+	padding: 1em;
+}
+.Preview_Img{
+	min-width: 200px;
+	width: 100%;
+	max-width: 500px;
+	min-height: 200px;
+	height: 100%;
+	max-height: 500px;
+	transition: all 0.3s ease;
+}
+.Preview_Img:hover{
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transform: scale(1.1);
+}
+.File{
+	z-index: 4px;
+	width: 100%;
+}
+.File_Input{
+	display: none;
+}
+.File_Logo{
+	right: 20px;
+	position: absolute;
+	background: white;
+	border-radius: 2em;
+	padding: 0.5em;
+	width: 45px;
+	height: 45px;
+	transition: all 0.3s ease;
+}
+.File_Logo:hover{
+	cursor: pointer;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transform: scale(1.1);
+}
 .Button{
 	color: var(--text);
 	background: var(--button);
@@ -127,3 +163,4 @@
 .Button:hover{
 	cursor: pointer;
 }
+

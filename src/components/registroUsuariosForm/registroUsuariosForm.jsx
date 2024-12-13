@@ -1,12 +1,17 @@
 import DatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faIdCardClip, faUser, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faIdCardClip, faUser, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import "react-datepicker/dist/react-datepicker.css";
+import { es } from "date-fns/locale/es";
+import { registerLocale } from "react-datepicker";
 import { useState } from 'react';
+import './RegistroUsuarioMediaQuery.css'
 import styles from './RegistroUsuario.module.css'
 
 const RegistroUsuario = () => {
-  const [startDate, setStartDate] = useState(new Date())
+  registerLocale("es", es);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
   const [formData, setFormData] = useState({
     cedula: '',
     primerapellido: '',
@@ -14,17 +19,26 @@ const RegistroUsuario = () => {
     primernombre: '',
     segundonombre: '',
     correo: '',
-    fechaNacimiento: '',
     sexo: '',
+    fechanacimiento: '',
     discapacidad: '',
     etnia: '',
     telefonoL: '',
     status: '',
     telefonoM: '',
     gu: '',
-    img: '',
   });
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -32,6 +46,9 @@ const RegistroUsuario = () => {
       [name]: value,
     });
   };
+  const fechaNacimiento = startDate
+    ? startDate.toLocaleDateString("es-ES")
+    : "No definido";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,14 +60,70 @@ const RegistroUsuario = () => {
   };
 
   return (
-<div className={styles.Container}>
-  	<h6 className = {styles.Title_Text}>Registro de usuario nuevo</h6>
-  <form className={styles.Form} onSubmit={handleSubmit}>
+<div className={`Container ${styles.Container}`}>
+  	<h6 className = {`Title_Text ${styles.Title_Text}`}>Registro de usuario nuevo</h6>
+  <form className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
+    <div className={styles.Form_Group}>
+      <input
+        placeholder = "Segundo apellido"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="text"
+        id="segundoapellido"
+        name="segundoapellido"
+        value={formData.segundoapellido}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div>
+      <input
+      	placeholder = "Primer apellido"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="text"
+        id="primerapellido"
+        name="primerapellido"
+        value={formData.primerapellido}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+        placeholder = "Segundo nombre"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="text"
+        id="segundonombre"
+        name="segundonombre"
+        value={formData.segundonombre}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+      	placeholder = "Primer nombre"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="text"
+        id="primernombre"
+        name="primernombre"
+        value={formData.primernombre}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
     <div className={styles.Form_Group}>
       <input
       	placeholder = "Cedula"
-        maxlength = "8"
-        className={styles.Form_Input}
+        maxLength = "8"
+        className={`Form_Input ${styles.Form_Input}`}
         type="number"
         id="cedula"
         name="cedula"
@@ -60,62 +133,10 @@ const RegistroUsuario = () => {
       />
      <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
     </div>
-    <div>
-      <input
-      	placeholder = "Primer apellido"
-        className={styles.Form_Input}
-        type="text"
-        id="apellidos"
-        name="apellidos"
-        value={formData.apellidos}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
-      <input
-        placeholder = "Segundo apellido"
-        className={styles.Form_Input}
-        type="text"
-        id="apellidos"
-        name="apellidos"
-        value={formData.apellidos}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
-      <input
-      	placeholder = "Primer nombre"
-        className={styles.Form_Input}
-        type="text"
-        id="nombres"
-        name="nombres"
-        value={formData.nombres}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
-      <input
-        placeholder = "Segundo nombre"
-        className={styles.Form_Input}
-        type="text"
-        id="nombres"
-        name="nombres"
-        value={formData.nombres}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
     <div className={styles.Form_Group}>
       <input
       	placeholder = "Correo"
-        className={styles.Form_Input}
+        className={`Form_Input ${styles.Form_Input}`}
         type="email"
         id="correo"
         name="correo"
@@ -128,45 +149,45 @@ const RegistroUsuario = () => {
     <div className={styles.Form_Group}>
       <input
       	placeholder = "Telefono Local"
-        className={styles.Form_Input}
+        className={`Form_Input ${styles.Form_Input}`}
         type="tel"
         id="telefonoL"
         name="telefonoL"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoL}
         onChange={handleChange}
       />
       <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
     </div>
     <div className={styles.Form_Group}>
-        <label className = {styles.Date_Label}>
+        <label className = {`Date_Label ${styles.Date_Label}`}>
           Fecha nacimiento
         </label>
         <DatePicker
-          className = {styles.Date_Input}
-          name="fechaNacimiento"
-          id="fechaNacimiento"
-          value={setFormData.fechaNacimiento}
-          selected = {startDate}
-          onChange = {(date) => setStartDate(date)}
-      />
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          locale="es"
+          dateFormat="dd/MM/yyyy"
+          required
+          className={styles.Date_Input}
+        />
     </div>
     <div className={styles.Form_Group}>
       <input
       	placeholder = "Teléfono Movil"
-        className={styles.Form_Input}
+        className={`Form_Input ${styles.Form_Input}`}
         type="tel"
         id="telefonoM"
         name="telefonoM"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoM}
         onChange={handleChange}
       />
      	<FontAwesomeIcon icon={faMobileScreenButton} className = {styles.Form_Img}/>
     </div>
-  <div className = {styles.Radius}>
-    <label className={styles.Radius_Label}>Status</label>
-    <label className = {styles.Radius_Label} >Act.
+  <div className = {`Radius ${styles.Radius}`}>
+    <label className={`Radius_Label ${styles.Radius_Label}`}>Status</label>
+    <label className = {`Radius_Label ${styles.Radius_Label}`} >Act.
       <input 
        type = "radio"
        id="status"
@@ -174,7 +195,7 @@ const RegistroUsuario = () => {
        value={formData.status}
       />
      </label>
-     <label className = {styles.Radius_Label}>Inact.
+     <label className = {`Radius_Label ${styles.Radius_Label}`}>Inact.
       <input
        type = "radio"
        id="status"
@@ -183,10 +204,10 @@ const RegistroUsuario = () => {
       />
     </label>
   </div>
-  <div className = {styles.Select}>
-    <div className={styles.Select_Group}>
+  <div className = {`Select ${styles.Select}`}>
+    <div className={`Select_Group ${styles.Select_Group}`}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="etnia"
         name="etnia"
         value={formData.etnia}
@@ -201,7 +222,7 @@ const RegistroUsuario = () => {
     </div>
     <div className={styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="discapacidad"
         name="discapacidad"
         value={formData.discapacidad}
@@ -215,7 +236,7 @@ const RegistroUsuario = () => {
     </div>
     <div className = {styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="sexo"
         name="sexo"
         value={formData.sexo}
@@ -229,7 +250,7 @@ const RegistroUsuario = () => {
   </div>
   <div className = {styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+       className={`Select_Input ${styles.Select_Input}`}
         id="gu"
         name="gu"
         value={formData.gu}
@@ -243,20 +264,30 @@ const RegistroUsuario = () => {
         <option value="estudiante">Estudiante</option>
       </select>
   </div>
-    <div className = {styles.File}>
+    <div className={styles.PreBox} >
+      {selectedImage && (
+        <div className={styles.Preview}>
+          <img src={selectedImage} alt="Vista previa" className={styles.Preview_Img}  />
+        </div>
+      )}
+    <div className = {`File ${styles.File}`}>
+      <label>
+      <FontAwesomeIcon icon={faCamera} className={styles.File_Logo}/>
       <input 
-        className = {styles.File_Input}
+        className = {`File_Input ${styles.File_Input}`}
         type = "file"
         id = "img"
         name = "img"
         value = {formData.img}
-        onChange = {handleChange}
+        onChange = {handleImageChange}
         required
       />
+      </label>
     </div>
-    <div className = {styles.Button_Group}>
-      <button className = {styles.Button} type="submit">Enviar</button>
-      <button className = {styles.Button} type="button" onClick={handleBack}>Volver</button>
+    </div>
+    <div className = {`Button_Group ${styles.Button_Group}`}>
+      <button className = {`Button ${styles.Button}`} type="submit">Enviar</button>
+      <button className = {`Button ${styles.Button}`} type="button" onClick={handleBack}>Volver</button>
     </div>
   </div>
   </form>
@@ -265,3 +296,4 @@ const RegistroUsuario = () => {
 };
 
 export default RegistroUsuario;
+
