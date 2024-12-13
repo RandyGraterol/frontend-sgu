@@ -38,9 +38,7 @@ const Navbar = ({ onNavClick }) => {
 
       {userRole !== 'Estudiante' ? (
         <nav className="navbar">
-        <div className="navbar-logo">
-          <img src="/icon/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <ul className='listaD'>
           {/* Menú Instituto */}
           <li>
@@ -90,16 +88,14 @@ const Navbar = ({ onNavClick }) => {
               <li><a style={{ fontSize: "medium" }} href="#">Registrar procesos</a></li>
               <li><a style={{ fontSize: "medium" }} href="#">Administrar procesos</a></li>
 
-              <li><a onClick={()=> onNavClick('Registro Periodo')} style={{ fontSize: "medium" }} href="#">Registro Periodo</a></li>
+              <li><a onClick={()=> onNavClick('Periodo Academico')} style={{ fontSize: "medium" }} href="#">Periodo Academico</a></li>
             </ul>
           </li>
         </ul>
       </nav>
       ) : (
         <nav className="navbar">
-        <div className="navbar-logo">
-          <img src="/icon/logo.png" alt="Logo" className="logo" />
-        </div>
+       
         <ul className='listaD'>
           {/* Menú Instituto */}
           <li>

@@ -60,7 +60,7 @@ const RegistroUsuario = () => {
       />
      <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
     </div>
-    <div>
+    <div className={styles.Form_Group}>
       <input
       	placeholder = "Primer apellido"
         className={styles.Form_Input}
@@ -126,19 +126,6 @@ const RegistroUsuario = () => {
      <FontAwesomeIcon icon = {faEnvelope} className = {styles.Form_Img}/>
     </div>
     <div className={styles.Form_Group}>
-      <input
-      	placeholder = "Telefono Local"
-        className={styles.Form_Input}
-        type="tel"
-        id="telefonoL"
-        name="telefonoL"
-        maxlength="11"
-        value={formData.telefonoL}
-        onChange={handleChange}
-      />
-      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
         <label className = {styles.Date_Label}>
           Fecha nacimiento
         </label>
@@ -150,6 +137,19 @@ const RegistroUsuario = () => {
           selected = {startDate}
           onChange = {(date) => setStartDate(date)}
       />
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+      	placeholder = "Telefono Local"
+        className={styles.Form_Input}
+        type="tel"
+        id="telefonoL"
+        name="telefonoL"
+        maxlength="11"
+        value={formData.telefonoL}
+        onChange={handleChange}
+      />
+      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
     </div>
     <div className={styles.Form_Group}>
       <input
@@ -194,9 +194,9 @@ const RegistroUsuario = () => {
         required
       >
         <option value="">Etnía</option>
-        <option value="Wayuu">Wayuu</option>
-        <option value="Afroamericano">Afroamericano</option>
-        <option value="Otro">Otro</option>
+        <option value={formData.etnia}>Wayuu</option>
+        <option value={formData.etnia}>Afroamericano</option>
+        <option value={formData.etnia}>Otro</option>
       </select>
     </div>
     <div className={styles.Select_Group}>

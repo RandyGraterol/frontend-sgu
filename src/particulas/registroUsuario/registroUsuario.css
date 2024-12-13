@@ -1,5 +1,5 @@
 .buttonRegister{
-	padding:.5rem 3rem;
+	padding:.7rem 5rem;
 	font-size:1rem;
 	background:rgb(76, 175, 80);
 	color:white;
@@ -8,5 +8,5 @@
     display: flex;
     justify-content: center;
     align-items:  center;
-    border-radius:7px 0 7px 0;
+    border-radius:7px;
 }
