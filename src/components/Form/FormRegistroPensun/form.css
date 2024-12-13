@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 /*form{
+=======
+.formPensum{
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
     display: flex;
     flex-direction: column;
+    min-width: 250px;
     width: 100%;
-    gap: 10px;
+    max-width: 500px;
+    gap: 25px;
     padding: 30px;
     background: #efefef;
     box-shadow: -9px 9px 7px #acacac;

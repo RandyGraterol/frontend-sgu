@@ -1,6 +1,7 @@
 import Botonera from '../botonera/botonera.jsx';
 // Hook para el cambio de estado
 import React, { useState } from 'react';
+import './usuario.css';
 
 // Componentes a renderizar 
 import SuperAdmin from "../../screens/superAdmin";
@@ -10,6 +11,7 @@ import Estudiante from "../../screens/estudiante";
 import Pensum from "../../screens/pensum";
 import OfertaA from "../../screens/ofertaA";
 import ControlAcceso from "../../screens/controlA.jsx";
+//importar login randy equipo B
 
 //importar componente registro de reactBoy (registro de usuarios)
 import RegistroUsuario from '../registroUsuariosForm/registroUsuariosForm.jsx';
@@ -30,7 +32,7 @@ const UsuariosComponent = () => {
 
     const renderActiveComponent = () => {
         if (!activeComponent) {
-            return <p className='textoInformativo'>"Inicio de panel usuarios."</p>; // Texto informativo
+            return <p>Inicio de panel usuarios</p>; // Texto informativo
         }
 
         switch (activeComponent) {
@@ -77,7 +79,7 @@ const UsuariosComponent = () => {
     return (
         <>
             <Botonera onNavClick={handleButtonClick} />
-            <div className="content">
+            <div className="contenidoPrincipal">
                 {renderActiveComponent()}
             </div>
         </>

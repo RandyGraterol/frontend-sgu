@@ -1,5 +1,4 @@
-	
-button{
+.botonLogin{
 	width: 30%;
 	height: 35px;
 	border: none;
@@ -8,15 +7,16 @@ button{
 	border-radius: 3px;
 	transition: .3s;
 }
-.boton1{
+.botonLogin1{
 	background: #5277ff;
 }
-.boton2{
+.botonLogin2{
 	background: transparent;
-	border: 1px solid #5277ff;
+	border: 2px solid #5277ff;
 }
-button:hover{
+.botonLogin:hover{
 	background: transparent;
 	border: 2px solid #5277ff;
 	letter-spacing: .05em;
+	filter: drop-shadow(2px 2px 3px #5277ff);
 }

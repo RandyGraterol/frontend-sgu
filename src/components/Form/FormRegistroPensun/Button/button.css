@@ -1,5 +1,4 @@
-
-button{
+.botonPensum{
 	width: 30%;
 	height: 35px;
 	border: none;
@@ -8,16 +7,16 @@ button{
 	border-radius: 3px;
 	transition: .3s;
 }
-.boton1{
+.botonPensum1{
 	background: #5277ff;
 }
-.boton2{
+.botonPensum2{
 	background: transparent;
 	border: 2px solid #5277ff;
 }
-button:hover{
+.botonPensum:hover{
 	background: transparent;
 	border: 2px solid #5277ff;
 	letter-spacing: .05em;
-	filter: drop-shadow(1px 1px 4px #5277ff);
+	filter: drop-shadow(2px 2px 3px #5277ff);
 }

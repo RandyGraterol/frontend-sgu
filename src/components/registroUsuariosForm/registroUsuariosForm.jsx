@@ -133,6 +133,61 @@ const RegistroUsuario = () => {
       />
      <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
     </div>
+<<<<<<< HEAD
+=======
+    <div className={styles.Form_Group}>
+      <input
+      	placeholder = "Primer apellido"
+        className={styles.Form_Input}
+        type="text"
+        id="apellidos"
+        name="apellidos"
+        value={formData.apellidos}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+        placeholder = "Segundo apellido"
+        className={styles.Form_Input}
+        type="text"
+        id="apellidos"
+        name="apellidos"
+        value={formData.apellidos}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+      	placeholder = "Primer nombre"
+        className={styles.Form_Input}
+        type="text"
+        id="nombres"
+        name="nombres"
+        value={formData.nombres}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+        placeholder = "Segundo nombre"
+        className={styles.Form_Input}
+        type="text"
+        id="nombres"
+        name="nombres"
+        value={formData.nombres}
+        onChange={handleChange}
+        required
+      />
+      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
     <div className={styles.Form_Group}>
       <input
       	placeholder = "Correo"
@@ -147,6 +202,7 @@ const RegistroUsuario = () => {
      <FontAwesomeIcon icon = {faEnvelope} className = {styles.Form_Img}/>
     </div>
     <div className={styles.Form_Group}>
+<<<<<<< HEAD
       <input
       	placeholder = "Telefono Local"
         className={`Form_Input ${styles.Form_Input}`}
@@ -161,6 +217,9 @@ const RegistroUsuario = () => {
     </div>
     <div className={styles.Form_Group}>
         <label className = {`Date_Label ${styles.Date_Label}`}>
+=======
+        <label className = {styles.Date_Label}>
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
           Fecha nacimiento
         </label>
         <DatePicker
@@ -171,6 +230,19 @@ const RegistroUsuario = () => {
           required
           className={styles.Date_Input}
         />
+    </div>
+    <div className={styles.Form_Group}>
+      <input
+      	placeholder = "Telefono Local"
+        className={styles.Form_Input}
+        type="tel"
+        id="telefonoL"
+        name="telefonoL"
+        maxlength="11"
+        value={formData.telefonoL}
+        onChange={handleChange}
+      />
+      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
     </div>
     <div className={styles.Form_Group}>
       <input
@@ -215,9 +287,9 @@ const RegistroUsuario = () => {
         required
       >
         <option value="">Etnía</option>
-        <option value="Wayuu">Wayuu</option>
-        <option value="Afroamericano">Afroamericano</option>
-        <option value="Otro">Otro</option>
+        <option value={formData.etnia}>Wayuu</option>
+        <option value={formData.etnia}>Afroamericano</option>
+        <option value={formData.etnia}>Otro</option>
       </select>
     </div>
     <div className={styles.Select_Group}>

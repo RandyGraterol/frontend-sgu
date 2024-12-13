@@ -6,8 +6,15 @@
 .principal{
 	overflow:hidden;
 	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:2rem;
 }body {
-  background-color:rgb(235, 228, 255); /* Color de fondo opcional */
+  background-color:rgb(255, 255, 255); /* Color de fondo opcional */
+  font-family: 'Helvetica', sans-serif;
 }
 
 

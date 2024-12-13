@@ -72,6 +72,7 @@ table {
   justify-content: center;
   align-items: center;
   gap:1rem;
+  height:100%;
 }.tituloH1{
   width:100%;
   margin: 0 !important;

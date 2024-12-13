@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./PeriodosLista.css"; 
 import { Toaster, toast } from "sonner";
-const Periodos = () => {
+const Periodos = ({navegacion}) => {
   const [periodos, setPeriodos] = useState([
     { numero: 20251, estado: "Activo" },
     { numero: 20242, estado: "Inactivo" },
@@ -82,11 +82,10 @@ const Periodos = () => {
             Buscar
           </button>
         </form>
-        <button type="submit" className="boton-crear">
-          {" "}
+        <a onClick={()=>navegacion('Registro Periodo')} type="submit" className="boton-crear">
           {/* redigir a crear periodo */}
           Crear periodo
-        </button>
+        </a>
       </div>
 
       <table className="tabla-periodos">

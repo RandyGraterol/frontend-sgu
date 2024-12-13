@@ -8,11 +8,12 @@
     margin-top: 1%;
     font-weight:600;
     margin-bottom: 1%;
+    margin-left: 600px;
   }
 
-/*  input{
+  .input1{
     border-radius: 0px !important;
     background-color: white !important;
     height: auto !important;
     width: 48% !important;
-}*/  
+}   

@@ -19,19 +19,20 @@
 	color: var(--text);
 }
 .Form{
+	height:auto;
 	display: flex;
-	justify-content: space-between;
-	flex-flow: wrap row-reverse;
-	gap: 3em;
+	justify-content: space-around;
+	flex-flow: wrap;
+	gap: 1em;
 	background: var(--background);
 	padding: 16px;
 	border-radius: 0px 0px 20px 20px;
 }
 .Form_Input{
-	width: 19em;
-	height: 3em;
 	font-size: 0.9em;
 	font-family: Roboto;
+	width: 15em;
+	height: 2.3em;
 	padding: 0.6em;
 	border: none;
 	border-radius: 1em;
@@ -49,16 +50,26 @@
 .Date_Input{
 	font-size: 0.9em;
 	font-family: Roboto;
+<<<<<<< HEAD
 	width: 9em;
 	height: 0em;
 	padding: 1.4em;
+=======
+	width: 7em;
+	height: 2.33em;
+	padding: 0.6em;
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
 	border: none;
 	border-radius: 0 1em 1em 0;
 }
 .Date_Label{
 	background: white;
 	color: var(--text);
+<<<<<<< HEAD
 	padding: 0.7em;
+=======
+	padding: 0.3em;
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
 	border-radius: 1em 0 0 1em;
 }
 .Select{
@@ -96,7 +107,7 @@
 	padding-left: 1em;
 	gap: 1em;
 	border-radius: 1em;
-	width: 17.4em;
+	width: 13.5em;
 	background: white;
 }
 .Radius_Label{

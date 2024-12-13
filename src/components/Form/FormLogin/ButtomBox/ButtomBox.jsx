@@ -4,8 +4,8 @@ export const ButtomBox = ({valor1,valor2}) =>{
 
 	return (
 		<div className="ButtomBox" >
-			<Button type="button" valor={valor1} clas="boton1" />
-			<Button type="button" valor={valor2} clas="boton2" />
+			<Button type="button" valor={valor1} clas="botonLogin1 botonLogin" />
+			<Button type="button" valor={valor2} clas="botonlogin2 botonlogin" />
 		</div>
 	);
 }

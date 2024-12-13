@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*select{
+=======
+.select1{
+>>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
     border-radius: 0px !important;
     width: 50% !important;
     background-color: white !important;
@@ -12,10 +16,9 @@
     margin-top: 1%;
     font-weight:600;
     margin-bottom: 1%;
+    
+  top: 50%;
+  left: 50%;
+  
   }
 
-/*  input{
-    border-radius: 0px !important;
-    background-color: white !important;
-    height: auto !important;
-}*/  

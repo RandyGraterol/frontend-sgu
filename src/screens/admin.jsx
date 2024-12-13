@@ -50,7 +50,8 @@ return(
          <h1 className='tituloH1'>Usuarios {name}</h1> 
         
           </div>
-        </div>
+
+         </div>
         
         <div className='containerTable'>
           <table className='styled-table'>
