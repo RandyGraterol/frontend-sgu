@@ -8,7 +8,7 @@ import './contenedorCarreras.css';
 export const Form = ({action,method})=>{
 	return (
 		<div className="contenedorCarreras" >
-			<form className="formCarreras" method={method} >
+			<form className="formCarreras" action="#" method={method} >
 				<h1>Carreras</h1>
 				<InputBox infoLabel="Codigo Opsu" type= "text" clase={faLaptopCode} />
 				<InputBox infoLabel="Nombre" type= "text" clase={faLaptopFile} />
