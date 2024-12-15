@@ -56,13 +56,13 @@ const Navbar = ({ onNavClick }) => {
               </a>
               </li>
 
-              <li><a style={{ fontSize: "medium" }} href="#">Asignar sede-carrera</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar autoridades</a>
+              <li><a onClick={()=> onNavClick('Asignar sede-carrera')} style={{ fontSize: "medium" }} href="#">Asignar sede-carrera</a></li>
+              <li><a onClick={()=> onNavClick('Registrar autoridades')} style={{ fontSize: "medium" }} href="#">Registrar autoridades</a>
               <ul className="nested-sub-menu">
             <li><a onClick={()=> onNavClick('Registro Tipo de Autoridad')} style={{ fontSize: "medium" }} href="#">Tipo de autoridad</a></li>
               </ul>
               </li>
-               <li><a onClick={()=>onNavClick('Registro Instituto')} style={{ fontSize: "medium" }}>Registro Instituto</a></li>
+                <li><a onClick={()=>onNavClick('Registro Instituto')} style={{ fontSize: "medium" }}>Registro Instituto</a></li>
             </ul>
           </li>
 
@@ -85,8 +85,8 @@ const Navbar = ({ onNavClick }) => {
           <li className='LImenuPrincipal'>
             <a href="#" onClick={() => toggleSubMenu('Procesos')}>Procesos</a>
             <ul className={`sub-menu ${activeMenu === 'Procesos' ? 'show' : ''}`}>
-              <li><a style={{ fontSize: "medium" }} href="#">Registrar procesos</a></li>
-              <li><a style={{ fontSize: "medium" }} href="#">Administrar procesos</a></li>
+              <li><a onClick={()=> onNavClick('Registrar Procesos')} style={{ fontSize: "medium" }} href="#">Registrar procesos</a></li>
+              <li><a onClick={()=> onNavClick('Administrar procesos')} style={{ fontSize: "medium" }} href="#">Administrar procesos</a></li>
 
               <li><a onClick={()=> onNavClick('Periodo Academico')} style={{ fontSize: "medium" }} href="#">Periodo Academico</a></li>
             </ul>

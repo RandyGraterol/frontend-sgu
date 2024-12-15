@@ -1,0 +1,40 @@
+.Submit{
+    color: rgb(232, 244, 249) ;
+    background-color: #5271ff;
+    border: none;
+    height: 40px;
+    width: 45% ;
+    min-width: 75px;
+    transition: .5s all;
+}
+
+.Submit:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: #5271ff;
+    border: #5271ff solid 4px;
+}
+
+.reset{
+    color: #5271ff ;
+    border: solid 2px #5271ff;
+    width: 45% ;
+    height: 40px;
+    transition: .5s;
+    min-width: 75px;
+}
+
+.buttonContainer{
+    margin-top: 4vh;
+    gap: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset:hover{
+    color: white;
+    background-color: #5271ff;
+    border: 4px solid white;
+    transform: scale(1.1);
+    outline: 1px solid #5271ff;
+}

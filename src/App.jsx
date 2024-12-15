@@ -25,6 +25,16 @@ import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
 
+// componentes de julian equipo (A)
+import Autoridades from './screens/Autoridades.jsx';
+import SedeCarrera from './screens/sedeCarrera.jsx';
+import Procesos from './screens/procesos.jsx';
+import ListadoAu from './screens/ListadoAut.jsx';
+import EditAut from './screens/EditAut.jsx';
+import EditProcess from './screens/EditP.jsx';
+import LPro from './screens/ListadoProcess.jsx';
+
+
 //iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync,faUser,faUserTimes,faArrowCircleRight,faUserCheck,faUserSecret,faUserShield,faUserCog,faUserTie,faUserGraduate,faClipboardList,faBook,faEllipsisH,faUserLock} from '@fortawesome/free-solid-svg-icons';
@@ -72,6 +82,16 @@ const renderComponent = () => {
             return <RegistroInstituto/>
         case 'Periodo Academico':
             return <PeriodoAcademico navegacion={handleClick}/>
+        case 'Asignar sede-carrera' :
+            return <SedeCarrera/>
+        case 'Registrar autoridades':
+            return <Autoridades/>;
+        case 'Registrar Procesos':
+            return <Procesos/>;
+        case 'Administrar procesos':
+            return <LPro/>;
+        case 'Editar Proceso':
+            return <EditAut/> 
         default:
             return null;
 }//fin de caso multiple
