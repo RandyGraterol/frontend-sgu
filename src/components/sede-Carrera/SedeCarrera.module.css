@@ -72,7 +72,7 @@
 .strong{
     margin-left: 4px;
     width: 30%;
-    
+    font-size: clamp(10px,1.5vw,17px);
 }
 
 

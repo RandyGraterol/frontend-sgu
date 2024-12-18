@@ -1,11 +1,11 @@
 import React from "react";
 import ListadoAu from '../components/listadoAu/listadoAut';
 
-const ListadoAutt = ()=>{
+const ListadoAutt = ({onhandleEditAut})=>{
     return(
 
         <>
-            <ListadoAu/>
+            <ListadoAu onhandleEditAut={onhandleEditAut} />
         </>
 
     )

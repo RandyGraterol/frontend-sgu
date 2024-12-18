@@ -41,6 +41,7 @@ const EditProces = () => {
     };
 
     return (
+        <div className={Style.ScreenContainer} >
         <form className={Style.form} onSubmit={handleSubmit}>
             <h1 className={Style.h1} >Editar Procesos</h1>
 
@@ -55,7 +56,7 @@ const EditProces = () => {
             <label htmlFor="modalidad" className={Style.label}>
                 <strong className={Style.strong} >Modalidad</strong>
                 <select name="modalidad" required className={Style.input} id="modalidad" onChange={handleModalidadChange}>
-                    <option selected value="">Modalidad seleccionada previamente</option>
+                    <option >Modalidad seleccionada previamente</option>
                     <option value="Anual">Anual / 2025-I</option>
                     <option value="semestral">Semestral / 2025-II</option>
                     <option value="trimestral">Trimestral / 2025-II</option>
@@ -66,14 +67,14 @@ const EditProces = () => {
                 <FontAwesomeIcon icon={faGraduationCap} size='lg' style={{ color: "#5271ff" }} />
                 <strong className={Style.strong} >Carrera - Institucion</strong>
                 <select name="carrera" required className={Style.input} id="carrera">
-                    <option selected value="">Carrera seleccionada previamente</option>
+                    <option >Carrera seleccionada previamente</option>
                     <option value="">Ing. Informática - San Juan de los Morros</option>
                     <option value="">Ing. Informática - Calabozo</option>
                     <option value="">Medicina - San Juan de los Morros</option>
                 </select>
             </label>
 
-            <label className={Style.input} htmlFor="nombre">
+            <label className={Style.label} htmlFor="nombre">
                 <FontAwesomeIcon icon={faListCheck} size='lg' style={{ color: "#5271ff" }} />
                 <strong className={Style.strong} >Nombre Proceso</strong>
                 <input type="text" name='proceso' value={'Nombre del proceso'} id='nombre' required className={Style.input} />
@@ -93,6 +94,7 @@ const EditProces = () => {
 
             <Submit /> 
         </form>
+        </div>
     );
 }
 

@@ -1,14 +1,5 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-
 modificaciones del archivo app.jsx 
 
 importaciones:
@@ -22,31 +13,30 @@ import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
 
+creacion de las funciones
+
+const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
+const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
+const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
+const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
+
 
 actualizacion de encaso:
 
-
-
-        case 'Registrar carreras':
-            return <RegistroCarreras/>
-        case 'Pensum':
-            return <RegistrarPensum/>
-        case 'Registrar usuario':
-            return <RegistroUsuario/>
-        case 'Registro Instituto':
-            return <RegistroInstituto/>
-        case 'Periodo Academico':
-            return <PeriodoAcademico navegacion={handleClick}/>
         case 'Asignar sede-carrera' :
             return <SedeCarrera/>
         case 'Registrar autoridades':
-            return <Autoridades/>;
+            return <Autoridades onhandleAddType={handleAddType} onhandleGetAutList={handleGetAutList} />;
         case 'Registrar Procesos':
             return <Procesos/>;
         case 'Administrar procesos':
-            return <LPro/>;
+            return <LPro onHandleEditProcess={handleEditProcess} />;
         case 'Editar Proceso':
-            return <EditAut/> 
+            return <EditProcess/> 
+        case 'Listado de Autoridades':
+            return <ListadoAu onhandleEditAut={handleEditAut} />
+        case 'Editar Autoridad':
+            return <EditAut onhandleAddType={handleAddType}/>
 
             modificaciones de navbar:
 
@@ -59,3 +49,25 @@ actualizacion de encaso:
             registro de Procesos
             Listado de Autoridades
             administrar procesos
+
+            el resto de modificaciones han sido en archivos creados por mi, asi que no deberia haber conflicto de versiones
+
+            archivos modificados en componentes: 
+            
+            todo carpeta editar
+            
+            todo en carpeta listadoAu
+            
+            LP.jsx de la carpeta listadoProcesos
+            
+            todo en carpeta registroAut
+
+            SedeCarrera.module.css en carpeta sede-Carrera
+            
+            archivos modificados en screens:
+
+            autoridades
+            EditAut
+            ListadoAut
+            ListadoProcess
+            ---> solo paso de props

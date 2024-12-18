@@ -3,37 +3,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import Style from './listadoAu.module.css'
 
-const ListadoAu = ()=>{
+const ListadoAu = ({onhandleEditAut})=>{
     return(
-        <>
-            <h1>Autoridades Registradas</h1>
+        <div className={Style.center}>
+            <h1 className={Style.h1}>Autoridades Registradas</h1>
 
             <table>
-                <thead>
-                    <th>Instituto</th>
-                    <th>Tipo</th>
-                    <th>Nombre</th>
-                    <th>Firma</th>
-                    <th>Editar</th>
-                </thead>
+                <tr>
+                    <th className={Style.th}>Instituto</th>
+                    <th className={Style.th}>Tipo</th>
+                    <th className={Style.th}>Nombre</th>
+                    <th className={Style.th}>Firma</th>
+                    <th className={Style.th}>Editar</th>
+                </tr>
                 <tbody>
                     <tr>
-                        <td>UNERG</td>
-                        <td>Decano AIS</td>
-                        <td>Leopoldo Lopez</td>
-                        <td><a href="/comingSoon"> ver firma </a> </td>
-                        <td> <a onClick={()=> onNavClick('Editar Proceso')} href="/#">  <FontAwesomeIcon icon={faPenToSquare} style={{color:"#FFC300"}} />  </a> </td>
+                        <td className={Style.td} >UNERG</td>
+                        <td className={Style.td} >Decano AIS</td>
+                        <td className={Style.td} >Leopoldo Lopez</td>
+                        <td className={Style.td} ><a href="#"> ver firma </a> </td>
+                        <td className={Style.td} > <FontAwesomeIcon onClick={onhandleEditAut}  icon={faPenToSquare} style={{color:"#FFC300"}}/> </td>
                     </tr>
                     <tr>
-                        <td>Calabozo</td>
-                        <td>Decano AIS</td>
-                        <td>Carlos Camacaro</td>
-                        <td><a href="/comingSoon"> ver firma </a> </td>
-                        <td> <a href="/EditAu">  <FontAwesomeIcon icon={faPenToSquare} style={{color:"#FFC300"}} />  </a> </td>
+                        <td className={Style.td} >Calabozo</td>
+                        <td className={Style.td} >Decano AIS</td>
+                        <td className={Style.td} >Carlos Camacaro</td>
+                        <td className={Style.td} > <a href="#"> ver firma </a> </td>
+                        <td className={Style.td} > <FontAwesomeIcon onClick={onhandleEditAut}  icon={faPenToSquare} style={{color:"#FFC300"}}/> </td>
                     </tr>
                 </tbody>
             </table>
-            </>
+            </div>
 
     )
 }

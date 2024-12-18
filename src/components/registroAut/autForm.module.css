@@ -25,14 +25,13 @@
 
 .add{
     position: absolute;
-    margin-top: -10px;
-    margin-left: -5.5vh;
+    margin-left: 85%;
 }
 
-@media screen and (min-height:670px) {
+@media screen and (max-width:1000px) {
 
 .add{
-    margin-left: -4.2vh;
+    margin-left: 80%;
 }
 
 }
@@ -40,6 +39,7 @@
 .strong{
     margin-left: 4px;
     width: 30%;
+    font-size: clamp(10px,1.5vw,17px);
     
 }
 
@@ -48,7 +48,8 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    flex-direction: column;
 }
 
 .label{
@@ -62,6 +63,7 @@
     justify-content:space-between;
     align-items: center;
     height: 40px;
+    position: relative;
 }
 
 .input{
@@ -71,4 +73,19 @@
     max-width:35vw ;
     display: flex;
     align-items: center;
+}
+
+.VerListado{
+    box-sizing: border-box;
+    background-color: #5271ff;
+    color:white;
+    padding: 20px;
+    margin: 10px;
+    transition: .5s;
+}
+
+.VerListado:hover{
+    background-color: white;
+    color: #5271ff;
+    border: #5271ff solid 4px;
 }

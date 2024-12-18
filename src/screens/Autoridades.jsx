@@ -1,10 +1,10 @@
 import React from 'react';
 import AutForm from '../components/registroAut/autForm';
 
-const Autoridades = () => {
+const Autoridades = ({onhandleAddType, onhandleGetAutList}) => {
     return (
         <>
-            <AutForm/>
+            <AutForm onhandleAddType={onhandleAddType} onhandleGetAutList={onhandleGetAutList}/>
         </>
     );
 };

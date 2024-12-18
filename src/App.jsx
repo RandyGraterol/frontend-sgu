@@ -50,13 +50,17 @@ const handleRegisterClick = () => { setSelectedComponent('Registrar Grupo de Usu
 const handdleRegisterClick = () => {setSelectedComponent('Crear Grupo de Usuarios'); };
 const asignarGrupoUsuario = ()=> {setSelectedComponent('Asignar grupo de usuario');};
 const handleClick = (identificador)=>{setSelectedComponent(identificador)}
+// julian functions
+const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
+const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
+const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
+const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
 
 const renderComponent = () => {
 
    if (!selectedComponent) {
             return < Usuarios/>// Texto informativo
         }
-
         switch (selectedComponent) {
         case 'Registro Periodo':
             return <RegistroPeriodo />;
@@ -85,13 +89,17 @@ const renderComponent = () => {
         case 'Asignar sede-carrera' :
             return <SedeCarrera/>
         case 'Registrar autoridades':
-            return <Autoridades/>;
+            return <Autoridades onhandleAddType={handleAddType} onhandleGetAutList={handleGetAutList} />;
         case 'Registrar Procesos':
             return <Procesos/>;
         case 'Administrar procesos':
-            return <LPro/>;
+            return <LPro onHandleEditProcess={handleEditProcess} />;
         case 'Editar Proceso':
-            return <EditAut/> 
+            return <EditProcess/> 
+        case 'Listado de Autoridades':
+            return <ListadoAu onhandleEditAut={handleEditAut} />
+        case 'Editar Autoridad':
+            return <EditAut onhandleAddType={handleAddType}/>
         default:
             return null;
 }//fin de caso multiple

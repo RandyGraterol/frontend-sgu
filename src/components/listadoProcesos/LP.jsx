@@ -4,22 +4,10 @@ import {faPenToSquare,faLayerGroup,faMinus, faCalendarDays } from '@fortawesome/
 import Submit from '../../particulas/SubmitButtons/Submit'
 import Style from  './LP.module.css'
 
-const LP = ()=>{
+const LP = ({onHandleEditProcess})=>{
     const [status,changeStatus] = useState(true);
     const [gest,gestPro] = useState(false);
     const [mig, gestMig] = useState(false)
-    
-    const [hola,dis_able] = useState({
-        lunes : true,
-        martes : false,
-        miercoles: false,
-        jueves: false,
-        viernes: false,
-    })
-
-    const En_dis_Able = ()=>{
-        dis_able()
-    }
 
     const trigger = ()=>{
 
@@ -43,7 +31,7 @@ const LP = ()=>{
             <div id={Style.filterContainer}>
                 
                 <select id="" className={Style.filter} >
-                    <option selcted  >modalidad / Periodo</option>
+                    <option  >modalidad / Periodo</option>
                     <option value="">Semestral / 2025-II</option>
                     <option value="">Anual / 2025-I</option>
                     <option value="">Trimestral / 2025-II</option>
@@ -51,7 +39,7 @@ const LP = ()=>{
                 
 
                 <select name="" id="" className={Style.filter}>
-                    <option selected >carrera - Institucion </option>
+                    <option  >carrera - Institucion </option>
                     <option value=""> Ing Informatica / San juan de los morros</option>
                     <option value="">Medicina / Calabozo</option>
                     <option value="">etc</option>
@@ -92,7 +80,7 @@ const LP = ()=>{
                             <td className={Style.active } onClick={trigger}>Activo</td>
                         ):( <td onClick={trigger} className={Style.inactive} >Inactivo</td>)}
                         <td className={Style.lastTd} > {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
-                        <td className={Style.lastTd} ><a className={Style.a} href="/EditProcess">  <FontAwesomeIcon icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} />  </a> </td>
+                        <td className={Style.lastTd} >  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
                     </tr>
                     <tr>
                         <td className={Style.td} >2025-I</td>
@@ -105,7 +93,7 @@ const LP = ()=>{
                         <td onClick={trigger} className={Style.inactive} >Inactivo</td>
                         ):(<td onClick={trigger} className={Style.active}>Activo</td>)}
                         <td className={Style.lastTd} > {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
-                        <td className={Style.lastTd}><a href="/EditProcess">  <FontAwesomeIcon icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} />  </a> </td>
+                        <td className={Style.lastTd}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
                     </tr>
                     
                 </tbody>

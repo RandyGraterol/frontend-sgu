@@ -7,7 +7,7 @@ import Submit from '../../particulas/SubmitButtons/Submit';
 
 
 
-const AutForm = ()=>{
+const AutForm = ({onhandleAddType,onhandleGetAutList})=>{
     return(
 
         <div className={Style.ScreenContainer} >
@@ -20,7 +20,7 @@ const AutForm = ()=>{
             <FontAwesomeIcon icon={faBuildingColumns} style={{color: "#5271ff"}} size='lg' />
             <strong className={Style.strong}> Institucion </strong> 
             <select className={Style.input} name="Institucion" required id="Institucion">
-                <option value=""  selected >Seleccione Institucion</option>
+                <option >Seleccione Institucion</option>
                 <option value="UNERG">UNERG</option>
                 <option value="Calabozo">Calabozo</option>
                 <option value="Zaraza">Zaraza</option>
@@ -31,12 +31,12 @@ const AutForm = ()=>{
             <FontAwesomeIcon icon={faArrowsDownToPeople} style={{color: "#5271ff"}} size='lg' />
             <strong className={Style.strong} > Tipo de Autoridad </strong> 
             <select className={Style.input} name="tipoAutoridad" required id="tipoAut" >
-                <option value=""  selected >Seleccione tipo</option>
+                <option  >Seleccione tipo</option>
                 <option value="Rector">Rector</option>
                 <option value="Rector">Decano Ais </option>
                 <option value="Rector">Decano Medicina SJM</option>
             </select>
-            <a href="/comingSoon"> <FontAwesomeIcon icon={faPlus} className={Style.add} style={{color: "#FFC300"}} title="agregar Autoridad"/> </a>
+            <FontAwesomeIcon icon={faPlus} onClick={onhandleAddType} className={Style.add} style={{color: "#FFC300"}} title="agregar Autoridad"/> 
             
         </label>
 
@@ -55,6 +55,9 @@ const AutForm = ()=>{
         <Submit/>
 
         </form>
+        
+        <div className={Style.VerListado} onClick={onhandleGetAutList} >Ver Listado de Autoridades</div>
+
         </div>
     )
 }

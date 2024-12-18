@@ -1,10 +1,10 @@
 import React from "react";
 import LP from "../components/listadoProcesos/LP";
 
-const ListPro = ()=>{
+const ListPro = ({onHandleEditProcess})=>{
     return(
     <>
-        <LP/>
+        <LP onHandleEditProcess={onHandleEditProcess} />
     </>
     )
 }
