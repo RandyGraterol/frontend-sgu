@@ -1,21 +1,22 @@
 :root{
-	--button: #9FC4D0;
-	--background: #ECECEC;
+	--button: #6BDBFF;
+	--background: #FFFFFF;
 	--text: #455459;
+	--border-color: #DEDEDE;
 }
 .FullSection{
 	display: flex;
+	width: 100%;
 	justify-content: center;
 }
 .Container{
-	filter: drop-shadow(-3px 3px 4px rgba(0, 0, 0, 0.4));
-	width: 50%;
+	width: 70%;
 	max-width: 100%;
 	height: 100%;
 }
 .Title_Text{
 	text-align: center;
-	font-size: 23px;
+	font-size: 24px;
 	width: 80%;
 	max-width: 100%;
 	background: var(--background);
@@ -34,34 +35,44 @@
 	padding: 16px;
 	border-radius: 0px 0px 20px 20px;
 }
+.Form_Title{
+	margin-left: 2px;
+	color: var(--text);
+	font-size: 12.4px;
+	flex: 1;
+	position: relative;
+}
+.Form_Group{
+	display: flex;
+	gap: 5px;
+	width: 100%;
+}
 .Form_Input{
-	font-size: 0.9em;
+	display: flex;
+	justify-content: center;
+	font-size: 1em;
 	font-family: Roboto;
 	width: 100%;
-	height: 2.3em;
-	padding: 0.6em;
-	border: none;
-	border-radius: 1em;
+	padding: 0.9em;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
 }
 .Form_Input[type=number]::-webkit-inner-spin-button,
 .Form_Input[type=number]::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 }
+/*
+Comento esto por sí acaso necesitamos ponerle logos
 .Form_Img{
-	position: absolute;
 	width: 20px;
 	height: 20px;
-	margin: 0.5em 0 0 -2em;
-}
-.Date{
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	font-size: 1em;
-	font-family: Roboto;
-}
+	margin: 0.5em 0 0 0;
+}*/
 .Date_Input{
+	text-align: center;
+	font-size: 17px;
 	border: none;
+	outline: none;
 }
 .Date_Label{
 	width: 65%;
@@ -73,16 +84,19 @@
 }
 .Radius{
 	display: flex;
-	justify-content: space-evenly;
-	background: white;
-	border-radius: 1em;
-	max-width: 65%;
+	flex-flow: column wrap;
+	gap: 10px;
 	width: 100%;
-	min-width: 65%;
 }
-.Radius_Label{
-	font-size: 1em;
-	color: var(--text);
+.Label_Radius{
+	display: flex;
+	gap: 20px;
+	font-size: 1.1em;
+	font-family: Roboto;
+	width: 100%;
+	padding: 0.7em;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
 }
 .Select{
 	display: flex;
@@ -90,25 +104,18 @@
 	gap: 1em;
 }
 .Select_Group{
-	width: 15em;
-	padding: 0.2em;
+	width: 100%;
 }
 .Select_Input{
 	width: 100%;
-	padding: 4%;
-	font-size: 1em;
+	padding: 0.9em;
+	font-size: 1.2em;
 	text-align: center;
 	background: white;
 	color: var(--text);
 	appearance: none;
-	border: none;
-	border-radius: 1em;
-}
-.Select_Img{
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	margin: 0 0 0 -1.4em;
+	border: 1px solid var(--border-color);
+	border-radius: 7pxem;
 }
 .PreBox{
 	display: flex;

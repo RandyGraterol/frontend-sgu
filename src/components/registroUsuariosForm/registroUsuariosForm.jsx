@@ -64,6 +64,9 @@ const RegistroUsuario = () => {
   <div className={`Container ${styles.Container}`}>
   	<h6 className = {`Title_Text ${styles.Title_Text}`}>Registro de usuario nuevo</h6>
   <form className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
+  <div className = {styles.Form_Title}>
+    <h1>Apellidos</h1>
+  </div>
     <div className={styles.Form_Group}>
       <input
         placeholder = "Segundo apellido"
@@ -76,9 +79,6 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div>
       <input
       	placeholder = "Primer apellido"
         maxLength="20"
@@ -90,7 +90,9 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className = {styles.Form_Title}>
+      <h1>Nombres</h1>
     </div>
     <div className={styles.Form_Group}>
       <input
@@ -104,9 +106,6 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
       <input
       	placeholder = "Primer nombre"
         maxLength="20"
@@ -118,7 +117,9 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className = {styles.Form_Title}>
+      <h1>Datos personales</h1>
     </div>
     <div className={styles.Form_Group}>
       <input
@@ -132,9 +133,6 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-     <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
-    </div>
-    <div className={styles.Form_Group}>
       <input
       	placeholder = "Correo"
         className={`Form_Input ${styles.Form_Input}`}
@@ -145,7 +143,9 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-     <FontAwesomeIcon icon = {faEnvelope} className = {styles.Form_Img}/>
+    </div>
+    <div className = {styles.Form_Title}>
+     <h1>Números de telefono</h1>
     </div>
     <div className={styles.Form_Group}>
       <input
@@ -158,9 +158,8 @@ const RegistroUsuario = () => {
         value={formData.telefonoL}
         onChange={handleChange}
       />
-      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Form_Group}>
+    <div className = {styles.Form_Group}>
       <input
       	placeholder = "Teléfono Movil"
         className={`Form_Input ${styles.Form_Input}`}
@@ -171,11 +170,12 @@ const RegistroUsuario = () => {
         value={formData.telefonoM}
         onChange={handleChange}
       />
-     	<FontAwesomeIcon icon={faMobileScreenButton} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Date}>
-        <label className = {styles.Date_Label}>
-         Fecha de nacimiento 
+    <div className = {styles.Form_Title}>
+      <h1>Fecha de nacimiento</h1>
+    </div>
+    <div className={styles.Form_Group}>
+        <label className = {styles.Form_Input}>
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
@@ -187,25 +187,32 @@ const RegistroUsuario = () => {
         </label>
     </div>
   <div className = {`Radius ${styles.Radius}`}>
-    <label className={`Radius_Label ${styles.Radius_Label}`}>Status</label>
-    <label className = {`Radius_Label ${styles.Radius_Label}`} >Act.
+  <div className = {styles.Form_Title}>
+    <h1>Status</h1>
+  </div>
+    <label className = {`Label_Radius ${styles.Label_Radius}`} >
       <input 
        type = "radio"
        id="status"
        name="status"
        value={formData.status}
       />
+      Activo
      </label>
-     <label className = {`Radius_Label ${styles.Radius_Label}`}>Inact.
+     <label className = {`Label_Radius ${styles.Label_Radius}`}>
       <input
        type = "radio"
        id="status"
        name="status"
        value={formData.status}
       />
+      Inactivo
     </label>
   </div>
   <div className = {`Select ${styles.Select}`}>
+  <div className = {styles.Form_Title}>
+    <h1>Datos adicionales</h1>
+  </div> 
     <div className={`Select_Group ${styles.Select_Group}`}>
       <select
         className={`Select_Input ${styles.Select_Input}`}
