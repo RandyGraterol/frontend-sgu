@@ -1,0 +1,22 @@
+.botonPensum{
+	width: 30%;
+	height: 35px;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	border-radius: 3px;
+	transition: .3s;
+}
+.botonPensum1{
+	background: #5277ff;
+}
+.botonPensum2{
+	background: transparent;
+	border: 2px solid #5277ff;
+}
+.botonPensum:hover{
+	background: transparent;
+	border: 2px solid #5277ff;
+	letter-spacing: .05em;
+	filter: drop-shadow(2px 2px 3px #5277ff);
+}

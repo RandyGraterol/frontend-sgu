@@ -1,0 +1,22 @@
+	
+button{
+	width: 30%;
+	height: 35px;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	border-radius: 3px;
+	transition: .3s;
+}
+.boton1{
+	background: #5277ff;
+}
+.boton2{
+	background: transparent;
+	border: 1px solid #5277ff;
+}
+button:hover{
+	background: transparent;
+	border: 2px solid #5277ff;
+	letter-spacing: .05em;
+}

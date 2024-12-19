@@ -1,0 +1,829 @@
+
+.inputStyle{
+  background-color:rgb(255,255,255);
+}.iconLogin{
+  width:100px;
+}.submit {
+  background-image: -webkit-radial-gradient(right,rgb(78, 95, 255),rgb(11, 177, 255));
+  cursor: pointer;
+  color:white;
+  padding:.5rem 2rem; 
+  transition:all 1s ease-in-out;
+}.submit:hover{
+ transform:translateY(-2px);
+ box-shadow:  2px 2px 50px rgb(78, 95, 255);
+}.message{
+  padding:0 2rem;
+}
+@media (max-width: 374px) {
+    /* Aquí van tus estilos específicos para móviles pequeños */
+  .container {
+  position:relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size:.9rem !important;
+  color:white;
+}.submit:hover{
+ color:white !important;
+}
+.loginRecuperar{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:10;
+  border: 2px solid grey;
+  width:100%;
+  height: 100%;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}.loginRecuperar:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  backdrop-filter:blur(2px);
+  background-color:rgba(0,0,0,.7);
+}
+.imagenLogin {
+  position: absolute;
+  width:100% !important;
+  height:100%;
+  top:0;
+  left:0;
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  width: 100%;
+}
+.redesSociales {
+  width: 20px;
+  cursor: pointer;
+}
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.tituloLogin {
+  font-size:1.6rem;
+}
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+.inputStyle {
+  border: 2px solid grey;
+  height: 32px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+.labelStyles {
+  width: 90%;
+}
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}
+
+.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+}
+.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:3rem;
+  z-index: 12;
+}
+.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+}
+/* Móviles medianos (375px - 414px) */
+@media (min-width: 375px) and (max-width: 414px) {
+    /* Aquí van tus estilos específicos para móviles medianos */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*REDMI NOTE 13 PRO PLUS*/
+  .container {
+  position:relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size:.9rem !important;
+  color:white;
+}.submit:hover{
+ color:white !important;
+}
+.loginRecuperar{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:10;
+  border: 2px solid grey;
+  width:100%;
+  height: 100%;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}.loginRecuperar:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  backdrop-filter:blur(2px);
+  background-color:rgba(0,0,0,.7);
+}
+.imagenLogin {
+  position: absolute;
+  width:100% !important;
+  height:100%;
+  top:0;
+  left:0;
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  width: 100%;
+}
+.redesSociales {
+  width: 20px;
+  cursor: pointer;
+}
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.tituloLogin {
+  font-size:1.8rem;
+}
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+.inputStyle {
+  border: 2px solid grey;
+  height: 32px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+.labelStyles {
+  width: 90%;
+}
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}
+.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+}
+.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:3rem;
+  z-index: 12;
+}
+.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+}
+/* Móviles grandes (415px - 599px)*/
+@media (min-width: 415px) and (max-width: 599px) {
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*IPHONE 15 PRO MAX*/
+  .container {
+  position:relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size:.9rem !important;
+  color:white;
+}.submit:hover{
+ color:white !important;
+}
+.loginRecuperar{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:10;
+  border: 2px solid grey;
+  width:100%;
+  height: 100%;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}.loginRecuperar:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  backdrop-filter:blur(2px);
+  background-color:rgba(0,0,0,.7);
+}
+.imagenLogin {
+  position: absolute;
+  width:100% !important;
+  height:100%;
+  top:0;
+  left:0;
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  width: 100%;
+}
+.redesSociales {
+  width: 20px;
+  cursor: pointer;
+}
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.tituloLogin {
+  font-size:2.1rem;
+}
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+.inputStyle {
+  border: 2px solid grey;
+  height: 32px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+.labelStyles {
+  width: 90%;
+}
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}
+.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+}
+.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:3rem;
+  z-index: 12;
+}
+.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+}
+/* Tabletas en orientación vertical (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    /* Aquí van tus estilos específicos para tabletas en orientación vertical*/
+    /* Aquí van tus estilos específicos para móviles grandes */
+}
+/* Tabletas en orientación horizontal (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+/* Aquí van tus estilos específicos para móviles grandes */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size:.9rem !important;
+}
+.loginRecuperar {
+  position: relative;
+  border: 2px solid grey;
+  width: 40%;
+  height: 100%;
+  background-color: rgb(235, 228, 255);
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagenLogin {
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.redesSociales {
+  width: 15px;
+  cursor: pointer;
+}
+
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tituloLogin {
+  font-size:1.5rem;
+}
+
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+
+.inputStyle {
+  border: 2px solid grey;
+  height: 32px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+.labelStyles {
+  width: 90%;
+}
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(235, 228, 255);
+}
+
+.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  z-index: 12;
+}
+
+.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:.5rem;
+}
+
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}.iconLogin{
+  width:80px;
+}
+}
+/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
+/* styles.css */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.loginRecuperar {
+  position: relative;
+  border: 2px solid grey;
+  width: 40%;
+  height: 100%;
+  background-color: rgb(235, 228, 255);
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagenLogin {
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.redesSociales {
+  width: 20px;
+  cursor: pointer;
+}
+
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tituloLogin {
+  font-size: 2rem;
+}
+
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+
+.inputStyle {
+  border: 2px solid grey;
+  height: 40px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+
+.labelStyles {
+  width: 90%;
+}
+
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(235, 228, 255);
+}
+
+.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1.4rem;
+  z-index: 12;
+}
+
+.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+}
+/* Dispositivos de pantalla grande (1280px en adelante) */
+@media (min-width: 1280px) {
+    /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
+/* styles.css */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.loginRecuperar {
+  position: relative;
+  border: 2px solid grey;
+  width: 40%;
+  height: 100%;
+  background-color: rgb(235, 228, 255);
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagenLogin {
+  width: 60%;
+  height: 100%;
+  border-right: none;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.redesSociales {
+  width: 25px;
+  cursor: pointer;
+}
+
+.containerRedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tituloLogin {
+  font-size: 2rem;
+}
+
+.containerLabelInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80%;
+}
+
+.inputStyle {
+  border: 2px solid grey;
+  height: 40px !important;
+  width: 90% !important;
+  padding-left: 1rem;
+}
+
+.labelStyles {
+  width: 90%;
+}
+
+.restablecerPassword {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}.restablecerPassword:hover {
+  color: rgb(0, 174, 240);
+  transform: scale(1.1);
+}.division {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(235, 228, 255);
+}.division:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 12;
+}.division:nth-child(2) {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.iconPasswordReset {
+  width: 100px;
+}
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+}
+
+

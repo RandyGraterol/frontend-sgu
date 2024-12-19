@@ -1,0 +1,12 @@
+.buttonRegister{
+	padding:.7rem 5rem;
+	font-size:1rem;
+	background:rgb(76, 175, 80);
+	color:white;
+	width:150px;
+	cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    border-radius:7px;
+}

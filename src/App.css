@@ -1,0 +1,9 @@
+.textoInformativo{
+	color:red;
+	padding:2rem 1rem;
+	text-align: center;
+	font-size:2rem;
+}.containerComponentPrincipal{
+	width:100%;
+	height:100%;
+}

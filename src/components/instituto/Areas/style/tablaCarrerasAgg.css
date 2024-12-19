@@ -1,0 +1,47 @@
+.table{
+	position: absolute;
+	min-width: 250px;
+	width: 100%;
+	max-width: 400px;
+	backdrop-filter: blur(4px);
+	background: rgba(255, 255, 255, .3);
+	border-radius: 5px;
+	transition: .3s;
+
+}
+.table thead{
+	background: #5277ff;
+	height: 35px;
+	width: ;
+}
+.table tbody tr{
+	transition: .4s;
+}
+.table tbody tr:hover{
+	background: rgba(255, 255, 255, .5);
+}
+.table tbody .action{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.table tbody .action a{
+	text-decoration: none;
+	color: red;
+	filter: drop-shadow(1px 1px 2px #000);
+}
+.table tbody .action a:hover{
+	color: #5277ff;
+}
+.salir{
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	font-size: 1.4em;
+	cursor: pointer;
+	color: red;
+	filter: drop-shadow(1px 1px 4px #000);
+}
+.salir:hover{
+	color: purple;
+}

@@ -1,0 +1,71 @@
+.form{
+    height: auto;
+    min-height: 550px;
+    width: 45vw ;
+    min-width: 300px;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+
+.ScreenContainer{    
+    margin: auto auto;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.add{
+    position: absolute;
+    margin-left: 85%;
+}
+
+@media screen and (max-width:1000px) {
+.add{
+    margin-left: 80%;
+}
+}
+
+.h1{
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.h2{
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
+.strong{
+    margin-left: 4px;
+    width: 30%;
+    font-size: clamp(10px,1.5vw,17px);
+    
+}
+
+
+.label{
+    color: #5271ff;
+    background-color: white;
+    padding: .5rem;
+    width: 70%;
+    max-width: 45vw;
+    min-width: 270px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 40px;
+    position: relative;
+}
+
+.input{
+    height: 90%;
+    border: none;
+    width: 60%;
+    max-width:35vw ;
+    display: flex;
+    align-items: center;
+}

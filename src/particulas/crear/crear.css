@@ -1,0 +1,25 @@
+.buscar{
+width:30px;
+}.formularioBusqueda{
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	height:50px;
+}.labelBuscar{
+	height:100%;
+	width:10%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border:2px solid grey;
+	border-radius:7px 0 0 7px;
+}.inputBuscar{
+	width:70%;
+	height:100%;
+	text-align: center;
+}.inputSubmitBuscar{
+	width:20%;
+	height:100%;
+	cursor:pointer;
+	border-radius:0 7px 7px 0;
+}

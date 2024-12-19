@@ -1,0 +1,222 @@
+.buttonCerrar{
+  padding:.5rem 2rem;
+  transition:all 1s ease-in-out;
+}
+.buttonCerrar:hover{
+ transform:translateY(-2px);
+}
+@media (max-width: 374px) {
+    /* Aquí van tus estilos específicos para móviles pequeños */
+        .modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:2rem 1.5rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.2rem;
+}.iconoNotifications{
+  width:30px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}
+/* Móviles medianos (375px - 414px) */
+@media (min-width: 375px) and (max-width: 414px) {
+    /* Aquí van tus estilos específicos para móviles medianos */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*REDMI NOTE 13 PRO PLUS*/
+     .modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:2rem 2.5rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.2rem;
+}.iconoNotifications{
+  width:30px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}
+/* Móviles grandes (415px - 599px)*/
+@media (min-width: 415px) and (max-width: 599px) {
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*IPHONE 15 PRO MAX*/
+    .modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:2rem 3rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.2rem;
+}.iconoNotifications{
+  width:30px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}
+/* Tabletas en orientación vertical (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    /* Aquí van tus estilos específicos para tabletas en orientación vertical*/
+    /* Aquí van tus estilos específicos para móviles grandes */
+}
+/* Tabletas en orientación horizontal (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+/* Aquí van tus estilos específicos para móviles grandes */
+.modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:2rem 3rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.2rem;
+}.iconoNotifications{
+  width:30px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}
+/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
+/* styles.css */
+.modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:3rem 5rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.5rem;
+}.iconoNotifications{
+  width:50px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}
+/* Dispositivos de pantalla grande (1280px en adelante) */
+@media (min-width: 1280px) {
+    /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
+/* styles.css */
+/* modalStyles.css */
+.modalContent {
+  position: absolute;
+  top: 50%; left: 50%; right: auto; bottom: auto;
+  margin-right: -50%; transform: translate(-50%, -50%);
+  padding:3rem 5rem;
+  z-index:100;
+  border:2px solid black;
+  background-color:rgb(255,255,255);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  border-radius:10px;
+}
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}.buttonCerrar{
+  background-color:rgb(76, 175, 80);
+  cursor:pointer;
+  color:white;
+}.messageModal{
+  font-size: 1.5rem;
+}.iconoNotifications{
+  width:50px;
+}.blue{
+  background-color: rgb(24, 116, 152);
+}.red{
+  background-color:rgb(240, 86, 86);
+}
+}

@@ -1,0 +1,13 @@
+.subNav{
+	width:250px;
+	height:100px;
+	
+	
+}.subNav:nth-child(2){
+	width:100px;
+	height:100px;
+	
+}.containerSubNav{
+	width:100%;
+	
+}

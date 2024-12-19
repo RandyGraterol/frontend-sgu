@@ -1,0 +1,11 @@
+.cajaCarreras{
+    width: 100%;
+    height: 35px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.bottona{
+    cursor: pointer;
+}

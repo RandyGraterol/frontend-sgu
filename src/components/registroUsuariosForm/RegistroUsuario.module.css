@@ -1,0 +1,130 @@
+:root{
+	--button: #9FC4D0;
+	--background: #ECECEC;
+	--text: #455459;
+}
+.Container{
+	filter: drop-shadow(-3px 3px 4px rgba(0, 0, 0, 0.4));
+	width: 40em;
+	height: 100%;
+   margin:2rem auto;
+}
+.Title_Text{
+	text-align: center;
+	font-size: 23px;
+	background: var(--background);
+	padding: 20px;
+	font-family: Roboto;
+	border-radius: 20px 20px 0 0;
+	color: var(--text);
+}
+.Form{
+	height:auto;
+	display: flex;
+	justify-content: space-around;
+	flex-flow: wrap;
+	gap: 1em;
+	background: var(--background);
+	padding: 16px;
+	border-radius: 0px 0px 20px 20px;
+}
+.Form_Input{
+	font-size: 0.9em;
+	font-family: Roboto;
+	width: 15em;
+	height: 2.3em;
+	padding: 0.6em;
+	border: none;
+	border-radius: 1em;
+}
+.Form_Img{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	margin: 0.5em 0 0 -2em;
+}
+.Date_Input{
+	font-size: 0.9em;
+	font-family: Roboto;
+	width: 7em;
+	height: 2.33em;
+	padding: 0.6em;
+	border: none;
+	border-radius: 0 1em 1em 0;
+}
+.Date_Label{
+	background: white;
+	color: var(--text);
+	padding: 0.3em;
+	border-radius: 1em 0 0 1em;
+}
+.File{
+	display: flex;
+	margin: 0 0 0 4em;
+	justify-content: center;
+	align-content: center;
+}
+.File_Input{
+	opacity: 2;
+	background: white;
+	padding: 1em;
+	font-size: 1em;
+	border-radius: 1em;
+}
+.Select{
+	display: flex;
+	flex-flow: wrap row;
+	margin: 2em 0 0 3em;
+	gap: 2em;
+}
+.Select_Group{
+	width: 15em;
+	padding: 0.2em;
+	margin: 0 0 0 10wm;
+}
+.Select_Input{
+	width: 100%;
+	height: 2.3em;
+	font-size: 1em;
+	text-align: center;
+	background: white;
+	color: var(--text);
+	appearance: none;
+	border: none;
+	border-radius: 1em;
+}
+.Select_Img{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 -1.4em;
+}
+.Radius{
+	display: flex;
+	align-content: center;
+	flex-flow: wrap;
+	padding-left: 1em;
+	gap: 1em;
+	border-radius: 1em;
+	width: 13.5em;
+	background: white;
+}
+.Radius_Label{
+	font-size: 1em;
+	color: var(--text);
+}
+.Button_Group{
+	display: flex;
+}
+.Button{
+	color: var(--text);
+	background: var(--button);
+	width: 10em;
+	border: none;
+	border-radius: 2em;
+	padding: 1em;
+	margin: 4em 0 0 7em;
+}
+.Button:hover{
+	cursor: pointer;
+}
