@@ -101,7 +101,7 @@ const Navbar = ({ onNavClick }) => {
                       <a onClick={()=> onNavClick('Asignar sede-carrera')} style={{ fontSize: "medium" }} href="#">Asignar sede-carrera</a>
                       </li>
 
-                      <li><a href="#registrar-autoridades">Registrar autoridades</a></li>
+                      <li><a onClick={()=> onNavClick('Registrar autoridades')} href="#registrar-autoridades">Registrar autoridades</a></li>
                       <li><a onClick={()=> onNavClick('Registro Tipo de Autoridad')} href="#tipo-autoridad">Tipo de autoridad</a></li>
                     </ul>
                   )}

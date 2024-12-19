@@ -22,7 +22,7 @@ import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
 //import {Form as RegistrarAreas} from './components/Form/FormRegistroAreas/Form.jsx';
 //importar  formulario de registro de usuarios 
-import RegistroUsuario from './components/registroUsuariosForm/RegistroUsuariosForm.jsx';
+import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
 
 // componentes de julian equipo (A)

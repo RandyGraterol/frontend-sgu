@@ -6,7 +6,8 @@
 
 .table{
     border-collapse: collapse;
-    max-width: 42vw;
+    width: 75%;
+    max-width: 45vw;
 }
 
 .th{
@@ -46,17 +47,32 @@
 }
 
 
+.label{
+    color: #5271ff;
+    background-color: white;
+    padding: .5rem;
+    width: 75%;
+    max-width: 45vw;
+    min-width: 270px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 40px;
+}
+
 .form{
     height: auto;
     min-height: 550px;
-    width: 45vw ;
     min-width: 300px;
     background-color: #efefef;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2vh;
+    width: 60vw ;
+    gap: 2.5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .h1{
@@ -75,19 +91,6 @@
     font-size: clamp(10px,1.5vw,17px);
 }
 
-
-.label{
-    color: #5271ff;
-    background-color: white;
-    padding: .5rem;
-    width: 70%;
-    max-width: 45vw;
-    min-width: 270px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    height: 40px;
-}
 
 .input{
     height: 90%;

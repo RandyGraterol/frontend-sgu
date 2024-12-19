@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListCheck, faCalendarDays, faListOl, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faListCheck, faCalendarDays, faListOl, faGraduationCap, faSliders } from '@fortawesome/free-solid-svg-icons';
 import Submit from '../../particulas/SubmitButtons/Submit';
 
 import Style from './editar.module.css'
@@ -54,6 +54,7 @@ const EditProces = () => {
             </label>
 
             <label htmlFor="modalidad" className={Style.label}>
+            <FontAwesomeIcon icon={faSliders} size='lg' style={{ color: "#5271ff" }}/>
                 <strong className={Style.strong} >Modalidad</strong>
                 <select name="modalidad" required className={Style.input} id="modalidad" onChange={handleModalidadChange}>
                     <option >Modalidad seleccionada previamente</option>

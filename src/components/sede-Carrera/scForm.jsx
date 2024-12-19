@@ -22,7 +22,7 @@ const SCForm = ()=>{
             <FontAwesomeIcon icon={faBuildingColumns} style={{color: "#5271ff"}} size='lg' />
             <strong className={Style.strong} > Institucion </strong> 
             <select className={Style.input} name="Institucion" required id="Institucion">
-                <option value="" disabled selected >Seleccione Institucion</option>
+                <option value="" disabled >Seleccione Institucion</option>
                 <option value="UNERG">UNERG</option>
                 <option value="Calabozo">Calabozo</option>
                 <option value="Zaraza">Zaraza</option>
@@ -39,12 +39,14 @@ const SCForm = ()=>{
             <p>busca otra carrera</p>
         ):(
             <table className={Style.table}>
+                <tbody>
                 <tr>
                 <td className={Style.td}  >3405</td>
                 <td className={Style.td} >Ing informática</td>
                 <td className={Style.td} >semestral</td>
                 <td className={Style.td} > <FontAwesomeIcon icon={faCheck}  style={{color:"#33df04"}} size='lg' onClick={swap} /> </td>
                 </tr>
+                </tbody>
             </table>
         )}
 
@@ -52,10 +54,12 @@ const SCForm = ()=>{
         <h2 className={Style.h2} >Listado de carreras seleccionadas</h2>
         <table className={Style.table}>
             <thead>
+                <tr>
                 <th className={Style.th} >Codigo Opsu</th>
                 <th className={Style.th} >Nombre</th>
                 <th className={Style.th} >Modalidad</th>
                 <th className={Style.th} >eliminar</th>
+                </tr>
             </thead>
 
             {state? (
@@ -69,7 +73,10 @@ const SCForm = ()=>{
             </tbody>
             
         ): (
+            <tbody>
                 <tr><td colSpan={4} className={Style.td}>sin carreras añadidas</td></tr>
+
+            </tbody>
             )}
 
         </table>

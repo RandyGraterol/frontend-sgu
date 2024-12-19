@@ -1,14 +1,16 @@
 .form{
     height: auto;
     min-height: 550px;
-    width: 45vw ;
     min-width: 300px;
     background-color: #efefef;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2vh;
+    width: 60vw ;
+    gap: 2.5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .h1{
@@ -25,15 +27,7 @@
 
 .add{
     position: absolute;
-    margin-left: 85%;
-}
-
-@media screen and (max-width:1000px) {
-
-.add{
-    margin-left: 80%;
-}
-
+    right: calc(10% - 1vw);
 }
 
 .strong{
@@ -56,7 +50,7 @@
     color: #5271ff;
     background-color: white;
     padding: .5rem;
-    width: 70%;
+    width: 75%;
     max-width: 45vw;
     min-width: 270px;
     display: flex;
