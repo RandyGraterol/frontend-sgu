@@ -4,7 +4,7 @@
     border: none;
     height: 40px;
     width: 45% ;
-    min-width: 75px;
+    min-width: 80px;
     transition: .5s all;
 }
 
@@ -21,7 +21,8 @@
     width: 45% ;
     height: 40px;
     transition: .5s;
-    min-width: 75px;
+    min-width: 80px;
+    background-color: white;
 }
 
 .buttonContainer{
@@ -29,6 +30,9 @@
     gap: 5%;
     display: flex;
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .reset:hover{

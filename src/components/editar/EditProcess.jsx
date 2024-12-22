@@ -47,15 +47,15 @@ const EditProces = () => {
 
             {error && <p style={{ color: 'red' }}>{error}</p>} 
 
+            <strong className={Style.strong} >Periodo Académico</strong>
             <label className={Style.label} >
                 <FontAwesomeIcon icon={faListOl} size='lg' style={{ color: "#5271ff" }} />
-                <strong className={Style.strong} >Periodo Académico</strong>
                 <input type="text" readOnly name='periodo' className={Style.input} value={state} />
             </label>
 
+            <strong className={Style.strong} ><label htmlFor="modalidad">Modalidad</label></strong>
             <label htmlFor="modalidad" className={Style.label}>
             <FontAwesomeIcon icon={faSliders} size='lg' style={{ color: "#5271ff" }}/>
-                <strong className={Style.strong} >Modalidad</strong>
                 <select name="modalidad" required className={Style.input} id="modalidad" onChange={handleModalidadChange}>
                     <option >Modalidad seleccionada previamente</option>
                     <option value="Anual">Anual / 2025-I</option>
@@ -64,9 +64,9 @@ const EditProces = () => {
                 </select>
             </label>
 
+            <strong className={Style.strong} ><label htmlFor="carrera">Carrera - Institucion</label></strong>
             <label htmlFor="carrera" className={Style.label} >
                 <FontAwesomeIcon icon={faGraduationCap} size='lg' style={{ color: "#5271ff" }} />
-                <strong className={Style.strong} >Carrera - Institucion</strong>
                 <select name="carrera" required className={Style.input} id="carrera">
                     <option >Carrera seleccionada previamente</option>
                     <option value="">Ing. Informática - San Juan de los Morros</option>
@@ -75,23 +75,32 @@ const EditProces = () => {
                 </select>
             </label>
 
+            
+            <strong className={Style.strong} ><label htmlFor="nombre">Nombre Proceso</label></strong>
             <label className={Style.label} htmlFor="nombre">
                 <FontAwesomeIcon icon={faListCheck} size='lg' style={{ color: "#5271ff" }} />
-                <strong className={Style.strong} >Nombre Proceso</strong>
                 <input type="text" name='proceso' value={'Nombre del proceso'} id='nombre' required className={Style.input} />
             </label>
 
+            <div className={Style.dateContainer} >
+
+            <div className={Style.halfContainer} >
+            <strong className={Style.strong} ><label htmlFor="fInicio">Fecha de inicio</label></strong>
             <label htmlFor="fInicio" className={Style.label} >
                 <FontAwesomeIcon icon={faCalendarDays} size='lg' style={{ color: "#5271ff" }} />
-                <strong className={Style.strong} >Fecha de inicio</strong>
                 <input type="date" name='fInicio' id='fInicio' className={Style.input} required value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
             </label>
+            </div>
 
+            <div className={Style.halfContainer} >
+            <label htmlFor="fCierre"><strong className={Style.strong} >Fecha de Cierre</strong></label>
             <label htmlFor="fCierre" className={Style.label} >
                 <FontAwesomeIcon icon={faCalendarDays} size='lg' style={{ color: "#5271ff" }} />
-                <strong className={Style.strong} >Fecha de Cierre</strong>
                 <input type="date" name='fCierre' id='fCierre' className={Style.input} required value={fechaCierre} onChange={(e) => setFechaCierre(e.target.value)} />
             </label>
+            </div>
+
+            </div>
 
             <Submit /> 
         </form>

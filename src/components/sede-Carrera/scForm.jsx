@@ -18,9 +18,10 @@ const SCForm = ()=>{
     <form action='/AddSede' method='POSt' className={Style.form} >
         <h1 className={Style.h1} >Asignar Sede - Carrera</h1>
 
+
+        <label htmlFor="Institucion"><strong className={Style.strong} > Institucion </strong></label>
         <label htmlFor="Institucion" className={Style.label} >
             <FontAwesomeIcon icon={faBuildingColumns} style={{color: "#5271ff"}} size='lg' />
-            <strong className={Style.strong} > Institucion </strong> 
             <select className={Style.input} name="Institucion" required id="Institucion">
                 <option value="" disabled >Seleccione Institucion</option>
                 <option value="UNERG">UNERG</option>
@@ -29,14 +30,14 @@ const SCForm = ()=>{
             </select>
         </label>
 
+        <label htmlFor="buscar" className="upperLabel" ><strong className={Style.strong} >Buscar carrera</strong></label>
         <label htmlFor="buscar" className={Style.label} >
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{color:"#5271ff"}} size='lg' />
-            <strong className={Style.strong} >Buscar carrera</strong> 
             <input type="search" id="buscar" placeholder="Cualquier carrera" className={Style.input} maxLength={50} />
         </label>
 
         {state? (
-            <p>busca otra carrera</p>
+            <p className={Style.p}>busca otra carrera</p>
         ):(
             <table className={Style.table}>
                 <tbody>
