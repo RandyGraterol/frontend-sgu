@@ -1,6 +1,6 @@
 import DatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faCamera, faIdCardClip, faUser, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import "react-datepicker/dist/react-datepicker.css";
 import { es } from "date-fns/locale/es";
 import { registerLocale } from "react-datepicker";
@@ -9,6 +9,7 @@ import './RegistroUsuarioMediaQuery.css'
 import styles from './RegistroUsuario.module.css'
 
 const RegistroUsuario = () => {
+  const [error, setError] = useState(null);
   registerLocale("es", es);
   const [selectedImage, setSelectedImage] = useState(null);
   const [startDate, setStartDate] = useState(new Date());
@@ -20,15 +21,16 @@ const RegistroUsuario = () => {
     segundonombre: '',
     correo: '',
     sexo: '',
-    fechanacimiento: '',
+    fechaNacimiento: new Date(),
     discapacidad: '',
     etnia: '',
     telefonoL: '',
-    status: '',
+    status: false,
     telefonoM: '',
     gu: '',
   });
 
+  //Esta función captura la imagen que ingresa el usuario para poder hacer la previsualización.
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -39,6 +41,7 @@ const RegistroUsuario = () => {
       reader.readAsDataURL(file);
     }
   };
+  //Está función de acá captura la mayoría de los datos del formulario, exceptuando el de fecha
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -46,12 +49,80 @@ const RegistroUsuario = () => {
       [name]: value,
     });
   };
+  //Función para capturar la fecha
+  const handleDateChange = (date) =>{
+    setStartDate(date);
+    setFormData({
+      ...formData,
+      fechaNacimiento: date,
+    })
+  }
+
+  const handleStatusChange = (e) =>{
+    const value = e.target.value === "true";
+    setFormData({
+      ...formData,
+      status: value,
+    })
+  }
+
+  const removeCircularReferences = (obj) => {
+    const seen = new WeakSet();
+    return JSON.parse(JSON.stringify(obj, (key, value) =>{
+      if (typeof value === "object" && value !=null){
+        if (seen.has(value)){
+          return;
+        }
+        seen.add(value)
+      }
+      return
+    }));
+  }
+
+  //Está función maneja la librería de fechas que decidimos usar para el desarrollo, aun no captura la fecha
   const fechaNacimiento = startDate
     ? startDate.toLocaleDateString("es-ES")
     : "No definido";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = {
+    cedula,
+    primerapellido,
+    segundoapellido,
+    primernombre,
+    segundonombre,
+    correo,
+    sexo,
+    fechaNacimiento,
+    discapacidad,
+    etnia,
+    telefonoL,
+    status,
+    telefonoM,
+    gu
+    }
+
+    try{
+      const response = await fetch('https://database-gb6x.onrender.com/',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(removeCircularReferences(user)),
+      });
+
+      const json = await response.json();
+
+      if (!response.ok){
+        throw new Error(json.error || "Error en la solicitud")
+      }
+      setFormData('');
+      console.log("Usuario añadido con éxito", json)
+    } catch(err){
+      setError(err.message);
+    }
+    console.log("Datos enviados con éxito")
     console.log(formData);
   };
 
@@ -67,7 +138,8 @@ const RegistroUsuario = () => {
   <div className = {styles.Form_Title}>
     <h1>Apellidos</h1>
   </div>
-    <div className={styles.Form_Group}>
+  <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
       <input
         placeholder = "Segundo apellido"
         maxLength="20"
@@ -79,6 +151,8 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
+    </div>
+    <div className = {styles.Form_Border}>
       <input
       	placeholder = "Primer apellido"
         maxLength="20"
@@ -91,10 +165,12 @@ const RegistroUsuario = () => {
         required
       />
     </div>
+    </div>
     <div className = {styles.Form_Title}>
       <h1>Nombres</h1>
     </div>
-    <div className={styles.Form_Group}>
+    <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
       <input
         placeholder = "Segundo nombre"
         maxLength="20"
@@ -106,6 +182,8 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
+    </div>
+    <div className = {styles.Form_Border}>
       <input
       	placeholder = "Primer nombre"
         maxLength="20"
@@ -118,21 +196,13 @@ const RegistroUsuario = () => {
         required
       />
     </div>
+    </div>
     <div className = {styles.Form_Title}>
       <h1>Datos personales</h1>
     </div>
     <div className={styles.Form_Group}>
-      <input
-      	placeholder = "Cedula"
-        maxLength = "8"
-        className={`Form_Input ${styles.Form_Input}`}
-        type="number"
-        id="cedula"
-        name="cedula"
-        value={formData.cedula}
-        onChange={handleChange}
-        required
-      />
+      <div className={styles.Form_Border}>
+       <FontAwesomeIcon icon={faEnvelope} className={styles.Icon}/>      
       <input
       	placeholder = "Correo"
         className={`Form_Input ${styles.Form_Input}`}
@@ -144,22 +214,39 @@ const RegistroUsuario = () => {
         required
       />
     </div>
+    <div className = {styles.Form_Border}>
+      <input
+      	placeholder = "Cedula"
+        maxLength = "8"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="number"
+        id="cedula"
+        name="cedula"
+        value={formData.cedula}
+        onChange={handleChange}
+        required
+      />
+    </div>
+    </div>
     <div className = {styles.Form_Title}>
      <h1>Números de telefono</h1>
     </div>
-    <div className={styles.Form_Group}>
+  <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
+    <FontAwesomeIcon icon={faPhone} className={`Icon ${styles.Icon}`}/>
       <input
       	placeholder = "Telefono Local"
         className={styles.Form_Input}
         type="tel"
         id="telefonoL"
         name="telefonoL"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoL}
         onChange={handleChange}
       />
     </div>
-    <div className = {styles.Form_Group}>
+    <div className = {styles.Form_Border}>
+      <FontAwesomeIcon icon={faMobileScreenButton} className={styles.Icon}/>
       <input
       	placeholder = "Teléfono Movil"
         className={`Form_Input ${styles.Form_Input}`}
@@ -171,14 +258,15 @@ const RegistroUsuario = () => {
         onChange={handleChange}
       />
     </div>
+  </div>
     <div className = {styles.Form_Title}>
       <h1>Fecha de nacimiento</h1>
     </div>
-    <div className={styles.Form_Group}>
+    <div className={styles.Form_Border}>
         <label className = {styles.Form_Input}>
         <DatePicker
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={handleDateChange}
           locale="es"
           dateFormat="dd/MM/yyyy"
           required
@@ -195,7 +283,9 @@ const RegistroUsuario = () => {
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={true}
+       checked={formData.status === true}
+       onChange={handleStatusChange}
       />
       Activo
      </label>
@@ -204,7 +294,9 @@ const RegistroUsuario = () => {
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={false}
+       checked={formData.status === false}
+       onChange={handleStatusChange}
       />
       Inactivo
     </label>

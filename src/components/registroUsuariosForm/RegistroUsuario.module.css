@@ -47,27 +47,37 @@
 	gap: 5px;
 	width: 100%;
 }
+.Form_Border{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
+}
 .Form_Input{
 	display: flex;
 	justify-content: center;
+	align-content: center;
 	font-size: 1em;
 	font-family: Roboto;
 	width: 100%;
-	padding: 0.9em;
-	border: 1px solid var(--border-color);
 	border-radius: 7px;
+	padding: 0.9em;
+	border: none;
+	outline: none;
 }
 .Form_Input[type=number]::-webkit-inner-spin-button,
 .Form_Input[type=number]::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 }
-/*
-Comento esto por sí acaso necesitamos ponerle logos
-.Form_Img{
-	width: 20px;
-	height: 20px;
-	margin: 0.5em 0 0 0;
-}*/
+.Icon{
+	min-width: 10%;
+	width: 10%;
+	max-width: 10%;
+	min-height: 40%;
+	height: 35%;
+	max-height: 40%;
+}
 .Date_Input{
 	text-align: center;
 	font-size: 17px;
@@ -114,8 +124,9 @@ Comento esto por sí acaso necesitamos ponerle logos
 	background: white;
 	color: var(--text);
 	appearance: none;
+	outline: none;
 	border: 1px solid var(--border-color);
-	border-radius: 7pxem;
+	border-radius: 7px;
 }
 .PreBox{
 	display: flex;
