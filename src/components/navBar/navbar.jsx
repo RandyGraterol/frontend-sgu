@@ -238,7 +238,7 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Carrera activa: Ingeniería Informática</a></li>
+                    <li><a href="#">Carrera activa: Ingeniería Informática<span className="arrow">▶</span></a></li>
                   </ul>
                 </li>
                 <li className={openMenus['Procesos'] ? 'active' : ''}>
@@ -279,7 +279,7 @@ const Navbar = ({ onNavClick }) => {
                   <ul
                     ref={(el) => {
                       if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '100%';
                       }
                     }}
                     className="submenu"
@@ -292,7 +292,7 @@ const Navbar = ({ onNavClick }) => {
                     <li><a href="#">Planilla de inscripción</a></li>
                     <li><a href="#">Constancia de Estudios</a></li>
                     <li><a href="#">Constancia de Buena Conducta</a></li>
-                    <li><a href="#">Record Académico</a></li>
+                    <li><a href="#">Record Academico</a></li>
                   </ul>
                 </li>
                 <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
@@ -328,10 +328,6 @@ const Navbar = ({ onNavClick }) => {
               </>
             )}
           </ul>
-
-          {/* Perfil del Usuario */}
-
-
                     {/* Perfil del Usuario */}
                     <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button">
