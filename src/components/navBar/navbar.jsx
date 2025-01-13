@@ -114,9 +114,9 @@ const Navbar = ({ onNavClick }) => {
                       <li><a onClick={() => onNavClick('Registro Instituto')} href="#registro-instituto">Registro instituto</a></li>
                       <li><a onClick={() => onNavClick('Registrar carreras')} href="#registrar-carreras">Registrar carreras</a></li>
                       <li><a onClick={() => onNavClick('Pensum')} href="#pensum">Pensum</a></li>
-                      <li><a href="#registrar-areas">Registrar áreas</a></li>
-                      <li><a href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
-                      <li><a href="#registrar-autoridades">Registrar autoridades</a></li>
+                      <li><a onClick={() => onNavClick('Registrar áreas')} href="#registrar-areas">Registrar áreas</a></li>
+                      <li><a onClick={() => onNavClick('Asignar sede-carrera')} href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
+                      <li><a onClick={() => onNavClick('Registrar autoridades')} href="#registrar-autoridades">Registrar autoridades</a></li>
                       <li><a onClick={() => onNavClick('Registro Tipo de Autoridad')} href="#tipo-autoridad">Tipo de autoridad</a></li>
                     </ul>
                   )}
@@ -144,10 +144,10 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Registrar usuario')} href="#registrar-usuario">Registrar usuario</a></li>
+                      <li><a onClick={() => onNavClick('Registrar Usuario')} href="#registrar-usuario">Registrar usuario</a></li>
                       <li><a onClick={() => onNavClick('Grupos de usuarios')} href="#grupos-usuarios">Grupos de usuarios</a></li>
                       <li><a onClick={() => onNavClick('Administración de usuarios')} href="#administracion-usuarios">Administración de usuarios</a></li>
-                      <li><a onClick={() => onNavClick('Administración de usuarios')} href="#control-acceso">Control de acceso</a></li>
+                      <li><a onClick={() => onNavClick('Control de Acceso')} href="#control-acceso">Control de acceso</a></li>
                     </ul>
                   )}
                 </li>
@@ -174,9 +174,9 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a href="#registrar-procesos">Registrar procesos</a></li>
-                      <li><a href="#administrar-procesos">Administrar procesos</a></li>
-                      <li><a onClick={() => onNavClick('Registro Periodo')} href="#registro-periodo">Registro periodo</a></li>
+                      <li><a onClick={() => onNavClick('Registrar Procesos')} href="#registrar-procesos">Registrar procesos</a></li>
+                      <li><a onClick={() => onNavClick('Administrar procesos')} href="#administrar-procesos">Administrar procesos</a></li>
+                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Registro periodo</a></li>
                     </ul>
                   )}
                 </li>
