@@ -1,0 +1,11 @@
+.donas {
+  background-color: white;
+  border-color: black;
+  border-radius: 15px;
+  flex: 1 1 calc(20% - 40px);
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+  max-width: 360px;
+  max-height: 360px;
+}

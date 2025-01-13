@@ -18,9 +18,12 @@ ChartJS.register(
   Legend
 );
 
+import sourcedata from "../graficos/sourcedata";
+import "./barras.css";
+
 function Barras() {
-  const estexist = [772, 200, 300, 500, 600];
-  const estinsc = [400, 50, 20, 30, 20];
+  const estexist = sourcedata.map((sourcedata) => sourcedata.estexit);
+  const estinsc = sourcedata.map((sourcedata) => sourcedata.estinsc);
 
   const data = {
     labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"],
@@ -50,10 +53,12 @@ function Barras() {
         text: "Estudiantes por dia",
       },
     },
+    responsive: true,
+    maintainAspectRatio: true,
   };
 
   return (
-    <div>
+    <div className="barras">
       <Bar data={data} options={options} />
     </div>
   );
