@@ -8,7 +8,7 @@
   height: 10vh;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 9;
 }
 /* Estilo para el input (código de barras) */
 .CB {
@@ -56,9 +56,8 @@
 }
 .arrow{
       display: none;
-    }
+}
 nav {
-  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: start;
