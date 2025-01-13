@@ -112,12 +112,12 @@ const Navbar = ({ onNavClick }) => {
                     }}
                   >
                       <li><a onClick={() => onNavClick('Registro Instituto')} href="#registro-instituto">Registro instituto</a></li>
-                      <li><a href="#registrar-carreras">Registrar carreras</a></li>
-                      <li><a href="#pensum">Pensum</a></li>
+                      <li><a onClick={() => onNavClick('Registrar carreras')} href="#registrar-carreras">Registrar carreras</a></li>
+                      <li><a onClick={() => onNavClick('Pensum')} href="#pensum">Pensum</a></li>
                       <li><a href="#registrar-areas">Registrar áreas</a></li>
                       <li><a href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
                       <li><a href="#registrar-autoridades">Registrar autoridades</a></li>
-                      <li><a href="#tipo-autoridad">Tipo de autoridad</a></li>
+                      <li><a onClick={() => onNavClick('Registro Tipo de Autoridad')} href="#tipo-autoridad">Tipo de autoridad</a></li>
                     </ul>
                   )}
                 </li>
@@ -144,10 +144,10 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Registrar Usuario')} href="#registrar-usuario">Registrar usuario</a></li>
-                      <li><a href="#grupos-usuarios">Grupos de usuarios</a></li>
-                      <li><a href="#administracion-usuarios">Administración de usuarios</a></li>
-                      <li><a href="#control-acceso">Control de acceso</a></li>
+                      <li><a onClick={() => onNavClick('Registrar usuario')} href="#registrar-usuario">Registrar usuario</a></li>
+                      <li><a onClick={() => onNavClick('Grupos de usuarios')} href="#grupos-usuarios">Grupos de usuarios</a></li>
+                      <li><a onClick={() => onNavClick('Administración de usuarios')} href="#administracion-usuarios">Administración de usuarios</a></li>
+                      <li><a onClick={() => onNavClick('Administración de usuarios')} href="#control-acceso">Control de acceso</a></li>
                     </ul>
                   )}
                 </li>
@@ -176,7 +176,7 @@ const Navbar = ({ onNavClick }) => {
                   >
                       <li><a href="#registrar-procesos">Registrar procesos</a></li>
                       <li><a href="#administrar-procesos">Administrar procesos</a></li>
-                      <li><a href="#registro-periodo">Registro periodo</a></li>
+                      <li><a onClick={() => onNavClick('Registro Periodo')} href="#registro-periodo">Registro periodo</a></li>
                     </ul>
                   )}
                 </li>
@@ -226,6 +226,7 @@ const Navbar = ({ onNavClick }) => {
                   >
                     Perfil <span className="arrow">▶</span>
                   </a>
+                  {openMenus['Perfil'] && (
                   <ul
                     ref={(el) => {
                       if (el) {
@@ -238,8 +239,9 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Carrera activa: Ingeniería Informática<span className="arrow">▶</span></a></li>
+                    <li><a href="#">Carrera activa: Ingeniería Informática</a></li>
                   </ul>
+                )}
                 </li>
                 <li className={openMenus['Procesos'] ? 'active' : ''}>
                   <a
@@ -251,7 +253,8 @@ const Navbar = ({ onNavClick }) => {
                   >
                     Procesos <span className="arrow">▶</span>
                   </a>
-                  <ul
+                  {openMenus['Procesos'] && (
+                  <ul    
                     ref={(el) => {
                       if (el) {
                         el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
@@ -263,8 +266,9 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Inscripción<span className="arrow">▶</span></a></li>
+                    <li><a href="#">Inscripción</a></li>
                   </ul>
+                )}
                 </li>
                 <li className={openMenus['Reportes'] ? 'active' : ''}>
                   <a
@@ -276,10 +280,11 @@ const Navbar = ({ onNavClick }) => {
                   >
                     Reportes <span className="arrow">▶</span>
                   </a>
+                  {openMenus['Reportes'] && (
                   <ul
                     ref={(el) => {
                       if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '100%';
+                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -294,6 +299,7 @@ const Navbar = ({ onNavClick }) => {
                     <li><a href="#">Constancia de Buena Conducta</a></li>
                     <li><a href="#">Record Academico</a></li>
                   </ul>
+                )}
                 </li>
                 <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
                   <a
