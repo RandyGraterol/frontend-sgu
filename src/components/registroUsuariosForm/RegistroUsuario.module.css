@@ -71,6 +71,7 @@
 	-webkit-appearance: none;
 }
 .Icon{
+	background: transparent;
 	min-width: 10%;
 	width: 10%;
 	max-width: 10%;
@@ -79,12 +80,14 @@
 	max-height: 40%;
 }
 .Date_Input{
+	background: transparent;
 	text-align: center;
 	font-size: 17px;
 	border: none;
 	outline: none;
 }
 .Date_Label{
+	background: transparent;
 	width: 65%;
 	font-size: 1em;
 	background: white;

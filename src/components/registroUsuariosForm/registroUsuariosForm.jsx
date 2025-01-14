@@ -9,25 +9,26 @@ import './RegistroUsuarioMediaQuery.css'
 import styles from './RegistroUsuario.module.css'
 
 const RegistroUsuario = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   registerLocale("es", es);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [formData, setFormData] = useState({
-    cedula: '',
-    primerapellido: '',
-    segundoapellido: '',
-    primernombre: '',
-    segundonombre: '',
-    correo: '',
-    sexo: '',
-    fechaNacimiento: new Date(),
-    discapacidad: '',
-    etnia: '',
-    telefonoL: '',
-    status: false,
-    telefonoM: '',
-    gu: '',
+    cedula:"",
+    primerapellido: "",
+    segundoapellido: "",
+    primernombre: "",
+    segundonombre: "",
+    correo: "",
+    fechaNacimiento: "",
+    sexo: "",
+    discapacidad: "",
+    etnia: "" ,
+    telefonoL:"",
+    status: "",
+    telefonoM:"",
+    gu:"",
+    img: ""
   });
 
   //Esta función captura la imagen que ingresa el usuario para poder hacer la previsualización.
@@ -37,6 +38,10 @@ const RegistroUsuario = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result);
+        setFormData({
+          ...formData,
+          img: reader.result,
+        });
       };
       reader.readAsDataURL(file);
     }
@@ -66,7 +71,7 @@ const RegistroUsuario = () => {
     })
   }
 
-  const removeCircularReferences = (obj) => {
+  {/*const removeCircularReferences = (obj) => {
     const seen = new WeakSet();
     return JSON.parse(JSON.stringify(obj, (key, value) =>{
       if (typeof value === "object" && value !=null){
@@ -78,7 +83,7 @@ const RegistroUsuario = () => {
       return
     }));
   }
-
+*/}
   //Está función maneja la librería de fechas que decidimos usar para el desarrollo, aun no captura la fecha
   const fechaNacimiento = startDate
     ? startDate.toLocaleDateString("es-ES")
@@ -86,30 +91,15 @@ const RegistroUsuario = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = {
-    cedula,
-    primerapellido,
-    segundoapellido,
-    primernombre,
-    segundonombre,
-    correo,
-    sexo,
-    fechaNacimiento,
-    discapacidad,
-    etnia,
-    telefonoL,
-    status,
-    telefonoM,
-    gu
-    }
-
+    const data = [formData]
+  
     try{
-      const response = await fetch('https://database-gb6x.onrender.com/',{
+      const response = await fetch('https://database-gb6x.onrender.com/registerEstudiante',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(removeCircularReferences(user)),
+        body: JSON.stringify(data),
       });
 
       const json = await response.json();
@@ -118,12 +108,12 @@ const RegistroUsuario = () => {
         throw new Error(json.error || "Error en la solicitud")
       }
       setFormData('');
-      console.log("Usuario añadido con éxito", json)
+      console.log(json)
     } catch(err){
       setError(err.message);
     }
-    console.log("Datos enviados con éxito")
-    console.log(formData);
+
+    console.log(data)
   };
 
   const handleBack = () => {
@@ -134,7 +124,7 @@ const RegistroUsuario = () => {
 <section className={styles.FullSection}> 
   <div className={`Container ${styles.Container}`}>
   	<h6 className = {`Title_Text ${styles.Title_Text}`}>Registro de usuario nuevo</h6>
-  <form className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
+  <form encType="multipart/form-data" className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
   <div className = {styles.Form_Title}>
     <h1>Apellidos</h1>
   </div>
@@ -371,7 +361,7 @@ const RegistroUsuario = () => {
         type = "file"
         id = "img"
         name = "img"
-        value = {formData.img}
+        defaultValue = {formData .img}
         onChange = {handleImageChange}
         required
       />
