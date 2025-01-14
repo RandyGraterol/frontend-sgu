@@ -1,14 +1,17 @@
 .app a{
   font-size: 18.5px;
-}
+}.app{
+  position:relative;
+  border:3px solid green;
 
+}
 #cabecera{
   width: 100%;
-  background-color: #74b0e8;
-  height: 10vh;
-  position: fixed;
+  height:auto;
   top: 0;
   z-index: 1;
+  background-color:rgb(0, 83, 160);
+  border:5px solid blue;
 }
 /* Estilo para el input (código de barras) */
 .CB {
@@ -19,7 +22,6 @@
   border-radius: 5px; /* Bordes redondeados */
   outline: none; /* Quita el contorno azul al hacer clic */
   transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
-  margin-left: 1vw;
 }
 
 .CB:focus {
@@ -36,7 +38,6 @@
   cursor: pointer; /* Cursor tipo puntero */
   transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
   font-size: 14px;
-  margin-left: 1vw;
 }
 
 .CBB:hover {
@@ -50,28 +51,17 @@
 }
 .image{
   position: relative;
-  height: 70px;
-  margin-right: -10vw;
-  margin-top: -5.6vh;
+  height:100%;
+  height:100%;
 }
 .arrow{
       display: none;
     }
-nav {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 2.5rem;
-  margin-left: 8vw;
 }
 nav ul li {
       position: relative;
@@ -80,47 +70,59 @@ nav ul li ul {
     height: 0;
     overflow: hidden;
       display: flex;
-      position: absolute;
-      z-index: 9999;
       flex-wrap: wrap; /* Permite que los elementos se distribuyan en múltiples líneas */
       width: 25rem; /* Define un ancho fijo para el contenedor del submenú */
-      top: 100%;
-      margin-top: 0.2vh;
-      left: 0;
       background-color: #3990e1;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
       border-radius: 5px;
-      margin-left: 0vw;
-
 }
-
-
-
 nav ul li ul li {
   flex: 0 0 45%; /* Ocupa el 50% del ancho del contenedor, es decir, dos columnas */
   padding: 1rem 0.8rem; /* Ajusta el padding para mejor distribución */
 }
-
 nav ul li ul li a {
   display: block; /* Asegura que el enlace ocupe todo el espacio disponible */
   color: #ffffff;
   text-decoration: none;
+  text-align: center;
 }
-
-
-nav a {
+nav a{
   text-decoration: none;
-}
-nav a#logo {
-  color: #000000;
-  font-weight: 700;
-  margin: 1%;
-}
-nav ul a {
+}.containerLogo{
+  border:4px solid red;
+  display:flex;
+  justify-content:center;
+  height:15vh;
+  width:20% !important;
+}#nav-bar{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  border:4px solid orange;
+  width:60%;
+  height:15vh;
+}#profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    border:2px solid gold;
+    width:20%;
+    height:15vh;
+}nav{
+  position:relative;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap:1rem;
+  width: 100%;
+  height:auto;
+  padding:1rem;
+  border:5px solid violet;
+}nav ul a {
   color: #ffffff;
   font-weight: 600;
-}
-nav ul a:hover {
+}nav ul a:hover {
   border-bottom: 2px solid #ffffff;
 }
 section#home {
@@ -136,11 +138,6 @@ section#home {
 nav ul.active {
   left: 0;
 }
-#profile-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 #profile-button {
   display: flex;
   align-items: center;
@@ -152,7 +149,7 @@ nav ul.active {
 }
 
 #not-button {
-  margin-right: 7vw;
+
   display: flex;
   cursor: pointer;
   color: white;
@@ -182,7 +179,6 @@ nav ul.active {
 
   .image{
     height: 60px;
-    margin-top: -5.8vh;
   }
 
 }
@@ -191,7 +187,6 @@ nav ul.active {
 
   .image{
     height: 65px;
-    margin-top: -4.7vh;
   }
   
   .app a{
@@ -208,7 +203,6 @@ nav ul.active {
 
   .image{
     height: 54px;
-    margin-top: -4vh;
   }
   .app a{
     font-size: 15.5px;
@@ -219,14 +213,8 @@ nav ul.active {
 @media only screen and (max-width: 767px) {
   nav ul{
     overflow-y: auto; /* Permite scroll si el contenido es demasiado alto */
-    margin-left: 0vw;
 
   }
-  nav ul li{
-    padding-top: 3.2rem;
-  }
-
-
   nav ul li ul {
     display: flex;
     position: relative;
@@ -237,7 +225,6 @@ nav ul.active {
     border-radius: 0;
     padding: 0.3rem 0; /* Reduce el padding superior e inferior */
     line-height: 0.7; /* Compacta la altura de las líneas */
-    margin-top: -0.5vh;
     overflow-y:hidden; /* Permite scroll si el contenido es demasiado alto */
 
   }
@@ -248,7 +235,6 @@ nav ul.active {
 
   .image{
   height: 58px;
-  margin-top: -3.8vh;
   }
   #ham-menu {
     display: block;
@@ -256,28 +242,17 @@ nav ul.active {
     font-size: 1.8rem;
     position: fixed;
     z-index: 9;
-    margin-top: -0.8vh;
-  }
-
-  nav a#logo{
-    margin-left: 5vw;
   }
   .CB {
-    margin-top: -10vh;
-    margin-left: 0;
     width: 200px;
 }
 
 .CBB{
-  margin-left: 0;
   font-size: 11px;
 }
 
   nav ul {
       background-color: #609dd6;
-      position: absolute;
-      left: -100vw;
-      top: 0;
       width: 50vw;
       height: 100vh;
       display: flex;
@@ -286,8 +261,7 @@ nav ul.active {
       justify-content: space-around;
       transition: 1s;
       gap: 0;
-      padding-bottom: 25rem;
-      padding-top: 5rem;
+      padding:2rem;
       z-index: 5;
       
     }
@@ -312,7 +286,6 @@ nav ul.active {
       align-items: flex-start;
       padding-left: 2rem;
       width: 100%;
-      margin-bottom: -6vh;
     }
     nav ul li ul li {
     padding: 1rem 4rem; /* Espaciado interno */
@@ -325,8 +298,6 @@ nav ul.active {
     text-decoration: none;
     padding: 0.5rem 0;
     width: 100%;
-    margin-top: -1vh;
-
   }
     nav ul li.active > ul {
       position: relative;
@@ -367,9 +338,6 @@ nav ul.active {
   }
   .image{
   height: 55px;
-  margin-left: 5vw;
-  margin-top: -4.5vh;
-  margin-bottom: 0;
   }
 
 

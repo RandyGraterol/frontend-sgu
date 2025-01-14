@@ -74,6 +74,7 @@ const Navbar = ({ onNavClick }) => {
     <header id='cabecera'>
       <div className='app'>
         <nav>
+        
           <FontAwesomeIcon
             icon={isMenuOpen ? faTimes : faBars}
             className="fa-bars"
@@ -81,9 +82,9 @@ const Navbar = ({ onNavClick }) => {
             onClick={toggleMenu}
           />
 
-          <a href="#home" id="logo">
+          <div className='containerLogo'>
             <img className="image" src="/icon/logo.png" alt="Logo" />
-          </a>
+          </div>
 
           <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
             {userRole === 'Superuser' && (
@@ -333,7 +334,7 @@ const Navbar = ({ onNavClick }) => {
 
 
                     {/* Perfil del Usuario */}
-                    <div id="profile-container" ref={profileButtonRef}>
+          <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button">
               <FontAwesomeIcon icon={faBell} />
             </div>

@@ -69,7 +69,7 @@ const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
 const renderComponent = () => {
 
    if (!selectedComponent) {
-            return < Dashboar/>// 
+            return < NotificationsAdmin/>// 
         }
         switch (selectedComponent) {
         case 'Registro periodo':
