@@ -1,12 +1,18 @@
 import DatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faIdCardClip, faUser, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import "react-datepicker/dist/react-datepicker.css";
+import { es } from "date-fns/locale/es";
+import { registerLocale } from "react-datepicker";
 import { useState } from 'react';
+import './RegistroUsuarioMediaQuery.css'
 import styles from './RegistroUsuario.module.css'
 
 const RegistroUsuario = () => {
-  const [startDate, setStartDate] = useState(new Date())
+  const [error, setError] = useState(null);
+  registerLocale("es", es);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
   const [formData, setFormData] = useState({
     cedula: '',
     primerapellido: '',
@@ -14,17 +20,28 @@ const RegistroUsuario = () => {
     primernombre: '',
     segundonombre: '',
     correo: '',
-    fechaNacimiento: '',
     sexo: '',
+    fechaNacimiento: new Date(),
     discapacidad: '',
     etnia: '',
     telefonoL: '',
-    status: '',
+    status: false,
     telefonoM: '',
     gu: '',
-    img: '',
   });
 
+  //Esta función captura la imagen que ingresa el usuario para poder hacer la previsualización.
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  //Está función de acá captura la mayoría de los datos del formulario, exceptuando el de fecha
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -32,9 +49,80 @@ const RegistroUsuario = () => {
       [name]: value,
     });
   };
+  //Función para capturar la fecha
+  const handleDateChange = (date) =>{
+    setStartDate(date);
+    setFormData({
+      ...formData,
+      fechaNacimiento: date,
+    })
+  }
 
-  const handleSubmit = (e) => {
+  const handleStatusChange = (e) =>{
+    const value = e.target.value === "true";
+    setFormData({
+      ...formData,
+      status: value,
+    })
+  }
+
+  const removeCircularReferences = (obj) => {
+    const seen = new WeakSet();
+    return JSON.parse(JSON.stringify(obj, (key, value) =>{
+      if (typeof value === "object" && value !=null){
+        if (seen.has(value)){
+          return;
+        }
+        seen.add(value)
+      }
+      return
+    }));
+  }
+
+  //Está función maneja la librería de fechas que decidimos usar para el desarrollo, aun no captura la fecha
+  const fechaNacimiento = startDate
+    ? startDate.toLocaleDateString("es-ES")
+    : "No definido";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = {
+    cedula,
+    primerapellido,
+    segundoapellido,
+    primernombre,
+    segundonombre,
+    correo,
+    sexo,
+    fechaNacimiento,
+    discapacidad,
+    etnia,
+    telefonoL,
+    status,
+    telefonoM,
+    gu
+    }
+
+    try{
+      const response = await fetch('https://database-gb6x.onrender.com/',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(removeCircularReferences(user)),
+      });
+
+      const json = await response.json();
+
+      if (!response.ok){
+        throw new Error(json.error || "Error en la solicitud")
+      }
+      setFormData('');
+      console.log("Usuario añadido con éxito", json)
+    } catch(err){
+      setError(err.message);
+    }
+    console.log("Datos enviados con éxito")
     console.log(formData);
   };
 
@@ -43,79 +131,81 @@ const RegistroUsuario = () => {
   };
 
   return (
-<div className={styles.Container}>
-  	<h6 className = {styles.Title_Text}>Registro de usuario nuevo</h6>
-  <form className={styles.Form} onSubmit={handleSubmit}>
-    <div className={styles.Form_Group}>
-      <input
-      	placeholder = "Cedula"
-        maxlength = "8"
-        className={styles.Form_Input}
-        type="number"
-        id="cedula"
-        name="cedula"
-        value={formData.cedula}
-        onChange={handleChange}
-        required
-      />
-     <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
-    </div>
-    <div className={styles.Form_Group}>
-      <input
-      	placeholder = "Primer apellido"
-        className={styles.Form_Input}
-        type="text"
-        id="apellidos"
-        name="apellidos"
-        value={formData.apellidos}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
+<section className={styles.FullSection}> 
+  <div className={`Container ${styles.Container}`}>
+  	<h6 className = {`Title_Text ${styles.Title_Text}`}>Registro de usuario nuevo</h6>
+  <form className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
+  <div className = {styles.Form_Title}>
+    <h1>Apellidos</h1>
+  </div>
+  <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
       <input
         placeholder = "Segundo apellido"
-        className={styles.Form_Input}
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
         type="text"
-        id="apellidos"
-        name="apellidos"
-        value={formData.apellidos}
+        id="segundoapellido"
+        name="segundoapellido"
+        value={formData.segundoapellido}
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Form_Group}>
+    <div className = {styles.Form_Border}>
       <input
-      	placeholder = "Primer nombre"
-        className={styles.Form_Input}
+      	placeholder = "Primer apellido"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
         type="text"
-        id="nombres"
-        name="nombres"
-        value={formData.nombres}
+        id="primerapellido"
+        name="primerapellido"
+        value={formData.primerapellido}
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Form_Group}>
+    </div>
+    <div className = {styles.Form_Title}>
+      <h1>Nombres</h1>
+    </div>
+    <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
       <input
         placeholder = "Segundo nombre"
-        className={styles.Form_Input}
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
         type="text"
-        id="nombres"
-        name="nombres"
-        value={formData.nombres}
+        id="segundonombre"
+        name="segundonombre"
+        value={formData.segundonombre}
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </div>
+    <div className = {styles.Form_Border}>
+      <input
+      	placeholder = "Primer nombre"
+        maxLength="20"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="text"
+        id="primernombre"
+        name="primernombre"
+        value={formData.primernombre}
+        onChange={handleChange}
+        required
+      />
+    </div>
+    </div>
+    <div className = {styles.Form_Title}>
+      <h1>Datos personales</h1>
     </div>
     <div className={styles.Form_Group}>
+      <div className={styles.Form_Border}>
+       <FontAwesomeIcon icon={faEnvelope} className={styles.Icon}/>      
       <input
       	placeholder = "Correo"
-        className={styles.Form_Input}
+        className={`Form_Input ${styles.Form_Input}`}
         type="email"
         id="correo"
         name="correo"
@@ -123,70 +213,101 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-     <FontAwesomeIcon icon = {faEnvelope} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Form_Group}>
-        <label className = {styles.Date_Label}>
-          Fecha nacimiento
-        </label>
-        <DatePicker
-          className = {styles.Date_Input}
-          name="fechaNacimiento"
-          id="fechaNacimiento"
-          value={setFormData.fechaNacimiento}
-          selected = {startDate}
-          onChange = {(date) => setStartDate(date)}
+    <div className = {styles.Form_Border}>
+      <input
+      	placeholder = "Cedula"
+        maxLength = "8"
+        className={`Form_Input ${styles.Form_Input}`}
+        type="number"
+        id="cedula"
+        name="cedula"
+        value={formData.cedula}
+        onChange={handleChange}
+        required
       />
     </div>
-    <div className={styles.Form_Group}>
+    </div>
+    <div className = {styles.Form_Title}>
+     <h1>Números de telefono</h1>
+    </div>
+  <div className = {styles.Form_Group}>
+    <div className={styles.Form_Border}>
+    <FontAwesomeIcon icon={faPhone} className={`Icon ${styles.Icon}`}/>
       <input
       	placeholder = "Telefono Local"
         className={styles.Form_Input}
         type="tel"
         id="telefonoL"
         name="telefonoL"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoL}
         onChange={handleChange}
       />
-      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
     </div>
-    <div className={styles.Form_Group}>
+    <div className = {styles.Form_Border}>
+      <FontAwesomeIcon icon={faMobileScreenButton} className={styles.Icon}/>
       <input
       	placeholder = "Teléfono Movil"
-        className={styles.Form_Input}
+        className={`Form_Input ${styles.Form_Input}`}
         type="tel"
         id="telefonoM"
         name="telefonoM"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoM}
         onChange={handleChange}
       />
-     	<FontAwesomeIcon icon={faMobileScreenButton} className = {styles.Form_Img}/>
     </div>
-  <div className = {styles.Radius}>
-    <label className={styles.Radius_Label}>Status</label>
-    <label className = {styles.Radius_Label} >Act.
+  </div>
+    <div className = {styles.Form_Title}>
+      <h1>Fecha de nacimiento</h1>
+    </div>
+    <div className={styles.Form_Border}>
+        <label className = {styles.Form_Input}>
+        <DatePicker
+          selected={startDate}
+          onChange={handleDateChange}
+          locale="es"
+          dateFormat="dd/MM/yyyy"
+          required
+          className={styles.Date_Input}
+        />
+        </label>
+    </div>
+  <div className = {`Radius ${styles.Radius}`}>
+  <div className = {styles.Form_Title}>
+    <h1>Status</h1>
+  </div>
+    <label className = {`Label_Radius ${styles.Label_Radius}`} >
       <input 
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={true}
+       checked={formData.status === true}
+       onChange={handleStatusChange}
       />
+      Activo
      </label>
-     <label className = {styles.Radius_Label}>Inact.
+     <label className = {`Label_Radius ${styles.Label_Radius}`}>
       <input
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={false}
+       checked={formData.status === false}
+       onChange={handleStatusChange}
       />
+      Inactivo
     </label>
   </div>
-  <div className = {styles.Select}>
-    <div className={styles.Select_Group}>
+  <div className = {`Select ${styles.Select}`}>
+  <div className = {styles.Form_Title}>
+    <h1>Datos adicionales</h1>
+  </div> 
+    <div className={`Select_Group ${styles.Select_Group}`}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="etnia"
         name="etnia"
         value={formData.etnia}
@@ -194,14 +315,14 @@ const RegistroUsuario = () => {
         required
       >
         <option value="">Etnía</option>
-        <option value={formData.etnia}>Wayuu</option>
-        <option value={formData.etnia}>Afroamericano</option>
-        <option value={formData.etnia}>Otro</option>
+        <option value="Wayuu">Wayuu</option>
+        <option value="Afroamericano">Afroamericano</option>
+        <option value="Otro">Otro</option>
       </select>
     </div>
     <div className={styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="discapacidad"
         name="discapacidad"
         value={formData.discapacidad}
@@ -215,7 +336,7 @@ const RegistroUsuario = () => {
     </div>
     <div className = {styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+        className={`Select_Input ${styles.Select_Input}`}
         id="sexo"
         name="sexo"
         value={formData.sexo}
@@ -229,7 +350,7 @@ const RegistroUsuario = () => {
   </div>
   <div className = {styles.Select_Group}>
       <select
-        className={styles.Select_Input}
+       className={`Select_Input ${styles.Select_Input}`}
         id="gu"
         name="gu"
         value={formData.gu}
@@ -243,25 +364,37 @@ const RegistroUsuario = () => {
         <option value="estudiante">Estudiante</option>
       </select>
   </div>
-    <div className = {styles.File}>
+    <div className={styles.PreBox} >
+      <label>
       <input 
-        className = {styles.File_Input}
+        className = {`File_Input ${styles.File_Input}`}
         type = "file"
         id = "img"
         name = "img"
         value = {formData.img}
-        onChange = {handleChange}
+        onChange = {handleImageChange}
         required
       />
+    <div className = {`File ${styles.File}`}>
+      <FontAwesomeIcon icon={faCamera} className={styles.File_Logo}/>
     </div>
-    <div className = {styles.Button_Group}>
-      <button className = {styles.Button} type="submit">Enviar</button>
-      <button className = {styles.Button} type="button" onClick={handleBack}>Volver</button>
+      </label>
+    </div>
+      {selectedImage && (
+        <div className={styles.Preview}>
+          <img src={selectedImage} alt="Vista previa" className={styles.Preview_Img}  />
+        </div>
+      )}
+    <div className = {`Button_Group ${styles.Button_Group}`}>
+      <button className = {`Button ${styles.Button}`} type="submit">Enviar</button>
+      <button className = {`Button ${styles.Button}`} type="button" onClick={handleBack}>Volver</button>
     </div>
   </div>
   </form>
 </div>
+</section>
   );
 };
 
 export default RegistroUsuario;
+

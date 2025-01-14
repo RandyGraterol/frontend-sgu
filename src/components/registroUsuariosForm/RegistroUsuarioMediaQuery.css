@@ -1,0 +1,45 @@
+/*Por alguna razón este mediaquery puede hacer responsive a gran parte de los telefonos*/
+@media (min-width: 375px) and (max-width: 767px){
+    .Container{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .Title_Text{
+      width: 100%;
+  }
+  }
+  .Container .Form {
+      display: flex;
+      width: 80%;
+      align-items: center;
+      justify-content: center
+      flex-flow: column;
+      padding: 8px;
+      gap: 1.5em;
+  }
+  .Container .Form_Input{
+      width: 100%;
+  }
+  }
+  .Form .Radius{
+      width: 100%;
+      padding: 10px;
+  }
+  .Select{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+   .Select .Select_Input{
+      width: 100%;  
+   }
+    .Button_Group{
+      justify-content: center;
+      width: 100%;
+      flex-flow: wrap; column;
+    }
+}

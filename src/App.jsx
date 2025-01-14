@@ -34,8 +34,15 @@ import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
 
+//importar modulo de notificaciones
+import NotificationsAdmin from './components/notifications/notifications.jsx';
+
+
 //IMPORTAR CONTROL DE ACCESO (EQUIPO B)
 import ControlAcceso from './screens/controlA.jsx';
+
+//import componente de jesus velazques
+import Dashboar from './components/dashboar/dashboar.jsx';
 
 
 //iconos awesome font
@@ -62,10 +69,10 @@ const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
 const renderComponent = () => {
 
    if (!selectedComponent) {
-            return < Usuarios/>// Texto informativo
+            return < Dashboar/>// 
         }
         switch (selectedComponent) {
-        case 'Registro Periodo':
+        case 'Registro periodo':
             return <RegistroPeriodo />;
         case 'Administración de usuarios':
             return <Usuarios />;

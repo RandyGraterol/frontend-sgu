@@ -1,0 +1,204 @@
+.principal{
+	width:100%;
+	height:100vh;
+	display:flex;
+	justify-content: center;
+	aling-items:center;
+	background:rgb(242, 243, 248);
+}.aside{
+	width:20%;	
+	background:rgb(44, 47, 62);
+}.sectionPrincipal{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:80%;
+}.divSectionPrincipal{
+	width:100%;
+}.divSectionPrincipal:nth-child(1){
+	display:flex;
+	justify-content:center;
+	aling-items:center;
+	gap:1rem;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .3); /* Sombra hacia abajo */
+	height:10%;
+	background:rgb(255, 255, 255);
+}.divSectionPrincipal:nth-child(2){
+	height:90%;
+}.divAside{
+	width:100%;
+}.divAside:nth-child(1){
+	height:10%;
+	color:whitesmoke;
+	background:rgb(41, 43, 58);
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .8); /* Sombra hacia abajo */
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:2rem;
+}.divAside:nth-child(2){
+	height:90%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:.5rem;
+}.iconCampana{
+	color:rgb(255, 183, 67);
+}.menuDesordenadoAside{
+	width:100%;
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	aling-items:center;
+	gap:1rem;
+	padding-top:2rem;
+}.menuDesordenadoAside li{
+	border-radius:3px;
+	text-align: center;
+	color:whitesmoke;
+	width:90%;
+	margin:0 auto;
+	padding:.7rem 0;
+	background:rgb(59, 59, 61);
+	box-shadow:1px 1px 30px rgba(0,0,0,.6);
+}.buttonBarra{
+	width:100px;
+	height:40px;
+	border-radius:5px;
+	color:whitesmoke;
+	border:none;
+	cursor:pointer;
+}.buttonBarra:nth-child(2){
+	background:rgb(40, 166, 111);
+}.buttonBarra:nth-child(3){
+	background:rgb(2, 149, 248);
+}.buttonBarra:nth-child(4){
+	background:rgb(240, 86, 86);
+}.barraNavegacion{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	gap:2rem;
+}.inputIconSearchContainer{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	position:relative;
+	height:auto;
+	width:auto;
+	display: inline-block;
+}.iconSearch{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px; /* Tamaño del ícono */
+	color: #aaa; /* Color del ícono */
+}.inputSearch{
+	padding-left: 30px; /* Espacio para el ícono */
+	height: 40px;
+	width: 250px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}.notificaciones{
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	gap:.5rem;
+	padding:1.5rem 0;
+	overflow-Y:auto;
+	scrollbar-width: none; /* Para Firefox */
+}.notificaciones::-webkit-scrollbar{
+	display:none;
+}.iconMessage{
+	color:rgb(59, 59, 61);
+	font-size:1.2rem;
+}.notificaciones section{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:1rem;
+	border:1px solid black;
+	width:98%;
+	padding:.5rem;
+	background:rgb(229, 229, 229);
+	border-radius:7px;
+	box-shadow:1px 1px 20px rgb(235, 228, 230);
+}.notificaciones section div{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	gap:1rem;
+	height:100%;
+	width:100%;
+}.notificaciones section div:nth-child(1){
+width:auto;
+padding:.1rem;
+}.notificaciones section div:nth-child(2){
+width:auto;
+padding:.1rem;
+}.notificaciones section div:nth-child(3){
+width:auto;
+padding:.1rem;
+}.notificaciones section div:nth-child(4){
+width:2000px;
+padding:.1rem;
+}.notificaciones section div:nth-child(7){
+width:auto;
+padding:.1rem;
+}.ocultarBarraDesplazamiento{
+overflow-Y:auto;
+height:40px !important;
+width:400px !important;
+margin-bottom:0 !important;
+scrollbar-width: none; /* Para Firefox */
+padding-bottom:1rem;
+}
+.notificaciones section div:nth-child(3) div ::-webkit-scrollbar{
+  display: none;
+}
+.parrafo{
+width:100%;
+height:100% !important;
+display: flex;
+justify-content: center;
+text-align: center;
+}.iconosCrudContainer{
+	display:flex;
+	flex-direction:row !important;
+	justify-content: center;
+	align-items: center;
+	gap:1rem;
+}.iconosCrudContainer .iconosCrud{
+	font-size:1.5rem;
+}.iconosCrudContainer .iconosCrud:nth-child(1){
+	color:rgb(3, 155, 229);
+}.iconosCrudContainer .iconosCrud:nth-child(2){
+	color:rgb(240, 86, 86);
+}.prioridad{
+	padding:.3rem 2rem; 
+	border-radius:5px;
+	width:100px;
+	color:whitesmoke;
+}
+/* PrioridadTexto.module.css */
+.baja {
+    background:rgb(39, 163, 109);
+}
+
+.media {
+    background:rgb(219, 167, 57);
+}
+
+.alta {
+    background:rgb(240, 86, 86);
+}
+
+.default {
+    background: black; /* Color por defecto */
+}

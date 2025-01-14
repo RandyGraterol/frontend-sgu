@@ -1,17 +1,24 @@
 :root{
-	--button: #9FC4D0;
-	--background: #ECECEC;
+	--button: #6BDBFF;
+	--background: #FFFFFF;
 	--text: #455459;
+	--border-color: #DEDEDE;
+}
+.FullSection{
+	display: flex;
+	width: 100%;
+	justify-content: center;
 }
 .Container{
-	filter: drop-shadow(-3px 3px 4px rgba(0, 0, 0, 0.4));
-	width: 40em;
+	width: 70%;
+	max-width: 100%;
 	height: 100%;
-   margin:2rem auto;
 }
 .Title_Text{
 	text-align: center;
-	font-size: 23px;
+	font-size: 24px;
+	width: 80%;
+	max-width: 100%;
 	background: var(--background);
 	padding: 20px;
 	font-family: Roboto;
@@ -28,103 +35,154 @@
 	padding: 16px;
 	border-radius: 0px 0px 20px 20px;
 }
-.Form_Input{
-	font-size: 0.9em;
-	font-family: Roboto;
-	width: 15em;
-	height: 2.3em;
-	padding: 0.6em;
-	border: none;
-	border-radius: 1em;
-}
-.Form_Img{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	margin: 0.5em 0 0 -2em;
-}
-.Date_Input{
-	font-size: 0.9em;
-	font-family: Roboto;
-	width: 7em;
-	height: 2.33em;
-	padding: 0.6em;
-	border: none;
-	border-radius: 0 1em 1em 0;
-}
-.Date_Label{
-	background: white;
+.Form_Title{
+	margin-left: 2px;
 	color: var(--text);
-	padding: 0.3em;
-	border-radius: 1em 0 0 1em;
+	font-size: 12.4px;
+	flex: 1;
+	position: relative;
 }
-.File{
+.Form_Group{
 	display: flex;
-	margin: 0 0 0 4em;
+	gap: 5px;
+	width: 100%;
+}
+.Form_Border{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
+}
+.Form_Input{
+	display: flex;
 	justify-content: center;
 	align-content: center;
-}
-.File_Input{
-	opacity: 2;
-	background: white;
-	padding: 1em;
 	font-size: 1em;
+	font-family: Roboto;
+	width: 100%;
+	border-radius: 7px;
+	padding: 0.9em;
+	border: none;
+	outline: none;
+}
+.Form_Input[type=number]::-webkit-inner-spin-button,
+.Form_Input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+}
+.Icon{
+	min-width: 10%;
+	width: 10%;
+	max-width: 10%;
+	min-height: 40%;
+	height: 35%;
+	max-height: 40%;
+}
+.Date_Input{
+	text-align: center;
+	font-size: 17px;
+	border: none;
+	outline: none;
+}
+.Date_Label{
+	width: 65%;
+	font-size: 1em;
+	background: white;
+	color: var(--text);
+	padding: 0.6em;
 	border-radius: 1em;
+}
+.Radius{
+	display: flex;
+	flex-flow: column wrap;
+	gap: 10px;
+	width: 100%;
+}
+.Label_Radius{
+	display: flex;
+	gap: 20px;
+	font-size: 1.1em;
+	font-family: Roboto;
+	width: 100%;
+	padding: 0.7em;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
 }
 .Select{
 	display: flex;
 	flex-flow: wrap row;
-	margin: 2em 0 0 3em;
-	gap: 2em;
+	gap: 1em;
 }
 .Select_Group{
-	width: 15em;
-	padding: 0.2em;
-	margin: 0 0 0 10wm;
+	width: 100%;
 }
 .Select_Input{
 	width: 100%;
-	height: 2.3em;
-	font-size: 1em;
+	padding: 0.9em;
+	font-size: 1.2em;
 	text-align: center;
 	background: white;
 	color: var(--text);
 	appearance: none;
-	border: none;
-	border-radius: 1em;
+	outline: none;
+	border: 1px solid var(--border-color);
+	border-radius: 7px;
 }
-.Select_Img{
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	margin: 0 0 0 -1.4em;
-}
-.Radius{
+.PreBox{
 	display: flex;
+	justify-content: center;
 	align-content: center;
-	flex-flow: wrap;
-	padding-left: 1em;
-	gap: 1em;
-	border-radius: 1em;
-	width: 13.5em;
-	background: white;
+	width: 100%;
 }
-.Radius_Label{
-	font-size: 1em;
-	color: var(--text);
+.Preview{
+	display: flex;
+	background: white;
+	padding: 1em;
+}
+.Preview_Img{
+	width: 100%;
+	height: 100%;
+	max-height: 500px;
+	transition: all 0.3s ease;
+}
+.Preview_Img:hover{
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transform: scale(1.1);
+}
+.File{
+	display: flex;
+	width: 100%;
+}
+.File_Input{
+	display: none;
+}
+.File_Logo{
+	background: white;
+	width: 100%;
+	height: 100%;
+	padding: 0.4em;
+	border-radius: 1em;
+	max-height: 25px;
+	transition: all 0.3s ease;
+}
+.File_Logo:hover{
+	cursor: pointer;
+	transform: scale(1.1);
 }
 .Button_Group{
 	display: flex;
+	width: 100%;
+	gap: 1em;
 }
 .Button{
+	width: 25%;
 	color: var(--text);
 	background: var(--button);
-	width: 10em;
 	border: none;
 	border-radius: 2em;
 	padding: 1em;
-	margin: 4em 0 0 7em;
 }
 .Button:hover{
 	cursor: pointer;
 }
+

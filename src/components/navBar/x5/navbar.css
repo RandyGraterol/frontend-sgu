@@ -6,9 +6,7 @@
   width: 100%;
   background-color: #74b0e8;
   height: 10vh;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+
 }
 /* Estilo para el input (código de barras) */
 .CB {
@@ -30,7 +28,7 @@
 /* Estilo para el botón (confirmar) */
 .CBB {
   color: #000000; /* Color del texto */
-  background-color: #00f562; /* Color de fondo */
+  background-color: #6dd6e6; /* Color de fondo */
   border: none; /* Sin bordes */
   border-radius: 5px; /* Bordes redondeados */
   cursor: pointer; /* Cursor tipo puntero */
@@ -40,46 +38,43 @@
 }
 
 .CBB:hover {
-  background-color: #71eba2; /* Color de fondo al pasar el mouse */
+  background-color: #75f4f0; /* Color de fondo al pasar el mouse */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
 }
 
 .CBB:active {
-  background-color: #9df5c0; /* Color de fondo al presionar */
+  background-color: #7afffb; /* Color de fondo al presionar */
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra interna */
 }
 .image{
   position: relative;
   height: 70px;
   margin-right: -10vw;
-  margin-top: -5.6vh;
+  margin-top: -5.2vh;
 }
 .arrow{
       display: none;
     }
 nav {
-  position: fixed;
+  position:relative;
   display: flex;
   justify-content: space-between;
   align-items: start;
-  top: 0;
   width: 100%;
   height: 100%;
   padding: 2rem;
+  z-index:50;
 }
 nav ul {
   list-style: none;
   display: flex;
   gap: 2.5rem;
-  margin-left: 8vw;
 }
 nav ul li {
       position: relative;
     }
 nav ul li ul {
-    height: 0;
-    overflow: hidden;
-      display: flex;
+      display: none;
       position: absolute;
       z-index: 9999;
       flex-wrap: wrap; /* Permite que los elementos se distribuyan en múltiples líneas */
@@ -87,27 +82,26 @@ nav ul li ul {
       top: 100%;
       margin-top: 0.2vh;
       left: 0;
-      background-color: #3990e1;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
-      margin-left: 0vw;
-
+      background-color: #57a1e7;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5%;
 }
-
-
 
 nav ul li ul li {
   flex: 0 0 45%; /* Ocupa el 50% del ancho del contenedor, es decir, dos columnas */
-  padding: 1rem 0.8rem; /* Ajusta el padding para mejor distribución */
+  padding: 1rem 0.5rem; /* Ajusta el padding para mejor distribución */
+
 }
 
 nav ul li ul li a {
   display: block; /* Asegura que el enlace ocupe todo el espacio disponible */
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
-
+nav ul li:hover ul {
+      display: flex;
+}
 nav a {
   text-decoration: none;
 }
@@ -150,16 +144,6 @@ nav ul.active {
   font-weight: 600;
   gap: 0.2rem;
 }
-
-#not-button {
-  margin-right: 7vw;
-  display: flex;
-  cursor: pointer;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
 #profile-button i {
   font-size: 2rem;
 }
@@ -181,8 +165,8 @@ nav ul.active {
 @media only screen and (max-width: 1240px) {
 
   .image{
-    height: 60px;
-    margin-top: -5.8vh;
+    height: 65px;
+    margin-top: -4.5vh;
   }
 
 }
@@ -191,7 +175,7 @@ nav ul.active {
 
   .image{
     height: 65px;
-    margin-top: -4.7vh;
+    margin-top: -4vh;
   }
   
   .app a{
@@ -208,7 +192,7 @@ nav ul.active {
 
   .image{
     height: 54px;
-    margin-top: -4vh;
+    margin-top: -3.5vh;
   }
   .app a{
     font-size: 15.5px;
@@ -219,8 +203,6 @@ nav ul.active {
 @media only screen and (max-width: 767px) {
   nav ul{
     overflow-y: auto; /* Permite scroll si el contenido es demasiado alto */
-    margin-left: 0vw;
-
   }
   nav ul li{
     padding-top: 3.2rem;
@@ -248,7 +230,7 @@ nav ul.active {
 
   .image{
   height: 58px;
-  margin-top: -3.8vh;
+  margin-top: -3vh;
   }
   #ham-menu {
     display: block;
@@ -256,7 +238,7 @@ nav ul.active {
     font-size: 1.8rem;
     position: fixed;
     z-index: 9;
-    margin-top: -0.8vh;
+    margin-bottom: 1vh;
   }
 
   nav a#logo{
@@ -368,7 +350,7 @@ nav ul.active {
   .image{
   height: 55px;
   margin-left: 5vw;
-  margin-top: -4.5vh;
+  margin-top: -2.5vh;
   margin-bottom: 0;
   }
 

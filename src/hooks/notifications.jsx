@@ -45,6 +45,7 @@ export const useNotificationModal = () => {
       <img src={iconSrc} className='iconoNotifications' />
       <p className='messageModal'>{modalMessage}</p>
       <button className={`buttonCerrar ${statusValue === 'aprobado' ? 'blue' : 'red'}`} onClick={closeModal}>Cerrar</button>
+      
     </Modal>
   );
 
