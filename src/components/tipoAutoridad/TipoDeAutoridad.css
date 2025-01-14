@@ -1,19 +1,18 @@
-
 .button1 {
     background-color: #3798ff;
     color: white;
     border: 2px solid #08080a; /* Green */
     padding: 10px 24px;
     border-radius: 2px;
-    margin-top: 1%;
-    font-weight:600;
-    margin-bottom: 1%;
-    margin-left: 600px;
-  }
+    margin: 1% auto; /* Centra el botón horizontalmente */
+    font-weight: 600;
+    display: block; /* Asegura que el botón sea un elemento de bloque */
+    text-align: center; /* Centra el contenido del botón */
+}
 
-  .input1{
+.input1{
     border-radius: 0px !important;
     background-color: white !important;
     height: auto !important;
     width: 48% !important;
-}   
+}
