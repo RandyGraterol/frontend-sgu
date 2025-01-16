@@ -74,6 +74,7 @@ const Navbar = ({ onNavClick }) => {
     <header id='cabecera'>
       <div className='app'>
         <nav>
+        
           <FontAwesomeIcon
             icon={isMenuOpen ? faTimes : faBars}
             className="fa-bars"
@@ -81,12 +82,12 @@ const Navbar = ({ onNavClick }) => {
             onClick={toggleMenu}
           />
 
-          <a href="#home" id="logo">
+          <div className='containerLogo'>
             <img className="image" src="/icon/logo.png" alt="Logo" />
-          </a>
+          </div>
 
           <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
-            {userRole === 'Superuser' && (
+          {userRole === 'Superuser' && (
               <>
                 <li className={openMenus['Instituto'] ? 'active' : ''}>
                   <a
@@ -174,13 +175,42 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
+                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo academico</a></li>
+                      <li><a onClick={() => onNavClick('Proceso de inscripcion')} href="#proceso-inscripcion">Proceso de incripcion</a></li>
                       <li><a onClick={() => onNavClick('Registrar Procesos')} href="#registrar-procesos">Registrar procesos</a></li>
                       <li><a onClick={() => onNavClick('Administrar procesos')} href="#administrar-procesos">Administrar procesos</a></li>
-                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Registro periodo</a></li>
                     </ul>
                   )}
                 </li>
-                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
+                <li className={openMenus['Reportes'] ? 'active' : ''}>
+                  <a
+                    href="#reportes"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Reportes');
+                    }}
+                  >
+                    Reportes <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['Reportes'] && (
+                    <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                      <li><a href="#reporte-inscripciones">Reporte de inscripciones</a></li>
+                      {/* <li><a href="#listado-estudiantes">Listado de estudiantes por secciones</a></li> */}
+                      </ul>
+                  )}
+                </li>
+                {/* <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
                   <a
                     href="#codigo-barras"
                     onClick={(e) => {
@@ -209,7 +239,7 @@ const Navbar = ({ onNavClick }) => {
                 </li>
               </ul>
             )}
-          </li>
+          </li> */}
               </>
             )}
 
@@ -267,6 +297,8 @@ const Navbar = ({ onNavClick }) => {
                     }}
                   >
                     <li><a href="#">Inscripción</a></li>
+                    <li><a href="#">Descargar horario</a></li>
+                    <li><a href="#">Consultar materias</a></li>
                   </ul>
                 )}
                 </li>
@@ -296,7 +328,6 @@ const Navbar = ({ onNavClick }) => {
                     <li><a href="#">Descargar pensum</a></li>
                     <li><a href="#">Planilla de inscripción</a></li>
                     <li><a href="#">Constancia de Estudios</a></li>
-                    <li><a href="#">Constancia de Buena Conducta</a></li>
                     <li><a href="#">Record Academico</a></li>
                   </ul>
                 )}
@@ -330,12 +361,173 @@ const Navbar = ({ onNavClick }) => {
                 </li>
               </ul>
             )}
+            
+          </li>
+              </>
+            )}
+            {userRole === 'Admin' && (
+              <>
+                {/* Menú Admin */}
+                <li className={openMenus['Procesos'] ? 'active' : ''}>
+                  <a
+                    href="#procesos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Procesos');
+                    }}
+                  >
+                    Procesos <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['Procesos'] && (
+                    <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                     <li><a onClick={() => onNavClick('Carga de horario')} href="#carga-de-horario">Carga de horario</a></li>
+                    </ul>
+                  )}
+                </li>
+                <li className={openMenus['Reportes'] ? 'active' : ''}>
+                  <a
+                    href="#reportes"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Reportes');
+                    }}
+                  >
+                    Reportes <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['Reportes'] && (
+                  <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                    <li><a href="#">Reporte de inscripciones</a></li>
+                    <li><a href="#">Listado de estudiantes por secciones</a></li>
+                  </ul>
+                )}
+                </li>
+                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
+                  <a
+                    href="#codigo-barras"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('CodigoBarra');
+                    }}
+                  >
+                    Escanear codigo de barras <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['CodigoBarra'] && (
+                    <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                <li>
+                  <input className="CB" placeholder="Ingrese código de barras" />
+                  <button className="CBB" type="submit">Confirmar</button>
+                </li>
+              </ul>
+            )}
+            
+          </li>
+              </>
+            )}
+            {userRole === 'Operador' && (
+              <>
+                {/* Menú Operador */}
+                
+                <li className={openMenus['Reportes'] ? 'active' : ''}>
+                  <a
+                    href="#reportes"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Reportes');
+                    }}
+                  >
+                    Reportes <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['Reportes'] && (
+                  <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                    <li><a href="#">Reporte de inscripciones</a></li>
+                    <li><a href="#">Listado de estudiantes por secciones</a></li>
+                  </ul>
+                )}
+                </li>
+                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
+                  <a
+                    href="#codigo-barras"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('CodigoBarra');
+                    }}
+                  >
+                    Escanear codigo de barras <span className="arrow">▶</span>
+                  </a>
+                  {openMenus['CodigoBarra'] && (
+                    <ul
+                    ref={(el) => {
+                      if (el) {
+                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
+                      }
+                    }}
+                    className="submenu"
+                    style={{
+                      overflow: 'hidden',
+                      transition: 'height 0.4s ease-in-out',
+                    }}
+                  >
+                <li>
+                  <input className="CB" placeholder="Ingrese código de barras" />
+                  <button className="CBB" type="submit">Confirmar</button>
+                </li>
+              </ul>
+            )}
+            
           </li>
               </>
             )}
           </ul>
+
+          {/* Perfil del Usuario */}
+
+
                     {/* Perfil del Usuario */}
-                    <div id="profile-container" ref={profileButtonRef}>
+          <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button">
               <FontAwesomeIcon icon={faBell} />
             </div>
