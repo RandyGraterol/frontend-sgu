@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useNotificationModal } from '../../hooks/notifications.jsx'; // Importa el hook de notificación
 import styles from './login.module.css';
+import Nav from '../navBar/navbar.jsx';
+import Footer from '../footer/footer.jsx';
+
+
+//importar hooks de change resolutions
+  import useWindowSize from '../../hooks/windowSize.jsx';
 
 const images = [
   'https://unerg.edu.ve/wp-content/uploads/2024/02/mov4-1024x576.jpg',
@@ -12,11 +19,12 @@ const images = [
 ];
 
 const Login = () => {
+const { width } = useWindowSize();
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const navigate = useNavigate();
+  const { openModal, NotificationModal } = useNotificationModal(); // Usa el hook de notificación
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,9 +41,9 @@ const Login = () => {
     const validPassword = '123456789';
 
     if (email === validEmail && password === validPassword) {
-      navigate('/home');
+      openModal('Inicio de sesión exitoso','aprobado');
     } else {
-      alert('¡Correo o contraseña incorrectos!');
+      openModal('¡Correo o contraseña incorrectos!','error');
     }
   };
 
@@ -44,7 +52,13 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Nav />
+    
     <div className={styles.container} id="container">
+
+      <NotificationModal /> {/* Componente de notificación */}
+
       <section className={styles.imagenLogin}>
         <img
           className={styles.imagen}
@@ -55,12 +69,10 @@ const Login = () => {
 
       <section className={styles.loginRecuperar}>
         <div className={`${styles.division} ${isRightPanelActive ? styles.hidden : ''}`}>
-          <h1 className={styles.tituloLogin}>Iniciar Sesión</h1>
           <div className={styles.containerRedesSociales}>
-            <img src='./fb.png' className={styles.redesSociales} alt="Facebook"/>
-            <img src='./instagram.png' className={styles.redesSociales} alt="Instagram"/>
-            <img src='./twitter.png' className={styles.redesSociales} alt="Twitter"/>
+            <img src='./inicio.png' className={styles.iconLogin} alt="Facebook"/>
           </div>
+          <h1 className={styles.tituloLogin}>Iniciar Sesión</h1>
           <p>¡Bienvenido a la Universidad Romulo Gallegos!</p>
           <form className={styles.formulario} onSubmit={handleLogin}>
             <div className={styles.containerLabelInput}>
@@ -88,6 +100,11 @@ const Login = () => {
             <button className={styles.submit} type="submit">Acceder</button>
           </form>
           <p onClick={toggle} title='¡Haz click aqui!' className={styles.restablecerPassword}>¿Haz olvidado tu contraseña?</p>
+           <div className={styles.containerRedesSociales}>
+            <img src='./fb.png' className={styles.redesSociales} alt="Facebook"/>
+            <img src='./instagram.png' className={styles.redesSociales} alt="Instagram"/>
+            <img src={width <= 720 ? './xblue.png' : 'twitter.png'} className={styles.redesSociales} alt="Twitter"/>
+          </div>
         </div>
 
         <div className={`${styles.division} ${isRightPanelActive ? '' : styles.hidden}`}>
@@ -108,6 +125,9 @@ const Login = () => {
         </div>
       </section>
     </div>
+    <Footer />
+
+    </>
   );
 };
 
