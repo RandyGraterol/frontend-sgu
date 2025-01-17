@@ -73,6 +73,32 @@ const Navbar = ({ onNavClick }) => {
   return (
     <header id='cabecera'>
       <div className='app'>
+        <div className='nombre'>
+      <div className='containerLogo'>
+            <img className="image" src="/icon/logo.png" alt="Logo" />
+          </div>
+          <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
+                              {/* Perfil del Usuario */}
+                              <div id="profile-container" ref={profileButtonRef}>
+                    <div id="not-button">
+              <FontAwesomeIcon icon={faBell} />
+            </div>
+            <div id="profile-button" onClick={toggleProfileMenu}>
+              <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon icon={faChevronDown} />
+            </div>
+            {isProfileMenuOpen && (
+              <div id="profile-menu">
+                <h3 className="nombre">Rafael Oliveros</h3>
+                <select value={userRole} onChange={handleRoleChange}>
+                  <option value="Superuser">Superuser</option>
+                  <option value="Estudiante">Estudiante</option>
+                </select>
+              </div>
+            )}
+          </div>
+          </div>
+
         <nav>
         
           <FontAwesomeIcon
@@ -82,9 +108,7 @@ const Navbar = ({ onNavClick }) => {
             onClick={toggleMenu}
           />
 
-          <div className='containerLogo'>
-            <img className="image" src="/icon/logo.png" alt="Logo" />
-          </div>
+
 
           <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
           {userRole === 'Superuser' && (
@@ -221,7 +245,7 @@ const Navbar = ({ onNavClick }) => {
                     Escanear codigo de barras <span className="arrow">▶</span>
                   </a>
                   {openMenus['CodigoBarra'] && (
-                    <ul
+                     <ul
                     ref={(el) => {
                       if (el) {
                         el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
@@ -332,37 +356,7 @@ const Navbar = ({ onNavClick }) => {
                   </ul>
                 )}
                 </li>
-                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
-                  <a
-                    href="#codigo-barras"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('CodigoBarra');
-                    }}
-                  >
-                    Escanear codigo de barras <span className="arrow">▶</span>
-                  </a>
-                  {openMenus['CodigoBarra'] && (
-                    <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
-                    }}
-                  >
-                <li>
-                  <input className="CB" placeholder="Ingrese código de barras" />
-                  <button className="CBB" type="submit">Confirmar</button>
-                </li>
-              </ul>
-            )}
-            
-          </li>
+                
               </>
             )}
             {userRole === 'Admin' && (
@@ -423,37 +417,7 @@ const Navbar = ({ onNavClick }) => {
                   </ul>
                 )}
                 </li>
-                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
-                  <a
-                    href="#codigo-barras"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('CodigoBarra');
-                    }}
-                  >
-                    Escanear codigo de barras <span className="arrow">▶</span>
-                  </a>
-                  {openMenus['CodigoBarra'] && (
-                    <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
-                    }}
-                  >
-                <li>
-                  <input className="CB" placeholder="Ingrese código de barras" />
-                  <button className="CBB" type="submit">Confirmar</button>
-                </li>
-              </ul>
-            )}
-            
-          </li>
+
               </>
             )}
             {userRole === 'Operador' && (
@@ -526,25 +490,7 @@ const Navbar = ({ onNavClick }) => {
           {/* Perfil del Usuario */}
 
 
-                    {/* Perfil del Usuario */}
-          <div id="profile-container" ref={profileButtonRef}>
-                    <div id="not-button">
-              <FontAwesomeIcon icon={faBell} />
-            </div>
-            <div id="profile-button" onClick={toggleProfileMenu}>
-              <FontAwesomeIcon icon={faUser} />
-              <FontAwesomeIcon icon={faChevronDown} />
-            </div>
-            {isProfileMenuOpen && (
-              <div id="profile-menu">
-                <h3 className="nombre">Rafael Oliveros</h3>
-                <select value={userRole} onChange={handleRoleChange}>
-                  <option value="Superuser">Superuser</option>
-                  <option value="Estudiante">Estudiante</option>
-                </select>
-              </div>
-            )}
-          </div>
+
         </nav>
       </div>
     </header>
