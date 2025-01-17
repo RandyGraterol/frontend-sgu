@@ -1,14 +1,20 @@
-import {Label} from '../Label/Label'
 import {Input} from '../Imput/Input'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import './inputbox.css'
 
-export const InputBox = ({type,clase,infoLabel})=>{
+import Style from "../../../../../public/estilosGenerales/formularios.module.css";
+
+
+export const InputBox = ({type,clase,infoLabel,placeholder, id})=>{
     return (
-        <div className="InputBox">
-            <Input type= {type} />
-            <Label label={infoLabel} />
-            <FontAwesomeIcon icon={clase} />
-        </div>
+        <>
+        <label htmlFor={id}>
+         <strong className={Style.strong}> {infoLabel} </strong>
+        </label>
+
+        <label htmlFor={id} className={Style.label}>
+            <FontAwesomeIcon icon={clase} size='lg' style={{color: "#5271ff" }} />
+            <Input id={id} placeholder={placeholder}  type= {type} />
+        </label>
+        </>
     );
 }

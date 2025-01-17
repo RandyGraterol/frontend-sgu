@@ -1,0 +1,102 @@
+
+
+
+
+
+@media (max-width: 374px) {
+    /* Aquí van tus estilos específicos para móviles pequeños */
+}
+/* Móviles medianos (375px - 414px) */
+@media (min-width: 375px) and (max-width: 414px) {
+    /* Aquí van tus estilos específicos para móviles medianos */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*REDMI NOTE 13 PRO PLUS*/
+}
+/* Móviles grandes (415px - 599px)*/
+@media (min-width: 415px) and (max-width: 599px) {
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /* Aquí van tus estilos específicos para móviles grandes */
+    /*IPHONE 15 PRO MAX*/
+}
+/* Tabletas en orientación vertical (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    /* Aquí van tus estilos específicos para tabletas en orientación vertical*/
+    /* Aquí van tus estilos específicos para móviles grandes */
+}
+/* Tabletas en orientación horizontal (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+/* Aquí van tus estilos específicos para móviles grandes */
+
+}
+/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
+/* styles.css */
+
+}
+/* Dispositivos de pantalla grande (1280px en adelante) */
+@media (min-width: 1280px) {
+    /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
+/* styles.css */
+.main{
+    width:100%;
+    height:100vh;
+    border:2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgb(242, 243, 248);
+    font-family: Arial, sans-serif;
+}.barraLateral{
+    height:100%;
+    border:2px solid violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}.menuLateral{
+    width:100%;
+    box-shadow:10px 0 30px -5px rgba(0,0,0,.7);
+}.menuLateral:nth-child(1){
+height:10%;
+display: flex;
+justify-content: center;
+align-items: center;
+color:whitesmoke;
+background:rgb(41, 43, 58);
+gap:2rem;
+
+}.menuLateral:nth-child(2){
+height:90%;
+}.menuLateral:nth-child(2) div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    border:2px solid green;
+    width:100%;
+    color:whitesmoke;
+}.barraLateral:nth-child(1){
+    width:20%;
+    background:rgb(44, 47, 62);
+}.barraLateral:nth-child(2){
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}.barraLateralSection{
+    border:2px solid red;
+    width:100%;
+}.barraLateralSection:nth-child(1){
+height:10%;
+ background:rgb(255, 255, 255);
+}.barraLateralSection:nth-child(2){
+height:90%;    
+}.icon{
+    color:white;
+}
+
+}
+
+

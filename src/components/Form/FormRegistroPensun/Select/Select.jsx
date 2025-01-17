@@ -1,9 +1,10 @@
 import {Option} from '../Option/Options'
-import './select.css'
 
-export const Select = ({namess,placeholder,campo})=>{
+import Style from "../../../../../public/estilosGenerales/formularios.module.css";
+
+export const Select = ({namess,campo, id})=>{
 	return (
-		<select className="SelectPensum" name={namess}  >
+		<select className={Style.input} id={id} name={namess}  >
 			<Option campo={campo} value={campo} defaul/>
 			<Option value="Valor 1" />
 		</select>

@@ -4,7 +4,8 @@ import {faBuildingColumns,  faSignature, faAddressCard, faUser, faArrowsDownToPe
 
 import Submit from '../../particulas/SubmitButtons/Submit';
 
-import Style from './editar.module.css'
+import Style from "../../../public/estilosGenerales/formularios.module.css";
+
 
 
 
@@ -16,9 +17,9 @@ const EditAu = ({onhandleAddType})=>{
 
         <h1 className={Style.h1} >Editar Autoridades</h1>
 
+        <label htmlFor="Institucion"><strong className={Style.strong} > Institucion </strong></label> 
         <label className={Style.label} htmlFor="Institucion">
             <FontAwesomeIcon icon={faBuildingColumns} style={{color: "#5271ff"}} size='lg' />
-            <strong className={Style.strong} > Institucion </strong> 
             <select className={Style.input} name="Institucion" required id="Institucion">
                 <option  >Valor asignado previamente</option>
                 <option value="UNERG">UNERG</option>
@@ -27,9 +28,9 @@ const EditAu = ({onhandleAddType})=>{
             </select>
         </label>
 
+        <label htmlFor="tipoAut"><strong className={Style.strong} > Tipo de Autoridad </strong></label>
         <label className={Style.label} htmlFor="tipoAut">
             <FontAwesomeIcon icon={faArrowsDownToPeople} style={{color: "#5271ff"}} size='lg' />
-            <strong className={Style.strong} > Tipo de Autoridad </strong> 
             <select className={Style.input} name="tipoAutoridad" required id="tipoAut" >
                 <option >Valor asignado previamente</option>
                 <option value="Rector">Rector</option>
@@ -40,15 +41,15 @@ const EditAu = ({onhandleAddType})=>{
             
         </label>
 
+        <label htmlFor="nombre"><strong className={Style.strong} >Nombre</strong>  </label>
         <label htmlFor="nombre" className={Style.label}>
             <FontAwesomeIcon icon={faUser} style={{color: "#5271ff"}} size='lg' />
-            <strong className={Style.strong} >Nombre</strong>
             <input type="text" id='nombre' className={Style.input} name='Nombre' maxLength={30} required value='Nombre asignado previamente' />
         </label>
 
+        <label htmlFor="firma"><strong className={Style.strong} >Firma Digital</strong> </label>
         <label htmlFor="firma" className={Style.label} >
             <FontAwesomeIcon icon={faSignature} style={{color: "#5271ff"}} size='lg'/>
-            <strong className={Style.strong} >Firma Digital</strong> 
             <input type="file" name='firma' id='firma' className={Style.input} required />
         </label>
 

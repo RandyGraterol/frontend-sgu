@@ -1,7 +1,6 @@
 import './App.css'
 import React, { useState } from 'react';
 import Nav from './components/navBar/navbar.jsx';
-import AppRoutes from './router/appRoutes.jsx';
 //import Table from './components/table/table.jsx';
 import Footer from './components/footer/footer.jsx';
 //importando componente de usuarios (Randy) equipo B
@@ -21,6 +20,7 @@ import AsignarGU from './screens/asignarGU.jsx';
 import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
+//import {Form as RegistrarAreas} from './components/Form/FormRegistroAreas/Form.jsx';
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
@@ -33,6 +33,16 @@ import ListadoAu from './screens/ListadoAut.jsx';
 import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
+
+//importar modulo de notificaciones
+import NotificationsAdmin from './components/notifications/notifications.jsx';
+
+
+//IMPORTAR CONTROL DE ACCESO (EQUIPO B)
+import ControlAcceso from './screens/controlA.jsx';
+
+//import componente de jesus velazques
+import Dashboar from './components/dashboar/dashboar.jsx';
 
 
 //iconos awesome font
@@ -59,10 +69,10 @@ const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
 const renderComponent = () => {
 
    if (!selectedComponent) {
-            return < Usuarios/>// Texto informativo
+            return < NotificationsAdmin/>// 
         }
         switch (selectedComponent) {
-        case 'Registro Periodo':
+        case 'Registro periodo':
             return <RegistroPeriodo />;
         case 'Administración de usuarios':
             return <Usuarios />;
@@ -77,10 +87,10 @@ const renderComponent = () => {
         case 'Asignar grupo de usuario':
             return <AsignarGU name={selectedComponent} />
         case 'Registrar carreras':
-            return <RegistroCarreras/>
+            return <RegistroCarreras />
         case 'Pensum':
-            return <RegistrarPensum/>
-        case 'Registrar usuario':
+            return <RegistrarPensum />
+        case 'Registrar Usuario':
             return <RegistroUsuario/>
         case 'Registro Instituto':
             return <RegistroInstituto/>
@@ -100,6 +110,10 @@ const renderComponent = () => {
             return <ListadoAu onhandleEditAut={handleEditAut} />
         case 'Editar Autoridad':
             return <EditAut onhandleAddType={handleAddType}/>
+        case 'Control de Acceso':
+            return <ControlAcceso />
+        case 'Registrar áreas':
+            return <h2>En proceso</h2>
         default:
             return null;
 }//fin de caso multiple
