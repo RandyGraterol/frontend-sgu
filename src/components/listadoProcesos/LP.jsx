@@ -4,23 +4,27 @@ import {faPenToSquare,faLayerGroup,faMinus, faCalendarDays } from '@fortawesome/
 import Submit from '../../particulas/SubmitButtons/Submit'
 import Style from  './LP.module.css'
 
+import SStyle from '../../../public/estilosGenerales/formularios.module.css'
+
 const LP = ({onHandleEditProcess})=>{
     const [status,changeStatus] = useState(true);
     const [gest,gestPro] = useState(false);
-    const [mig, gestMig] = useState(false)
+    const [mig, gestMig] = useState(false);
+    const [toggle, handleToggle] =useState(true);
 
     const trigger = ()=>{
 
         changeStatus(!status)
-
     }
 
     const tiggerGest = ()=>{
         gestPro(!gest)
+        handleToggle(!toggle)
     }
 
     const triggerMig = ()=>{
         gestMig(!mig)
+        handleToggle(!toggle)
     }
 
     return(
@@ -53,8 +57,10 @@ const LP = ({onHandleEditProcess})=>{
 
 
             </div>
-
-            <table className={Style.table} >
+            {toggle ? (
+                
+                
+                <table className={Style.table} >
                 <thead>
                     <tr>
                     <th className={Style.th}  >Periodo</th>
@@ -98,7 +104,8 @@ const LP = ({onHandleEditProcess})=>{
                     
                 </tbody>
             </table>
-
+):(<></>)}
+            
             {gest ? (
               
             <table>
@@ -165,12 +172,13 @@ const LP = ({onHandleEditProcess})=>{
 
             { mig && 
             
-            <form action="" style={{marginBottom:'20px'}} className={Style.form} >
-                    <h2 className={Style.h2} >Migracion de horario</h2>
+            <form action="/migrar" method="post" className={SStyle.migform} >
+                    <h2 className={SStyle.h2} >Migracion de horario <FontAwesomeIcon icon={faMinus} onClick={triggerMig}  size="lg" style={{color:"#FFC300"}} /></h2>
 
-                    <label className={Style.label}  htmlFor="horario" >
-                        <strong className={Style.strong} >Ingrese horario</strong>
-
+                    <label   htmlFor="horario" >
+                        <strong className={Style.strong} >seleccione horario</strong>  
+                    </label>
+                    <label className={SStyle.label} >
                         <div style={{display:'flex', flexDirection:'row', justifyContent:'center', gap:'4px', width:'100%'}}>
                         <FontAwesomeIcon icon={faCalendarDays} size="lg" style={{color:"#5271ff" }} />
                         <input type="file" id="horario" name="horario" className={Style.input} required />

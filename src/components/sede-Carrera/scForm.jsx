@@ -3,8 +3,8 @@ import {faBuildingColumns, faCircleXmark, faMagnifyingGlass, faPlus, faCheck} fr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Submit from '../../particulas/SubmitButtons/Submit';
 
-import Style from './SedeCarrera.module.css'
 
+import Style from "../../../public/estilosGenerales/formularios.module.css";
 
 const SCForm = ()=>{
     const [state, changeState] = useState(false);

@@ -12,8 +12,16 @@ export const Form = ({action,method})=>{
 				<h1 className={Style.h1} >Pensum</h1>
 				<InputBox  id="Semestre" infoLabel="Semestre" placeholder="semestre ejemplo" type= "text" clase={faLaptopFile} 	/>
 				<InputBox  id="Codigo de Carrera" infoLabel="Codigo de Carrera" type="text" placeholder="3024" clase={faPersonChalkboard} />
+				
+				<div className={Style.dateContainer} >
+				<div className={Style.halfContainer}>
 				<InputBox  id="Horas Teoricas" infoLabel="Horas Teoricas" type="text" placeholder="4" clase={faBookOpenReader} />
+				</div>
+
+				<div className={Style.halfContainer}>
 				<InputBox  id="Horas Practicas" infoLabel="Horas Practicas" type="text" placeholder="4" clase={faBookOpenReader} />
+				</div>
+				</div>
 				<InputBox  id="Unidades de Credito" infoLabel="Unidades de Credito" type="text" placeholder="4" clase={faUser} />
 				<InputSelect id="Prelaciones" campo="Prelaciones" names="select"  clase={faSquarePollHorizontal}/>
 				<Submit/>
