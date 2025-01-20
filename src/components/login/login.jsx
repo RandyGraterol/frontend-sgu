@@ -53,7 +53,7 @@ const { width } = useWindowSize();
 
   return (
     <>
-        <Nav hidden /> {/* Oculto */}
+        <Nav login/> {/* Oculto */}
         
     <div className={styles.container} id="container">
 
@@ -100,11 +100,11 @@ const { width } = useWindowSize();
             <button className={styles.submit} type="submit">Acceder</button>
           </form>
           <p onClick={toggle} title='¡Haz click aqui!' className={styles.restablecerPassword}>¿Haz olvidado tu contraseña?</p>
-           <div className={styles.containerRedesSociales}>
+           {/* <div className={styles.containerRedesSociales}>
             <img src='./fb.png' className={styles.redesSociales} alt="Facebook"/>
             <img src='./instagram.png' className={styles.redesSociales} alt="Instagram"/>
             <img src={width <= 720 ? './xblue.png' : 'twitter.png'} className={styles.redesSociales} alt="Twitter"/>
-          </div>
+          </div> */}
         </div>
 
         <div className={`${styles.division} ${isRightPanelActive ? '' : styles.hidden}`}>
