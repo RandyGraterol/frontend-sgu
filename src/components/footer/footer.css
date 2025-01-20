@@ -42,6 +42,10 @@
   height: 20px;
 }
 
+.ig{
+  margin-left: 3px;
+}
+
 @media (max-width: 767px) {
 
   .footer{
