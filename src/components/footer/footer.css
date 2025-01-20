@@ -1,5 +1,5 @@
 .footer {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,17 +7,17 @@
   background-color: #0053a0;
   bottom: 0;
   width: 100%;
+  z-index: 99;
 }
 
 .column {
   flex: 1 1 200px;
-  margin: 15px;
+  margin: 5px;
   /* border-style:solid; */
 }
 
 .column h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 13px;
   color: aliceblue;
 }
 
@@ -38,6 +38,14 @@
 }
 
 .social-media a img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 767px) {
+
+  .footer{
+    position: relative;
+  }
+
 }
