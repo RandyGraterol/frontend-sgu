@@ -17,13 +17,13 @@ const Footer = () => (
     </div>
     <div className="social-media">
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-        <img src="fbblue.png" alt="Facebook logo" />
+        <img className='fb' src="fbblue.png" alt="Facebook logo" />
       </a>
       <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
-        <img src="xblue.png" alt="Twitter logo" />
+        <img className='tt' src="xblue.png" alt="Twitter logo" />
       </a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-        <img src="igblue.png" alt="Instagram logo" />
+        <img className='ig' src="igblue.png" alt="Instagram logo" />
       </a>
     </div>
   </footer>
