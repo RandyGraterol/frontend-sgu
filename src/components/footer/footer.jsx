@@ -5,19 +5,15 @@ const Footer = () => (
   <footer className="footer">
     <div className="column">
       <h3>Facultades</h3>
-      <a href="/departamentos-centrales" title="Departamentos Centrales">Departamentos Centrales</a>
     </div>
     <div className="column">
       <h3>Pregrado</h3>
-      <a href="/informacion-pregrado" title="Información de Pregrado">Información</a>
     </div>
     <div className="column">
       <h3>Webmail</h3>
-      <a href="/consulta-trabajo" title="Consulta tu trabajo">Consulta de Trabajo</a>
     </div>
     <div className="column">
       <h3>WorldMUN UCV</h3>
-      <a href="/estudiantes-de-paz" title="Conoce a los estudiantes de paz">Estudiantes de Paz</a>
     </div>
     <div className="social-media">
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
