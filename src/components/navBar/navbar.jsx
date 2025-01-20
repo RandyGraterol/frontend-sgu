@@ -3,10 +3,32 @@ import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChevronDown, faBars, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = ({ onNavClick, hidden }) => {
-  const style = {
-    display: hidden ? 'none' : 'flex',
+const Navbar = ({ onNavClick, login }) => {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 767);
   };
+
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+  const style = {
+    display: login ? 'none' : 'flex',
+  };
+  const style2 = {
+    display: login ? 'flex' : 'none',
+  };
+  const style3 = {
+    ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
@@ -83,26 +105,43 @@ const Navbar = ({ onNavClick, hidden }) => {
           <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
                               {/* Perfil del Usuario */}
                               <div id="profile-container" ref={profileButtonRef}>
-                    <div id="not-button">
+                    <div id="not-button" style={style}>
               <FontAwesomeIcon icon={faBell} />
-            </div>
-            <div id="profile-button" onClick={toggleProfileMenu}>
+              </div>
+              <div className="social-media_" style={style2}>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <img className='fb' src="fbblue.png" alt="Facebook logo" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
+                <img className='tt' src="xblue.png" alt="Twitter logo" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img className='ig' src="igblue.png" alt="Instagram logo" />
+              </a>
+              </div>
+            <div id="profile-button" onClick={toggleProfileMenu} style={style}>
               <FontAwesomeIcon icon={faUser} />
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
             {isProfileMenuOpen && (
               <div id="profile-menu">
                 <h3 className="nombre">Rafael Oliveros</h3>
+                <h4 className="carrera">Carrera activa:<br />Ingenieria informatica</h4>
+                <h4 className="carrera">rafaeloliveros@gmail.com</h4>
+              <a href=""><h4 className="carrera">Perfil</h4></a>  
+
+
+
                 <select value={userRole} onChange={handleRoleChange}>
                   <option value="Superuser">Superuser</option>
                   <option value="Estudiante">Estudiante</option>
                   <option value="Admin">Admin</option>
                   <option value="Operador">Operador</option>
-
-                </select>
+              </select>
               </div>
             )}
-                      <FontAwesomeIcon
+            <FontAwesomeIcon
+            style={style3}
             icon={isMenuOpen ? faTimes : faBars}
             className="fa-bars"
             id="ham-menu"
@@ -112,7 +151,7 @@ const Navbar = ({ onNavClick, hidden }) => {
           
           </div>
 
-          <nav style={style} className="navbar">        
+          <nav style={style}>        
           <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
           {userRole === 'Superuser' && (
               <>
