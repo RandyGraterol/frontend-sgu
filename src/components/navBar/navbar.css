@@ -14,8 +14,8 @@
 .nombre{
   display: flex;
   justify-content: space-between;
-  /* background-color: #f2f2f2; */
-  background-color: rgb(158, 149, 149);
+  background-color: #f2f2f2;
+  /* background-color: rgb(158, 149, 149); */
 }
 .titulo{
   position: relative;
