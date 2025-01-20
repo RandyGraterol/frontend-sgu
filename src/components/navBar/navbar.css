@@ -14,7 +14,8 @@
 .nombre{
   display: flex;
   justify-content: space-between;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background-color: rgb(158, 149, 149);
 }
 .titulo{
   position: relative;
@@ -83,7 +84,7 @@ nav ul li ul {
   position: absolute;
   z-index: 9999;
   flex-wrap: wrap; /* Permite que los elementos se distribuyan en múltiples líneas */
-  width: 12rem; /* Define un ancho fijo para el contenedor del submenú */
+  width: 11.5rem; /* Define un ancho fijo para el contenedor del submenú */
   margin-top: 1vh;
   top: 100%;
   left: 0;
@@ -91,7 +92,6 @@ nav ul li ul {
   border-radius: 5px;
   padding-bottom: 1rem;
   padding-top: 1rem;
-
 }
 nav ul li ul li {
   padding-left: 0.55rem; /* Ajusta el padding para mejor distribución */
@@ -149,6 +149,7 @@ section#home {
 
 #ham-menu {
   display: none;
+  
 }
 nav ul.active {
   right: 0;
@@ -187,6 +188,22 @@ nav ul.active {
 }
 #profile-button.active + #profile-menu {
   display: block;
+}
+
+
+
+.social-media_ {
+  display: flex;
+  gap: 12px;
+}
+
+.social-media_ a img {
+  width: 21px;
+  height: 21px;
+}
+
+.ig{
+  margin-left: 3px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -297,6 +314,7 @@ nav ul.active {
     font-size: 1.7rem;
     position: relative;
     z-index: 99999999999;
+    cursor: pointer;
   }
   .CB {
     width: 200px;
@@ -430,8 +448,8 @@ nav ul {
     width: 100vw;
   }
   .image{
-  height: 40px;
-  margin-top: -1.5vh;
+  height: 45px;
+  margin-top: -2vh;
   }
   .containerLogo{
     margin: 0;
