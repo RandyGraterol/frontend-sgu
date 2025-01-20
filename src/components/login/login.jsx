@@ -53,8 +53,8 @@ const { width } = useWindowSize();
 
   return (
     <>
-    <Nav />
-    
+        <Nav hidden /> {/* Oculto */}
+        
     <div className={styles.container} id="container">
 
       <NotificationModal /> {/* Componente de notificación */}
