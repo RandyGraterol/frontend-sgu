@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PeriodosLista.css"; 
+import styles from "../../styles/stylesGenerales.module.css"; 
 import { Toaster, toast } from "sonner";
 const Periodos = ({navegacion}) => {
   const [periodos, setPeriodos] = useState([
@@ -69,8 +69,9 @@ const Periodos = ({navegacion}) => {
 
   return (
     <div className="tabla-container">
-      <div className="form-busqueda">
-        <form onSubmit={buscarPeriodo} className="">
+      <div className={styles.containerFormulario}>
+      <h2>Crear periodo</h2>
+        <form onSubmit={buscarPeriodo} className={styles.formulario}>
           <input
             type="number"
             value={numeroBuscado}
@@ -82,13 +83,10 @@ const Periodos = ({navegacion}) => {
             Buscar
           </button>
         </form>
-        <a onClick={()=>navegacion('Registro Periodo')} type="submit" className="boton-crear">
-          {/* redigir a crear periodo */}
-          Crear periodo
-        </a>
+        
       </div>
 
-      <table className="tabla-periodos">
+      <table className={styles.styledTable}>
         <thead>
           <tr>
             <th>Periodo</th>

@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Submit from "../../particulas/SubmitButtons/Submit";
 
-import Style from "./process.module.css";
+import Style from "../../../public/estilosGenerales/formularios.module.css";
 
 const Process = () => {
   const [state, changeState] = useState("2025-I");

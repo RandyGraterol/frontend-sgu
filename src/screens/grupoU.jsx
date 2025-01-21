@@ -44,7 +44,7 @@ usuarios.push(
         </div>
         
         <div className='containerTable'>
-          <table className='styled-table'>
+          <table className='styledTable'>
          <thead>
          <tr>
          <th></th>

@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useNotificationModal } from '../../hooks/notifications.jsx'; // Importa el hook de notificación
 import styles from './login.module.css';
+import Nav from '../navBar/navbar.jsx';
+import Footer from '../footer/footer.jsx';
+
+
 //importar hooks de change resolutions
   import useWindowSize from '../../hooks/windowSize.jsx';
 
@@ -48,8 +52,13 @@ const { width } = useWindowSize();
   };
 
   return (
+    <>
+    <Nav />
+    
     <div className={styles.container} id="container">
+
       <NotificationModal /> {/* Componente de notificación */}
+
       <section className={styles.imagenLogin}>
         <img
           className={styles.imagen}
@@ -116,6 +125,9 @@ const { width } = useWindowSize();
         </div>
       </section>
     </div>
+    <Footer />
+
+    </>
   );
 };
 

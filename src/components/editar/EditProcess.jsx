@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListCheck, faCalendarDays, faListOl, faGraduationCap, faSliders } from '@fortawesome/free-solid-svg-icons';
 import Submit from '../../particulas/SubmitButtons/Submit';
 
-import Style from './editar.module.css'
+import Style from "../../../public/estilosGenerales/formularios.module.css";
+
 
 const EditProces = () => {
     const [state, changeState] = useState('2025-I');

@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBuildingColumns,  faSignature, faAddressCard, faUser, faArrowsDownToPeople,faPlus } from '@fortawesome/free-solid-svg-icons';
-import Style from './autForm.module.css';
+
+import Style from "../../../public/estilosGenerales/formularios.module.css";
+
 
 import Submit from '../../particulas/SubmitButtons/Submit';
 

@@ -27,7 +27,7 @@ import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.js
 
 // componentes de julian equipo (A)
 import Autoridades from './screens/Autoridades.jsx';
-import SedeCarrera from './screens/sedeCarrera.jsx';
+import SedeCarrera from './screens/SedeCarrera.jsx';
 import Procesos from './screens/procesos.jsx';
 import ListadoAu from './screens/ListadoAut.jsx';
 import EditAut from './screens/EditAut.jsx';

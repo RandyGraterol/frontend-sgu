@@ -4,7 +4,8 @@ import {faBuildingColumns,  faSignature, faAddressCard, faUser, faArrowsDownToPe
 
 import Submit from '../../particulas/SubmitButtons/Submit';
 
-import Style from './editar.module.css'
+import Style from "../../../public/estilosGenerales/formularios.module.css";
+
 
 
 

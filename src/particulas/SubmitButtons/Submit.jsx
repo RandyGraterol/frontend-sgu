@@ -1,5 +1,6 @@
 import React from 'react'
-import Style from './Submit.module.css'
+import Style from "../../../public/estilosGenerales/formularios.module.css";
+
 
 
 const Submit = ()=>{

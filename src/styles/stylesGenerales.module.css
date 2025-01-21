@@ -40,6 +40,7 @@ table {
 }.styledTable {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+  width:100%;
 }.styledTable thead tr {
   background-color:rgb(0, 79, 154); /* Color de fondo para el encabezado */
   color: white; /* Color del texto */
@@ -51,7 +52,7 @@ table {
 }.styledTable tbody tr{
   background-color: #f2f2f2; /* Color de fondo para filas pares */
 }.styledTable tbody tr:hover{
-  background-color:rgb(235, 228, 255);
+
 }.styledTable tbody tr:nth-child(2n) {
   background-color:rgb(235, 228, 255); /* Color de fondo más oscuro para cada tercera fila */
 }
@@ -105,6 +106,38 @@ table {
   justify-content: center;
   align-items: center;
   gap:1rem;
+}
+.containerFilter{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2rem;
+  padding:2rem;
+}.containerFilter select,.containerBuscar input{
+  padding:.7rem .5rem;
+}.inactive{
+}.active{
+}.titulo,.subtitulos{
+  width:100%;
+  padding:2rem 1rem;
+  text-align: center;
+}.containerBuscar{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:1rem;
+  height:100% !important;
+}.formulario{
+  padding:2rem;
+}.formulario input{
+  padding:.6rem .5rem;
+}.formulario button{
+  padding:.6rem .2rem;
+}.containerFormulario h2{
+  margin:2rem auto;
+  text-align: center;
 }
 }
 
