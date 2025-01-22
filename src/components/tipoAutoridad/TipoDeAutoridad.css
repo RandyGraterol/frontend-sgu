@@ -1,18 +1,35 @@
-.button1 {
-    background-color: #3798ff;
-    color: white;
-    border: 2px solid #08080a; /* Green */
-    padding: 10px 24px;
-    border-radius: 2px;
-    margin: 1% auto; /* Centra el botón horizontalmente */
-    font-weight: 600;
-    display: block; /* Asegura que el botón sea un elemento de bloque */
-    text-align: center; /* Centra el contenido del botón */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos */
 }
 
-.input1{
-    border-radius: 0px !important;
-    background-color: white !important;
-    height: auto !important;
-    width: 48% !important;
+.button1 {
+  background-color: #3798ff;
+  color: white;
+  border: 2px solid #08080a; /* Green */
+  padding: 10px 24px;
+  border-radius: 2px;
+  margin: 1% auto; /* Centra el botón horizontalmente */
+  font-weight: 600;
+  display: block; /* Asegura que el botón sea un elemento de bloque */
+  text-align: center; /* Centra el contenido del botón */
+  flex: 1 1 100%; /* Hace que el botón ocupe el 100% del ancho del contenedor en pantallas pequeñas */
+}
+
+.input1 {
+  border-radius: 0px !important;
+  background-color: white !important;
+  height: auto !important;
+  width: 48% !important;
+  flex: 1 1 48%; /* Hace que el input ocupe el 48% del ancho del contenedor */
+}
+
+@media (max-width: 600px) {
+  .input1 {
+    width: 100% !important;
+    flex: 1 1 100%; /* Hace que el input ocupe el 100% del ancho del contenedor en pantallas pequeñas */
+  }
 }

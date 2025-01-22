@@ -74,7 +74,7 @@ const Process = () => {
             onChange={handleModalidadChange}
           >
             <option value="" disabled>
-              Seleccione modalidad
+              Seleccione periodo
             </option>
             <option value="2025-I">2025-I </option>
             <option value="2025-II">2025-II </option>
