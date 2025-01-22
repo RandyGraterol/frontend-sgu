@@ -319,7 +319,7 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Inscripción</a></li>
+                    <li><a onClick={() => onNavClick('Inscripcion')} href="#Inscripcion">Inscripción</a></li>
                     <li><a href="#">Descargar horario</a></li>
                     <li><a href="#">Consultar materias</a></li>
                   </ul>

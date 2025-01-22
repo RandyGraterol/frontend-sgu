@@ -24,6 +24,9 @@ import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
+//Import Inscripción Estudiantiles
+import Inscripcion from './components/InscricsionHorario/Inscripcion'
+
 
 // componentes de julian equipo (A)
 import Autoridades from './screens/Autoridades.jsx';
@@ -114,6 +117,8 @@ const renderComponent = () => {
             return <ControlAcceso />
         case 'Registrar áreas':
             return <h2>En proceso</h2>
+        case 'Inscripcion':
+            return <Inscripcion />
         default:
             return null;
 }//fin de caso multiple

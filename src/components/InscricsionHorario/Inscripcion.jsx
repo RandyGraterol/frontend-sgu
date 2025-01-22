@@ -118,11 +118,13 @@ const [events, setEvents] = useState([]);
     setEvents([...events, event]);
   };
   return (
-    <div className="ContenedorInscripcion">
-      <BoxSelect filtro={filtro} busqueda={busqueda} materias={materias} botonCambio={filtrar} />
-      <SeccionDisponivilidadMaterias onAddEvent={addNewEvent} data={materias} resultado={buscar} />
-      <MyWeeklySchedule eventos={events}/>
-      <BoxButton />
+    <div className="Inscripcion">
+      <div className="ContenedorInscripcion">
+        <BoxSelect filtro={filtro} busqueda={busqueda} materias={materias} botonCambio={filtrar} />
+        <SeccionDisponivilidadMaterias onAddEvent={addNewEvent} data={materias} resultado={buscar} />
+        <MyWeeklySchedule eventos={events}/>
+        <BoxButton />
+      </div>
     </div>
   );
 };
