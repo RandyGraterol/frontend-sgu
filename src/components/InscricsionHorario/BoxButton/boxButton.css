@@ -1,0 +1,23 @@
+.BoxButton{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	gap: 20px;
+}
+.BoxButton button{
+	padding: 7px 20px;
+	font-size: 1.05em;
+	font-weight: 700;
+	border: 1px solid #5277ff;
+	border-radius: 10px;
+	transition: .3s;
+}
+.BoxButton .Botton1{
+	background: #5277ff;
+	color: white;
+}
+.BoxButton .Botton:hover{
+	background: transparent;
+	color: black;
+}

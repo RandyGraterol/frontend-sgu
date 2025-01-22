@@ -1,0 +1,26 @@
+:root{
+	--ais: #5277ff;
+}
+
+
+.ContenedorInscripcion{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	min-width: 250px;
+	width: 95%;
+	max-width: 800px;
+	background: #efefef;
+	padding: 10px;
+	border-radius:10px;
+	box-shadow: 15px 15px 35px #acacac,
+				-15px -15px 35px #efefef;
+	border: 1px solid #fff;
+	user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    transition: .3s all;
+}
