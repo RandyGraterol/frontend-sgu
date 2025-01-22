@@ -5,5 +5,16 @@
 	font-size:2rem;
 }.containerComponentPrincipal{
 	width:100%;
-	height:100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+.containerComponentPrincipal .content{
+	overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+	width: 2px; /* Ancho del scroll vertical */
+}
+.containerComponentPrincipal .content::-webkit-scrollbar{
+	width: 2px; /* Ancho del scroll vertical */
 }

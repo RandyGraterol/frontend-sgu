@@ -3,6 +3,10 @@
 	padding:0;
 	box-sizing: border-box;
 }
+body {
+	background-color:rgb(255, 255, 255); /* Color de fondo opcional */
+	font-family: 'Helvetica', sans-serif;
+}
 .principal{
 	overflow:hidden;
 	width:100%;
@@ -12,9 +16,4 @@
 	justify-content: center;
 	align-items:center;
 	gap:2rem;
-}body {
-  background-color:rgb(255, 255, 255); /* Color de fondo opcional */
-  font-family: 'Helvetica', sans-serif;
 }
-
-
