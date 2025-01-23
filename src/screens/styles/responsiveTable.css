@@ -1,110 +1,142 @@
-
-@media (max-width: 374px){
-    /* Aquí van tus estilos específicos para móviles pequeños */
-}
-/* Móviles medianos (375px - 414px) */
-@media (min-width: 375px) and (max-width: 414px) {
-    /* Aquí van tus estilos específicos para móviles medianos */
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /*REDMI NOTE 13 PRO PLUS*/
-
-}
-/* Móviles grandes (415px - 599px)*/
-@media (min-width: 415px) and (max-width: 599px) {
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /*IPHONE 15 PRO MAX*/
-
-}
-/* Tabletas en orientación vertical (600px - 767px) */
-@media (min-width: 600px) and (max-width: 767px) {
-    /* Aquí van tus estilos específicos para tabletas en orientación vertical*/
-    /* Aquí van tus estilos específicos para móviles grandes */
-}
-/* Tabletas en orientación horizontal (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-/* Aquí van tus estilos específicos para móviles grandes */
-
-}
-/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
-@media (min-width: 1025px) and (max-width: 1279px) {
-    /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
-/* styles.css */
-}
-/* Dispositivos de pantalla grande (1280px en adelante) */
-@media (min-width: 1280px) {
-    /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
 table {
   width: 100vw; /* O 100% para que ocupe todo el ancho del contenedor */
   border-collapse: collapse; /* Para eliminar espacios entre celdas */
-}.styledTable {
+}
+.styledTable {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-}.styledTable thead tr {
-  background-color:rgb(0, 79, 154); /* Color de fondo para el encabezado */
+  display: table;
+}
+.styledTable thead tr {
+  background-color: rgb(0, 79, 154); /* Color de fondo para el encabezado */
   color: white; /* Color del texto */
 }
-
-.styledTable th, .styledTable td {
+.styledTable th,
+.styledTable td {
   padding: 12px 15px; /* Espaciado interno */
-  text-align:center; /* Alineación del texto */
-}.styledTable tbody tr{
+  text-align: center; /* Alineación del texto */
+}
+.styledTable tbody tr {
   background-color: #f2f2f2; /* Color de fondo para filas pares */
-}.styledTable tbody tr:hover{
-  background-color:rgb(235, 228, 255);
-}.styledTable tbody tr:nth-child(2n) {
-  background-color:rgb(235, 228, 255); /* Color de fondo más oscuro para cada tercera fila */
 }
-.containerTable{
-  overflow:auto;
-}.containerBotones{
-  display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  text-align: center;
-  gap:1rem;
-  padding:4rem 2rem;
-  width:30%;
-}.titulo{
-  width:70%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  gap:1rem;
-  height:100%;
-}.tituloH1{
-  width:100%;
-  margin: 0 !important;
-}.botoneraTable{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:1rem;
-}.containerTituloBotones{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}.icon{
-  cursor:pointer;
-}.checkbox-grande { 
-  width: 15px; /* Ajusta el ancho */ 
-  height: 15px; /* Ajusta la altura */ 
-  transform: scale(1.3); /* Escala el tamaño del checkbox */ 
-}.iconoAsignarGU{
-  cursor:pointer;
-}.containerGU{
-  border:3px solid gold;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap:1rem;
-}.privilegiosAGU{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  gap:1rem;
-}
+.styledTable tbody tr:hover {
+  background-color: rgb(235, 228, 255);
 }
 
+.containerTable {
+  overflow: auto;
+}
+.containerBotones {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 1rem;
+  padding: 7px;
+  width: 30%;
+}
+.titulo {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 7px;
+}
+.tituloH1 {
+  width: 100%;
+  margin: 0 !important;
+}
+.botoneraTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.containerTituloBotones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.icon {
+  cursor: pointer;
+}
+.checkbox-grande {
+  width: 15px; /* Ajusta el ancho */
+  height: 15px; /* Ajusta la altura */
+  transform: scale(1.3); /* Escala el tamaño del checkbox */
+}
+.iconoAsignarGU {
+  cursor: pointer;
+}
+.containerGU {
+  border: 3px solid gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.privilegiosAGU {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .styledTable thead {
+    display: none; /* Oculta el encabezado de la tabla */
+  }
+  .styledTable,
+  .styledTable tbody,
+  .styledTable tr,
+  .styledTable td {
+    display: block; /* Hace que cada celda sea un bloque */
+    width: 100%; /* Asegura que cada celda ocupe el 100% del ancho */
+  }
+  .styledTable tr {
+    margin-bottom: 15px; /* Espacio entre filas */
+    border-bottom: 0.4px solid black; /* Línea negra delgada entre filas */
+  }
+  .styledTable td {
+    text-align: right; /* Alinea el texto a la derecha */
+    padding-left: 50%; /* Espacio para el pseudo-elemento */
+    position: relative;
+    border: 0.4px solid black;
+    border-bottom: 0.4px solid black;
+  }
+  .styledTable td::before {
+    content: attr(
+      data-label
+    ); /* Usa el atributo data-label para el contenido */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left; /* Alinea el texto del pseudo-elemento a la izquierda */
+  }
+
+  /* Estilos responsivos para containerTituloBotones */
+  .containerTituloBotones {
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+  }
+  .containerTituloBotones .titulo {
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    padding: 10px; /* Añade un poco de espacio alrededor */
+  }
+  .containerTituloBotones .containerBotones {
+    width: 100%; /* Asegura que los botones ocupen todo el ancho */
+    padding: 10px; /* Añade un poco de espacio alrededor */
+  }
+  .containerTituloBotones .tituloH1 {
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+  }
+}
