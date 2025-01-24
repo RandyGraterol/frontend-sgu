@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/stylesGenerales.module.css"; 
 import { Toaster, toast } from "sonner";
+
 const Periodos = ({navegacion}) => {
   const [periodos, setPeriodos] = useState([
     { numero: 20251, estado: "Activo" },
@@ -30,26 +31,24 @@ const Periodos = ({navegacion}) => {
 
     setPeriodos(nuevosPeriodos);
 
-    // Actualiza resultados si hay una búsqueda activa
     if (numeroBuscado) {
       const resultadosFiltrados = nuevosPeriodos.filter(
         (periodo) => periodo.numero === parseInt(numeroBuscado)
       );
       setResultados(resultadosFiltrados);
     } else {
-      setResultados(nuevosPeriodos); // Si no hay búsqueda, mostrar todos
+      setResultados(nuevosPeriodos);
     }
   };
 
   const eliminarPeriodo = (numero) => {
-    toast.error(`Se elimino el periodo: ${numero}`, {
+    toast.error(`Se eliminó el periodo: ${numero}`, {
       duration: 1000,
     });
     const nuevosPeriodos = periodos.filter(
       (periodo) => periodo.numero !== numero
     );
     setPeriodos(nuevosPeriodos);
-    // Actualiza los resultados después de eliminar
     setResultados(nuevosPeriodos);
     setNumeroBuscado("");
   };
@@ -63,29 +62,28 @@ const Periodos = ({navegacion}) => {
       );
       setResultados(resultadosFiltrados);
     } else {
-      setResultados(periodos); // Si no es un número, mostrar todos
+      setResultados(periodos);
     }
   };
 
   return (
-    <div className="tabla-container">
-      <div className={styles.containerFormulario}>
-      <h2>Crear periodo</h2>
-        <form onSubmit={buscarPeriodo} className={styles.formulario}>
-          <input
-            type="number"
-            value={numeroBuscado}
-            onChange={(e) => setNumeroBuscado(e.target.value)}
-            placeholder="Buscar por periodo"
-            className="input-busqueda"
-          />
-          <button type="submit" className="boton-busqueda">
-            Buscar
-          </button>
-        </form>
-        
-      </div>
+    <div className={styles.tablaContainer}>
+            <h1 className={styles.titulo}>Crear periodo</h1>
+            <div className={styles.containerFilter}> 
+              <form onSubmit={buscarPeriodo} >
+                
+               <div className={styles.button_group}>
+                    <input className={styles.containerInput} 
+                      type="number" value={numeroBuscado} 
+                      value={numeroBuscado}
+                      onChange={(e) => setNumeroBuscado(e.target.value)}
+                      placeholder="Buscar por periodo"
+                    />
+                    <button className={styles.periodoButton}>Buscar</button>
+               </div>
+              </form>
 
+            </div>
       <table className={styles.styledTable}>
         <thead>
           <tr>
@@ -99,25 +97,22 @@ const Periodos = ({navegacion}) => {
             <tr
               key={index}
               className={
-                periodo.estado === "Activo" ? "bg-activo" : "bg-inactivo"
+                periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo
               }
             >
-              <td className="periodos">{periodo.numero}</td>
+              <td className={styles.periodos}>{periodo.numero}</td>
               <td>{periodo.estado}</td>
-              <td>
+              <td className={styles.button_group}>
                 <button
                   onClick={() => cambiarEstado(periodo.numero)}
-                  className={
-                    periodo.estado === "Activo"
-                      ? "bg-inactivo-boton"
-                      : "bg-activo-boton"
+                  className={ styles.periodoButton
                   }
                 >
                   Cambiar Estado
                 </button>
                 <button
                   onClick={() => eliminarPeriodo(periodo.numero)}
-                  className="tabla-periodos-eliminar"
+                  className={styles.periodoButton}
                 >
                   Eliminar
                 </button>
@@ -127,6 +122,31 @@ const Periodos = ({navegacion}) => {
         </tbody>
       </table>
       <Toaster richColors visibleToasts="1" position="top-right" />
+      <div className={styles.Universal}>
+      <div className={styles.tabla_mobile}>
+        <div className={styles.fila}>
+          <div className={styles.columna}>
+            <div className={styles.header}>Periodo</div>
+            <div className={styles.contenido}>2025-I</div>
+          </div>
+          <div className={styles.columna}>
+            <div className={styles.header}>Status</div>
+            <div className={styles.contenido}>Activo</div>
+          </div>
+          <div className={styles.columna}>
+            <div className={styles.header}>Acciones</div>
+            <div className={styles.button_group}>
+            <button className={styles.periodoButton}>
+              Cambiar estado
+            </button>
+            <button className={styles.periodoButton}>
+              Eliminar
+            </button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };
