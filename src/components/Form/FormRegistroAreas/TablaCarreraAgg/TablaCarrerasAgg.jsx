@@ -1,5 +1,7 @@
-import "./tablaCarrerasAgg.css";
-import "./cajaTable.css";
+/*import "./tablaCarrerasAgg.css";
+import "./cajaTable.css";*/
+import Styles from "../../../../../public/estilosGenerales/formularios.module.css"
+
 import { faTrashCan, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

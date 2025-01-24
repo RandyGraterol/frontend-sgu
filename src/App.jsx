@@ -18,6 +18,7 @@ import RegistroTipoAutoridad from './components/tipoAutoridad/TipoDeAutoridad.js
 import AsignarGU from './screens/asignarGU.jsx';
 //importar componente formulario registro de carrera RICARDO equipo (B)
 import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
+import {Form as RegistroAreas} from './components/Form/FormRegistroAreas/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
 //import {Form as RegistrarAreas} from './components/Form/FormRegistroAreas/Form.jsx';
@@ -88,6 +89,9 @@ const renderComponent = () => {
             return <AsignarGU name={selectedComponent} />
         case 'Registrar carreras':
             return <RegistroCarreras />
+        case 'Pensum':
+        case 'Registrar áreas':
+            return <RegistroAreas />
         case 'Pensum':
             return <RegistrarPensum />
         case 'Registrar Usuario':

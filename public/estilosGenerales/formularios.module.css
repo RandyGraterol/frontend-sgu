@@ -1,0 +1,247 @@
+.form{
+    height: auto;
+    min-height: 550px;
+    min-width: 300px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw ;
+    gap: 1vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 2% ;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+-webkit-box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+-moz-box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+}
+
+.migform{
+    height: auto;
+    min-height: 320px;
+    min-width: 180px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 30vw ;
+    gap: 1vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 2% ;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+-webkit-box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+-moz-box-shadow: -16px 17px 31px -1px rgba(0,0,0,0.46);
+}
+
+.h1{
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.h2{
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strong{
+    width: auto;
+    font-size: clamp(15px,1vw,20px);
+}
+
+.content{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.ScreenContainer{    
+    margin: auto auto;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2dddd;
+}
+
+.label{
+    padding: .5rem;
+    width: 100%;
+    min-width: 210px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    border: #5271ff 2px solid;
+}
+
+.input{
+    height: 100%;
+    border: none;
+    width: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    /*background-color: #e2dddd;*/
+}
+
+.input:focus{
+    outline: none;
+}
+
+.dateContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 1vh;
+}
+
+
+.add{
+    position: absolute;
+    right: calc(10% - 1vw);
+}
+
+
+.halfContainer{
+    width: 49%;
+    gap: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.label label{
+    margin-left: auto;
+    margin-right:auto ;
+}
+
+@media screen and (max-width:920px) {
+
+    .dateContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .halfContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+
+    
+}
+
+
+/*  estilos de los botones   */
+
+.Submit{
+    color: rgb(232, 244, 249) ;
+    background-color: #5271ff;
+    border: none;
+    height: 40px;
+    width: 45% ;
+    min-width: 75px;
+    transition: .5s all;
+}
+
+.Submit:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: #5271ff;
+    border: #5271ff solid 4px;
+}
+
+.reset{
+    color: #5271ff ;
+    background-color: white;
+    border: solid 2px #5271ff;
+    width: 45% ;
+    height: 40px;
+    transition: .5s;
+    min-width: 75px;
+}
+
+.buttonContainer{
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset:hover{
+    color: white;
+    background-color: #5271ff;
+    border: 4px solid white;
+    transform: scale(1.1);
+    outline: 1px solid #5271ff;
+}
+
+
+
+.VerListado{
+    box-sizing: border-box;
+    background-color: #5271ff;
+    color:white;
+    padding: 20px;
+    margin: 10px;
+    transition: .5s;
+    margin-left: auto;
+    margin-right: auto;
+    border: #5271ff solid 4px;
+}
+
+
+.VerListado:hover{
+    background-color: white;
+    color: #5271ff;
+    border: #5271ff solid 4px;
+}
+
+
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.th{
+    background-color: #5271ff;
+    color: white;
+}
+
+.p{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.th, .td{
+    border: #5271ff solid 2px;
+    text-align: center;
+    padding: 4px;
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+
+.a{
+    border: none;
+    background-color: transparent;
+}
