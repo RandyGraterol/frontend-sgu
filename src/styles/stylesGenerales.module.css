@@ -1,42 +1,12 @@
-
-@media (max-width: 374px){
-    /* Aquí van tus estilos específicos para móviles pequeños */
-}
-/* Móviles medianos (375px - 414px) */
-@media (min-width: 375px) and (max-width: 414px) {
-    /* Aquí van tus estilos específicos para móviles medianos */
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /*REDMI NOTE 13 PRO PLUS*/
-
-}
-/* Móviles grandes (415px - 599px)*/
-@media (min-width: 415px) and (max-width: 599px) {
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /* Aquí van tus estilos específicos para móviles grandes */
-    /*IPHONE 15 PRO MAX*/
-
-}
-/* Tabletas en orientación vertical (600px - 767px) */
-@media (min-width: 600px) and (max-width: 767px) {
-    /* Aquí van tus estilos específicos para tabletas en orientación vertical*/
-    /* Aquí van tus estilos específicos para móviles grandes */
-}
-/* Tabletas en orientación horizontal (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-/* Aquí van tus estilos específicos para móviles grandes */
-
-}
-/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
-@media (min-width: 1025px) and (max-width: 1279px) {
-    /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
-/* styles.css */
-}
-/* Dispositivos de pantalla grande (1280px en adelante) */
-@media (min-width: 1280px) {
-    /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
 table {
   width: 100vw; /* O 100% para que ocupe todo el ancho del contenedor */
   border-collapse: collapse; /* Para eliminar espacios entre celdas */
+}
+.titulo,.subtitulos{
+  width:100%;
+  padding:2rem 1rem;
+  text-align: center;
+}.containerBuscar{
 }.styledTable {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
@@ -45,11 +15,50 @@ table {
   background-color:rgb(0, 79, 154); /* Color de fondo para el encabezado */
   color: white; /* Color del texto */
 }
+.containerFilter{
+  display:flex;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  gap: 2rem;
+  padding:2rem;
+}
+.containerSelect, .containerInput{
+  padding: 0.5em;
+  font-size: 1em;
+  text-align: center;
+  background:white;
+  color: black;
+  appearance: none;
+  outline: none;
+  border: 1.5px solid #3E4657;
+  border-radius: 7px;
+}
 
+.button_group{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 3%;
+}
+.periodoButton{
+  width: 10em;
+  text-align: center;
+  color: white;
+  background-color:#3A72C5;
+  padding: 0.6em;
+  border-radius: 10px;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+.periodoButton:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .styledTable th, .styledTable td {
   padding: 12px 15px; /* Espaciado interno */
   text-align:center; /* Alineación del texto */
-}.styledTable tbody tr{
+.styledTable tbody tr{
   background-color: #f2f2f2; /* Color de fondo para filas pares */
 }.styledTable tbody tr:hover{
 
@@ -107,37 +116,109 @@ table {
   align-items: center;
   gap:1rem;
 }
-.containerFilter{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:2rem;
-  padding:2rem;
-}.containerFilter select,.containerBuscar input{
-  padding:.7rem .5rem;
-}.inactive{
+.inactive{
 }.active{
-}.titulo,.subtitulos{
-  width:100%;
-  padding:2rem 1rem;
-  text-align: center;
-}.containerBuscar{
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap:1rem;
   height:100% !important;
-}.formulario{
-  padding:2rem;
-}.formulario input{
-  padding:.6rem .5rem;
-}.formulario button{
-  padding:.6rem .2rem;
-}.containerFormulario h2{
-  margin:2rem auto;
-  text-align: center;
 }
+.formulario{
+  border: 20px solid red;
+}
+}
+/*Tabla mobile*/
+.tabla_mobile {
+  display: none;
+  width: 100%;
+}
+.tabla-mobile .fila .columna{
+  display: flex;
 }
 
+.tabla_mobile .fila .columna .header, 
+.tabla_mobile .fila .columna .contenido{
+  padding: 10px;
+  text-align: center;
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.tabla_mobile .fila .columna .header{
+  width: 90%;
+  background-color:rgb(0, 79, 154);
+  color: white;
+  font-weight: bold;
+}
+
+.tabla_mobile .fila .columna .contenido{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.tabla_mobile .fila .columna .contenido, 
+.tabla_mobile .fila .columna .header{
+  border-bottom: 1px solid #909090;
+} 
+
+@media (min-width: 375px) and (max-width: 767px){
+  .Universal{
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+  }
+  .tabla_mobile{
+    display: block;  
+  }
+  .styledTable{
+    display: none;
+  }
+  .containerFilter{
+    display: flex;
+    flex-direction: column;
+  }
+  .containerFilter select, .containerBuscar, input{
+    width: 100%;
+  }
+  .button_group{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    gap: 1.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+@media (min-width: 360px) and (max-width: 776px){
+  .Universal{
+    display: flex;
+    margin-left: 5%;
+    width: 100%;
+    flex-flow: column;
+  }
+  .tabla_mobile{
+    display: block;  
+  }
+  .styledTable{
+    display: none;
+  }
+  .containerFilter{
+    display: flex;
+    flex-direction: column;
+  }
+  .containerFilter select, .containerBuscar, input{
+    width: 100%;
+  }
+  .button_group{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    gap: 1.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
