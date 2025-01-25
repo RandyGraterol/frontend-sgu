@@ -1,6 +1,6 @@
 .form{
     height: auto;
-    min-height: 550px;
+    min-height: 480px;
     min-width: 300px;
     display: flex;
     align-items: start;
@@ -68,6 +68,7 @@
     margin: auto auto;
     width: 100vw;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     background-color: white;

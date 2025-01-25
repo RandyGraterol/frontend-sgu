@@ -89,6 +89,7 @@ const { width } = useWindowSize();
             <div className={styles.containerLabelInput}>
               <label className={styles.labelStyles}>Contraseña</label>
               <input
+                style={{backgroundColor:'rgb(255,255,255)'}}
                 type='password'
                 placeholder='Ingrese contraseña'
                 required
@@ -108,8 +109,8 @@ const { width } = useWindowSize();
         </div>
 
         <div className={`${styles.division} ${isRightPanelActive ? '' : styles.hidden}`}>
-          <h2 className={styles.tituloLogin}>¡Recuperar contraseña!</h2>
           <img src='./mail.png' className={styles.iconPasswordReset} alt="Recuperar contraseña"/>
+          <h2 className={styles.tituloLogin}>¡Recuperar contraseña!</h2>
           <p className={styles.message}>¡Se te enviara un correo electronico con un enlace para restablecer la contraseña!</p>
           <form className={styles.formulario}>
             <label className={styles.labelStyles}>Correo Electronico</label>

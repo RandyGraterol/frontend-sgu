@@ -11,6 +11,7 @@
 }
 .containerComponentPrincipal .content{
 	overflow-x: hidden;
+	display: flex;
 }
 body::-webkit-scrollbar {
 	width: 2px; /* Ancho del scroll vertical */

@@ -116,7 +116,7 @@ const renderComponent = () => {
         case 'Control de Acceso':
             return <ControlAcceso />
         case 'Registrar áreas':
-            return <h2>En proceso</h2>
+            return <h2>En proceso <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> hols </h2>
         case 'Inscripcion':
             return <Inscripcion />
         default:

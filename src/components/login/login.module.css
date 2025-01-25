@@ -1,17 +1,24 @@
 
 .inputStyle{
-  background-color:rgb(255,255,255);
-}.iconLogin{
-  width:100px;
+  background-color:white !important;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.iconLogin{
+  width:25%;
 }.submit {
-  background-image: -webkit-radial-gradient(right,rgb(78, 95, 255),rgb(11, 177, 255));
-  cursor: pointer;
-  color:white;
-  padding:.5rem 2rem; 
-  transition:all 1s ease-in-out;
+  color: rgb(232, 244, 249) ;
+  background-color: #5271ff;
+  border: none;
+  height: 40px;
+  width: 45% ;
+  min-width: 75px;
+  transition: .5s all;
 }.submit:hover{
- transform:translateY(-2px);
- box-shadow:  2px 2px 50px rgb(78, 95, 255);
+  background-color: white;
+  color: #5271ff;
+  border: #5271ff solid 4px;
 }.message{
   padding:0 2rem;
 }
@@ -57,7 +64,6 @@
   height:100%;
   top:0;
   left:0;
-  width: 60%;
   height: 100%;
   border-right: none;
   box-shadow: 3px 3px 15px rgb(0, 0, 0);
@@ -100,7 +106,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -242,7 +248,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -383,7 +389,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -513,7 +519,7 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -643,7 +649,7 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 40px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -674,7 +680,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:1.4rem;
+  gap:5%;
   z-index: 12;
 }
 
@@ -710,8 +716,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  margin-top: 12vh;
+  padding: 2vw;
 }
 
 .loginRecuperar {
@@ -773,7 +778,6 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
   height: 40px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -796,13 +800,12 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(235, 228, 255);
+  background-color: rgb(225, 239, 249);
 }.division:nth-child(1) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
   z-index: 12;
 }.division:nth-child(2) {
   z-index: 11;

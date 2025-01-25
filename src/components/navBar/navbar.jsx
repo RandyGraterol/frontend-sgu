@@ -33,7 +33,7 @@ useEffect(() => {
     ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
   };
   const style4 = {
-    position: login ? '' : 'fixed',
+    position: login ? '' : '',
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
