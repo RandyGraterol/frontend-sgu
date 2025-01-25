@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Nav from './components/navBar/navbar.jsx';
 //import Table from './components/table/table.jsx';
 import Footer from './components/footer/footer.jsx';
@@ -20,6 +20,7 @@ import AsignarGU from './screens/asignarGU.jsx';
 import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
+import {Form as FormRegistroPerfil} from './components/Form/FormRegistroPerfil/Form.jsx';
 //import {Form as RegistrarAreas} from './components/Form/FormRegistroAreas/Form.jsx';
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
@@ -91,7 +92,7 @@ const renderComponent = () => {
         case 'Pensum':
             return <RegistrarPensum />
         case 'Registrar Usuario':
-            return <RegistroUsuario/>
+            return <RegistroUsuario />
         case 'Registro Instituto':
             return <RegistroInstituto/>
         case 'Periodo Academico':
