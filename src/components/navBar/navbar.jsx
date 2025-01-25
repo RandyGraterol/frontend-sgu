@@ -3,7 +3,11 @@ import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChevronDown, faBars, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
 
+
+
 const Navbar = ({ onNavClick, login }) => {
+
+
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
@@ -28,12 +32,17 @@ useEffect(() => {
   const style3 = {
     ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
   };
+  const style4 = {
+    position: login ? '' : 'fixed',
+  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [userRole, setUserRole] = useState('Superuser'); // Por defecto "Superuser"
+  const [profileData, setProfileData] = useState({ periodo: '', estatus: '' });
+  const [error, setError] = useState(null);
 
   const navBarRef = useRef(null);
   const profileButtonRef = useRef(null);
@@ -48,6 +57,43 @@ useEffect(() => {
       return newState;
     });
   };
+
+        // Llamada a la API para obtener datos del perfil
+        useEffect(() => {
+          const fetchProfileData = async () => {
+            const query = `
+              query MyQuery {
+                item(id: "20241") {
+                  periodo
+                  estatus
+                }
+              }
+            `;
+
+            try {
+              const response = await fetch('http://154.56.0.218:8000/graphql', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlbHJhbmR5Z3JhdGVyb2xAZ21haWwuY29tIiwiZXhwIjoxNzM3NzQyMzMzfQ.wVs_GlgNdWev_y0qrvc5TI9kEV1NXTHh2iVKXI1LAwM',
+                },
+                body: JSON.stringify({ query }),
+              });
+      
+              const result = await response.json();
+              if (result.data) {
+                setProfileData(result.data.item);
+              } else {
+                throw new Error('No data found');
+              }
+            } catch (err) {
+              setError(err.message);
+            }
+          };
+      
+          fetchProfileData();
+        }, []);
+  
 
   const toggleMenu = (e) => {
     e.stopPropagation();
@@ -88,23 +134,27 @@ useEffect(() => {
     };
   }, []);
 
+
   const handleRoleChange = (e) => {
     setUserRole(e.target.value);
     setIsMenuOpen(false); // Cierra el menú al cambiar de rol
   };
 
 
+  
+
+
 
   return (
-    <header id='cabecera'>
+    <header id='cabecera' style={style4}>
       <div className='app'>
         <div className='nombre'>
       <div className='containerLogo'>
             <img className="image" src="/icon/logo.png" alt="Logo" />
           </div>
           <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
-                              {/* Perfil del Usuario */}
-                              <div id="profile-container" ref={profileButtonRef}>
+                            {/* Perfil del Usuario */}
+                            <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button" style={style}>
               <FontAwesomeIcon icon={faBell} />
               </div>
@@ -128,9 +178,13 @@ useEffect(() => {
                 <h3 className="nombre">Rafael Oliveros</h3>
                 <h4 className="carrera">Carrera activa:<br />Ingenieria informatica</h4>
                 <h4 className="carrera">rafaeloliveros@gmail.com</h4>
-              <a href=""><h4 className="carrera">Perfil</h4></a>
-                            <a href=""><h4 className="carrera">Cambiar contraseña</h4></a>  
-  
+                {/* <h4 className="carrera">Periodo: {profileData.periodo || 'Cargando...'}</h4>
+                <h4 className="carrera">Estatus: {profileData.estatus || 'Cargando...'}</h4>
+                {error && <p style={{ color: 'red' }}>Error: {error}</p>} */}
+
+
+                
+              <a href=""><h4 className="carrera">Perfil</h4></a>  
 
 
 
@@ -153,8 +207,8 @@ useEffect(() => {
           
           </div>
 
-          <nav style={style}>        
-          <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
+          <nav>        
+          <ul style={style} id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
           {userRole === 'Superuser' && (
               <>
                 <li className={openMenus['Instituto'] ? 'active' : ''}>
@@ -167,6 +221,8 @@ useEffect(() => {
                   >
                     Instituto <span className="arrow">▶</span>
                   </a>
+
+
                   {openMenus['Instituto'] && (
                     <ul
                     ref={(el) => {
@@ -183,6 +239,7 @@ useEffect(() => {
                       <li><a onClick={() => onNavClick('Registro Instituto')} href="#registro-instituto">Registro instituto</a></li>
                       <li><a onClick={() => onNavClick('Registrar carreras')} href="#registrar-carreras">Registrar carreras</a></li>
                       <li><a onClick={() => onNavClick('Pensum')} href="#pensum">Pensum</a></li>
+                      
                       <li><a onClick={() => onNavClick('Registrar áreas')} href="#registrar-areas">Registrar áreas</a></li>
                       <li><a onClick={() => onNavClick('Asignar sede-carrera')} href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
                       <li><a onClick={() => onNavClick('Registrar autoridades')} href="#registrar-autoridades">Registrar autoridades</a></li>
@@ -244,11 +301,7 @@ useEffect(() => {
                     }}
                   >
                       <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo academico</a></li>
-                      <li><a onClick={() => onNavClick('Registro periodo')} href="#registro-periodo">Registro periodo</a></li>
                       <li><a onClick={() => onNavClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de incripcion</a></li>
-                      <li><a onClick={() => onNavClick('Inscripcion')} href="#Inscripcion">Inscripción</a></li>
-                      <li><a onClick={() => onNavClick('Registrar Procesos')} href="#Inscripcion">Registrar Procesos</a></li>
-                      
                     </ul>
                   )}
                 </li>

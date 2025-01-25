@@ -4,7 +4,6 @@
   position:relative;
 }
 #cabecera{
-  position: relative;
   width: 100%;
   height:auto;
   top: 0;
@@ -72,7 +71,7 @@
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 4.5rem;
 }
 nav ul li {
   position: relative;
@@ -84,7 +83,7 @@ nav ul li ul {
   position: absolute;
   z-index: 9999;
   flex-wrap: wrap; /* Permite que los elementos se distribuyan en múltiples líneas */
-  width: 11.5rem; /* Define un ancho fijo para el contenedor del submenú */
+  width: 13.5rem; /* Define un ancho fijo para el contenedor del submenú */
   margin-top: 1vh;
   top: 100%;
   left: 0;
@@ -92,9 +91,10 @@ nav ul li ul {
   border-radius: 5px;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  gap: 2rem;
 }
 nav ul li ul li {
-  padding-left: 0.55rem; /* Ajusta el padding para mejor distribución */
+  padding-left: 1rem; /* Ajusta el padding para mejor distribución */
 }
 nav ul li ul li a {
   display: block; /* Asegura que el enlace ocupe todo el espacio disponible */
@@ -132,7 +132,7 @@ nav{
   align-items: center;
   gap:1rem;
   width: 100%;
-  height:auto;
+  height:6.2vh;
   padding:1rem;
 }nav ul a {
   color: #ffffff;
@@ -181,7 +181,6 @@ nav ul.active {
   right: 1.5rem;
   top: 4rem;
   background: white;
-  border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 0.8rem;
   z-index: 4;
@@ -337,7 +336,7 @@ nav ul {
   flex-direction: column;
   justify-content: space-around;
   transition: 1s ease;
-  gap: 0;
+  gap: 0.1rem;
   z-index: 999999;
 
 }
@@ -368,7 +367,9 @@ nav ul {
       width: 100%;
       height: 100%;
       margin-top: -1vh;
-      border: 1px solid red;
+      gap: 0.4rem;
+
+
 
 
     }
