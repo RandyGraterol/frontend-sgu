@@ -22,8 +22,14 @@ export const Form = ({ action, method }) => {
         <InputBox infoLabel="Nombre" id="Nombre" type="text" placeholder="Ricardo" clase={faLaptopFile} />
         <InputBox infoLabel="Descripcion" id="Descripcion" placeholder=" ejemplo " type="text" clase={faClipboard} />
         <InputBox infoLabel="Direccion" id="Direccion" placeholder="castrero" type="text" clase={faMapLocationDot} />
+        <div className={Style.dateContainer} >
+          <div className={Style.halfContainer}>
         <InputBox infoLabel="Telefono" id="Telefono" placeholder="04267456892" type="tel" clase={faPhone} />
+          </div>
+          <div className={Style.halfContainer} >
         <InputBox infoLabel="Correo" id="Telefono" placeholder="elmoreno1199@gmail.com" type="email" clase={faEnvelope} />
+        </div>
+        </div>
         <Submit/>
       </form>
     </section>

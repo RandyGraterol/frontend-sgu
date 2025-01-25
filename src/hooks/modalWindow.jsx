@@ -11,9 +11,9 @@ import { useNavigate } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 
-export const useModal = () => {
+export const useModal = ()=>{
  
-  const navigate = useNavigate();
+  const navigate = useNavigate();//para redireccionar 
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent,setModalContent] = useState(null);
@@ -54,7 +54,7 @@ export const useModal = () => {
                     transform: 'translate(-50%, -50%)',
                     backgroundColor: '#fff', // Color de fondo del modal
                     borderRadius: '10px',
-                    padding:'2rem',
+                    padding:'2rem'
                 },
             }}
     >

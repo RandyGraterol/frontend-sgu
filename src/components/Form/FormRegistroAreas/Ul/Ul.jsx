@@ -1,5 +1,5 @@
 import { Li } from "../Li/Li";
-import './ul.css'; 
+//import './ul.css'; 
 export const Ul = ({valorActive}) =>{
     return (
         <ul className = {valorActive ? 'listactive' : 'lista' } >

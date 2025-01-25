@@ -1,4 +1,4 @@
-import './li.css'
+//import './li.css'
 export const Li = ({content}) => {
     
     return (

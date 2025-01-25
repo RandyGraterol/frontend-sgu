@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import {faPeopleGroup,faScaleUnbalancedFlip,faMessage,faT} from '@fortawesome/free-solid-svg-icons';
 import styles from './crearNotificacion.module.css';
+import Submit from '../SubmitButtons/Submit'
+import Style from "../../../public/estilosGenerales/formularios.module.css";
 
 const CrearNotificacionForm = () => {
 
@@ -45,31 +49,55 @@ const CrearNotificacionForm = () => {
 
     return (
         <>
-            <h2>Crear Notificación</h2>
             <form className={styles.formulario} onSubmit={handleSubmit}>
-                <label>Título</label>
+            <h2 className={Style.h2}>Crear Notificación</h2>
+                <label htmlFor='titulo'>Título</label>
+                <label htmlFor="titulo" className={Style.label}>
+                <FontAwesomeIcon icon={faT} size='lg' style={{ color: "#5271ff" }}  />
                 <input
+                className={Style.input}
+                    id='titulo'
+                    placeholder='Apertura del poceso de inscripcion'
                     type="text"
                     value={titulo}
                     onChange={(e) => setTitulo(e.target.value)} // Actualiza el estado
                     required
                 />
-                <label>Mensaje</label>
+                </label>
+
+                <label htmlFor='mensaje' >Mensaje</label>
+                <label htmlFor="mensaje" className={Style.label}>
+                <FontAwesomeIcon icon={faMessage} size='lg' style={{ color: "#5271ff" }} />
                 <input
+                    className={Style.input}
+                    placeholder='nueva notficacion'
+                    id='mensaje'
                     type="text"
                     value={message}
                     onChange={(e) => setMensaje(e.target.value)} // Actualiza el estado
                     required
                 />
-                <label>Grupo de Usuario</label>
+                </label>
+                
+                <label htmlFor='gu' >Grupo de Usuario</label>
+                <label htmlFor="gu" className={Style.label}>
+                
+                <FontAwesomeIcon icon={faPeopleGroup} size='lg' style={{ color: "#5271ff" }} />
                 <input
                     type="text"
+                    id='gu'
+                    className={Style.input}
+                    placeholder='estudiantes'
                     value={grupoUsuario}
                     onChange={(e) => setGrupoUsuario(e.target.value)} // Actualiza el estado
                     required
                 />
+                </label>
                 <label>Prioridad</label>
+                <label className={Style.label}>
+                <FontAwesomeIcon icon={faScaleUnbalancedFlip} size='lg' style={{ color: "#5271ff" }} />
                 <select
+                    className={Style.input}
                     value={prioridad}
                     onChange={(e) => setPrioridad(e.target.value)} // Actualiza el estado
                 >
@@ -77,7 +105,8 @@ const CrearNotificacionForm = () => {
                     <option value="Media">Media</option>
                     <option value="Baja">Baja</option>
                 </select>
-                <button type="submit">Crear notificación</button>
+                </label>
+                <Submit/>
             </form>
         </>
     );

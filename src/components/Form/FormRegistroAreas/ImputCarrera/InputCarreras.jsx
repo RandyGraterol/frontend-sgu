@@ -1,6 +1,6 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { Label } from '../Label/Label';
-import './inputcarrera.css'
+//import './inputcarrera.css'
 
 export const InputCarreras = ({onBotton,clase,fort})=>{
     return (

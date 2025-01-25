@@ -48,7 +48,23 @@ const Notifications = () => {
        mensaje: "Certificado de tesis y maestrias , periodo academico 2025",
        prioridad: "Baja" ,
        checked:false
+   },
+    { id: 8,
+       mensaje: "Diseños de paginas web ventas electronicas",
+       prioridad: "Media" ,
+       checked:false
+   },
+    { id: 9,
+       mensaje: "Autorizacion de token y revision de permisos",
+       prioridad: "Media" ,
+       checked:false
+   },
+    { id: 10,
+       mensaje: "Automatizacion de compras realizadas por los usuarios",
+       prioridad: "Alta" ,
+       checked:false
    }
+
 ]);
     const [crearNotificacion,setCrearNotificacion]= useState(false);
 
@@ -90,40 +106,57 @@ const manejarCambioCheckbox = (id) => {
 
         return (
             <main className={styles.principal}>
+
             <VentanaModal />
+            
             <aside className={styles.aside}>
+
             <div className={styles.divAside}>
             <FontAwesomeIcon className={styles.iconCampana} icon={faBell} />
             <h3>Notificaciones</h3>
             </div>
+
             <div className={styles.divAside}>
             <ul className={styles.menuDesordenadoAside}>
-            <li>Super Admin</li>
-            <li>Admin</li>
-            <li>Operador</li>
-            <li>Profesor</li>
-            <li>Estudiante</li>
+            <li>Horario</li>
+            <li>Pensum</li>
+            <li>Notas</li>
+            <li>Inscripcion</li>
+            <li>constancia</li>
             </ul>
             </div>
             </aside>
 
             <section className={styles.sectionPrincipal}>
+
             <div className={`${styles.barraNavegacion} ${styles.divSectionPrincipal}`}>
+
             <div className={styles.inputIconSearchContainer}>
             <FontAwesomeIcon icon={faSearch} className={styles.iconSearch} />
             <input type="search" placeholder='Buscar notificación' className={styles.inputSearch} />
             </div>
+
             <button onClick={handleCrear} className={styles.buttonBarra}>Crear</button>
-            <button className={styles.buttonBarra}>Modificar</button>
-            <button className={styles.buttonBarra}>Eliminar</button>
+            <button className={styles.buttonBarra}>Seleccionar</button>
+            <button className={styles.buttonBarra}>Eliminar todo</button>
 
             </div>
 
             <div className={`${styles.notificaciones} ${styles.divSectionPrincipal}`}>
+             <ul className={styles.menuNotification}>
+                 <li>C</li>
+                 <li>D</li>
+                 <li>ID</li>
+                 <li>mensaje</li>
+                 <li>Prioridad</li>
+                 <li>Grupo usuario</li>
+                 <li>Opciones</li>
+             </ul>
             {notificaciones.map((notificacion) => (
                 <section key={notificacion.id}>
 
-                <div>
+                <div className={styles.divSectionNotifications}>
+
                  <Checkbox
                 key={notificacion.id}
                 checked={notificacion.checked}
@@ -131,16 +164,15 @@ const manejarCambioCheckbox = (id) => {
             />
                 </div>
 
-                <div>
+                <div className={styles.divSectionNotifications}>
                 <FontAwesomeIcon className={styles.iconMessage} icon={faEye} />
                 </div>
-                <div>
-                <h4>Identificador</h4>
+
+                <div className={styles.divSectionNotifications}>
                 <p>{notificacion.id}</p>
                 </div>
 
-                <div>
-                <h4>Mensaje</h4>
+                <div className={styles.divSectionNotifications}>
 
                 <div className={styles.ocultarBarraDesplazamiento}>
                 <p className={styles.parrafo}>{notificacion.mensaje}</p>
@@ -149,20 +181,21 @@ const manejarCambioCheckbox = (id) => {
                 </div>
 
 
-                <div>
-                <h4>Prioridad</h4>
+                <div className={styles.divSectionNotifications}>
                 <p className={`${styles.prioridad} ${getColorFondo(notificacion.prioridad)}`}>
                 {notificacion.prioridad}
                 </p>
                 </div>
-                <div>
-                <h4>Grupo U.</h4>
+
+                <div className={styles.divSectionNotifications}>
                 <p>Estudiante</p>
                 </div>
-                <div className={styles.iconosCrudContainer}>
+
+                <div className={`${styles.divSectionNotifications} ${styles.iconosCrudContainer}`}>
                 <FontAwesomeIcon icon={faEdit} className={styles.iconosCrud} />
                 <FontAwesomeIcon icon={faTrash} className={styles.iconosCrud} />
                 </div>
+
                 </section>
                 ))}
             </div>

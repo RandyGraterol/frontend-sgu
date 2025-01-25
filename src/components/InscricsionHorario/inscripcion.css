@@ -1,13 +1,8 @@
 :root{
 	--ais: #5277ff;
 }
-.Inscripcion{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 20px;
-}
+
+
 .ContenedorInscripcion{
 	display: flex;
 	justify-content: center;

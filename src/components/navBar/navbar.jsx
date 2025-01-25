@@ -3,7 +3,32 @@ import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChevronDown, faBars, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = ({ onNavClick }) => {
+const Navbar = ({ onNavClick, login }) => {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 767);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+  const style = {
+    display: login ? 'none' : 'flex',
+  };
+  const style2 = {
+    display: login ? 'flex' : 'none',
+  };
+  const style3 = {
+    ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
@@ -80,36 +105,55 @@ const Navbar = ({ onNavClick }) => {
           <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
                               {/* Perfil del Usuario */}
                               <div id="profile-container" ref={profileButtonRef}>
-                    <div id="not-button">
+                    <div id="not-button" style={style}>
               <FontAwesomeIcon icon={faBell} />
-            </div>
-            <div id="profile-button" onClick={toggleProfileMenu}>
+              </div>
+              <div className="social-media_" style={style2}>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <img className='fb' src="fbblue.png" alt="Facebook logo" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
+                <img className='tt' src="xblue.png" alt="Twitter logo" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img className='ig' src="igblue.png" alt="Instagram logo" />
+              </a>
+              </div>
+            <div id="profile-button" onClick={toggleProfileMenu} style={style}>
               <FontAwesomeIcon icon={faUser} />
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
             {isProfileMenuOpen && (
               <div id="profile-menu">
                 <h3 className="nombre">Rafael Oliveros</h3>
+                <h4 className="carrera">Carrera activa:<br />Ingenieria informatica</h4>
+                <h4 className="carrera">rafaeloliveros@gmail.com</h4>
+              <a href=""><h4 className="carrera">Perfil</h4></a>
+                            <a href=""><h4 className="carrera">Cambiar contraseña</h4></a>  
+  
+
+
+
                 <select value={userRole} onChange={handleRoleChange}>
                   <option value="Superuser">Superuser</option>
                   <option value="Estudiante">Estudiante</option>
-                </select>
+                  <option value="Admin">Admin</option>
+                  <option value="Operador">Operador</option>
+              </select>
               </div>
             )}
-          </div>
-          </div>
-
-        <nav>
-        
-          <FontAwesomeIcon
+            <FontAwesomeIcon
+            style={style3}
             icon={isMenuOpen ? faTimes : faBars}
             className="fa-bars"
             id="ham-menu"
             onClick={toggleMenu}
           />
+          </div>
+          
+          </div>
 
-
-
+          <nav style={style}>        
           <ul id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
           {userRole === 'Superuser' && (
               <>
@@ -126,8 +170,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Instituto'] && (
                     <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Instituto'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Instituto'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -159,8 +203,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Usuarios'] && (
                     <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Usuarios'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Usuarios'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -189,8 +233,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Procesos'] && (
                     <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -200,8 +244,11 @@ const Navbar = ({ onNavClick }) => {
                     }}
                   >
                       <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo academico</a></li>
+                      <li><a onClick={() => onNavClick('Registro periodo')} href="#registro-periodo">Registro periodo</a></li>
                       <li><a onClick={() => onNavClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de incripcion</a></li>
-                      <li><a onClick={() => onNavClick('Registrar Procesos')} href="#registrar-procesos">Registrar procesos</a></li>
+                      <li><a onClick={() => onNavClick('Inscripcion')} href="#Inscripcion">Inscripción</a></li>
+                      <li><a onClick={() => onNavClick('Registrar Procesos')} href="#Inscripcion">Registrar Procesos</a></li>
+                      
                     </ul>
                   )}
                 </li>
@@ -218,8 +265,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Reportes'] && (
                     <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -246,8 +293,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['CodigoBarra'] && (
                      <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -269,33 +316,7 @@ const Navbar = ({ onNavClick }) => {
             {userRole === 'Estudiante' && (
               <>
                 {/* Menú Estudiante */}
-                <li className={openMenus['Perfil'] ? 'active' : ''}>
-                  <a
-                    href="#perfil"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('Perfil');
-                    }}
-                  >
-                    Perfil <span className="arrow">▶</span>
-                  </a>
-                  {openMenus['Perfil'] && (
-                  <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Perfil'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
-                    }}
-                  >
-                    <li><a href="#">Carrera activa: Ingeniería Informática</a></li>
-                  </ul>
-                )}
-                </li>
+
                 <li className={openMenus['Procesos'] ? 'active' : ''}>
                   <a
                     href="#procesos"
@@ -309,8 +330,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Procesos'] && (
                   <ul    
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -319,41 +340,71 @@ const Navbar = ({ onNavClick }) => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a onClick={() => onNavClick('Inscripcion')} href="#Inscripcion">Inscripción</a></li>
-                    <li><a href="#">Descargar horario</a></li>
+                    <li><a href="#">Inscripción</a></li>
                     <li><a href="#">Consultar materias</a></li>
                   </ul>
                 )}
+                
                 </li>
-                <li className={openMenus['Reportes'] ? 'active' : ''}>
+                <li className={openMenus['Descargar pensum'] ? 'active' : ''}>
                   <a
-                    href="#reportes"
+                    href="#Descargar pensum"
                     onClick={(e) => {
                       e.preventDefault();
-                      handleMenuItemClick('Reportes');
+                      handleMenuItemClick('Descargar pensum');
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    Descargar pensum <span className="arrow">▶</span>
                   </a>
-                  {openMenus['Reportes'] && (
-                  <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
+
+                </li>
+                <li className={openMenus['Descargar horario'] ? 'active' : ''}>
+                  <a
+                    href="#Descargarhorario"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Descargar horario');
                     }}
                   >
-                    <li><a href="#">Descargar pensum</a></li>
-                    <li><a href="#">Planilla de inscripción</a></li>
-                    <li><a href="#">Constancia de Estudios</a></li>
-                    <li><a href="#">Record Academico</a></li>
-                  </ul>
-                )}
+                    Descargar horario <span className="arrow">▶</span>
+                  </a>
+
+                </li>                
+                <li className={openMenus['Planilla de inscripción'] ? 'active' : ''}>
+                  <a
+                    href="#Planilla-de-inscripción"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Planilla de inscripción');
+                    }}
+                  >
+                    Planilla de inscripción <span className="arrow">▶</span>
+                  </a>
+
+                </li>                
+                <li className={openMenus['Constancia de Estudios'] ? 'active' : ''}>
+                  <a
+                    href="#Constancia-de-Estudios"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Constancia de Estudios');
+                    }}
+                  >
+                    Constancia de Estudios <span className="arrow">▶</span>
+                  </a>
+
+                </li>                
+                <li className={openMenus['Record Academico'] ? 'active' : ''}>
+                  <a
+                    href="#RecordAcademico"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuItemClick('Record Academico');
+                    }}
+                  >
+                    Record Academico <span className="arrow">▶</span>
+                  </a>
+
                 </li>
                 
               </>
@@ -361,33 +412,7 @@ const Navbar = ({ onNavClick }) => {
             {userRole === 'Admin' && (
               <>
                 {/* Menú Admin */}
-                <li className={openMenus['Procesos'] ? 'active' : ''}>
-                  <a
-                    href="#procesos"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('Procesos');
-                    }}
-                  >
-                    Procesos <span className="arrow">▶</span>
-                  </a>
-                  {openMenus['Procesos'] && (
-                    <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Procesos'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
-                    }}
-                  >
-                     <li><a onClick={() => onNavClick('Carga de horario')} href="#carga-de-horario">Carga de horario</a></li>
-                    </ul>
-                  )}
-                </li>
+
                 <li className={openMenus['Reportes'] ? 'active' : ''}>
                   <a
                     href="#reportes"
@@ -401,8 +426,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Reportes'] && (
                   <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -436,8 +461,8 @@ const Navbar = ({ onNavClick }) => {
                   {openMenus['Reportes'] && (
                   <ul
                     ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
+                        if (el && window.innerWidth >= 767) {
+                          el.style.height = openMenus['Reportes'] ? `${el.scrollHeight}px` : '0';
                       }
                     }}
                     className="submenu"
@@ -451,37 +476,7 @@ const Navbar = ({ onNavClick }) => {
                   </ul>
                 )}
                 </li>
-                <li className={openMenus['CodigoBarra'] ? 'active' : ''}>
-                  <a
-                    href="#codigo-barras"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('CodigoBarra');
-                    }}
-                  >
-                    Escanear codigo de barras <span className="arrow">▶</span>
-                  </a>
-                  {openMenus['CodigoBarra'] && (
-                    <ul
-                    ref={(el) => {
-                      if (el) {
-                        el.style.height = openMenus['CodigoBarra'] ? `${el.scrollHeight}px` : '0';
-                      }
-                    }}
-                    className="submenu"
-                    style={{
-                      overflow: 'hidden',
-                      transition: 'height 0.4s ease-in-out',
-                    }}
-                  >
-                <li>
-                  <input className="CB" placeholder="Ingrese código de barras" />
-                  <button className="CBB" type="submit">Confirmar</button>
-                </li>
-              </ul>
-            )}
-            
-          </li>
+
               </>
             )}
           </ul>

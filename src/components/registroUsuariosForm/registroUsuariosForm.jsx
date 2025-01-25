@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { es } from "date-fns/locale/es";
 import { registerLocale } from "react-datepicker";
 import { useState } from 'react';
-import Submit from "../../particulas/SubmitButtons/Submit.jsx";
+import Submit from "../../particulas/SubmitButtons/Submit";
 
 import Style from "../../../public/estilosGenerales/formularios.module.css";
 
@@ -232,6 +232,11 @@ const RegistroUsuario = () => {
       </div>
     </div>
 
+    <div className={Style.dateContainer}>
+
+    <div className={Style.halfContainer}>
+
+
     <label htmlFor='correo'>
       <strong className={Style.strong} > Correo</strong>
     </label>
@@ -248,6 +253,11 @@ const RegistroUsuario = () => {
         required
       />
     </label>
+   
+
+    </div>
+    <div className={Style.halfContainer}>
+
     
     <label htmlFor="cedula">
       <strong className={Style.strong} > Cedula </strong>
@@ -268,6 +278,15 @@ const RegistroUsuario = () => {
     </label>
 
 
+    </div>
+
+    </div>
+
+    
+    <div className={Style.dateContainer}>
+
+    <div className={Style.halfContainer}>
+
     <label htmlFor="telefonoL" >
      <strong className={Style.strong}>Telefono local</strong >
     </label>
@@ -286,6 +305,9 @@ const RegistroUsuario = () => {
       />
     </label>
 
+
+    </div>
+    <div className={Style.halfContainer}>
     <label htmlFor="telefonoM">
       <strong className={Style.strong} > Teléfono Móvil </strong>
     </label>
@@ -304,6 +326,10 @@ const RegistroUsuario = () => {
         onChange={handleChange}
       />
     </label>
+
+    </div>
+
+    </div>
 
 
     <div className={Style.dateContainer} >
@@ -359,9 +385,12 @@ const RegistroUsuario = () => {
   </div>
   </div>
 
-    <h2 className={Style.h2} > Datos adicionales </h2>
+<div className={Style.dateContainer}>
 
-  <label >
+<div className={Style.halfContainer}>
+
+
+<label htmlFor='etnia'>
     <strong className={Style.strong}>Etnia</strong >
   </label> 
 
@@ -382,7 +411,11 @@ const RegistroUsuario = () => {
       </select>
     </label>
 
-    <label htmlFor="discapacidad">
+</div>
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="discapacidad">
       <strong className={Style.strong} > Discapacidad  </strong>
     </label>
 
@@ -400,8 +433,16 @@ const RegistroUsuario = () => {
         <option value="Sí">Sí</option>
       </select>
     </label>
+</div>
+</div>
 
-    <label htmlFor="sexo">
+
+<div className={Style.dateContainer}>
+
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="sexo">
       <strong className={Style.strong} > sexo </strong>
     </label>
     <label htmlFor='sexo' className = {Style.label}>
@@ -420,7 +461,11 @@ const RegistroUsuario = () => {
   </label>
 
 
-    <label htmlFor="gu">
+</div>
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="gu">
       <strong className={Style.strong} > Grupo de Usuario </strong>
     </label>
 
@@ -440,6 +485,11 @@ const RegistroUsuario = () => {
         <option value="operador">Operador</option>
       </select>
   </label>
+
+
+
+</div>
+</div>
 
       <label htmlFor="img">
         <strong className={Style.strong} > Foto </strong>

@@ -52,7 +52,7 @@ import Dashboar from './components/dashboar/dashboar.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync,faUser,faUserTimes,faArrowCircleRight,faUserCheck,faUserSecret,faUserShield,faUserCog,faUserTie,faUserGraduate,faClipboardList,faBook,faEllipsisH,faUserLock} from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+function App(){
 
    const [selectedComponent, setSelectedComponent] = useState(null);
 

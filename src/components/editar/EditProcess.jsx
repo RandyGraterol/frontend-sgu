@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListCheck, faCalendarDays, faListOl, faGraduationCap, faSliders } from '@fortawesome/free-solid-svg-icons';
+import { faListCheck, faCalendarDays, faListOl, faGraduationCap, faSliders, faBuildingColumns } from '@fortawesome/free-solid-svg-icons';
 import Submit from '../../particulas/SubmitButtons/Submit';
 
 import Style from "../../../public/estilosGenerales/formularios.module.css";
@@ -65,17 +65,37 @@ const EditProces = () => {
                 </select>
             </label>
 
-            <strong className={Style.strong} ><label htmlFor="carrera">Carrera - Institucion</label></strong>
+            <div className={Style.dateContainer}>
+                <div className={Style.halfContainer}>
+
+
+                <strong className={Style.strong} ><label htmlFor="carrera">Carrera</label></strong>
             <label htmlFor="carrera" className={Style.label} >
                 <FontAwesomeIcon icon={faGraduationCap} size='lg' style={{ color: "#5271ff" }} />
                 <select name="carrera" required className={Style.input} id="carrera">
                     <option >Carrera seleccionada previamente</option>
-                    <option value="">Ing. Informática - San Juan de los Morros</option>
-                    <option value="">Ing. Informática - Calabozo</option>
-                    <option value="">Medicina - San Juan de los Morros</option>
+                    <option value="">Ing. Informática </option>
+                    <option value="">Ing. Informática </option>
+                    <option value="">Medicina </option>
                 </select>
             </label>
 
+
+                </div>
+                <div className={Style.halfContainer}>
+                    <label htmlFor="institucion"> <strong className={Style.strong} > Institucion </strong> </label>
+                    <label htmlFor="institucion" className={Style.label} >
+                    <FontAwesomeIcon icon={faBuildingColumns} size='lg' style={{ color: "#5271ff" }}/>
+                        <select className={Style.input} name="institucion" id="institucion">
+                            <option value="">San juan de los morros</option>
+                            <option value="">Calabozo</option>
+                            <option value="">otro</option>
+
+                        </select>
+                    </label>
+
+                </div>
+            </div>
             
             <strong className={Style.strong} ><label htmlFor="nombre">Nombre Proceso</label></strong>
             <label className={Style.label} htmlFor="nombre">

@@ -2,7 +2,6 @@
 .modalOverlay {
     background-color: rgba(0, 0, 0, 0.7); /* Color de fondo oscuro con opacidad */
 }
-
 .modalContent {
     top: 50%;
     left: 50%;

@@ -13,7 +13,19 @@
     outline: none; /* Elimina el contorno al hacer clic */
     position: relative; /* Para posicionar el pseudo-elemento */
 }
-
 .check:checked {
     background-color: rgb(39, 163, 109); /* Color de fondo cuando está marcado */
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+.check {
+    width: 15px; /* Ancho del checkbox */
+    height: 15px; /* Alto del checkbox */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+    appearance: none; /* Elimina el estilo por defecto del checkbox */
+    border: 2px solid grey; /* Borde del checkbox */
+    border-radius: 4px; /* Bordes redondeados */
+    outline: none; /* Elimina el contorno al hacer clic */
+    position: relative; /* Para posicionar el pseudo-elemento */
+}
+}
+

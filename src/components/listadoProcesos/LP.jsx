@@ -1,13 +1,18 @@
-import {useState} from "react"
+import {useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPenToSquare,faLayerGroup,faMinus, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import Submit from '../../particulas/SubmitButtons/Submit'
-import styles from  '../../styles/stylesGenerales.module.css'
+import Submit from '../../particulas/SubmitButtons/Submit';
+import styles from  '../../styles/stylesGenerales.module.css';
+import useWindowSize from '../../hooks/windowSize.jsx';
+import {useModal} from '../../hooks/modalWindow.jsx';
+
 
 const LP = ({onHandleEditProcess})=>{
     const [status,changeStatus] = useState(true);
     const [gest,gestPro] = useState(false);
-    const [mig, gestMig] = useState(false)
+    const [mig, gestMig] = useState(false);
+    const { width } = useWindowSize();
+    const {openModal,VentanaModal} = useModal();
 
     const trigger = ()=>{
 
@@ -24,33 +29,27 @@ const LP = ({onHandleEditProcess})=>{
     }
 
     return(
-        <div>
+        <div className={styles.Car}>
             <h1 className={styles.titulo}>Administrar Procesos</h1>
-
-        
-            <div className={styles.containerFilter}>
-                
-                <select id="">
-                    <option  >modalidad / Periodo</option>
+            <div className={styles.containerFilter}> 
+                <select id="" className={styles.containerSelect}>
+                    <option  >Modalidad / Periodo</option>
                     <option value="">Semestral / 2025-II</option>
                     <option value="">Anual / 2025-I</option>
                     <option value="">Trimestral / 2025-II</option>
                 </select>
                 
 
-                <select name="" id="">
-                    <option  >carrera - Institucion </option>
+                <select name="" id="" className={styles.containerSelect}>
+                    <option  >Carrera - Institucion </option>
                     <option value=""> Ing Informatica / San juan de los morros</option>
                     <option value="">Medicina / Calabozo</option>
                     <option value="">etc</option>
                 </select>
 
                <div className={styles.containerBuscar}>
-                    <input type="search" id="search" placeholder='  Nombre'/>
-                
-                </div>
-
-
+                    <input className={styles.containerInput} type="search" id="search" placeholder='  Nombre'/>
+               </div>
             </div>
 
             <table className={styles.styledTable}>
@@ -94,7 +93,6 @@ const LP = ({onHandleEditProcess})=>{
                         <td> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
                         <td>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
                     </tr>
-                    
                 </tbody>
             </table>
 
@@ -179,13 +177,94 @@ const LP = ({onHandleEditProcess})=>{
                 <Submit/>
 
             </form>
-
             }
-            
-            </div>
+  <div className={styles.Universal}>
+  <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Periodo</div>
+        <div className = {styles.contenido}>2025-I</div>
+        <div className = {styles.contenido}>2022-I</div>
+      </div>    
+      </div>
+  </div>
+  <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Modalidad</div>
+        <div className = {styles.contenido}>Semestral</div>
+        <div className = {styles.contenido}>Anual</div>
+      </div>    
+      </div>
+      <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Carrera - Institucion</div>
+        <div className = {styles.contenido}>Ing Informatica - UNERG</div>
+        <div className = {styles.contenido}>Medicina - UNERG</div>
+      </div>    
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Nombre</div>
+        <div className = {styles.contenido}>Inscripción</div>
+        <div className = {styles.contenido}>Carnetización</div>
+      </div>    
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Fecha de inicio</div>
+        <div className = {styles.contenido}>01-06-2004</div>
+        <div className = {styles.contenido}>01-05-2007</div>
+      </div>
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Fecha de cierre</div>
+        <div className = {styles.contenido}>06-06-2004</div>
+        <div className = {styles.contenido}>06-06-2007</div>
+      </div>    
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Status</div>
+        <div className = {styles.contenido}>Activo</div>
+        <div className = {styles.contenido}>Inactivo</div>
+      </div>
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Gestionar</div>
+      </div>
+      <div className = {styles.icon}>
+       {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </div>
 
-
-    )
+      </div>
+  </div>
+        <div className = {styles.tabla_mobile}>
+    <div className = {styles.fila}>
+      <div className = {styles.columna}>
+        <div className = {styles.header}>Editar</div>
+      </div>
+      </div>
+  </div>        
+      </div>
+  </div>
+      <div className = {styles.icon}>  
+      <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> 
+      </div>
+      </div>
+  </div>    
+      </div>
+  </div>
+      </div>
+  </div>
+      </div>
+  </div>
+  </div>
+</div>
+  </div>
+)
 }
 
 export default LP;
