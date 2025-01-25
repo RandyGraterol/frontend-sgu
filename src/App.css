@@ -10,7 +10,7 @@
 	grid-template-rows: auto 1fr auto;
 }
 .containerComponentPrincipal .content{
-	overflow-x: hidden;
+	overflow-y: scroll;
 	display: flex;
 }
 body::-webkit-scrollbar {

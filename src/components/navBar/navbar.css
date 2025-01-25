@@ -4,10 +4,11 @@
   position:relative;
 }
 #cabecera{
+  position: sticky;
   width: 100%;
   height:auto;
   top: 0;
-  z-index: 99;
+  z-index: 10;
   background-color:rgb(0, 83, 160);
 }
 .nombre{

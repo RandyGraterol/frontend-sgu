@@ -13,7 +13,6 @@ export const Form = ({action,method})=>{
 				<InputBox infoLabel="Codigo Opsu" id="Codigo Opsu" type= "text" clase={faLaptopCode} placeholder="1045" />
 				<InputBox infoLabel="Nombre" id="Nombre" type="text" clase={faLaptopFile} placeholder="ejemplo" />
 				<InputSelect infoLabel="Modalidad" campo="Modalidad" id="modalidad" names="select" clase={faSquarePollHorizontal}/>
-
 				<Submit/>
 
 			</form>

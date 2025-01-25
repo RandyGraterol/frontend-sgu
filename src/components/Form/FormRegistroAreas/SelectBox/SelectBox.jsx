@@ -1,10 +1,10 @@
-import { Ul } from "../Ul/Ul";
+import { Select } from "../Select/Select";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 //import './ulbox.css'
 
 import Style from "../../../../../public/estilosGenerales/formularios.module.css"
 
-export const UlBox = ({clase,onActivar,valorActive,labelcontent})=>{
+export const SelectBox = ({clase,onActivar,valorActive,labelcontent})=>{
     return (
         <>
         <label htmlFor="">
@@ -13,8 +13,7 @@ export const UlBox = ({clase,onActivar,valorActive,labelcontent})=>{
 
         <label  onClick={onActivar}  className={Style.label}>
             <FontAwesomeIcon  icon={clase} size="lg" style={{ color: "#5271ff" }}  />
-            <Ul valorActive={valorActive} />
-
+            <Select valorActive={valorActive} />
         </label>
         </>
     );

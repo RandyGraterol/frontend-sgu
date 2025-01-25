@@ -20,13 +20,12 @@ import AsignarGU from './screens/asignarGU.jsx';
 import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
-//import {Form as RegistrarAreas} from './components/Form/FormRegistroAreas/Form.jsx';
+import {Form as RegistroAreas} from './components/Form/FormRegistroAreas/Form'
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
 //Import Inscripción Estudiantiles
 import Inscripcion from './components/InscricsionHorario/Inscripcion'
-
 
 // componentes de julian equipo (A)
 import Autoridades from './screens/Autoridades.jsx';
@@ -116,7 +115,7 @@ const renderComponent = () => {
         case 'Control de Acceso':
             return <ControlAcceso />
         case 'Registrar áreas':
-            return <h2>En proceso <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> hols </h2>
+            return <RegistroAreas/>
         case 'Inscripcion':
             return <Inscripcion />
         default:
@@ -127,14 +126,12 @@ const renderComponent = () => {
 
     return (
         <div className='containerComponentPrincipal'>
-        <Nav onNavClick={handleNavClick}/>
+            <Nav onNavClick={handleNavClick}/>
 
-        <div className="content">
-        {renderComponent()}
-        </div>
-       {/*<Table />*/}
-       {/*<AppRoutes />{/*Rutas del sistema*/}
-        <Footer />
+            <div className="content">
+                {renderComponent()}
+            </div>
+            <Footer />
         </div>
         )
 }

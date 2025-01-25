@@ -32,9 +32,6 @@ useEffect(() => {
   const style3 = {
     ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
   };
-  const style4 = {
-    position: login ? '' : '',
-  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
@@ -146,7 +143,7 @@ useEffect(() => {
 
 
   return (
-    <header id='cabecera' style={style4}>
+    <header id='cabecera'>
       <div className='app'>
         <div className='nombre'>
       <div className='containerLogo'>
