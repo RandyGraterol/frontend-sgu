@@ -73,7 +73,7 @@ const { width } = useWindowSize();
             <img src='./inicio.png' className={styles.iconLogin} alt="Facebook"/>
           </div>
           <h1 className={styles.tituloLogin}>Iniciar Sesión</h1>
-          <p>¡Bienvenido a la Universidad Romulo Gallegos!</p>
+          <p >¡Bienvenido a la Universidad Romulo Gallegos!</p>
           <form className={styles.formulario} onSubmit={handleLogin}>
             <div className={styles.containerLabelInput}>
               <label className={styles.labelStyles}>Correo</label>
