@@ -70,9 +70,9 @@ const { width } = useWindowSize();
 
       <section className={styles.loginRecuperar}>
         <div className={`${styles.division} ${isRightPanelActive ? styles.hidden : ''}`}>
-          <div className={styles.containerRedesSociales}>
+          {/*<div className={styles.containerRedesSociales}>
             <img src='./inicio.png' className={styles.iconLogin} alt="Facebook"/>
-          </div>
+          </div>*/}
           <h1 className={styles.tituloLogin}>Iniciar Sesión</h1>
           <p className={styles.p} >¡Bienvenido a la Universidad Romulo Gallegos!</p>
           <form className={styles.formulario} onSubmit={handleLogin}>
@@ -99,9 +99,11 @@ const { width } = useWindowSize();
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            <div className={styles.containerButton} >
             <button className={styles.submit} type="submit">Acceder</button>
+            </div>
           </form>
-          <p onClick={toggle} title='¡Haz click aqui!' className={styles.restablecerPassword}>¿Haz olvidado tu contraseña?</p>
+          <p onClick={toggle} title='¡Haz click aqui!' className={`${styles.restablecerPassword} ${styles.p}`}>¿Haz olvidado tu contraseña?</p>
         </div>
 
         <div className={`${styles.division} ${isRightPanelActive ? '' : styles.hidden}`}>
@@ -109,16 +111,21 @@ const { width } = useWindowSize();
           <h2 className={styles.tituloLogin}>¡Recuperar contraseña!</h2>
           <p className={styles.message}>¡Se te enviara un correo electronico con un enlace para restablecer la contraseña!</p>
           <form className={styles.formulario}>
+            <div className={styles.containerLabelInput} >
+
             <label className={styles.labelStyles}>Correo Electronico</label>
             <input
               type='email'
               placeholder='¡Ingresa tu correo electronico!'
               required
               className={styles.inputStyle}
-            />
+              />
+              </div>
+            <div className={styles.containerButton} >
             <button className={styles.submit} type="submit">Enviar Correo</button>
-          </form>
+            </div>
           <p onClick={toggle} className={styles.restablecerPassword}>¡Iniciar Sesión!</p>
+          </form>
         </div>
       </section>
     </div>

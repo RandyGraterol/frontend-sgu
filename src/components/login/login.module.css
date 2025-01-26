@@ -1,17 +1,28 @@
 .container {
-  width: 100%;
+  width: 90%;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vw;
+  padding: 4vw 0;
   font-size: clamp(.9rem,1vw,1.5rem);
+}
+.containerButton{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p{
+  text-align: center;
+
 }
 
 .inputStyle{
-  background-color:white !important;
+  background-color:rgba(226, 226, 226, 0.485) !important;
   border-radius: 4px;
-  border:1px solid;
+  border-color: transparent;
 }
 
 .iconLogin{
@@ -21,9 +32,10 @@
   background-color: #5271ff;
   border: none;
   height: 40px;
-  width: 45% ;
+  width: 90% ;
   min-width: 75px;
   transition: .5s all;
+  border-radius: 8px;
 }.submit:hover{
   background-color: white;
   color: #5271ff;
@@ -67,6 +79,8 @@
   backdrop-filter:blur(2px);
   background-color:rgba(0,0,0,.7);
 }
+
+
 .imagenLogin {
   position: absolute;
   width:100% !important;
@@ -466,11 +480,26 @@
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
 }
 
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vw 0;
+    gap: 5%;
+}
+
+.p{
+  color: grey;
+}
+
 .imagenLogin {
   width: 60%;
   height: 100%;
   border-right: none;
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -480,6 +509,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 
 .formulario {
@@ -549,7 +579,7 @@
   justify-content: space-evenly;
   align-items: center;
   z-index: 12;
-  background-color: rgba(225, 239, 249,.3);
+  border-radius: 8px ;
 }
 
 .division:nth-child(2) {
@@ -559,6 +589,7 @@
   justify-content: center;
   align-items: center;
   gap:.5rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
@@ -585,6 +616,21 @@
   width: 40%;
   height: 100%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
+}
+.p{
+  color: grey;
+}
+
+.container{
+  width: 80%;
+        height: 80vh;
+        display: flex
+;
+        justify-content: center;
+        align-items: center;
+        padding: 4vw 0;
+        gap: 5%;
 }
 
 .imagenLogin {
@@ -592,6 +638,7 @@
   height: 100%;
   border-right: none;
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -601,6 +648,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 
 .formulario {
@@ -661,7 +709,6 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(225, 239, 249);  
 }
 
 .division:nth-child(1) {
@@ -670,7 +717,7 @@
   justify-content: space-evenly;
   align-items: center;
   z-index: 12;
-  background-color: rgba(225, 239, 249,.3);
+  border-radius: 8px;
 }
 
 .division:nth-child(2) {
@@ -680,6 +727,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
@@ -700,12 +748,13 @@
     /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
 /* styles.css */
 .container {
-  width: 100%;
+  width: 80%;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vw;
+  padding: 4vw 0;
+  gap: 5%;
 }
 
 .loginRecuperar {
@@ -713,6 +762,7 @@
   width: 40%;
   height: 100%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagenLogin {
@@ -720,6 +770,7 @@
   height: 100%;
   border-right: none;
   box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -729,6 +780,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 .formulario {
   display: flex;
@@ -787,13 +839,13 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(225, 239, 249,.3);
 }.division:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   z-index: 12;
+  border-radius: 8px;
 }.division:nth-child(2) {
   z-index: 11;
   display: flex;
@@ -801,6 +853,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
