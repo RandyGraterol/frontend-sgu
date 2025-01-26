@@ -42,6 +42,7 @@ const { width } = useWindowSize();
 
     if (email === validEmail && password === validPassword) {
       openModal('Inicio de sesión exitoso','aprobado');
+
     } else {
       openModal('¡Correo o contraseña incorrectos!','error');
     }
@@ -73,7 +74,7 @@ const { width } = useWindowSize();
             <img src='./inicio.png' className={styles.iconLogin} alt="Facebook"/>
           </div>
           <h1 className={styles.tituloLogin}>Iniciar Sesión</h1>
-          <p>¡Bienvenido a la Universidad Romulo Gallegos!</p>
+          <p className="p">¡Bienvenido a la Universidad Romulo Gallegos!</p>
           <form className={styles.formulario} onSubmit={handleLogin}>
             <div className={styles.containerLabelInput}>
               <label className={styles.labelStyles}>Correo</label>
@@ -101,11 +102,6 @@ const { width } = useWindowSize();
             <button className={styles.submit} type="submit">Acceder</button>
           </form>
           <p onClick={toggle} title='¡Haz click aqui!' className={styles.restablecerPassword}>¿Haz olvidado tu contraseña?</p>
-           {/* <div className={styles.containerRedesSociales}>
-            <img src='./fb.png' className={styles.redesSociales} alt="Facebook"/>
-            <img src='./instagram.png' className={styles.redesSociales} alt="Instagram"/>
-            <img src={width <= 720 ? './xblue.png' : 'twitter.png'} className={styles.redesSociales} alt="Twitter"/>
-          </div> */}
         </div>
 
         <div className={`${styles.division} ${isRightPanelActive ? '' : styles.hidden}`}>

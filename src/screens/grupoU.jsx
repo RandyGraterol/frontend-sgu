@@ -29,7 +29,7 @@ usuarios.push(
         );
 }
 	return(
-		<>
+		<div className='tablaContainerA'>
 		 <div className='containerTituloBotones'>
         <div className='containerBotones'>
         <Registro onRegisterClick={onRegisterClick}/>
@@ -37,34 +37,34 @@ usuarios.push(
         </div>
           
           <div className='titulo'>
-          <FontAwesomeIcon icon={faUsers} size="4x" color="blue" /> 
-         <h1 className='tituloH1'>{name}</h1> 
+            <FontAwesomeIcon icon={faUsers} size="4x" color="blue" /> 
+            <h1 className='tituloH1'>{name}</h1> 
 
           </div>
-        </div>
+      </div>
         
         <div className='containerTable'>
           <table className='styledTable'>
-         <thead>
-         <tr>
-         <th></th>
-          <th>Usuario</th>
-          <th>Cede</th>
-          <th>Carrera</th>
-          <th>Status</th>
-          <th>Grupo Usuario</th>
-          <th></th>
-         </tr>
-         </thead>
-         <tbody>
-    
-          {usuarios}
+            <thead>
+              <tr>
+                <th></th>
+                <th>Usuario</th>
+                <th>Cede</th>
+                <th>Carrera</th>
+                <th>Status</th>
+                <th>Grupo Usuario</th>
+                <th></th>
+              </tr>
+            </thead>
+           <tbody>
+      
+            {usuarios}
 
-         </tbody>
-        
-          </table>
+           </tbody>
+          
+            </table>
         </div>
-		</>
-		)
+		</div>
+		);
 }
 export default GrupoU;

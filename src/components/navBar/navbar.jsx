@@ -137,11 +137,6 @@ useEffect(() => {
     setIsMenuOpen(false); // Cierra el menú al cambiar de rol
   };
 
-
-  
-
-
-
   return (
     <header id='cabecera'>
       <div className='app'>

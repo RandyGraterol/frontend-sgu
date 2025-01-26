@@ -29,7 +29,7 @@ const LP = ({onHandleEditProcess})=>{
     }
 
     return(
-        <div className={styles.Car}>
+        <div className={styles.tablaContainer}>
             <h1 className={styles.titulo}>Administrar Procesos</h1>
             <div className={styles.containerFilter}> 
                 <select id="" className={styles.containerSelect}>
