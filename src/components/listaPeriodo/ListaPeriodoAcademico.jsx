@@ -4,16 +4,16 @@ import { Toaster, toast } from "sonner";
 
 const Periodos = ({navegacion}) => {
   const [periodos, setPeriodos] = useState([
-    { numero: 20251, estado: "Activo" },
-    { numero: 20242, estado: "Inactivo" },
-    { numero: 20243, estado: "Activo" },
-    { numero: 20252, estado: "Activo" },
-    { numero: 20241, estado: "Inactivo" },
-    { numero: 20253, estado: "Activo" },
-    { numero: 20261, estado: "Activo" },
-    { numero: 20262, estado: "Inactivo" },
-    { numero: 20263, estado: "Activo" },
-    { numero: 20271, estado: "Activo" }
+    { numero: 20251,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20242,modalidad:"Anuel", estado: "Inactivo" },
+    { numero: 20243,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20252,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20241,modalidad:"Anuel", estado: "Inactivo" },
+    { numero: 20253,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20261,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20262,modalidad:"Anuel", estado: "Inactivo" },
+    { numero: 20263,modalidad:"Anuel", estado: "Activo" },
+    { numero: 20271,modalidad:"Anuel", estado: "Activo" }
   ]);
 
   const [numeroBuscado, setNumeroBuscado] = useState("");
@@ -39,18 +39,6 @@ const Periodos = ({navegacion}) => {
     } else {
       setResultados(nuevosPeriodos);
     }
-  };
-
-  const eliminarPeriodo = (numero) => {
-    toast.error(`Se eliminó el periodo: ${numero}`, {
-      duration: 1000,
-    });
-    const nuevosPeriodos = periodos.filter(
-      (periodo) => periodo.numero !== numero
-    );
-    setPeriodos(nuevosPeriodos);
-    setResultados(nuevosPeriodos);
-    setNumeroBuscado("");
   };
 
   const buscarPeriodo = (e) => {
@@ -88,6 +76,7 @@ const Periodos = ({navegacion}) => {
         <thead>
           <tr>
             <th>Periodo</th>
+            <th>Modalida</th>
             <th>Estatus</th>
             <th>Acciones</th>
           </tr>
@@ -101,6 +90,7 @@ const Periodos = ({navegacion}) => {
               }
             >
               <td className={styles.periodos}>{periodo.numero}</td>
+              <td >{periodo.modalidad}</td>
               <td>{periodo.estado}</td>
               <td className={styles.button_group}>
                 <button
@@ -109,12 +99,6 @@ const Periodos = ({navegacion}) => {
                   }
                 >
                   Cambiar Estado
-                </button>
-                <button
-                  onClick={() => eliminarPeriodo(periodo.numero)}
-                  className={styles.periodoButton}
-                >
-                  Eliminar
                 </button>
               </td>
             </tr>

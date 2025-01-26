@@ -25,9 +25,13 @@ export const useNotificationModal = () => {
       navigate('/home');
     }
   };
+  const tiempo = () =>{
+      navigate('/home');
+  }
   
   if(statusValue == 'aprobado'){
   iconSrc='./check.png';
+  setTimeout(tiempo, 3000);
   }else if(statusValue == 'error'){
    iconSrc='./cross.png';
   }else{
