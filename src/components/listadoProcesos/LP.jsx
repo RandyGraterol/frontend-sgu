@@ -7,7 +7,7 @@ import useWindowSize from '../../hooks/windowSize.jsx';
 import {useModal} from '../../hooks/modalWindow.jsx';
 import Style from '../../../public/estilosGenerales/formularios.module.css'
 
-const LP = ({onHandleEditProcess})=>{
+const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
     const [status,changeStatus] = useState(true);
     const [gest,gestPro] = useState(false);
     const [mig, gestMig] = useState(false);
@@ -31,7 +31,13 @@ const LP = ({onHandleEditProcess})=>{
     return(
         <div className={styles.tablaContainer}>
             <h1 className={styles.titulo}>Administrar Procesos</h1>
-            <div className={styles.containerFilter}> 
+            
+
+            <div className={styles.containerFilter}>
+
+              
+            <div className={styles.containerSelect} style={{backgroundColor:"#5271ff", color:"white"}} onClick={onHandleRegistrarProcesos} >registrar procesos</div>
+
                 <select id="" className={styles.containerSelect}>
                     <option  >Modalidad </option>
                     <option value="">Semestral </option>

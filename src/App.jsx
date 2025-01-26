@@ -67,6 +67,7 @@ const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
 const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
 const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
 const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
+const HandleRegistrarProcesos = ()=>{setSelectedComponent('Registrar Procesos')}
 
 const renderComponent = () => {
 
@@ -105,7 +106,7 @@ const renderComponent = () => {
         case 'Registrar Procesos':
             return <Procesos/>;
         case 'Administrar procesos':
-            return <LPro onHandleEditProcess={handleEditProcess} />;
+            return <LPro onHandleEditProcess={handleEditProcess} onHandleRegistrarProcesos={HandleRegistrarProcesos} />;
         case 'Editar Proceso':
             return <EditProcess/> 
         case 'Listado de Autoridades':
