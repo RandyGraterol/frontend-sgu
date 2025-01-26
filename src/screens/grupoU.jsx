@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/responsiveTable.css';
+import Style from '../styles/stylesGenerales.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync,faUserLock,faSignInAlt,faEdit,faPlus,faUsers} from '@fortawesome/free-solid-svg-icons';
@@ -29,23 +29,22 @@ usuarios.push(
         );
 }
 	return(
-		<div className='tablaContainerA'>
-		 <div className='containerTituloBotones'>
+		<div className={Style.tablaContainerA}>
+		 <div className={Style.tituloHeader}>
         <div className='containerBotones'>
-        <Registro onRegisterClick={onRegisterClick}/>
-        <Filtro textoDefiltro='Grupo usuario, sede , carrera'/>
+          <Registro onRegisterClick={onRegisterClick}/>
+          <Filtro textoDefiltro='Grupo usuario, sede , carrera'/>
         </div>
           
           <div className='titulo'>
             <FontAwesomeIcon icon={faUsers} size="4x" color="blue" /> 
             <h1 className='tituloH1'>{name}</h1> 
-
           </div>
       </div>
         
         <div className='containerTable'>
-          <table className='styledTable'>
-            <thead>
+          <table className={Style.styledTable}>
+            <thead >
               <tr>
                 <th></th>
                 <th>Usuario</th>

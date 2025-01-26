@@ -2,6 +2,17 @@
   width: 100%;
   height: 100%;
 }
+.tablaContainerA{
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.tituloHeader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 table {
   width: 100vw; /* O 100% para que ocupe todo el ancho del contenedor */
   border-collapse: collapse; /* Para eliminar espacios entre celdas */
@@ -169,7 +180,7 @@ table {
   border-bottom: 1px solid #909090;
 } 
 
-@media (min-width: 375px) and (max-width: 767px){
+/*@media (min-width: 375px) and (max-width: 767px){
   .Universal{
     display: flex;
     width: 100%;
@@ -225,4 +236,4 @@ table {
     margin-top: 2%;
     margin-bottom: 2%;
   }
-}
+}*/
