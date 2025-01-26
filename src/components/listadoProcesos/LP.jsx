@@ -5,7 +5,7 @@ import Submit from '../../particulas/SubmitButtons/Submit';
 import styles from  '../../styles/stylesGenerales.module.css';
 import useWindowSize from '../../hooks/windowSize.jsx';
 import {useModal} from '../../hooks/modalWindow.jsx';
-
+import Style from '../../../public/estilosGenerales/formularios.module.css'
 
 const LP = ({onHandleEditProcess})=>{
     const [status,changeStatus] = useState(true);
@@ -33,10 +33,17 @@ const LP = ({onHandleEditProcess})=>{
             <h1 className={styles.titulo}>Administrar Procesos</h1>
             <div className={styles.containerFilter}> 
                 <select id="" className={styles.containerSelect}>
-                    <option  >Modalidad / Periodo</option>
-                    <option value="">Semestral / 2025-II</option>
-                    <option value="">Anual / 2025-I</option>
-                    <option value="">Trimestral / 2025-II</option>
+                    <option  >Modalidad </option>
+                    <option value="">Semestral </option>
+                    <option value="">Anual </option>
+                    <option value="">Trimestral </option>
+                </select>
+                
+                <select id="" className={styles.containerSelect}>
+                    <option  > Periodo</option>
+                    <option value=""> 2025-II</option>
+                    <option value=""> 2025-I</option>
+                    <option value=""> 2025-II</option>
                 </select>
                 
 
@@ -47,9 +54,12 @@ const LP = ({onHandleEditProcess})=>{
                     <option value="">etc</option>
                 </select>
 
-               <div className={styles.containerBuscar}>
-                    <input className={styles.containerInput} type="search" id="search" placeholder='  Nombre'/>
-               </div>
+                <select name="" id="" className={styles.containerSelect}>
+                    <option  >nombre de proceso </option>
+                    <option value=""> Inscripciones regulares</option>
+                    <option value=""> Inscripciones de rezagados</option>
+                    <option value=""> carga de notas</option>
+                </select>
             </div>
 
             <table className={styles.styledTable}>
@@ -58,7 +68,7 @@ const LP = ({onHandleEditProcess})=>{
                     <th>Periodo</th>
                     <th>Modalidad</th>
                     <th>Carrera - Institucion</th>
-                    <th>Nombre</th>
+                    <th>Nombre del proceso</th>
                     <th>Fecha de Inicio</th>
                     <th>Fecha de Cierre</th>
                     <th>Status</th>
@@ -67,7 +77,7 @@ const LP = ({onHandleEditProcess})=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {!mig && <tr>
                         <td>2025-I</td>
                         <td>Semestral</td>
                         <td>Ing Informatica - UNERG</td>
@@ -79,8 +89,9 @@ const LP = ({onHandleEditProcess})=>{
                         ):( <td onClick={trigger} className={styles.inactive} >Inactivo</td>)}
                         <td> {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
                         <td>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
-                    </tr>
-                    <tr>
+                    </tr> }
+                    
+                    {!gest && <tr>
                         <td>2025-I</td>
                         <td>Semestral</td>
                         <td>Ing Informatica - Calabozo</td>
@@ -92,7 +103,8 @@ const LP = ({onHandleEditProcess})=>{
                         ):(<td onClick={trigger} className={styles.active}>Activo</td>)}
                         <td> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
                         <td>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
-                    </tr>
+                    </tr>}
+                    
                 </tbody>
             </table>
 
@@ -162,15 +174,16 @@ const LP = ({onHandleEditProcess})=>{
 
             { mig && 
             
-            <form action="" style={{marginBottom:'20px'}}>
-                    <h2>Migracion de horario</h2>
+            <form action="/migrar" method="post" className={Style.migform} >
+                    <h2 className={Style.h2} >Migracion de horario <FontAwesomeIcon icon={faMinus} onClick={triggerMig}  size="lg" style={{color:"#FFC300"}} /></h2>
 
-                    <label htmlFor="horario" >
-                        <strong>Ingrese horario</strong>
-
+                    <label   htmlFor="horario" >
+                        <strong className={Style.strong} >seleccione horario</strong>  
+                    </label>
+                    <label className={Style.label} >
                         <div style={{display:'flex', flexDirection:'row', justifyContent:'center', gap:'4px', width:'100%'}}>
                         <FontAwesomeIcon icon={faCalendarDays} size="lg" style={{color:"#5271ff" }} />
-                        <input type="file" id="horario" name="horario" required />
+                        <input type="file" id="horario" name="horario" className={Style.input} required />
                         </div>
                     </label>
 
