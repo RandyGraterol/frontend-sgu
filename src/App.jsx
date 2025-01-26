@@ -68,6 +68,7 @@ const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
 const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
 const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
 const HandleRegistrarProcesos = ()=>{setSelectedComponent('Registrar Procesos')}
+const handleRegistrarPeriodo = ()=>{setSelectedComponent('Registro periodo')}
 
 const renderComponent = () => {
 
@@ -76,7 +77,7 @@ const renderComponent = () => {
         }
         switch (selectedComponent) {
         case 'Registro periodo':
-            return <RegistroPeriodo />;
+            return <RegistroPeriodo  onhandleRegistrarPeriodo={handleRegistrarPeriodo} />;
         case 'Administración de usuarios':
             return <Usuarios />;
         case 'Registro Tipo de Autoridad':
@@ -98,7 +99,7 @@ const renderComponent = () => {
         case 'Registro Instituto':
             return <RegistroInstituto/>
         case 'Periodo Academico':
-            return <PeriodoAcademico navegacion={handleClick}/>
+            return <PeriodoAcademico navegacion={handleClick}  onhandleRegistrarPeriodo={handleRegistrarPeriodo}  />
         case 'Asignar sede-carrera' :
             return <SedeCarrera/>
         case 'Registrar autoridades':

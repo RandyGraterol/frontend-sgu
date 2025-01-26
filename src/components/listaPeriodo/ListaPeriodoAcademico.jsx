@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/stylesGenerales.module.css"; 
 import { Toaster, toast } from "sonner";
 
-const Periodos = ({navegacion}) => {
+const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [periodos, setPeriodos] = useState([
     { numero: 20251,modalidad:"Anuel", estado: "Activo" },
     { numero: 20242,modalidad:"Anuel", estado: "Inactivo" },
@@ -62,12 +62,14 @@ const Periodos = ({navegacion}) => {
                 
                <div className={styles.button_group}>
                     <input className={styles.containerInput} 
-                      type="number" value={numeroBuscado} 
+                      type="number" 
                       value={numeroBuscado}
                       onChange={(e) => setNumeroBuscado(e.target.value)}
                       placeholder="Buscar por periodo"
                     />
                     <button className={styles.periodoButton}>Buscar</button>
+                    
+                                <div className={styles.containerSelect} style={{backgroundColor:"#5271ff", color:"white"}} onClick={onhandleRegistrarPeriodo} >registrar periodo</div>
                </div>
               </form>
 
@@ -76,7 +78,7 @@ const Periodos = ({navegacion}) => {
         <thead>
           <tr>
             <th>Periodo</th>
-            <th>Modalida</th>
+            <th>Modalidad</th>
             <th>Estatus</th>
             <th>Acciones</th>
           </tr>
