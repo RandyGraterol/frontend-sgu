@@ -36,7 +36,7 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             <div className={styles.containerFilter}>
 
               
-            <div className={styles.containerSelect} style={{backgroundColor:"#5271ff", color:"white"}} onClick={onHandleRegistrarProcesos} >registrar procesos</div>
+            <button className={styles.periodoButton} onClick={onHandleRegistrarProcesos} >registrar procesos</button>
 
                 <select id="" className={styles.containerSelect}>
                     <option  >Modalidad </option>
@@ -69,7 +69,7 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             </div>
 
             <table className={styles.styledTable}>
-                <thead>
+                <thead className={styles.thead}>
                     <tr>
                     <th>Periodo</th>
                     <th>Modalidad</th>

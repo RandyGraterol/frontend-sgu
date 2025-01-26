@@ -58,7 +58,7 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
     <div className={styles.tablaContainer}>
             <h1 className={styles.titulo}>Crear periodo</h1>
             <div className={styles.containerFilter}> 
-              <form onSubmit={buscarPeriodo} >
+              <form className={styles.formulario} onSubmit={buscarPeriodo} >
                 
                <div className={styles.button_group}>
                     <input className={styles.containerInput} 
@@ -68,33 +68,28 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
                       placeholder="Buscar por periodo"
                     />
                     <button className={styles.periodoButton}>Buscar</button>
-                    
-                                <div className={styles.containerSelect} style={{backgroundColor:"#5271ff", color:"white"}} onClick={onhandleRegistrarPeriodo} >registrar periodo</div>
+                    <button className={styles.periodoButton} onClick={onhandleRegistrarPeriodo} >Rgst. Periodo</button>
                </div>
               </form>
 
             </div>
       <table className={styles.styledTable}>
         <thead>
-          <tr>
+          <tr className={styles.tr}>
             <th>Periodo</th>
             <th>Modalidad</th>
             <th>Estatus</th>
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tbody}>
           {resultados.map((periodo, index) => (
-            <tr
-              key={index}
-              className={
-                periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo
-              }
-            >
-              <td className={styles.periodos}>{periodo.numero}</td>
-              <td >{periodo.modalidad}</td>
-              <td>{periodo.estado}</td>
-              <td className={styles.button_group}>
+            <tr className={styles.tr} key={index}>
+              <td className={`${styles.td} ${styles.periodos}`}>{periodo.numero}</td>
+              <td className={styles.td}>{periodo.modalidad}</td>
+              <td className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>
+              </td>
+              <td className={` ${styles.td} ${styles.button_group}`}>
                 <button
                   onClick={() => cambiarEstado(periodo.numero)}
                   className={ styles.periodoButton
