@@ -32,7 +32,6 @@
 .titulo,.subtitulos{
   width:100%;
   text-align: center;
-}.containerBuscar{
 }
 .styledTable {
   width: 100%;  
@@ -43,10 +42,16 @@
   overflow: hidden;
 }
 .styledTable thead .tr {
-  background-color:rgb(175, 208, 255); /* Color de fondo para el encabezado */
+  /*background-color:rgb(175, 208, 255);  Color de fondo para el encabezado */
+  background-color:rgb(0, 25, 61);
   color: white; /* Color del texto */
   text-shadow: 1px 1px 4px #000;
 }
+
+tr:nth-child(even){
+  background-color: rgba(0, 0, 0, .1);
+}
+
 .containerFilter{
   display:flex;
   width:100%;
@@ -73,25 +78,25 @@
   color: black;
   outline: none;
   border: 1.5px solid #3E4657;
-  border-radius: 7px;
+  border-radius: 8px;
   gap: 10px;
   background:white;
 }
 .containerSelect{
-  background: #0029FF1E;
-  padding: 5px 0;
+  background-color:rgb(0, 25, 61);
+  padding: 8px ;
+  color: white;
 }
 .periodoButton{
-  width: 10em;
   text-align: center;
   color: white;
-  background-color:#3A72C5;
+  background-color:#0053a0;
   padding: 0.6em;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   transition: 0.2s ease-in-out;
-  box-shadow: 1px 4px 0px 1px #3f3f3f;
   font-weight: 1000;
+  text-wrap: nowrap ;
 }
 .periodoButton:hover{
   box-shadow: 1px 6px 0px 1px #3f3f3f;
@@ -106,8 +111,7 @@
 .bgActivo{
   padding: 7px;
   min-width: 70px;
-  width: 100%;
-  max-width: 50%;
+  width: 70%;
   border-radius: 8px;
   color: white;
   font-weight: 1000;
