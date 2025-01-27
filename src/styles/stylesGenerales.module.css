@@ -9,13 +9,25 @@
   width: 100%;
   height: 100%;
   padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  gap: 20px;
 }
 .tituloHeader{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.register{
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
 }
 .titulo,.subtitulos{
   width:100%;
@@ -33,6 +45,7 @@
 .styledTable thead .tr {
   background-color:rgb(175, 208, 255); /* Color de fondo para el encabezado */
   color: white; /* Color del texto */
+  text-shadow: 1px 1px 4px #000;
 }
 .containerFilter{
   display:flex;
@@ -65,6 +78,7 @@
   background:white;
 }
 .containerSelect{
+  background: #0029FF1E;
   padding: 5px 0;
 }
 .periodoButton{
@@ -111,7 +125,12 @@
   padding: 12px 15px;
   text-align:center; /* Alineación del texto */
 }
-
+.styledTable .tbody .tr .td svg{
+  cursor: pointer;
+}
+.styledTable .tbody .tr .td p{
+  cursor: pointer;
+}
 .containerTable{
   overflow:auto;
 }.containerBotones{
@@ -162,7 +181,9 @@
   flex-direction: column;
   gap:1rem;
 }
-
+.inputFile{
+  display: none;
+}
 /*Tabla mobile*/
 .tabla_mobile {
   display: none;
@@ -198,7 +219,7 @@
   border-bottom: 1px solid #909090;
 } 
 
-/*@media (min-width: 375px) and (max-width: 767px){
+/*@media (max-width: 767px){
   .Universal{
     display: flex;
     width: 100%;
@@ -226,7 +247,7 @@
     margin-bottom: 2%;
   }
 }
-@media (min-width: 360px) and (max-width: 776px){
+@media (max-width: 776px){
   .Universal{
     display: flex;
     margin-left: 5%;

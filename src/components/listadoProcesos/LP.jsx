@@ -69,8 +69,8 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             </div>
 
             <table className={styles.styledTable}>
-                <thead className={styles.thead}>
-                    <tr>
+                <thead >
+                    <tr className={styles.tr}>
                     <th>Periodo</th>
                     <th>Modalidad</th>
                     <th>Carrera - Institucion</th>
@@ -82,33 +82,33 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                     <th>Editar</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {!mig && <tr>
-                        <td>2025-I</td>
-                        <td>Semestral</td>
-                        <td>Ing Informatica - UNERG</td>
-                        <td>Inscripciones</td>
-                        <td>01-06-2004</td>
-                        <td>06-06-2004</td>
+                <tbody className={styles.tbody}>
+                    {!mig && <tr className={styles.tr}>
+                        <td className={styles.td}>2025-I</td>
+                        <td className={styles.td}>Semestral</td>
+                        <td className={styles.td}>Ing Informatica - UNERG</td>
+                        <td className={styles.td}>Inscripciones</td>
+                        <td className={styles.td}>01-06-2004</td>
+                        <td className={styles.td}>06-06-2004</td>
                         {status?(
-                            <td className={styles.active } onClick={trigger}>Activo</td>
-                        ):( <td onClick={trigger} className={styles.inactive} >Inactivo</td>)}
-                        <td> {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
-                        <td>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
+                            <td className={` ${styles.td}`} onClick={trigger}><p className={styles.bgActivo}>Activo</p></td>
+                        ):( <td onClick={trigger} className={` ${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>)}
+                        <td className={styles.td}> {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
+                        <td className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
                     </tr> }
                     
-                    {!gest && <tr>
-                        <td>2025-I</td>
-                        <td>Semestral</td>
-                        <td>Ing Informatica - Calabozo</td>
-                        <td>Migracion de horario</td>
-                        <td>10-06-2004</td>
-                        <td>015-06-2004</td>
+                    {!gest && <tr className={styles.tr}>
+                        <td className={styles.td}>2025-I</td>
+                        <td className={styles.td}>Semestral</td>
+                        <td className={styles.td}>Ing Informatica - Calabozo</td>
+                        <td className={styles.td}>Migracion de horario</td>
+                        <td className={styles.td}>10-06-2004</td>
+                        <td className={styles.td}>015-06-2004</td>
                         {status ?(
-                        <td onClick={trigger} className={styles.inactive} >Inactivo</td>
-                        ):(<td onClick={trigger} className={styles.active}>Activo</td>)}
-                        <td> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
-                        <td>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"#FFC300"}} /> </td>
+                        <td onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
+                        <td className={styles.td}> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
+                        <td className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
                     </tr>}
                     
                 </tbody>
@@ -118,11 +118,11 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
               
             <table className={styles.styledTable}>
                 <thead>
-                    <tr>
+                    <tr className={styles.tr}>
                         <th colSpan={7}>carrera: Ing Sistemas</th>
                         <th colSpan={2}>ocultar gestion <FontAwesomeIcon icon={faMinus} onClick={tiggerGest}  size="lg" style={{color:"#FFC300"}} /></th>
                     </tr>
-                    <tr>
+                    <tr className={styles.tr}>
                         <th colSpan={2}>Fecha</th>
                         <th colSpan={3}>Condición</th>
                         <th>Estuidantes por <br /> inscribir</th>
@@ -131,46 +131,46 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                         <th>Estado</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td colSpan={2}>lunes 03-03-25</td>
-                        <td colSpan={3}>lisos con Promedio mayor o igual a 8 </td>
-                        <td>404</td>
-                        <td>290</td>
-                        <td>114</td>
+                <tbody className={styles.tbody }>
+                    <tr className={styles.tr}>
+                        <td className={styles.td} colSpan={2}>lunes 03-03-25</td>
+                        <td className={styles.td} colSpan={3}>lisos con Promedio mayor o igual a 8 </td>
+                        <td className={styles.td}>404</td>
+                        <td className={styles.td}>290</td>
+                        <td className={styles.td}>114</td>
                         <td className={styles.inactive} >Inctivo</td>
                     </tr>
-                    <tr>
-                        <td colSpan={2}>Martes 04-03-25</td>
-                        <td colSpan={3}>lisos con Promedio entre 6 y 8 </td>
-                        <td>256</td>
-                        <td>38</td>
-                        <td></td>
+                    <tr className={styles.tr}>
+                        <td className={styles.td} colSpan={2}>Martes 04-03-25</td>
+                        <td className={styles.td} colSpan={3}>lisos con Promedio entre 6 y 8 </td>
+                        <td className={styles.td}>256</td>
+                        <td className={styles.td}>38</td>
+                        <td className={styles.td}></td>
                         <td className={styles.active} >Activo</td>
                     </tr>
-                    <tr>
-                        <td colSpan={2}>Miercoles 05-03-25</td>
-                        <td colSpan={3}>De 1 a 3 materias reprobadas y con promedio mayor o = a 8 </td>
-                        <td>122</td>
-                        <td></td>
-                        <td></td>
+                    <tr className={styles.tr}>
+                        <td className={styles.td} colSpan={2}>Miercoles 05-03-25</td>
+                        <td className={styles.td} colSpan={3}>De 1 a 3 materias reprobadas y con promedio mayor o = a 8 </td>
+                        <td className={styles.td}>122</td>
+                        <td className={styles.td}></td>
+                        <td className={styles.td}></td>
                         <td className={styles.inactive} >Inactivo</td>
                     </tr>
-                    <tr>
-                        <td colSpan={2}>jueves 06-03-25</td>
-                        <td colSpan={3}>con mas de 3 materias reprobadas y con promedio entre 6 y 8 </td>
-                        <td>538</td>
-                        <td></td>
-                        <td></td>
-                        <td className={styles.inactive} >Inactivo</td>
+                    <tr className={styles.tr}>
+                        <td className={styles.td} colSpan={2}>jueves 06-03-25</td>
+                        <td className={styles.td} colSpan={3}>con mas de 3 materias reprobadas y con promedio entre 6 y 8 </td>
+                        <td className={styles.td}>538</td>
+                        <td className={styles.td}></td>
+                        <td className={styles.td}></td>
+                        <td className={styles.td}className={styles.inactive} >Inactivo</td>
                     </tr>
-                    <tr>
-                        <td colSpan={2}>Viernes 07-03-25</td>
-                        <td colSpan={3}>con promedio menor a 6</td>
-                        <td>103</td>
-                        <td></td>
-                        <td></td>
-                        <td className={styles.inactive} >Inactivo</td>
+                    <tr className={styles.tr}>
+                        <td className={styles.td} colSpan={2}>Viernes 07-03-25</td>
+                        <td className={styles.td} colSpan={3}>con promedio menor a 6</td>
+                        <td className={styles.td}>103</td>
+                        <td className={styles.td}></td>
+                        <td className={styles.td}></td>
+                        <td className={`${styles.td}${styles.inactive}`} >Inactivo</td>
                     </tr>
                 </tbody>
             </table>):(
@@ -187,9 +187,10 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                         <strong className={Style.strong} >seleccione horario</strong>  
                     </label>
                     <label className={Style.label} >
-                        <div style={{display:'flex', flexDirection:'row', justifyContent:'center', gap:'4px', width:'100%'}}>
-                        <FontAwesomeIcon icon={faCalendarDays} size="lg" style={{color:"#5271ff" }} />
-                        <input type="file" id="horario" name="horario" className={Style.input} required />
+                        <div style={{display:'flex', flexDirection:'row', justifyContent:'center', gap:'7px', width:'100%'}}>
+                        <FontAwesomeIcon icon={faCalendarDays} size="lg"/>
+                        <input type="file" id="horario" name="horario" className={styles.inputFile} required />
+                        Click Aqui .!
                         </div>
                     </label>
 
