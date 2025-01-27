@@ -85,11 +85,11 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
         <tbody className={styles.tbody}>
           {resultados.map((periodo, index) => (
             <tr className={styles.tr} key={index}>
-              <td className={`${styles.td} ${styles.periodos}`}>{periodo.numero}</td>
-              <td className={styles.td}>{periodo.modalidad}</td>
-              <td className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>
+              <td data-titulo="Periodo" className={`${styles.td} ${styles.periodos}`}><p className={styles.p}>{periodo.numero}</p></td>
+              <td data-titulo="Modalidad" className={styles.td}><p className={styles.p}>{periodo.modalidad}</p></td>
+              <td data-titulo="Estatus" className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>
               </td>
-              <td className={` ${styles.td} ${styles.button_group}`}>
+              <td data-titulo="Acciones" className={` ${styles.td} ${styles.button_group}`}>
                 <button
                   onClick={() => cambiarEstado(periodo.numero)}
                   className={ styles.periodoButton

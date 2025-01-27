@@ -218,36 +218,54 @@
 .tabla_mobile .fila .columna .header{
   border-bottom: 1px solid #909090;
 } 
-
-/*@media (max-width: 767px){
-  .Universal{
-    display: flex;
-    width: 100%;
-    flex-flow: column;
+@media (max-width: 780px){
+  .styledTable { 
+    font-size: .9em;
   }
-  .tabla_mobile{
-    display: block;  
-  }
-  .styledTable{
+  .styledTable thead{
     display: none;
   }
-  .containerFilter{
+  .styledTable tr{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+    background: #acacac;
+    transition: .3s;
+    overflow: hidden;
+    height: 45px;
   }
-  .containerFilter select, .containerBuscar, input{
-    width: 100%;
+  .styledTable tr:hover{
+    background: #3a3a3a;
   }
-  .button_group{
+  .styledTable .td{
     display: flex;
-    width: 90%;
-    justify-content: center;
-    gap: 1.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    height: 100%;
   }
+  .p{
+    margin: 0 auto;
+  }
+  .styledTable .td[data-titulo]{
+    align-items: center;
+  }
+  .styledTable .td[data-titulo]::before{
+    content: attr(data-titulo);
+    width: 50%;
+    height: 100%;
+    padding: 10px 0;
+    border-right: 1px solid;
+  }
+  .styledTable .td[data-titulo]:last-child{
+    justify-content: space-between;
+  }
+  .styledTable .td p{
+    max-width: 20%;
+  }
+.periodoButton{
+  margin: 0 auto;
+
 }
-@media (max-width: 776px){
+}
+/*@media (max-width: 776px){
   .Universal{
     display: flex;
     margin-left: 5%;
