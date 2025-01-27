@@ -625,12 +625,11 @@
 .container{
   width: 80%;
         height: 80vh;
-        display: flex
-;
+        display: flex;
         justify-content: center;
         align-items: center;
         padding: 4vw 0;
-        gap: 5%;
+        gap: 2.5%;
 }
 
 .imagenLogin {

@@ -19,7 +19,9 @@ const images = [
 ];
 
 const Login = () => {
-const { width } = useWindowSize();
+  
+  const navigate = useNavigate();
+  const { width } = useWindowSize();
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,7 +43,7 @@ const { width } = useWindowSize();
     const validPassword = '123456789';
 
     if (email === validEmail && password === validPassword) {
-      openModal('Inicio de sesión exitoso','aprobado');
+      navigate('/home')
 
     } else {
       openModal('¡Correo o contraseña incorrectos!','error');

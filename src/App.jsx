@@ -21,6 +21,7 @@ import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/F
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
 import {Form as RegistroAreas} from './components/Form/FormRegistroAreas/Form'
+import {Form as FormRegistroPerfil} from './components/Form/FormRegistroPerfil/Form.jsx';
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
@@ -73,7 +74,7 @@ const handleRegistrarPeriodo = ()=>{setSelectedComponent('Registro periodo')}
 const renderComponent = () => {
 
    if (!selectedComponent) {
-            return < NotificationsAdmin/>// 
+            return < FormRegistroPerfil/>// 
         }
         switch (selectedComponent) {
         case 'Notificacion':
