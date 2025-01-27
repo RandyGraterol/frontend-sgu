@@ -177,8 +177,10 @@ useEffect(() => {
                 {error && <p style={{ color: 'red' }}>Error: {error}</p>} */}
 
 
-                
-              <a href=""><h4 className="carrera">Perfil</h4></a>  
+               
+              <a onClick={() => onNavClick('Perfil')} href="#perfil"><h4 className="carrera">Perfil</h4></a>  
+              <a href="#ChangePasword"><h4 className="carrera">Cambiar contraseña</h4></a>  
+
 
 
 
@@ -387,7 +389,7 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Inscripción</a></li>
+                    <li><a onClick={() => onNavClick('Inscripcion')} href="#">Inscripción</a></li>
                     <li><a href="#">Consultar materias</a></li>
                   </ul>
                 )}
