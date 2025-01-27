@@ -123,6 +123,8 @@ const renderComponent = () => {
             return <RegistroAreas/>
         case 'Inscripcion':
             return <Inscripcion />
+            case 'Perfil':
+                return < FormRegistroPerfil/>// 
         default:
             return null;
 }//fin de caso multiple
