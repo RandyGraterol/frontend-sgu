@@ -172,7 +172,15 @@ nav ul.active {
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+#not-button a{
+  text-decoration: none;
+  color: black;
+  font-size: .9em;
+  transition: .3s;
+}
+#not-button a:hover{
+  color:#5277ff;
+}
 #profile-button i {
   font-size: 2rem;
 }

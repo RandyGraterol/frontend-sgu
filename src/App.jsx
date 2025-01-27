@@ -76,6 +76,8 @@ const renderComponent = () => {
             return < NotificationsAdmin/>// 
         }
         switch (selectedComponent) {
+        case 'Notificacion':
+            return < NotificationsAdmin/>// 
         case 'Registro periodo':
             return <RegistroPeriodo  onhandleRegistrarPeriodo={handleRegistrarPeriodo} />;
         case 'Administración de usuarios':

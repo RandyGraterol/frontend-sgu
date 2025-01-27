@@ -148,7 +148,9 @@ useEffect(() => {
                             {/* Perfil del Usuario */}
                             <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button" style={style}>
+              <a  onClick={() => onNavClick('Notificacion')} href="#Notificacion">
               <FontAwesomeIcon icon={faBell} />
+              </a>
               </div>
               <div className="social-media_" style={style2}>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
