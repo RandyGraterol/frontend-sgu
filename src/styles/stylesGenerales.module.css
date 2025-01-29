@@ -229,7 +229,15 @@ tr:nth-child(even){
   .styledTable thead{
     display: none;
   }
-  .styledTable tr{
+  tr{
+    -moz-transition: height 1s;
+    transition: height 1s;
+    interpolate-size: allow-keywords;
+  }
+  .styledTable .trActivo{
+    height: auto !important;
+  }
+  .styledTable .tr{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
