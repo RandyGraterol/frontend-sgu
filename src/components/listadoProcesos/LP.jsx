@@ -13,6 +13,7 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
     const [mig, gestMig] = useState(false);
     const { width } = useWindowSize();
     const {openModal,VentanaModal} = useModal();
+    const [estadoRow, setEstadoRow] = useState(null);
 
     const trigger = ()=>{
 
@@ -28,6 +29,9 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
         gestMig(!mig)
     }
 
+    const handleRowClick = (index) => {
+        setEstadoRow(index); // Actualiza el estado con el índice del <tr> clicado
+    };
     return(
         <div className={styles.tablaContainer}>
             <h1 className={styles.titulo}>Administrar Procesos</h1>
@@ -84,31 +88,31 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                 </thead>
                 <tbody className={styles.tbody}>
                     {!mig && <tr className={styles.tr}>
-                        <td className={styles.td}>2025-I</td>
-                        <td className={styles.td}>Semestral</td>
-                        <td className={styles.td}>Ing Informatica - UNERG</td>
-                        <td className={styles.td}>Inscripciones</td>
-                        <td className={styles.td}>01-06-2004</td>
-                        <td className={styles.td}>06-06-2004</td>
+                        <td data-titulo="Periodo" className={styles.td}>2025-I</td>
+                        <td data-titulo="Modalidad" className={styles.td}>Semestral</td>
+                        <td data-titulo="Carrera" className={styles.td}>Ing Informatica - UNERG</td>
+                        <td data-titulo="Nombre del Proceso" className={styles.td}>Inscripciones</td>
+                        <td data-titulo="Fecha de Inicio" className={styles.td}>01-06-2004</td>
+                        <td data-titulo="Fecha de Cierre" className={styles.td}>06-06-2004</td>
                         {status?(
-                            <td className={` ${styles.td}`} onClick={trigger}><p className={styles.bgActivo}>Activo</p></td>
-                        ):( <td onClick={trigger} className={` ${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>)}
-                        <td className={styles.td}> {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
-                        <td className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
+                            <td data-titulo="Status" className={` ${styles.td}`} onClick={trigger}><p className={styles.bgActivo}>Activo</p></td>
+                        ):( <td data-titulo="Status" onClick={trigger} className={` ${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>)}
+                        <td data-titulo="Gestionar" className={styles.td}> {status ? (<FontAwesomeIcon onClick={tiggerGest} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />):(<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} /> ) }   </td>
+                        < td data-titulo="Editar" className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
                     </tr> }
                     
                     {!gest && <tr className={styles.tr}>
-                        <td className={styles.td}>2025-I</td>
-                        <td className={styles.td}>Semestral</td>
-                        <td className={styles.td}>Ing Informatica - Calabozo</td>
-                        <td className={styles.td}>Migracion de horario</td>
-                        <td className={styles.td}>10-06-2004</td>
-                        <td className={styles.td}>015-06-2004</td>
+                        <td data-titulo="Periodo"  className={styles.td}>2025-I</td>
+                        <td data-titulo="Modalidad" className={styles.td}>Semestral</td>
+                        <td data-titulo="Carrera"  className={styles.td}>Ing Informatica - Calabozo</td>
+                        <td data-titulo="Nombre" className={styles.td}>Migracion de horario</td>
+                        <td data-titulo="Fecha de Inicio"className={styles.td}>10-06-2004</td>
+                        <td data-titulo="Fecha de Cierre" className={styles.td}>015-06-2004</td>
                         {status ?(
-                        <td onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
                         ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
-                        <td className={styles.td}> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
-                        <td className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
+                        <td data-titulo="Status" className={styles.td}> {status ? (<FontAwesomeIcon icon={faLayerGroup} size="lg" style={{color:"#ff3c00"}} />   ):( <FontAwesomeIcon onClick={triggerMig} icon={faLayerGroup} size="lg" style={{color:"#FFC300"}} />  )} </td>
+                        <td data-titulo="Editar" className={styles.td}>  <FontAwesomeIcon onClick={onHandleEditProcess}  icon={faPenToSquare} size="lg" style={{color:"green"}} /> </td>
                     </tr>}
                     
                 </tbody>

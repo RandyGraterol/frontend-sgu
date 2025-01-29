@@ -19,6 +19,12 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [numeroBuscado, setNumeroBuscado] = useState("");
   const [resultados, setResultados] = useState(periodos);
 
+  const [estadoRow, setEstadoRow] = useState(null);
+
+  const handleRowClick = (index) => {
+    setEstadoRow(index); // Actualiza el estado con el índice del <tr> clicado
+  };
+
   const cambiarEstado = (numero) => {
     const nuevosPeriodos = periodos.map((periodo) =>
       periodo.numero === numero
@@ -84,7 +90,9 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
         </thead>
         <tbody className={styles.tbody}>
           {resultados.map((periodo, index) => (
-            <tr className={styles.tr} key={index}>
+            <tr className={`${styles.tr} ${estadoRow === index ? styles.trActivo : ''}`}
+            key={index}
+            onClick={() => handleRowClick(index)}>
               <td data-titulo="Periodo" className={`${styles.td} ${styles.periodos}`}><p className={styles.p}>{periodo.numero}</p></td>
               <td data-titulo="Modalidad" className={styles.td}><p className={styles.p}>{periodo.modalidad}</p></td>
               <td data-titulo="Estatus" className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>

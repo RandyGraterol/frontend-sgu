@@ -234,7 +234,15 @@ tr:nth-child(even){
   .styledTable thead{
     display: none;
   }
-  .styledTable tr{
+  tr{
+    -moz-transition: height 1s;
+    transition: height 1s;
+    interpolate-size: allow-keywords;
+  }
+  .styledTable .trActivo{
+    height: auto !important;
+  }
+  .styledTable .tr{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -243,9 +251,9 @@ tr:nth-child(even){
     overflow: hidden;
     height: 45px;
   }
-  .styledTable tr:hover{
+  /*.styledTable tr:hover{
     background: #3a3a3a;
-  }
+  }*/
   .styledTable .td{
     display: flex;
     height: 100%;
