@@ -10,7 +10,7 @@
 	flex-direction: column;
 	gap: 20px;
 	min-width: 250px;
-	width: 95%;
+	width: 100%;
 	max-width: 800px;
 	background: #efefef;
 	padding: 10px;
@@ -23,4 +23,6 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     transition: .3s all;
+	border:5px solid red ;
+	margin:1rem auto;
 }
