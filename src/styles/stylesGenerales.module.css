@@ -246,9 +246,9 @@ tr:nth-child(even){
     overflow: hidden;
     height: 45px;
   }
-  .styledTable tr:hover{
+  /*.styledTable tr:hover{
     background: #3a3a3a;
-  }
+  }*/
   .styledTable .td{
     display: flex;
     height: 100%;
