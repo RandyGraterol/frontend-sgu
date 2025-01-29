@@ -16,4 +16,7 @@
   max-height: 100vh;
 }
 
-
+@font-face {
+  font-family: 'batmfa'; 
+  src: url('/public/Font/batman_forever/batmfa__.ttf') 
+}
