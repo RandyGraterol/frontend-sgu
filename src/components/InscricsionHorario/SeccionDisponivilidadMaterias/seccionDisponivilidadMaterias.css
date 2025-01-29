@@ -13,12 +13,13 @@
 				-5px 5px 17px #acacac;
 	overflow-y: hidden;
 	transition: .3s;
+	border:2px solid grey
 }
 .SeccionDisponivilidadMaterias .SeccionHoras{
 	display: flex;
 	flex-direction: column;
 	backdrop-filter: blur(5px);
-	background: rgb(82, 119, 255, .4);
+	background: rgb;
 	box-shadow: 3px 3px 10px grey;
 	font-family: sans-serif;
 	justify-content: center;

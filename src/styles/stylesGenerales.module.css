@@ -30,11 +30,6 @@
 
 }
 .titulo,.subtitulos{
-  font-family: "Work Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-
   width:100%;
   text-align: center;
 }
@@ -246,11 +241,10 @@ tr:nth-child(even){
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    background: #0053a0;
+    background: #acacac;
     transition: .3s;
     overflow: hidden;
     height: 45px;
-    color: white;
   }
   /*.styledTable tr:hover{
     background: #3a3a3a;
@@ -258,7 +252,6 @@ tr:nth-child(even){
   .styledTable .td{
     display: flex;
     height: 100%;
-    border-bottom: white 2px solid;
   }
   .p{
     margin: 0 auto;

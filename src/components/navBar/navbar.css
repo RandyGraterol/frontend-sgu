@@ -22,6 +22,7 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  font-family: Poppins;
 }
 /* Estilo para el input (código de barras) */
 .CB {
@@ -118,6 +119,7 @@ nav a{
   align-items: center;
   width:60%;
   height:3vh;
+  font-family: Rubik;
 }#profile-container{
     display: flex;
     justify-content: center;

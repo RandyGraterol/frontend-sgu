@@ -5,7 +5,7 @@ export const SeccionDisponivilidadMaterias = ({ data, resultado, onAddEvent }) =
   if (resultado === "vacio") {
     return (
       <section className={`SeccionDisponivilidadMaterias`}>
-        Selecione Una Materia
+        Selecionar Horario
       </section>
     );
   } else {

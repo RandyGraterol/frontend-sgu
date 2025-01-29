@@ -11,9 +11,9 @@
 	gap: 20px;
 	min-width: 250px;
 	width: 100%;
-	max-width: 800px;
+	max-width: 1400px;
 	background: #efefef;
-	padding: 10px;
+	padding: 1rem 4rem;
 	border-radius:10px;
 	box-shadow: 15px 15px 35px #acacac,
 				-15px -15px 35px #efefef;
@@ -23,6 +23,6 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     transition: .3s all;
-	border:5px solid red ;
+	border:2px solid  grey;
 	margin:1rem auto;
 }
