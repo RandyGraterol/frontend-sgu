@@ -35,7 +35,7 @@ const MyWeeklySchedule = ({ eventos }) => {
             color: 'black',
             fontSize: 'bold',
             borderRadius: '5px',
-            padding: '5px',
+            padding: '2rem'
           },
         })}
       />

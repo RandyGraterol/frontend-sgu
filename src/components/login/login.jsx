@@ -10,12 +10,10 @@ import Footer from '../footer/footer.jsx';
   import useWindowSize from '../../hooks/windowSize.jsx';
 
 const images = [
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/mov4-1024x576.jpg',
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/mov5-1024x576.jpg',
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/mov6-1024x576.jpg',
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/mov2-1024x576.jpg',
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/8-1024x576.png',
-  'https://unerg.edu.ve/wp-content/uploads/2024/02/mov7-1024x576.jpg'
+  "/fotos/login1.jpg",
+  "/fotos/login2.jpg",
+  "/fotos/login3.jpg",
+  "/fotos/llogin4.webp",
 ];
 
 const Login = () => {
