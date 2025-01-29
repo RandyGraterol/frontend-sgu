@@ -30,6 +30,11 @@
 
 }
 .titulo,.subtitulos{
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+
   width:100%;
   text-align: center;
 }

@@ -136,6 +136,12 @@ useEffect(() => {
     setUserRole(e.target.value);
     setIsMenuOpen(false); // Cierra el menú al cambiar de rol
   };
+  const styles = {
+    fontFamily: 'Work Sans, serif',
+    fontOpticalSizing: 'auto',
+    fontWeight: 900,
+    fontStyle: 'normal'
+};
 
   return (
     <header id='cabecera'>
@@ -144,7 +150,7 @@ useEffect(() => {
       <div className='containerLogo'>
             <img className="image" src="/icon/logo.png" alt="Logo" />
           </div>
-          <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
+          <div className='titulo'><h1 style={styles}>Sistema de gestion universitaria</h1></div>     
                             {/* Perfil del Usuario */}
                             <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button" style={style}>
