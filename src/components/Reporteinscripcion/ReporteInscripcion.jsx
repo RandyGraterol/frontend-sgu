@@ -261,10 +261,10 @@ const ReporteI = ({ onHandleEditProcess, onHandleRegistrarProcesos }) => {
               <td className={styles.td} colSpan={3}>
                 Total:
               </td>
-              <td className={styles.td}>1406</td>
-              <td className={styles.td}>430</td>
-              <td className={styles.td}>114</td>
-              <td data-titulo="Status" className={`${styles.td}`}>
+              <td className={styles.td}>1423</td>
+              <td className={styles.td}>328</td>
+              <td className={styles.td}>1095</td>
+              <td data-titulo="Status" className={`${tyles.td}`}>
                 <p
                   className={styles.bgActivo}
                   onClick={() => setShowGraficos(!showGraficos)}
