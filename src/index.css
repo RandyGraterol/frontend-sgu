@@ -17,6 +17,11 @@
 }
 
 @font-face {
-  font-family: 'batmfa'; 
-  src: url('/public/Font/batman_forever/batmfa__.ttf') 
+  font-family: 'titulos'; 
+  src: url('/public/Font/helvetica-now-font-family-1738163705-0/helveticanowtext-black-demo.ttf') 
+}
+
+@font-face {
+  font-family: 'subtitulos'; 
+  src: url('/public/Font/helvetica-now-font-family-1738163705-0/helveticanowtext-bold-demo.ttf') 
 }

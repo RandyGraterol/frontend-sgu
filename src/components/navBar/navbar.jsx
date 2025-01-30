@@ -1,44 +1,51 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faChevronDown, faBars, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
-
-
+import React, { useState, useEffect, useRef } from "react";
+import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faChevronDown,
+  faBars,
+  faTimes,
+  faBell,
+  faUniversity,
+  faUsers,
+  faTasks,
+  faChartBar,
+  faDownload,
+  faFileAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ onNavClick, login }) => {
-
-
-
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 767);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
 
-  window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const style = {
-    display: login ? 'none' : 'flex',
+    display: login ? "none" : "flex",
   };
   const style2 = {
-    display: login ? 'flex' : 'none',
+    display: login ? "flex" : "none",
   };
   const style3 = {
-    ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
+    ...(isMobile && { display: login ? "none" : "block" }), // Si es móvil, aplica el estilo
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const [userRole, setUserRole] = useState('Superuser'); // Por defecto "Superuser"
-  const [profileData, setProfileData] = useState({ periodo: '', estatus: '' });
+  const [userRole, setUserRole] = useState("Superuser"); // Por defecto "Superuser"
+  const [profileData, setProfileData] = useState({ periodo: "", estatus: "" });
   const [error, setError] = useState(null);
 
   const navBarRef = useRef(null);
@@ -55,10 +62,10 @@ useEffect(() => {
     });
   };
 
-        // Llamada a la API para obtener datos del perfil
-        useEffect(() => {
-          const fetchProfileData = async () => {
-            const query = `
+  // Llamada a la API para obtener datos del perfil
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      const query = `
               query MyQuery {
                 item(id: "20241") {
                   periodo
@@ -67,30 +74,30 @@ useEffect(() => {
               }
             `;
 
-            try {
-              const response = await fetch('http://154.56.0.218:8000/graphql', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlbHJhbmR5Z3JhdGVyb2xAZ21haWwuY29tIiwiZXhwIjoxNzM3NzQyMzMzfQ.wVs_GlgNdWev_y0qrvc5TI9kEV1NXTHh2iVKXI1LAwM',
-                },
-                body: JSON.stringify({ query }),
-              });
-      
-              const result = await response.json();
-              if (result.data) {
-                setProfileData(result.data.item);
-              } else {
-                throw new Error('No data found');
-              }
-            } catch (err) {
-              setError(err.message);
-            }
-          };
-      
-          fetchProfileData();
-        }, []);
-  
+      try {
+        const response = await fetch("http://154.56.0.218:8000/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlbHJhbmR5Z3JhdGVyb2xAZ21haWwuY29tIiwiZXhwIjoxNzM3NzQyMzMzfQ.wVs_GlgNdWev_y0qrvc5TI9kEV1NXTHh2iVKXI1LAwM",
+          },
+          body: JSON.stringify({ query }),
+        });
+
+        const result = await response.json();
+        if (result.data) {
+          setProfileData(result.data.item);
+        } else {
+          throw new Error("No data found");
+        }
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchProfileData();
+  }, []);
 
   const toggleMenu = (e) => {
     e.stopPropagation();
@@ -101,11 +108,10 @@ useEffect(() => {
     if (
       navBarRef.current &&
       !navBarRef.current.contains(e.target) &&
-      e.target.className !== 'fa-bars'
+      e.target.className !== "fa-bars"
     ) {
       setIsMenuOpen(false);
       setOpenMenus({}); // Cierra todos los submenús
-
     }
     if (
       profileButtonRef.current &&
@@ -125,12 +131,11 @@ useEffect(() => {
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleDocumentClick);
+    document.addEventListener("click", handleDocumentClick);
     return () => {
-      document.removeEventListener('click', handleDocumentClick);
+      document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
-
 
   const handleRoleChange = (e) => {
     setUserRole(e.target.value);
@@ -189,7 +194,7 @@ useEffect(() => {
             </div>
             {isProfileMenuOpen && (
               <div id="profile-menu">
-                <h3 className="nombre">Rafael Oliveros</h3>
+                <h3 className="">Rafael Oliveros</h3>
                 <h4 className="carrera">
                   Carrera activa:
                   <br />
@@ -242,7 +247,7 @@ useEffect(() => {
                       handleMenuItemClick("Instituto");
                     }}
                   >
-                    Instituto <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faUniversity} /> Instituto <span className="arrow">▶</span>
                   </a>
 
                   {openMenus["Instituto"] && (
@@ -327,7 +332,7 @@ useEffect(() => {
                       handleMenuItemClick("Usuarios");
                     }}
                   >
-                    Usuarios <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faUsers} /> Usuarios <span className="arrow">▶</span>
                   </a>
                   {openMenus["Usuarios"] && (
                     <ul
@@ -389,7 +394,7 @@ useEffect(() => {
                       handleMenuItemClick("Procesos");
                     }}
                   >
-                    Procesos <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faTasks} /> Procesos <span className="arrow">▶</span>
                   </a>
                   {openMenus["Procesos"] && (
                     <ul
@@ -433,7 +438,7 @@ useEffect(() => {
                       handleMenuItemClick("Reportes");
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} /> Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus["Reportes"] && (
                     <ul
@@ -504,7 +509,7 @@ useEffect(() => {
                       handleMenuItemClick("Procesos");
                     }}
                   >
-                    Procesos <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faTasks} /> Procesos <span className="arrow">▶</span>
                   </a>
                   {openMenus["Procesos"] && (
                     <ul
@@ -540,7 +545,7 @@ useEffect(() => {
                       handleMenuItemClick("Descargar pensum");
                     }}
                   >
-                    Descargar pensum <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faDownload} /> Pensum de estudios <span className="arrow">▶</span>
                   </a>
                 </li>
                 <li className={openMenus["Descargar horario"] ? "active" : ""}>
@@ -551,7 +556,7 @@ useEffect(() => {
                       handleMenuItemClick("Descargar horario");
                     }}
                   >
-                    Descargar horario <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} /> Horario de clase <span className="arrow">▶</span>
                   </a>
                 </li>
                 <li
@@ -566,7 +571,7 @@ useEffect(() => {
                       handleMenuItemClick("Planilla de inscripción");
                     }}
                   >
-                    Planilla de inscripción <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} /> Planilla de inscripción <span className="arrow">▶</span>
                   </a>
                 </li>
                 <li
@@ -581,7 +586,7 @@ useEffect(() => {
                       handleMenuItemClick("Constancia de Estudios");
                     }}
                   >
-                    Constancia de Estudios <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} /> Constancia de Estudios <span className="arrow">▶</span>
                   </a>
                 </li>
                 <li className={openMenus["Record Academico"] ? "active" : ""}>
@@ -592,7 +597,7 @@ useEffect(() => {
                       handleMenuItemClick("Record Academico");
                     }}
                   >
-                    Record Academico <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} /> Record Academico <span className="arrow">▶</span>
                   </a>
                 </li>
               </>
@@ -609,7 +614,7 @@ useEffect(() => {
                       handleMenuItemClick("Reportes");
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} /> Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus["Reportes"] && (
                     <ul
@@ -649,7 +654,7 @@ useEffect(() => {
                       handleMenuItemClick("Reportes");
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} /> Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus["Reportes"] && (
                     <ul
