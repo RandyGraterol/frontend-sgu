@@ -1,5 +1,4 @@
 import { InputBox } from "./ImputBox/InputBox";
-
 import Submit from "../../../particulas/SubmitButtons/Submit";
 import Style from "../../../../public/estilosGenerales/formularios.module.css";
 

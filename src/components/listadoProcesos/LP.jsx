@@ -2,9 +2,9 @@ import {useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPenToSquare,faLayerGroup,faMinus, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import Submit from '../../particulas/SubmitButtons/Submit';
-import styles from  '../../styles/stylesGenerales.module.css';
 import useWindowSize from '../../hooks/windowSize.jsx';
 import {useModal} from '../../hooks/modalWindow.jsx';
+import styles from  '../../styles/stylesGenerales.module.css';
 import Style from '../../../public/estilosGenerales/formularios.module.css'
 
 const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
@@ -40,7 +40,7 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             <div className={styles.containerFilter}>
 
               
-            <button className={styles.periodoButton} onClick={onHandleRegistrarProcesos} >registrar procesos</button>
+            <button className={styles.periodoButton} onClick={onHandleRegistrarProcesos} >Registrar Procesos</button>
 
                 <select id="" className={styles.containerSelect}>
                     <option  >Modalidad </option>
@@ -59,16 +59,16 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
 
                 <select name="" id="" className={styles.containerSelect}>
                     <option  >Carrera - Institucion </option>
-                    <option value=""> Ing Informatica / San juan de los morros</option>
+                    <option value=""> Ing Informatica / San juan de los Morros</option>
                     <option value="">Medicina / Calabozo</option>
                     <option value="">etc</option>
                 </select>
 
                 <select name="" id="" className={styles.containerSelect}>
-                    <option  >nombre de proceso </option>
-                    <option value=""> Inscripciones regulares</option>
-                    <option value=""> Inscripciones de rezagados</option>
-                    <option value=""> carga de notas</option>
+                    <option  >Nombre de proceso </option>
+                    <option value=""> Inscripciones Regulares</option>
+                    <option value=""> Inscripciones de Rezagados</option>
+                    <option value=""> Carga de Notas</option>
                 </select>
             </div>
 
@@ -81,7 +81,7 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                     <th>Nombre del proceso</th>
                     <th>Fecha de Inicio</th>
                     <th>Fecha de Cierre</th>
-                    <th>Status</th>
+                    <th>Estatus</th>
                     <th>Gestionar</th>
                     <th>Editar</th>
                     </tr>
@@ -92,8 +92,8 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                         <td data-titulo="Modalidad" className={styles.td}>Semestral</td>
                         <td data-titulo="Carrera" className={styles.td}>Ing Informatica - UNERG</td>
                         <td data-titulo="Nombre del Proceso" className={styles.td}>Inscripciones</td>
-                        <td data-titulo="Fecha de Inicio" className={styles.td}>01-06-2004</td>
-                        <td data-titulo="Fecha de Cierre" className={styles.td}>06-06-2004</td>
+                        <td data-titulo="Fecha de Inicio" className={styles.td}>01-05-2005</td>
+                        <td data-titulo="Fecha de Cierre" className={styles.td}>05-05-2005</td>
                         {status?(
                             <td data-titulo="Status" className={` ${styles.td}`} onClick={trigger}><p className={styles.bgActivo}>Activo</p></td>
                         ):( <td data-titulo="Status" onClick={trigger} className={` ${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>)}
@@ -123,58 +123,68 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             <table className={styles.styledTable}>
                 <thead>
                     <tr className={styles.tr}>
-                        <th colSpan={7}>carrera: Ing Sistemas</th>
-                        <th colSpan={2}>ocultar gestion <FontAwesomeIcon icon={faMinus} onClick={tiggerGest}  size="lg" style={{color:"#FFC300"}} /></th>
+                        <th colSpan={7}>Carrera: Ing Sistemas</th>
+                        <th colSpan={2}>Ocultar <FontAwesomeIcon icon={faMinus} onClick={tiggerGest}  size="lg" style={{color:"#FFC300"}} /></th>
                     </tr>
                     <tr className={styles.tr}>
                         <th colSpan={2}>Fecha</th>
                         <th colSpan={3}>Condición</th>
-                        <th>Estuidantes por <br /> inscribir</th>
-                        <th>Estudiantes <br /> inscritos</th>
-                        <th>Estudiantes sin <br /> inscribir</th>
+                        <th>Estuidantes a <br /> Inscribir</th>
+                        <th>Estudiantes <br /> Inscritos</th>
+                        <th>Estudiantes sin <br /> Inscribir</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody className={styles.tbody }>
                     <tr className={styles.tr}>
-                        <td className={styles.td} colSpan={2}>lunes 03-03-25</td>
-                        <td className={styles.td} colSpan={3}>lisos con Promedio mayor o igual a 8 </td>
+                        <td className={styles.td} colSpan={2}>Lunes 01-03-25</td>
+                        <td className={styles.td} colSpan={3}>Lisos con Promedio mayor o igual a 8 </td>
                         <td className={styles.td}>404</td>
                         <td className={styles.td}>290</td>
                         <td className={styles.td}>114</td>
-                        <td className={styles.inactive} >Inctivo</td>
+                        {status ?(
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgActivo}>Activo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgInactivo}>Inactivo</p></td>)}
                     </tr>
                     <tr className={styles.tr}>
-                        <td className={styles.td} colSpan={2}>Martes 04-03-25</td>
-                        <td className={styles.td} colSpan={3}>lisos con Promedio entre 6 y 8 </td>
+                        <td className={styles.td} colSpan={2}>Martes 02-03-25</td>
+                        <td className={styles.td} colSpan={3}>Lisos con Promedio entre 6 y 8 </td>
                         <td className={styles.td}>256</td>
                         <td className={styles.td}>38</td>
                         <td className={styles.td}></td>
-                        <td className={styles.active} >Activo</td>
+                        {status ?(
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
                     </tr>
                     <tr className={styles.tr}>
-                        <td className={styles.td} colSpan={2}>Miercoles 05-03-25</td>
+                        <td className={styles.td} colSpan={2}>Miércoles 03-03-25</td>
                         <td className={styles.td} colSpan={3}>De 1 a 3 materias reprobadas y con promedio mayor o = a 8 </td>
                         <td className={styles.td}>122</td>
                         <td className={styles.td}></td>
                         <td className={styles.td}></td>
-                        <td className={styles.inactive} >Inactivo</td>
+                        {status ?(
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
                     </tr>
                     <tr className={styles.tr}>
-                        <td className={styles.td} colSpan={2}>jueves 06-03-25</td>
-                        <td className={styles.td} colSpan={3}>con mas de 3 materias reprobadas y con promedio entre 6 y 8 </td>
+                        <td className={styles.td} colSpan={2}>Jueves 04-03-25</td>
+                        <td className={styles.td} colSpan={3}>Con más de 3 materias reprobadas y con promedio entre 6 y 8 </td>
                         <td className={styles.td}>538</td>
                         <td className={styles.td}></td>
                         <td className={styles.td}></td>
-                        <td className={styles.td}className={styles.inactive} >Inactivo</td>
+                        {status ?(
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
                     </tr>
                     <tr className={styles.tr}>
-                        <td className={styles.td} colSpan={2}>Viernes 07-03-25</td>
-                        <td className={styles.td} colSpan={3}>con promedio menor a 6</td>
+                        <td className={styles.td} colSpan={2}>Viernes 05-03-25</td>
+                        <td className={styles.td} colSpan={3}>Con promedio menor a 6</td>
                         <td className={styles.td}>103</td>
                         <td className={styles.td}></td>
                         <td className={styles.td}></td>
-                        <td className={`${styles.td}${styles.inactive}`} >Inactivo</td>
+                        {status ?(
+                        <td data-titulo="Status" onClick={trigger} className={`${styles.td}`} ><p className={styles.bgInactivo}>Inactivo</p></td>
+                        ):(<td onClick={trigger} className={`${styles.td}`}><p className={styles.bgActivo}>Activo</p></td>)}
                     </tr>
                 </tbody>
             </table>):(

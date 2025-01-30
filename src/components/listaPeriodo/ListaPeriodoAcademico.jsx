@@ -4,16 +4,16 @@ import { Toaster, toast } from "sonner";
 
 const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [periodos, setPeriodos] = useState([
-    { numero: 20251,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20242,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20243,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20252,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20241,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20253,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20261,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20262,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20263,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20271,modalidad:"Anuel", estado: "Activo" }
+    { numero: "2025-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2024-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2025-2",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-1",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2025-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2026-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2027-1",modalidad:"Anuel", estado: "Activo" }
   ]);
 
   const [numeroBuscado, setNumeroBuscado] = useState("");
@@ -62,7 +62,7 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
 
   return (
     <div className={styles.tablaContainer}>
-            <h1 className={styles.titulo}>Crear periodo</h1>
+            <h1 className={styles.titulo}>Periodo Académico</h1>
             <div className={styles.containerFilter}> 
               <form className={styles.formulario} onSubmit={buscarPeriodo} >
                 
