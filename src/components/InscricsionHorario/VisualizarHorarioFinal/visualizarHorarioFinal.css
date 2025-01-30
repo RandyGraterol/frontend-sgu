@@ -1,9 +1,8 @@
 .calendar{
 	width: 100%;
 	position: relative;
-	border-radius: 20px;
-	overflow: hidden;
 	transition: .3s all;
+	border-radius: 10px 10px 0 0 ;
 }
 .semanaDias{
 	width: 100%;
@@ -13,9 +12,11 @@
 	align-items: center;
 	position: absolute;
 	z-index: 2;
+	border-radius: 10px 10px 0 0 ;
 }
 .semanaDias .hora{
-	width: 60%;
+	width: 100%;
+	max-width: 80.4px;
 	height: 100%;
 	display: flex;
 	align-items: 	center;
@@ -27,16 +28,25 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #acacac;
-
-}
-.contentCalendar{
-	background-color: #cacaca;
+	border-left: 1px solid white;
 }
 .rbc-time-header{
 	height: 40px;
 }
 .rbc-label,.rbc-time-gutter{
-	border-radius: 20px;
-	background-color: #5277ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.semanaDias,
+.rbc-label,
+.rbc-time-gutter{
+  background-color:rgb(0, 25, 61);
+  color: white;
+  font-weight: 1000;
+}
+.rbc-label:first-child{
+	border-radius: 10px 0 0 0 ;
+	z-index: 100px;	
 }

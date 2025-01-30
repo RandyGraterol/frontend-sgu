@@ -31,7 +31,7 @@ const RegistroAcademico = () => {
 
     <div className={Style.ScreenContainer} id="nice">
       <form onSubmit={handleSubmit} className={Style.form} >
-    <h2 className={Style.h1} >Registro de Periodo Académico</h2>
+    <h2 className={Style.h1} >Registro de Perido Académico</h2>
       <label htmlFor="anoRegistro" >
              <strong className={Style.strong} > Año del Periodo</strong>
           </label>
@@ -51,19 +51,7 @@ const RegistroAcademico = () => {
         </label>
 
         <label htmlFor="modalidad">
-          <strong className={Style.strong} >Modalidad</strong>
-        </label>
-        <label className={Style.label} htmlFor="modalidad">
-          <FontAwesomeIcon icon={faSquarePollHorizontal} style={{color: "#5271ff"}} size='lg' />
-          <select name="" id="modalidad" className={Style.input}>
-            <option value="">anual</option>
-            <option value="">semestral</option>
-            <option value="">trimestral</option>
-          </select>
-        </label>
-
-        <label htmlFor="modalidad">
-             <strong className={Style.strong} > Seleccionar Numero</strong>
+             <strong className={Style.strong} > Seleccionar Número</strong>
           </label>
         <label className={Style.label} id="nice-2">
           <FontAwesomeIcon icon={fa1} style={{color: "#5271ff"}} size='lg' />
@@ -75,11 +63,23 @@ const RegistroAcademico = () => {
             required
           >
             <option value="" disabled>
-              Numero
+              Número
             </option>
             <option value="I">I</option>
             <option value="II">II</option>
             <option value="III">III</option>
+          </select>
+        </label>
+
+        <label htmlFor="modalidad">
+          <strong className={Style.strong} >Modalidad</strong>
+        </label>
+        <label className={Style.label} htmlFor="modalidad">
+          <FontAwesomeIcon icon={faSquarePollHorizontal} style={{color: "#5271ff"}} size='lg' />
+          <select name="" id="modalidad" className={Style.input}>
+            <option value="">Anual</option>
+            <option value="">Semestral</option>
+            <option value="">Trimestral</option>
           </select>
         </label>
       

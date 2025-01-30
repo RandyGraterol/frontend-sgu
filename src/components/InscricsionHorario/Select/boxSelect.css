@@ -22,11 +22,9 @@
 }
 .BoxSelect .buscar{
 	padding: 10px;
-	background: whitesmoke;
+	background: rgb(82, 119, 255 , .5);
 	border-radius: 10px;
 	transition: .1s;
-	border:1px solid grey;
-	cursor:pointer
 }
 .BoxSelect .buscar:active{
 	background: rgb(82, 119, 255 , .8);

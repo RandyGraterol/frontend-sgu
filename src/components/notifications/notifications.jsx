@@ -109,23 +109,7 @@ const manejarCambioCheckbox = (id) => {
 
             <VentanaModal />
             
-            <aside className={styles.aside}>
-
-            <div className={styles.divAside}>
-            <FontAwesomeIcon className={styles.iconCampana} icon={faBell} />
-            <h3>Notificaciones</h3>
-            </div>
-
-            <div className={styles.divAside}>
-            <ul className={styles.menuDesordenadoAside}>
-            <li>Horario</li>
-            <li>Pensum</li>
-            <li>Notas</li>
-            <li>Inscripcion</li>
-            <li>constancia</li>
-            </ul>
-            </div>
-            </aside>
+            
 
             <section className={styles.sectionPrincipal}>
 

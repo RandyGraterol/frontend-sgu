@@ -40,6 +40,7 @@
   border-radius: 8px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, .7);
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .styledTable thead .tr {
   /*background-color:rgb(175, 208, 255);  Color de fondo para el encabezado */
@@ -241,10 +242,14 @@ tr:nth-child(even){
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    background: #acacac;
     transition: .3s;
     overflow: hidden;
     height: 45px;
+    color: black;
+  }
+  .styledTable .tr .td:first-child{
+    background: #0053a0;
+    color: white;
   }
   /*.styledTable tr:hover{
     background: #3a3a3a;
@@ -252,6 +257,7 @@ tr:nth-child(even){
   .styledTable .td{
     display: flex;
     height: 100%;
+    border-bottom: white 2px solid;
   }
   .p{
     margin: 0 auto;
