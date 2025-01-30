@@ -12,24 +12,24 @@ const sourcedata = [
   {
     label: "miercoles",
     estexit: 122,
-    estinsc: 50,
+    estinsc: 0,
   },
   {
     label: "jueves",
     estexit: 538,
-    estinsc: 400,
+    estinsc: 0,
   },
   {
     label: "viernes",
     estexit: 103,
-    estinsc: 30,
+    estinsc: 0,
   },
 ];
 
-// sourcedata.push({
-//  label: "Total",
-//  estexit: sourcedata.reduce((prev, curr) => prev + curr.estexit, 0),
-//  estinsc: sourcedata.reduce((prev, curr) => prev + curr.estinsc, 0),
-// });
+sourcedata.push({
+  label: "Total",
+  estexit: sourcedata.reduce((prev, curr) => prev + curr.estexit, 0),
+  estinsc: sourcedata.reduce((prev, curr) => prev + curr.estinsc, 0),
+});
 
 export default sourcedata;
