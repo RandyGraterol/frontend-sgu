@@ -26,7 +26,7 @@ const MyWeeklySchedule = ({ eventos }) => {
         endAccessor="end"
         toolbar={false} // Esconde la barra de tiempo
         min={new Date(2025, 0, 20, 7, 45)} // Hora mínima (8:00 AM)
-        max={new Date(2025, 0, 20, 17, 0)} // Hora máxima (8:00 PM)
+        max={new Date(2025, 0, 20, 16, 0)} // Hora máxima (8:00 PM)
         step={45} // Intervalo de tiempo (45 minutos)
         timeslots={1} // Número de intervalos por hora
         eventPropGetter={(event) => ({

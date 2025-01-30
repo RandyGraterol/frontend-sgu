@@ -15,12 +15,10 @@
 	border-radius: 10px 10px 0 0 ;
 }
 .semanaDias .hora{
-	width: 100%;
-	max-width: 80.4px;
-	height: 100%;
 	display: flex;
 	align-items: 	center;
 	justify-content: center;
+	height: 100%;
 }
 .semanaDias .dias{
 	width: 100%;
@@ -38,6 +36,12 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+.semanaDias .hora,
+.rbc-label,
+.rbc-time-gutter{
+	width: 100%;
+	max-width: 80.4px;
 }
 .semanaDias,
 .rbc-label,

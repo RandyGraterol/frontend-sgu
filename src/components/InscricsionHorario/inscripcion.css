@@ -39,3 +39,32 @@
 		max-width: 700px;
 	}
 }
+@media (max-width: 540px){
+	.semanaDias .hora,
+	.rbc-label,
+	.rbc-time-gutter{
+		width: 100%;
+		max-width: 60.4px;
+	}
+	.semanaDias .dias,
+	.semanaDias .hora,
+	.rbc-label,
+	.rbc-time-gutter{
+		font-size: .9em;
+	}
+
+}
+@media (max-width: 400px){
+	.semanaDias .hora,
+	.rbc-label,
+	.rbc-time-gutter{
+		width: 100%;
+		max-width: 50.4px;
+	}
+	.semanaDias .dias,
+	.semanaDias .hora,
+	.rbc-label,
+	.rbc-time-gutter{
+		font-size: .8em;
+	}
+}
