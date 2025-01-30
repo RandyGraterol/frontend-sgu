@@ -7,24 +7,15 @@ import {
   faCalendarDays,
 } from "@fortawesome/free-solid-svg-icons";
 import Submit from "../../particulas/SubmitButtons/Submit.jsx";
-import useWindowSize from "../../hooks/windowSize.jsx";
-import { useModal } from "../../hooks/modalWindow.jsx";
 import styles from "../../styles/stylesGenerales.module.css";
 import Style from "../../../public/estilosGenerales/formularios.module.css";
 import Graficos from "./graficos/graficos.jsx";
 
-const ReporteI = ({ onHandleEditProcess, onHandleRegistrarProcesos }) => {
-  const [status, changeStatus] = useState(true);
+const ReporteI = ({ onHandleEditProcess }) => {
+  const [status] = useState(true);
   const [gest, gestPro] = useState(false);
   const [mig, gestMig] = useState(false);
-  const { width } = useWindowSize();
-  const { openModal, VentanaModal } = useModal();
-  const [estadoRow, setEstadoRow] = useState(null);
   const [showGraficos, setShowGraficos] = useState(false);
-
-  const trigger = () => {
-    changeStatus(!status);
-  };
 
   const tiggerGest = () => {
     gestPro(!gest);
@@ -34,9 +25,6 @@ const ReporteI = ({ onHandleEditProcess, onHandleRegistrarProcesos }) => {
     gestMig(!mig);
   };
 
-  const handleRowClick = (index) => {
-    setEstadoRow(index); // Actualiza el estado con el índice del <tr> clicado
-  };
   return (
     <div className={styles.tablaContainer}>
       <h1 className={styles.titulo}>Reporte de inscripción</h1>
@@ -264,9 +252,9 @@ const ReporteI = ({ onHandleEditProcess, onHandleRegistrarProcesos }) => {
               <td className={styles.td}>1423</td>
               <td className={styles.td}>328</td>
               <td className={styles.td}>1095</td>
-              <td data-titulo="Status" className={`${tyles.td}`}>
+              <td data-titulo="Status" className={`${styles.td}`}>
                 <p
-                  className={styles.bgActivo}
+                  className={`${styles.bgActivo2} ${Style.bgActivo}`}
                   onClick={() => setShowGraficos(!showGraficos)}
                 >
                   {showGraficos

@@ -109,6 +109,7 @@ tr:nth-child(even) {
   transform: scaleY(0.9) translateY(3px);
   box-shadow: 1px 1px 0px 1px #3f3f3f;
 }
+.bgActivo2,
 .bgInactivo,
 .bgActivo {
   padding: 7px;
