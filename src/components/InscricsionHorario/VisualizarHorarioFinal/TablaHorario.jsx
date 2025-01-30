@@ -1,7 +1,7 @@
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-const dias = ['Lunes','Martes','Miercoles','Jueves','Viernes']
+const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes']
 
 const localizer = momentLocalizer(moment);
 
@@ -35,7 +35,7 @@ const MyWeeklySchedule = ({ eventos }) => {
             color: 'black',
             fontSize: 'bold',
             borderRadius: '5px',
-            padding: '5px',
+            padding: '2rem'
           },
         })}
       />

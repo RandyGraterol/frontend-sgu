@@ -27,7 +27,7 @@ import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosF
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
 //Import Inscripción Estudiantiles
 import Inscripcion from './components/InscricsionHorario/Inscripcion'
-
+// ©
 // componentes de julian equipo (A)
 import Autoridades from './screens/Autoridades.jsx';
 import SedeCarrera from './screens/SedeCarrera.jsx';
@@ -36,6 +36,8 @@ import ListadoAu from './screens/ListadoAut.jsx';
 import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
+import ReporteI from './components/ReporteInscripcion/ReporteInscripcion.jsx';
+
 
 //importar modulo de notificaciones
 import NotificationsAdmin from './components/notifications/notifications.jsx';
@@ -95,6 +97,8 @@ const renderComponent = () => {
             return <AsignarGU name={selectedComponent} />
         case 'Registrar carreras':
             return <RegistroCarreras />
+        case 'Reporte inscripciones':
+            return <ReporteI />            
         case 'Pensum':
             return <RegistrarPensum />
         case 'Registrar Usuario':
@@ -123,6 +127,8 @@ const renderComponent = () => {
             return <RegistroAreas/>
         case 'Inscripcion':
             return <Inscripcion />
+            case 'Perfil':
+                return < FormRegistroPerfil/>// 
         default:
             return null;
 }//fin de caso multiple

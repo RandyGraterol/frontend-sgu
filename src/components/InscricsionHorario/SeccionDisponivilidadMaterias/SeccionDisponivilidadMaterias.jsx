@@ -3,15 +3,17 @@ import './seccionDisponivilidadMaterias.css';
 
 export const SeccionDisponivilidadMaterias = ({ data, resultado, onAddEvent }) => {
   if (resultado === "vacio") {
-    return (
-      <section className={`SeccionDisponivilidadMaterias`}>
-        Selecione Una Materia
-      </section>
-    );
+    // return (
+    //   <section className={`SeccionDisponivilidadMaterias`}>
+    //     Selecione Una Sección
+    //   </section>
+    // );
   } else {
     if (data[resultado].DatosMateria.length) {
       return (
-        <section className={`SeccionDisponivilidadMaterias`}>
+        <div className="SeccionDisponivilidadMaterias">
+          <p>Selecione Una Sección</p>
+        <section className={`SeccionDisponivilidad`}>
           {data[resultado].DatosMateria.map((element, index) => (
             <div 
               key={index} 
@@ -48,6 +50,7 @@ export const SeccionDisponivilidadMaterias = ({ data, resultado, onAddEvent }) =
             </div>
           ))}
         </section>
+        </div>
       );
     }
   }

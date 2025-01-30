@@ -1,17 +1,22 @@
 :root{
 	--ais: #5277ff;
 }
-
-
+.ContenedorIH{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	width: 100%;
+}
 .ContenedorInscripcion{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 20px;
+	gap: 10px;
 	min-width: 250px;
-	width: 95%;
-	max-width: 800px;
+	width: 100%;
+	max-width: 1300px;
+	max-height: 98%;
 	background: #efefef;
 	padding: 10px;
 	border-radius:10px;
@@ -23,4 +28,14 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     transition: .3s all;
+}
+@media (max-width: 1330px){
+	.ContenedorInscripcion{
+		max-width: 1000px;
+	}
+}
+@media (max-width: 1024px){
+	.ContenedorInscripcion{
+		max-width: 700px;
+	}
 }

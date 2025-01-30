@@ -3,10 +3,10 @@
 	padding: 15px;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	min-width: 250px;
 	width: 98%;
 	max-width: 100%;
-	gap: 25px;
 	border: 1px solid #acacac;
 	border-radius: 10px;
 	box-shadow: 5px -5px 17px #f1fff1,
@@ -14,11 +14,19 @@
 	overflow-y: hidden;
 	transition: .3s;
 }
+.SeccionDisponivilidad{
+	display: flex;
+	padding: 15px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 25px;
+}
 .SeccionDisponivilidadMaterias .SeccionHoras{
 	display: flex;
 	flex-direction: column;
 	backdrop-filter: blur(5px);
-	background: rgb(82, 119, 255, .4);
+	background: white;
 	box-shadow: 3px 3px 10px grey;
 	font-family: sans-serif;
 	justify-content: center;

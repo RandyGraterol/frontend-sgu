@@ -10,7 +10,7 @@ const Inscripcion = () => {
   const materias = [
     {
       id: 1,
-      Nombre: 'MatematicaI',
+      Nombre: 'Matemática',
       UnidadesCredito: 4,
       DatosMateria : [{
                   HorarioPrimario: { dia:'Martes',
@@ -36,7 +36,7 @@ const Inscripcion = () => {
     },
     {
       id: 2,
-      Nombre: 'Sistema Numerico',
+      Nombre: 'Sistema Numérico',
       UnidadesCredito: 3,
        DatosMateria : [{
                   HorarioPrimario: { dia:'Jueves',
@@ -62,7 +62,7 @@ const Inscripcion = () => {
     },
     {
       id: 3,
-      Nombre: 'ProgramacionI',
+      Nombre: 'Programación',
       UnidadesCredito: 4,
        DatosMateria : [{
                   HorarioPrimario: { dia:'Lunes',
@@ -78,7 +78,7 @@ const Inscripcion = () => {
     },
     {
       id: 4,
-      Nombre: 'Fisica II',
+      Nombre: 'Física II',
       UnidadesCredito: 4,
       DatosMateria : [{
                   HorarioPrimario: { dia:'Lunes',
@@ -118,11 +118,13 @@ const [events, setEvents] = useState([]);
     setEvents([...events, event]);
   };
   return (
+    <div className="ContenedorIH">
     <div className="ContenedorInscripcion">
       <BoxSelect filtro={filtro} busqueda={busqueda} materias={materias} botonCambio={filtrar} />
       <SeccionDisponivilidadMaterias onAddEvent={addNewEvent} data={materias} resultado={buscar} />
       <MyWeeklySchedule eventos={events}/>
       <BoxButton />
+    </div>
     </div>
   );
 };

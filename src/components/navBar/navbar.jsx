@@ -1,7 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faChevronDown, faBars, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faUser,
+  faChevronDown,
+  faBars,
+  faTimes,
+  faBell,
+  faUniversity,
+  faUsers,
+  faTasks,
+  faChartBar,
+  faDownload,
+  faFileAlt,
+  } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -136,6 +147,12 @@ useEffect(() => {
     setUserRole(e.target.value);
     setIsMenuOpen(false); // Cierra el menú al cambiar de rol
   };
+  const styles = {
+    fontFamily: 'Work Sans, serif',
+    fontOpticalSizing: 'auto',
+    fontWeight: 900,
+    fontStyle: 'normal'
+};
 
   return (
     <header id='cabecera'>
@@ -144,7 +161,9 @@ useEffect(() => {
       <div className='containerLogo'>
             <img className="image" src="/icon/logo.png" alt="Logo" />
           </div>
-          <div className='titulo'><h1>Sistema de gestion universitaria</h1></div>     
+          <div className='titulo'>
+            <h1 >Sistema de Gestión Universitaria</h1>
+            </div>     
                             {/* Perfil del Usuario */}
                             <div id="profile-container" ref={profileButtonRef}>
                     <div id="not-button" style={style}>
@@ -168,32 +187,33 @@ useEffect(() => {
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
             {isProfileMenuOpen && (
-              <div id="profile-menu">
-                <h3 className="nombre">Rafael Oliveros</h3>
-                <h4 className="carrera">Carrera activa:<br />Ingenieria informatica</h4>
+              <div className={`profile-menu ${isProfileMenuOpen ? 'isactive' : ''}`}>
                 <h4 className="carrera">rafaeloliveros@gmail.com</h4>
+                <img src="https://i.ebayimg.com/images/g/O4YAAOSwVr9kJVb3/s-l1200.jpg" alt=""/>
+                <div className="descriptionUser">
+                  <h3 >Hola, Rafael Oliveros</h3>
+                  <h4 className="carrera">Carrera activa: "Ingenieria informatica"</h4>
+                </div>
                 {/* <h4 className="carrera">Periodo: {profileData.periodo || 'Cargando...'}</h4>
                 <h4 className="carrera">Estatus: {profileData.estatus || 'Cargando...'}</h4>
                 {error && <p style={{ color: 'red' }}>Error: {error}</p>} */}
-
-
-                
-              <a href=""><h4 className="carrera">Perfil</h4></a>  
-
-
-
+                {/*<a onClick={() => onNavClick('Perfil')} href="#perfil"><h4 className="carrera">Perfil</h4></a>  */}
                 <select value={userRole} onChange={handleRoleChange}>
-                  <option value="Superuser">Superuser</option>
+                  <option value="Superuser">SuperUser</option>
                   <option value="Estudiante">Estudiante</option>
                   <option value="Admin">Admin</option>
                   <option value="Operador">Operador</option>
               </select>
+              <a onClick={() => onNavClick('Perfil')} href="#ChangePasword"><h4 className="carrera">Perfil</h4></a> 
+
+
+              <a href="#ChangePasword"><h4 className="carrera">Cambiar contraseña</h4></a> 
               </div>
             )}
             <FontAwesomeIcon
             style={style3}
             icon={isMenuOpen ? faTimes : faBars}
-            className="fa-bars"
+            className={isMenuOpen ? 'fa-bara' : ''}
             id="ham-menu"
             onClick={toggleMenu}
           />
@@ -213,7 +233,7 @@ useEffect(() => {
                       handleMenuItemClick('Instituto');
                     }}
                   >
-                    Instituto <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faUniversity} />Instituto <span className="arrow">▶</span>
                   </a>
 
 
@@ -249,7 +269,7 @@ useEffect(() => {
                       handleMenuItemClick('Usuarios');
                     }}
                   >
-                    Usuarios <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faUsers} />Usuarios <span className="arrow">▶</span>
                   </a>
                   {openMenus['Usuarios'] && (
                     <ul
@@ -266,7 +286,6 @@ useEffect(() => {
                   >
                       <li><a onClick={() => onNavClick('Registrar Usuario')} href="#registrar-usuario">Registrar usuario</a></li>
                       <li><a onClick={() => onNavClick('Grupos de usuarios')} href="#grupos-usuarios">Grupos de usuarios</a></li>
-                      <li><a onClick={() => onNavClick('Administración de usuarios')} href="#administracion-usuarios">Administración de usuarios</a></li>
                       <li><a onClick={() => onNavClick('Control de Acceso')} href="#control-acceso">Control de acceso</a></li>
                     </ul>
                   )}
@@ -279,7 +298,7 @@ useEffect(() => {
                       handleMenuItemClick('Procesos');
                     }}
                   >
-                    Procesos <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faTasks} />Procesos <span className="arrow">▶</span>
                   </a>
                   {openMenus['Procesos'] && (
                     <ul
@@ -294,8 +313,8 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo academico</a></li>
-                      <li><a onClick={() => onNavClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de incripcion</a></li>
+                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo Académico</a></li>
+                      <li><a onClick={() => onNavClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de Inscripción</a></li>
                     </ul>
                   )}
                 </li>
@@ -307,7 +326,7 @@ useEffect(() => {
                       handleMenuItemClick('Reportes');
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} />Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus['Reportes'] && (
                     <ul
@@ -322,7 +341,7 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a href="#reporte-inscripciones">Reporte de inscripciones</a></li>
+                      <li><a onClick={() => onNavClick('Reporte inscripciones')} href="#reporte-inscripciones">Reporte de inscripciones</a></li>
                       {/* <li><a href="#listado-estudiantes">Listado de estudiantes por secciones</a></li> */}
                       </ul>
                   )}
@@ -366,13 +385,12 @@ useEffect(() => {
 
                 <li className={openMenus['Procesos'] ? 'active' : ''}>
                   <a
-                    href="#procesos"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Procesos');
                     }}
                   >
-                    Procesos <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faTasks} />Procesos
                   </a>
                   {openMenus['Procesos'] && (
                   <ul    
@@ -387,69 +405,63 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a href="#">Inscripción</a></li>
-                    <li><a href="#">Consultar materias</a></li>
+                    <li><a onClick={() => onNavClick('Inscripcion')}>Inscripción</a></li>
                   </ul>
                 )}
                 
                 </li>
-                <li className={openMenus['Descargar pensum'] ? 'active' : ''}>
+                <li className={'liButton'}>
                   <a
-                    href="#Descargar pensum"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Descargar pensum');
                     }}
                   >
-                    Descargar pensum <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faDownload} />D.Pensum
                   </a>
 
                 </li>
-                <li className={openMenus['Descargar horario'] ? 'active' : ''}>
+                <li className={'liButton'}>
                   <a
-                    href="#Descargarhorario"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Descargar horario');
                     }}
                   >
-                    Descargar horario <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} />D.Horario 
                   </a>
 
                 </li>                
-                <li className={openMenus['Planilla de inscripción'] ? 'active' : ''}>
+                <li className={'liButton'}>
                   <a
-                    href="#Planilla-de-inscripción"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Planilla de inscripción');
                     }}
                   >
-                    Planilla de inscripción <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} />P.Inscripción
                   </a>
 
                 </li>                
-                <li className={openMenus['Constancia de Estudios'] ? 'active' : ''}>
+                <li className={'liButton'}>
                   <a
-                    href="#Constancia-de-Estudios"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Constancia de Estudios');
                     }}
                   >
-                    Constancia de Estudios <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} />C.Estudios 
                   </a>
 
                 </li>                
-                <li className={openMenus['Record Academico'] ? 'active' : ''}>
+                <li className={'liButton'}>
                   <a
-                    href="#RecordAcademico"
                     onClick={(e) => {
                       e.preventDefault();
                       handleMenuItemClick('Record Academico');
                     }}
                   >
-                    Record Academico <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faFileAlt} />R.Academico 
                   </a>
 
                 </li>
@@ -468,7 +480,7 @@ useEffect(() => {
                       handleMenuItemClick('Reportes');
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} />Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus['Reportes'] && (
                   <ul
@@ -503,7 +515,7 @@ useEffect(() => {
                       handleMenuItemClick('Reportes');
                     }}
                   >
-                    Reportes <span className="arrow">▶</span>
+                    <FontAwesomeIcon icon={faChartBar} />Reportes <span className="arrow">▶</span>
                   </a>
                   {openMenus['Reportes'] && (
                   <ul

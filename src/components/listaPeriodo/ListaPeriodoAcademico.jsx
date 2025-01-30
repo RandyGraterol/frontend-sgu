@@ -4,20 +4,26 @@ import { Toaster, toast } from "sonner";
 
 const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [periodos, setPeriodos] = useState([
-    { numero: 20251,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20242,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20243,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20252,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20241,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20253,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20261,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20262,modalidad:"Anuel", estado: "Inactivo" },
-    { numero: 20263,modalidad:"Anuel", estado: "Activo" },
-    { numero: 20271,modalidad:"Anuel", estado: "Activo" }
+    { numero: "2025-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2024-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2025-2",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-1",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2025-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2026-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2027-1",modalidad:"Anuel", estado: "Activo" }
   ]);
 
   const [numeroBuscado, setNumeroBuscado] = useState("");
   const [resultados, setResultados] = useState(periodos);
+
+  const [estadoRow, setEstadoRow] = useState(null);
+
+  const handleRowClick = (index) => {
+    setEstadoRow(index); // Actualiza el estado con el índice del <tr> clicado
+  };
 
   const cambiarEstado = (numero) => {
     const nuevosPeriodos = periodos.map((periodo) =>
@@ -56,7 +62,7 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
 
   return (
     <div className={styles.tablaContainer}>
-            <h1 className={styles.titulo}>Crear periodo</h1>
+            <h1 className={styles.titulo}>Periodo Académico</h1>
             <div className={styles.containerFilter}> 
               <form className={styles.formulario} onSubmit={buscarPeriodo} >
                 
@@ -84,7 +90,9 @@ const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
         </thead>
         <tbody className={styles.tbody}>
           {resultados.map((periodo, index) => (
-            <tr className={styles.tr} key={index}>
+            <tr className={`${styles.tr} ${estadoRow === index ? styles.trActivo : ''}`}
+            key={index}
+            onClick={() => handleRowClick(index)}>
               <td data-titulo="Periodo" className={`${styles.td} ${styles.periodos}`}><p className={styles.p}>{periodo.numero}</p></td>
               <td data-titulo="Modalidad" className={styles.td}><p className={styles.p}>{periodo.modalidad}</p></td>
               <td data-titulo="Estatus" className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>
