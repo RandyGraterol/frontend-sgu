@@ -36,6 +36,7 @@ import ListadoAu from './screens/ListadoAut.jsx';
 import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
+import ReporteI from './components/Reporteinscripcion/ReporteInscripcion.jsx';
 
 //importar modulo de notificaciones
 import NotificationsAdmin from './components/notifications/notifications.jsx';
@@ -125,6 +126,8 @@ const renderComponent = () => {
             return <Inscripcion />
             case 'Perfil':
                 return < FormRegistroPerfil/>// 
+            case 'Reporte inscripciones':
+                return <ReporteI /> 
         default:
             return null;
 }//fin de caso multiple

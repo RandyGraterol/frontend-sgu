@@ -339,7 +339,7 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a href="#reporte-inscripciones">Reporte de inscripciones</a></li>
+                      <li><a onClick={() => onNavClick('Reporte inscripciones')} href="#reporte-inscripciones">Reporte de inscripciones</a></li>
                       {/* <li><a href="#listado-estudiantes">Listado de estudiantes por secciones</a></li> */}
                       </ul>
                   )}
