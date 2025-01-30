@@ -1,0 +1,15 @@
+.container-items {
+  background-color: rgba(112, 119, 203, 0.768);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.items1 {
+  align-items: center;
+}
+.items2 {
+  align-items: center;
+}

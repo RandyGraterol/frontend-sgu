@@ -1,0 +1,7 @@
+.barras {
+  background-color: rgba(255, 255, 255, 100);
+  border-color: black;
+  border-radius: 15px;
+  width: 600px;
+  height: 300px;
+}
