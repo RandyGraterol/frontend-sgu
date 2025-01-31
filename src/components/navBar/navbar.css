@@ -193,7 +193,7 @@ nav ul.active {
   flex-direction: column;
   position: absolute;
   right: 80px;
-  top: 50px;
+  top: 55px;
   background: white;
   border-radius: 20px;
   padding: 0.8rem;
@@ -206,10 +206,13 @@ nav ul.active {
   opacity: 0;
 }
 .profile-menu img{
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 55px;
   background-size: cover;
   background-position: center;
+  padding: 5px;
+  background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(240, 45, 242 ));
+  border-radius: 50%;
 }
 .profile-menu .descriptionUser{
   display: flex;
@@ -506,7 +509,9 @@ nav ul {
     height: 40px;
     margin-top: -1.3vh;
     }
-
+  .profile-menu{
+    right: 5px;
+  }
     .containerLogo{
       margin: 0;
       justify-content: start;
