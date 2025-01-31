@@ -1,7 +1,6 @@
 import './App.css'
 import React, { useState } from 'react';
 import Nav from './components/navBar/navbar.jsx';
-import AppRoutes from './router/appRoutes.jsx';
 //import Table from './components/table/table.jsx';
 import Footer from './components/footer/footer.jsx';
 //importando componente de usuarios (Randy) equipo B
@@ -21,15 +20,40 @@ import AsignarGU from './screens/asignarGU.jsx';
 import {Form as RegistroCarreras} from './components/Form/FromRegistroCarreras/Form.jsx';
 import {Form as RegistrarPensum} from './components/Form/FormRegistroPensun/Form.jsx';
 import {Form as RegistroInstituto} from './components/Form/FormRegistroInstituto/Form.jsx';
+import {Form as RegistroAreas} from './components/Form/FormRegistroAreas/Form'
+import {Form as FormRegistroPerfil} from './components/Form/FormRegistroPerfil/Form.jsx';
 //importar  formulario de registro de usuarios 
 import RegistroUsuario from './components/registroUsuariosForm/registroUsuariosForm.jsx';
 import PeriodoAcademico from './components/listaPeriodo/ListaPeriodoAcademico.jsx';
+//Import Inscripción Estudiantiles
+import Inscripcion from './components/InscricsionHorario/Inscripcion'
+
+// componentes de julian equipo (A)
+import Autoridades from './screens/Autoridades.jsx';
+import SedeCarrera from './screens/SedeCarrera.jsx';
+import Procesos from './screens/procesos.jsx';
+import ListadoAu from './screens/ListadoAut.jsx';
+import EditAut from './screens/EditAut.jsx';
+import EditProcess from './screens/EditP.jsx';
+import LPro from './screens/ListadoProcess.jsx';
+import ReporteI from './components/Reporteinscripcion/ReporteInscripcion.jsx';
+
+//importar modulo de notificaciones
+import NotificationsAdmin from './components/notifications/notifications.jsx';
+
+
+//IMPORTAR CONTROL DE ACCESO (EQUIPO B)
+import ControlAcceso from './screens/controlA.jsx';
+
+//import componente de jesus velazques
+import Dashboar from './components/dashboar/dashboar.jsx';
+
 
 //iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync,faUser,faUserTimes,faArrowCircleRight,faUserCheck,faUserSecret,faUserShield,faUserCog,faUserTie,faUserGraduate,faClipboardList,faBook,faEllipsisH,faUserLock} from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+function App(){
 
    const [selectedComponent, setSelectedComponent] = useState(null);
 
@@ -40,16 +64,24 @@ const handleRegisterClick = () => { setSelectedComponent('Registrar Grupo de Usu
 const handdleRegisterClick = () => {setSelectedComponent('Crear Grupo de Usuarios'); };
 const asignarGrupoUsuario = ()=> {setSelectedComponent('Asignar grupo de usuario');};
 const handleClick = (identificador)=>{setSelectedComponent(identificador)}
+// julian functions
+const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
+const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
+const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
+const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
+const HandleRegistrarProcesos = ()=>{setSelectedComponent('Registrar Procesos')}
+const handleRegistrarPeriodo = ()=>{setSelectedComponent('Registro periodo')}
 
 const renderComponent = () => {
 
    if (!selectedComponent) {
-            return < Usuarios/>// Texto informativo
+            return < FormRegistroPerfil/>// 
         }
-
         switch (selectedComponent) {
-        case 'Registro Periodo':
-            return <RegistroPeriodo />;
+        case 'Notificacion':
+            return < NotificationsAdmin/>// 
+        case 'Registro periodo':
+            return <RegistroPeriodo  onhandleRegistrarPeriodo={handleRegistrarPeriodo} />;
         case 'Administración de usuarios':
             return <Usuarios />;
         case 'Registro Tipo de Autoridad':
@@ -63,15 +95,39 @@ const renderComponent = () => {
         case 'Asignar grupo de usuario':
             return <AsignarGU name={selectedComponent} />
         case 'Registrar carreras':
-            return <RegistroCarreras/>
+            return <RegistroCarreras />
         case 'Pensum':
-            return <RegistrarPensum/>
-        case 'Registrar usuario':
+            return <RegistrarPensum />
+        case 'Registrar Usuario':
             return <RegistroUsuario/>
         case 'Registro Instituto':
             return <RegistroInstituto/>
         case 'Periodo Academico':
-            return <PeriodoAcademico navegacion={handleClick}/>
+            return <PeriodoAcademico navegacion={handleClick}  onhandleRegistrarPeriodo={handleRegistrarPeriodo}  />
+        case 'Asignar sede-carrera' :
+            return <SedeCarrera/>
+        case 'Registrar autoridades':
+            return <Autoridades onhandleAddType={handleAddType} onhandleGetAutList={handleGetAutList} />;
+        case 'Registrar Procesos':
+            return <Procesos/>;
+        case 'Administrar procesos':
+            return <LPro onHandleEditProcess={handleEditProcess} onHandleRegistrarProcesos={HandleRegistrarProcesos} />;
+        case 'Editar Proceso':
+            return <EditProcess/> 
+        case 'Listado de Autoridades':
+            return <ListadoAu onhandleEditAut={handleEditAut} />
+        case 'Editar Autoridad':
+            return <EditAut onhandleAddType={handleAddType}/>
+        case 'Control de Acceso':
+            return <ControlAcceso />
+        case 'Registrar áreas':
+            return <RegistroAreas/>
+        case 'Inscripcion':
+            return <Inscripcion />
+            case 'Perfil':
+                return < FormRegistroPerfil/>// 
+            case 'Reporte inscripciones':
+                return <ReporteI /> 
         default:
             return null;
 }//fin de caso multiple
@@ -80,14 +136,12 @@ const renderComponent = () => {
 
     return (
         <div className='containerComponentPrincipal'>
-        <Nav onNavClick={handleNavClick}/>
+            <Nav onNavClick={handleNavClick}/>
 
-        <div className="content">
-        {renderComponent()}
-        </div>
-       {/*<Table />*/}
-       {/*<AppRoutes />{/*Rutas del sistema*/}
-        <Footer />
+            <div className="content">
+                {renderComponent()}
+            </div>
+            <Footer />
         </div>
         )
 }

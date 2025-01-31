@@ -1,17 +1,45 @@
+.container {
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw 0;
+  font-size: clamp(.9rem,1vw,1.5rem);
+}
+.containerButton{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p{
+  text-align: center;
+
+}
 
 .inputStyle{
-  background-color:rgb(255,255,255);
-}.iconLogin{
-  width:100px;
+  background-color:rgba(226, 226, 226, 0.485) !important;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.iconLogin{
+  width:25%;
 }.submit {
-  background-image: -webkit-radial-gradient(right,rgb(78, 95, 255),rgb(11, 177, 255));
-  cursor: pointer;
-  color:white;
-  padding:.5rem 2rem; 
-  transition:all 1s ease-in-out;
+  color: rgb(232, 244, 249) ;
+  background-color: #5271ff;
+  border: none;
+  height: 40px;
+  width: 90% ;
+  min-width: 75px;
+  transition: .5s all;
+  border-radius: 8px;
 }.submit:hover{
- transform:translateY(-2px);
- box-shadow:  2px 2px 50px rgb(78, 95, 255);
+  background-color: white;
+  color: #5271ff;
+  border: #5271ff solid 4px;
 }.message{
   padding:0 2rem;
 }
@@ -51,16 +79,17 @@
   backdrop-filter:blur(2px);
   background-color:rgba(0,0,0,.7);
 }
+
+
 .imagenLogin {
   position: absolute;
   width:100% !important;
   height:100%;
   top:0;
   left:0;
-  width: 60%;
-  height: 100%;
   border-right: none;
   box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  transition: 1s all;
 }
 .imagen {
   width: 100%;
@@ -68,7 +97,7 @@
   background-position: center;
   background-size: cover;
   object-fit: cover;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out all;
 }
 .formulario {
   display: flex;
@@ -100,7 +129,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -155,7 +184,7 @@
 }
 }
 /* Móviles medianos (375px - 414px) */
-@media (min-width: 375px) and (max-width: 414px) {
+@media (min-width: 375px) and (max-width: 413px) {
     /* Aquí van tus estilos específicos para móviles medianos */
     /* Aquí van tus estilos específicos para móviles grandes */
     /*REDMI NOTE 13 PRO PLUS*/
@@ -242,7 +271,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -273,7 +302,7 @@
   justify-content: center;
   align-items: center;
   gap:3rem;
-  z-index: 12;
+  z-index: 0;
 }
 .division:nth-child(2) {
   z-index: 11;
@@ -296,7 +325,7 @@
 }
 }
 /* Móviles grandes (415px - 599px)*/
-@media (min-width: 415px) and (max-width: 599px) {
+@media (min-width: 414px) and (max-width: 767px) {
     /* Aquí van tus estilos específicos para móviles grandes */
     /* Aquí van tus estilos específicos para móviles grandes */
     /*IPHONE 15 PRO MAX*/
@@ -320,7 +349,6 @@
   top:0;
   left:0;
   z-index:10;
-  border: 2px solid grey;
   width:100%;
   height: 100%;
   box-shadow: 3px 3px 15px rgb(0, 0, 0);
@@ -343,7 +371,7 @@
   width: 60%;
   height: 100%;
   border-right: none;
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
 }
 .imagen {
   width: 100%;
@@ -383,7 +411,7 @@
   width: 80%;
 }
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -435,6 +463,7 @@
 .hidden {
   display: none !important;
 }
+
 }
 /* Tabletas en orientación vertical (600px - 767px) */
 @media (min-width: 600px) and (max-width: 767px) {
@@ -444,29 +473,34 @@
 /* Tabletas en orientación horizontal (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
 /* Aquí van tus estilos específicos para móviles grandes */
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  font-size:.9rem !important;
-}
+
 .loginRecuperar {
   position: relative;
-  border: 2px solid grey;
   width: 40%;
   height: 100%;
-  background-color: rgb(235, 228, 255);
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vw 0;
+    gap: 5%;
+}
+
+.p{
+  color: grey;
 }
 
 .imagenLogin {
   width: 60%;
   height: 100%;
   border-right: none;
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -476,6 +510,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 
 .formulario {
@@ -513,7 +548,7 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 32px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -536,16 +571,16 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(235, 228, 255);
+  
 }
 
 .division:nth-child(1) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap:1rem;
   z-index: 12;
+  border-radius: 8px ;
 }
 
 .division:nth-child(2) {
@@ -555,6 +590,7 @@
   justify-content: center;
   align-items: center;
   gap:.5rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
@@ -575,28 +611,34 @@
 @media (min-width: 1025px) and (max-width: 1279px) {
     /* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
 /* styles.css */
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
+
 .loginRecuperar {
   position: relative;
-  border: 2px solid grey;
   width: 40%;
   height: 100%;
-  background-color: rgb(235, 228, 255);
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
+}
+.p{
+  color: grey;
+}
+
+.container{
+  width: 80%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4vw 0;
+        gap: 2.5%;
 }
 
 .imagenLogin {
   width: 60%;
   height: 100%;
   border-right: none;
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -606,6 +648,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 
 .formulario {
@@ -643,7 +686,7 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
+  background-color: white;
   height: 40px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -666,16 +709,15 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(235, 228, 255);
 }
 
 .division:nth-child(1) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap:1.4rem;
   z-index: 12;
+  border-radius: 8px;
 }
 
 .division:nth-child(2) {
@@ -685,6 +727,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
@@ -705,29 +748,29 @@
     /* Aquí van tus estilos específicos para dispositivos de pantalla grande */
 /* styles.css */
 .container {
-  width: 100%;
+  width: 80%;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  margin-top: 12vh;
+  padding: 4vw 0;
+  gap: 5%;
 }
 
 .loginRecuperar {
   position: relative;
-  border: 2px solid grey;
   width: 40%;
   height: 100%;
-  background-color: rgb(235, 228, 255);
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagenLogin {
   width: 60%;
   height: 100%;
   border-right: none;
-  box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0,.4);
+  border-radius: 12px;
 }
 
 .imagen {
@@ -737,6 +780,7 @@
   background-size: cover;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
+  border-radius: 12px;
 }
 .formulario {
   display: flex;
@@ -773,7 +817,6 @@
 }
 
 .inputStyle {
-  border: 2px solid grey;
   height: 40px !important;
   width: 90% !important;
   padding-left: 1rem;
@@ -796,14 +839,13 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(235, 228, 255);
 }.division:nth-child(1) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
   z-index: 12;
+  border-radius: 8px;
 }.division:nth-child(2) {
   z-index: 11;
   display: flex;
@@ -811,6 +853,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-radius: 8px;
 }
 
 .iconPasswordReset {
@@ -824,4 +867,9 @@
 .hidden {
   display: none !important;
 }
+}
+
+
+.hidden {
+  display: none !important;
 }

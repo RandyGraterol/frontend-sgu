@@ -1,23 +1,31 @@
 import { InputBox } from './ImputBox/InputBox';
 import {InputSelect} from './ImputSelect/InputSelect'
-import {ButtomBox} from './ButtonBox/ButtomBox'
 import {faUser,faLaptopFile,faBookOpenReader,faSquarePollHorizontal,faPersonChalkboard} from '@fortawesome/free-solid-svg-icons'
-import './form.css';
-import './contenedorPensum.css'
+
+import Submit from "../../../particulas/SubmitButtons/Submit";
+import Style from "../../../../public/estilosGenerales/formularios.module.css";
 
 export const Form = ({action,method})=>{
 	return (
-		<div className="contenedorPensum">
-			<form className="formPensum" method={method} >
-				<h1>Pensum</h1>
-				<InputBox infoLabel="Semestre" type= "text" clase={faLaptopFile} 	/>
-				<InputBox infoLabel="Codigo de Carrera" type= "text" clase={faPersonChalkboard} />
-				<InputBox infoLabel="Horas Teoricas" type= "text" clase={faBookOpenReader} />
-				<InputBox infoLabel="Horas Practicas" type= "text" clase={faBookOpenReader} />
-				<InputBox infoLabel="Unidades de Credito" type= "text" clase={faUser} />
-				<InputSelect campo="Prelaciones" names="select" clase={faSquarePollHorizontal}/>
-				<ButtomBox valor1="Enviar" valor2="volver"/>
+		<section className={Style.ScreenContainer}>
+			<form className={Style.form} method={method} >
+				<h1 className={Style.h1} >Pensum</h1>
+				<InputBox  id="Semestre" infoLabel="Semestre" placeholder="semestre ejemplo" type= "text" clase={faLaptopFile} 	/>
+				<InputBox  id="Codigo de Carrera" infoLabel="Codigo de Carrera" type="text" placeholder="3024" clase={faPersonChalkboard} />
+				
+				<div className={Style.dateContainer} >
+				<div className={Style.halfContainer}>
+				<InputBox  id="Horas Teoricas" infoLabel="Horas Teoricas" type="text" placeholder="4" clase={faBookOpenReader} />
+				</div>
+
+				<div className={Style.halfContainer}>
+				<InputBox  id="Horas Practicas" infoLabel="Horas Practicas" type="text" placeholder="4" clase={faBookOpenReader} />
+				</div>
+				</div>
+				<InputBox  id="Unidades de Credito" infoLabel="Unidades de Credito" type="text" placeholder="4" clase={faUser} />
+				<InputSelect id="Prelaciones" campo="Prelaciones" names="select"  clase={faSquarePollHorizontal}/>
+				<Submit/>
 			</form>
-		</div>
+		</section>
 	);
 }

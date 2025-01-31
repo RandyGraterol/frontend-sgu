@@ -1,22 +1,29 @@
 import React, { useState } from "react";
-import "./PeriodosLista.css"; 
+import styles from "../../styles/stylesGenerales.module.css"; 
 import { Toaster, toast } from "sonner";
-const Periodos = ({navegacion}) => {
+
+const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [periodos, setPeriodos] = useState([
-    { numero: 20251, estado: "Activo" },
-    { numero: 20242, estado: "Inactivo" },
-    { numero: 20243, estado: "Activo" },
-    { numero: 20252, estado: "Activo" },
-    { numero: 20241, estado: "Inactivo" },
-    { numero: 20253, estado: "Activo" },
-    { numero: 20261, estado: "Activo" },
-    { numero: 20262, estado: "Inactivo" },
-    { numero: 20263, estado: "Activo" },
-    { numero: 20271, estado: "Activo" }
+    { numero: "2025-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2024-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2025-2",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2024-1",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2025-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-1",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2026-2",modalidad:"Anuel", estado: "Inactivo" },
+    { numero: "2026-3",modalidad:"Anuel", estado: "Activo" },
+    { numero: "2027-1",modalidad:"Anuel", estado: "Activo" }
   ]);
 
   const [numeroBuscado, setNumeroBuscado] = useState("");
   const [resultados, setResultados] = useState(periodos);
+
+  const [estadoRow, setEstadoRow] = useState(null);
+
+  const handleRowClick = (index) => {
+    setEstadoRow(index); // Actualiza el estado con el índice del <tr> clicado
+  };
 
   const cambiarEstado = (numero) => {
     const nuevosPeriodos = periodos.map((periodo) =>
@@ -30,28 +37,14 @@ const Periodos = ({navegacion}) => {
 
     setPeriodos(nuevosPeriodos);
 
-    // Actualiza resultados si hay una búsqueda activa
     if (numeroBuscado) {
       const resultadosFiltrados = nuevosPeriodos.filter(
         (periodo) => periodo.numero === parseInt(numeroBuscado)
       );
       setResultados(resultadosFiltrados);
     } else {
-      setResultados(nuevosPeriodos); // Si no hay búsqueda, mostrar todos
+      setResultados(nuevosPeriodos);
     }
-  };
-
-  const eliminarPeriodo = (numero) => {
-    toast.error(`Se elimino el periodo: ${numero}`, {
-      duration: 1000,
-    });
-    const nuevosPeriodos = periodos.filter(
-      (periodo) => periodo.numero !== numero
-    );
-    setPeriodos(nuevosPeriodos);
-    // Actualiza los resultados después de eliminar
-    setResultados(nuevosPeriodos);
-    setNumeroBuscado("");
   };
 
   const buscarPeriodo = (e) => {
@@ -63,65 +56,54 @@ const Periodos = ({navegacion}) => {
       );
       setResultados(resultadosFiltrados);
     } else {
-      setResultados(periodos); // Si no es un número, mostrar todos
+      setResultados(periodos);
     }
   };
 
   return (
-    <div className="tabla-container">
-      <div className="form-busqueda">
-        <form onSubmit={buscarPeriodo} className="">
-          <input
-            type="number"
-            value={numeroBuscado}
-            onChange={(e) => setNumeroBuscado(e.target.value)}
-            placeholder="Buscar por periodo"
-            className="input-busqueda"
-          />
-          <button type="submit" className="boton-busqueda">
-            Buscar
-          </button>
-        </form>
-        <a onClick={()=>navegacion('Registro Periodo')} type="submit" className="boton-crear">
-          {/* redigir a crear periodo */}
-          Crear periodo
-        </a>
-      </div>
+    <div className={styles.tablaContainer}>
+            <h1 className={styles.titulo}>Periodo Académico</h1>
+            <div className={styles.containerFilter}> 
+              <form className={styles.formulario} onSubmit={buscarPeriodo} >
+                
+               <div className={styles.button_group}>
+                    <input className={styles.containerInput} 
+                      type="number" 
+                      value={numeroBuscado}
+                      onChange={(e) => setNumeroBuscado(e.target.value)}
+                      placeholder="Buscar por periodo"
+                    />
+                    <button className={styles.periodoButton}>Buscar</button>
+                    <button className={styles.periodoButton} onClick={onhandleRegistrarPeriodo} >Rgst. Periodo</button>
+               </div>
+              </form>
 
-      <table className="tabla-periodos">
+            </div>
+      <table className={styles.styledTable}>
         <thead>
-          <tr>
+          <tr className={styles.tr}>
             <th>Periodo</th>
+            <th>Modalidad</th>
             <th>Estatus</th>
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tbody}>
           {resultados.map((periodo, index) => (
-            <tr
-              key={index}
-              className={
-                periodo.estado === "Activo" ? "bg-activo" : "bg-inactivo"
-              }
-            >
-              <td className="periodos">{periodo.numero}</td>
-              <td>{periodo.estado}</td>
-              <td>
+            <tr className={`${styles.tr} ${estadoRow === index ? styles.trActivo : ''}`}
+            key={index}
+            onClick={() => handleRowClick(index)}>
+              <td data-titulo="Periodo" className={`${styles.td} ${styles.periodos}`}><p className={styles.p}>{periodo.numero}</p></td>
+              <td data-titulo="Modalidad" className={styles.td}><p className={styles.p}>{periodo.modalidad}</p></td>
+              <td data-titulo="Estatus" className={styles.td}><p className={periodo.estado === "Activo" ? styles.bgActivo : styles.bgInactivo}>{periodo.estado}</p>
+              </td>
+              <td data-titulo="Acciones" className={` ${styles.td} ${styles.button_group}`}>
                 <button
                   onClick={() => cambiarEstado(periodo.numero)}
-                  className={
-                    periodo.estado === "Activo"
-                      ? "bg-inactivo-boton"
-                      : "bg-activo-boton"
+                  className={ styles.periodoButton
                   }
                 >
                   Cambiar Estado
-                </button>
-                <button
-                  onClick={() => eliminarPeriodo(periodo.numero)}
-                  className="tabla-periodos-eliminar"
-                >
-                  Eliminar
                 </button>
               </td>
             </tr>
@@ -129,6 +111,31 @@ const Periodos = ({navegacion}) => {
         </tbody>
       </table>
       <Toaster richColors visibleToasts="1" position="top-right" />
+      <div className={styles.Universal}>
+      <div className={styles.tabla_mobile}>
+        <div className={styles.fila}>
+          <div className={styles.columna}>
+            <div className={styles.header}>Periodo</div>
+            <div className={styles.contenido}>2025-I</div>
+          </div>
+          <div className={styles.columna}>
+            <div className={styles.header}>Status</div>
+            <div className={styles.contenido}>Activo</div>
+          </div>
+          <div className={styles.columna}>
+            <div className={styles.header}>Acciones</div>
+            <div className={styles.button_group}>
+            <button className={styles.periodoButton}>
+              Cambiar estado
+            </button>
+            <button className={styles.periodoButton}>
+              Eliminar
+            </button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/*form{
-=======
 .FromInstituto{
->>>>>>> ab44d3bcb1674adba1038f244b09e00746e15c3b
     display: flex;
     flex-direction: column;
     min-width: 200px;
@@ -16,4 +12,4 @@
     border-top: 1px solid #767676;
     border-radius:   5px 5px  5px 0;
     transition: .3s;
-}*/
+}

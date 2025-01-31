@@ -4,17 +4,24 @@
 	box-sizing: border-box;
 }
 .principal{
-	overflow:hidden;
+	display:flex;
 	width:100%;
 	height:100%;
-	display:flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items:center;
-	gap:2rem;
 }body {
   background-color:rgb(255, 255, 255); /* Color de fondo opcional */
   font-family: 'Helvetica', sans-serif;
+  max-height: 100vh;
 }
 
+@font-face {
+  font-family: 'titulos'; 
+  src: url('/public/Font/helvetica-now-font-family-1738163705-0/helveticanowtext-black-demo.ttf') 
+}
 
+@font-face {
+  font-family: 'subtitulos'; 
+  src: url('/public/Font/helvetica-now-font-family-1738163705-0/helveticanowtext-black-demo.ttf') 
+}

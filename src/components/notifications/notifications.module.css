@@ -1,0 +1,802 @@
+.principal{
+	width:100%;
+	height:100vh;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	background:rgb(242, 243, 248);
+	position: relative;
+}.sectionPrincipal{
+	height:100%;
+}.menuDesordenadoAside{
+	list-style: none;
+}.menuNotification{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	list-style:none;
+	width:98%;
+	background-color:rgb(0, 25, 61) !important;
+}.menuNotification li{
+	width:100%;
+	text-align: center;
+	padding:.5rem .1rem;
+}.notificaciones section{
+	user-select: none;
+  transition:background .5s ease-in-out;
+}.notificaciones section:hover{
+ background:rgb(213, 206, 217);
+}@media (max-width: 374px) {
+	/* Aquí van tus estilos específicos para móviles pequeños */
+}
+/* Móviles medianos (375px - 414px) */
+@media (min-width: 375px) and (max-width: 414px) {
+	/* Aquí van tus estilos específicos para móviles medianos */
+	/* Aquí van tus estilos específicos para móviles grandes */
+	/*REDMI NOTE 13 PRO PLUS*/
+}
+/* Móviles grandes (415px - 599px)*/
+@media (min-width: 415px) and (max-width: 599px) {
+	/* Aquí van tus estilos específicos para móviles grandes */
+	/* Aquí van tus estilos específicos para móviles grandes */
+	/*IPHONE 15 PRO MAX*/
+}
+/* Tabletas en orientación vertical (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+	/* Aquí van tus estilos específicos para tabletas en orientación vertical*/
+	/* Aquí van tus estilos específicos para móviles grandes */
+}
+/* Tabletas en orientación horizontal (768px - 1024px) */
+
+@media (max-width: 768px) {
+
+	.notificaciones section{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		border:1px solid black;
+		width:80%;
+		padding:.5rem;
+		background-color:rgb(0, 25, 61); 
+		border-radius:7px;
+		box-shadow:1px 1px 20px rgb(235, 228, 230);
+		margin: 8px auto;
+		flex-wrap: wrap;
+		color: white;
+	}
+
+
+	.ocultarBarraDesplazamiento{
+		overflow-Y:auto;
+		height: auto;
+		width:80%;
+		margin-bottom:0 !important;
+		scrollbar-width: none; /* Para Firefox */
+		text-align: center;
+	}
+
+	
+.menuNotification li:nth-child(1),.divSectionNotifications:nth-child(1){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}.menuNotification li:nth-child(2),.divSectionNotifications:nth-child(2){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	
+}.menuNotification li:nth-child(3),.divSectionNotifications:nth-child(3){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}.menuNotification li:nth-child(4),.divSectionNotifications:nth-child(4){
+	width:90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 12px;
+	background-color: white;
+	color: black;
+	border-radius: 4px;
+	min-height: 150px;
+}.menuNotification li:nth-child(5),.divSectionNotifications:nth-child(5){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}.menuNotification li:nth-child(6),.divSectionNotifications:nth-child(6){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}.menuNotification li:nth-child(7),.divSectionNotifications:nth-child(7){
+	width:32%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20%;
+}
+
+.divSectionPrincipal:nth-child(1){
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:.5rem;
+	height:10%;
+	background-color:#0053a0;
+}
+
+.menuNotification{
+	display: none;
+}
+
+.inputIconSearchContainer{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	position:relative;
+	height:auto;
+	width:auto;
+	display: inline-block;
+}
+
+.iconSearch{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px; /* Tamaño del ícono */
+	color: #aaa; /* Color del ícono */
+}
+
+.inputSearch{
+	font-size: .7rem;
+	padding-left: 30px; /* Espacio para el ícono */
+	height: 30px;
+	width: 40vw;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+
+.buttonBarra{
+	width:15vw;
+	height:30px;
+	border-radius:5px;
+	color:whitesmoke;
+	border:none;
+	cursor:pointer;
+	background-color: red;
+	font-size: .6rem;
+}
+
+.buttonBarra:nth-child(2){
+	background:rgb(40, 166, 111);
+}.buttonBarra:nth-child(3){
+	background:rgb(2, 149, 248);
+}.buttonBarra:nth-child(4){
+	background:rgb(240, 86, 86);
+}
+
+.notificaciones section:hover{
+	background:rgba(195, 169, 56, 0.9);
+	border: 2px solid  rgb(0, 25, 61); 
+	color: black;
+   }
+
+   .notificaciones section:hover .menuNotification li:nth-child(4),.divSectionNotifications:nth-child(4){
+	
+	border: 2px solid  rgb(0, 25, 61); 
+   }
+
+   .notificaciones section:hover .divSectionNotifications:nth-child(2),.notificaciones section:hover .divSectionNotifications:nth-child(6) {
+	border-color: rgb(0, 25, 61);
+   }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+/* Aquí van tus estilos específicos para móviles grandes */
+.aside{
+	width:20%;	
+	background:rgb(44, 47, 62);
+	height:100% !important;
+}.divAside h3{
+	font-size: .8rem;
+}.sectionPrincipal{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:80%;
+}.divSectionPrincipal{
+	width:100%;
+}.divSectionPrincipal:nth-child(1){
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:1rem;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .3); /* Sombra hacia abajo */
+	height:10%;
+	background:rgb(255, 255, 255);
+}.divSectionPrincipal:nth-child(2){
+	height:90%;
+}.divAside{
+	width:100%;
+}.divAside:nth-child(1){
+	height:10%;
+	color:whitesmoke;
+	background:rgb(41, 43, 58);
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .8); /* Sombra hacia abajo */
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:2rem;
+}.divAside:nth-child(2){
+	height:90%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:.5rem;
+}.iconCampana{
+	color:rgb(255, 183, 67);
+}.menuDesordenadoAside{
+	width:100%;
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items:center;
+	gap:1rem;
+	padding-top:2rem;
+}.menuDesordenadoAside li{
+	border-radius:3px;
+	text-align: center;
+	color:whitesmoke;
+	width:90%;
+	margin:0 auto;
+	font-size: .8rem;
+	padding:.4rem 0;
+	background:rgb(59, 59, 61);
+	box-shadow:1px 1px 30px rgba(0,0,0,.6);
+}.buttonBarra{
+	width:100px;
+	height:30px;
+	border-radius:5px;
+	color:whitesmoke;
+	border:none;
+	cursor:pointer;
+}.buttonBarra:nth-child(2){
+	background:rgb(40, 166, 111);
+}.buttonBarra:nth-child(3){
+	background:rgb(2, 149, 248);
+}.buttonBarra:nth-child(4){
+	background:rgb(240, 86, 86);
+}.barraNavegacion{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	gap:2rem;
+}.inputIconSearchContainer{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	position:relative;
+	height:auto;
+	width:auto;
+	display: inline-block;
+}.iconSearch{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px; /* Tamaño del ícono */
+	color: #aaa; /* Color del ícono */
+}.inputSearch{
+	font-size: .7rem;
+	padding-left: 30px; /* Espacio para el ícono */
+	height: 30px;
+	width: 250px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}.notificaciones{
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	gap:.5rem;
+	padding:1.5rem 0;
+	overflow-Y:auto;
+	scrollbar-width: none; /* Para Firefox */
+}.notificaciones::-webkit-scrollbar{
+	display:none;
+}.iconMessage{
+	color:rgb(59, 59, 61);
+	font-size:1.2rem;
+}.notificaciones section{
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	border:1px solid black;
+	width:98%;
+	padding:.5rem;
+	background:rgb(229, 229, 229);
+	border-radius:7px;
+	box-shadow:1px 1px 20px rgb(235, 228, 230);
+}.ocultarBarraDesplazamiento{
+	overflow-Y:auto;
+	height:40px !important;
+	width:400px !important;
+	margin-bottom:0 !important;
+	scrollbar-width: none; /* Para Firefox */
+	padding-bottom:1rem;
+}.notificaciones section div:nth-child(3) div ::-webkit-scrollbar{
+	display: none;
+}.parrafo{
+	width:100%;
+	height:100% !important;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}.iconosCrudContainer{
+	display:flex;
+	flex-direction:row !important;
+	justify-content: center;
+	align-items: center;
+	gap:1rem;
+}.iconosCrudContainer .iconosCrud{
+	font-size:1.5rem;
+}.iconosCrudContainer .iconosCrud:nth-child(1){
+	color:rgb(3, 155, 229);
+}.iconosCrudContainer .iconosCrud:nth-child(2){
+	color:rgb(240, 86, 86);
+}.prioridad{
+	padding:.3rem 1.5rem; 
+	border-radius:5px;
+	width:90px;
+	color:whitesmoke;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}.baja {
+	background:rgb(39, 163, 109);
+}.media {
+	background:rgb(219, 167, 57);
+}.alta {
+	background:rgb(240, 86, 86);
+}.default {
+	background: black; /* Color por defecto */
+}.menuNotification{
+background:rgb(0, 83, 160);
+margin-bottom:.5rem;
+color: white;
+}.menuNotification li{
+	border:.4px solid black;
+  background-color:rgb(0, 25, 61);
+	font-size:.5rem;
+}.menuNotification li:nth-child(1),.divSectionNotifications:nth-child(1){
+	width:5%;
+}.menuNotification li:nth-child(2),.divSectionNotifications:nth-child(2){
+	width:5%;
+}.menuNotification li:nth-child(3),.divSectionNotifications:nth-child(3){
+	width:5%;
+}.menuNotification li:nth-child(4),.divSectionNotifications:nth-child(4){
+	width:40%;
+}.menuNotification li:nth-child(5),.divSectionNotifications:nth-child(5){
+	width:15%;
+}.menuNotification li:nth-child(6),.divSectionNotifications:nth-child(6){
+	width:15%;
+}.menuNotification li:nth-child(7),.divSectionNotifications:nth-child(7){
+	width:15%;
+}.divSectionNotifications{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+}
+/* Tabletas grandes o dispositivos pequeños de escritorio (1025px - 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+	/* Aquí van tus estilos específicos para tabletas grandes o dispositivos pequeños de escritorio */
+/* styles.css */
+.aside{
+	width:20%;	
+	background:rgb(44, 47, 62);
+	height:100% !important;
+}.sectionPrincipal{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:80%;
+}.divSectionPrincipal{
+	width:100%;
+}.divSectionPrincipal:nth-child(1){
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:1rem;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .3); /* Sombra hacia abajo */
+	height:10%;
+	background:rgb(255, 255, 255);
+}.divSectionPrincipal:nth-child(2){
+	height:90%;
+}.divAside{
+	width:100%;
+}.divAside:nth-child(1){
+	height:10%;
+	color:whitesmoke;
+	background:rgb(41, 43, 58);
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .8); /* Sombra hacia abajo */
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:2rem;
+}.divAside:nth-child(2){
+	height:90%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:.5rem;
+}.iconCampana{
+	color:rgb(255, 183, 67);
+}.menuDesordenadoAside{
+	width:100%;
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items:center;
+	gap:1rem;
+	padding-top:2rem;
+}.menuDesordenadoAside li{
+	border-radius:3px;
+	text-align: center;
+	color:whitesmoke;
+	width:90%;
+	margin:0 auto;
+	padding:.7rem 0;
+	background:rgb(59, 59, 61);
+	box-shadow:1px 1px 30px rgba(0,0,0,.6);
+}.buttonBarra{
+	width:100px;
+	height:30px;
+	border-radius:5px;
+	color:whitesmoke;
+	border:none;
+	cursor:pointer;
+}.buttonBarra:nth-child(2){
+	background:rgb(40, 166, 111);
+}.buttonBarra:nth-child(3){
+	background:rgb(2, 149, 248);
+}.buttonBarra:nth-child(4){
+	background:rgb(240, 86, 86);
+}.barraNavegacion{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	gap:2rem;
+}.inputIconSearchContainer{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	position:relative;
+	height:auto;
+	width:auto;
+	display: inline-block;
+}.iconSearch{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px; /* Tamaño del ícono */
+	color: #aaa; /* Color del ícono */
+}.inputSearch{
+	font-size: .7rem;
+	padding-left: 30px; /* Espacio para el ícono */
+	height: 30px;
+	width: 250px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}.notificaciones{
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	gap:.5rem;
+	padding:1.5rem 0;
+	overflow-Y:auto;
+	scrollbar-width: none; /* Para Firefox */
+}.notificaciones::-webkit-scrollbar{
+	display:none;
+}.iconMessage{
+	color:rgb(59, 59, 61);
+	font-size:1.2rem;
+}.notificaciones section{
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	border:1px solid black;
+	width:98%;
+	padding:.5rem;
+	background:rgb(229, 229, 229);
+	border-radius:7px;
+	box-shadow:1px 1px 20px rgb(235, 228, 230);
+}.ocultarBarraDesplazamiento{
+	overflow-Y:auto;
+	height:40px !important;
+	width:400px !important;
+	margin-bottom:0 !important;
+	scrollbar-width: none; /* Para Firefox */
+	padding-bottom:1rem;
+}.notificaciones section div:nth-child(3) div ::-webkit-scrollbar{
+	display: none;
+}.parrafo{
+	width:100%;
+	height:100% !important;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}.iconosCrudContainer{
+	display:flex;
+	flex-direction:row !important;
+	justify-content: center;
+	align-items: center;
+	gap:1rem;
+}.iconosCrudContainer .iconosCrud{
+	font-size:1.5rem;
+}.iconosCrudContainer .iconosCrud:nth-child(1){
+	color:rgb(3, 155, 229);
+}.iconosCrudContainer .iconosCrud:nth-child(2){
+	color:rgb(240, 86, 86);
+}.prioridad{
+	padding:.3rem 1.5rem; 
+	border-radius:5px;
+	width:90px;
+	color:whitesmoke;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}.baja {
+	background:rgb(39, 163, 109);
+}.media {
+	background:rgb(219, 167, 57);
+}.alta {
+	background:rgb(240, 86, 86);
+}.default {
+	background: black; /* Color por defecto */
+}.menuNotification{
+background:rgb(0, 83, 160);
+margin-bottom:.5rem;
+}.menuNotification li{
+	border:.4px solid black;
+	color:whitesmoke;
+}.menuNotification li:nth-child(1),.divSectionNotifications:nth-child(1){
+	width:5%;
+}.menuNotification li:nth-child(2),.divSectionNotifications:nth-child(2){
+	width:5%;
+}.menuNotification li:nth-child(3),.divSectionNotifications:nth-child(3){
+	width:5%;
+}.menuNotification li:nth-child(4),.divSectionNotifications:nth-child(4){
+	width:40%;
+}.menuNotification li:nth-child(5),.divSectionNotifications:nth-child(5){
+	width:15%;
+}.menuNotification li:nth-child(6),.divSectionNotifications:nth-child(6){
+	width:15%;
+}.menuNotification li:nth-child(7),.divSectionNotifications:nth-child(7){
+	width:15%;
+}.divSectionNotifications{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+}
+/*////////////////////////////////////////////////////////////////////////////////////*/
+/* Dispositivos de pantalla grande (1280px en adelante) */
+@media (min-width: 1280px) {
+	/* Aquí van tus estilos específicos para dispositivos de pantalla grande */
+/* styles.css */
+.aside{
+	width:20%;	
+	background:rgb(44, 47, 62);
+	height:100% !important;
+}.sectionPrincipal{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:80%;
+}.divSectionPrincipal{
+	width:100%;
+}.divSectionPrincipal:nth-child(1){
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:1rem;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .3); /* Sombra hacia abajo */
+	height:10%;
+	background:rgb(255, 255, 255);
+}.divSectionPrincipal:nth-child(2){
+	height:90%;
+}.divAside{
+	width:100%;
+}.divAside:nth-child(1){
+	height:10%;
+	color:whitesmoke;
+	background:rgb(41, 43, 58);
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, .8); /* Sombra hacia abajo */
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:2rem;
+}.divAside:nth-child(2){
+	height:90%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:.5rem;
+}.iconCampana{
+	color:rgb(255, 183, 67);
+}.menuDesordenadoAside{
+	width:100%;
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items:center;
+	gap:1rem;
+	padding-top:2rem;
+}.menuDesordenadoAside li{
+	border-radius:3px;
+	text-align: center;
+	color:whitesmoke;
+	width:90%;
+	margin:0 auto;
+	padding:.7rem 0;
+	background:rgb(59, 59, 61);
+	box-shadow:1px 1px 30px rgba(0,0,0,.6);
+}.buttonBarra{
+	width:100px;
+	height:40px;
+	border-radius:5px;
+	color:whitesmoke;
+	border:none;
+	cursor:pointer;
+}.buttonBarra:nth-child(2){
+	background:rgb(40, 166, 111);
+}.buttonBarra:nth-child(3){
+	background:rgb(2, 149, 248);
+}.buttonBarra:nth-child(4){
+	background:rgb(240, 86, 86);
+}.barraNavegacion{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	gap:2rem;
+}.inputIconSearchContainer{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	position:relative;
+	height:auto;
+	width:auto;
+	display: inline-block;
+}.iconSearch{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px; /* Tamaño del ícono */
+	color: #aaa; /* Color del ícono */
+}.inputSearch{
+	padding-left: 30px; /* Espacio para el ícono */
+	height: 40px;
+	width: 250px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}.notificaciones{
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	gap:.5rem;
+	padding:1.5rem 0;
+	overflow-Y:auto;
+	scrollbar-width: none; /* Para Firefox */
+}.notificaciones::-webkit-scrollbar{
+	display:none;
+}.iconMessage{
+	color:rgb(59, 59, 61);
+	font-size:1.2rem;
+}.notificaciones section{
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	border:1px solid black;
+	width:98%;
+	padding:.5rem;
+	background:rgb(229, 229, 229);
+	border-radius:7px;
+	box-shadow:1px 1px 20px rgb(235, 228, 230);
+}.ocultarBarraDesplazamiento{
+	overflow-Y:auto;
+	height:40px !important;
+	width:400px !important;
+	margin-bottom:0 !important;
+	scrollbar-width: none; /* Para Firefox */
+	padding-bottom:1rem;
+}.notificaciones section div:nth-child(3) div ::-webkit-scrollbar{
+	display: none;
+}.parrafo{
+	width:100%;
+	height:100% !important;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}.iconosCrudContainer{
+	display:flex;
+	flex-direction:row !important;
+	justify-content: center;
+	align-items: center;
+	gap:1rem;
+}.iconosCrudContainer .iconosCrud{
+	font-size:1.5rem;
+}.iconosCrudContainer .iconosCrud:nth-child(1){
+	color:rgb(3, 155, 229);
+}.iconosCrudContainer .iconosCrud:nth-child(2){
+	color:rgb(240, 86, 86);
+}.prioridad{
+	padding:.3rem 2rem; 
+	border-radius:5px;
+	width:100px;
+	color:whitesmoke;
+}.baja {
+	background:rgb(39, 163, 109);
+}.media {
+	background:rgb(219, 167, 57);
+}.alta {
+	background:rgb(240, 86, 86);
+}.default {
+	background: black; /* Color por defecto */
+}.menuNotification{
+background:rgb(0, 83, 160);
+margin-bottom:.5rem;
+}.menuNotification li{
+	border:.4px solid black;
+	color:whitesmoke;
+}.menuNotification li:nth-child(1),.divSectionNotifications:nth-child(1){
+	width:15%;
+}.menuNotification li:nth-child(2),.divSectionNotifications:nth-child(2){
+	width:15%;
+}.menuNotification li:nth-child(3),.divSectionNotifications:nth-child(3){
+	width:15%;
+}.menuNotification li:nth-child(4),.divSectionNotifications:nth-child(4){
+	width:100%;
+}.menuNotification li:nth-child(5),.divSectionNotifications:nth-child(5){
+	width:40%;
+}.menuNotification li:nth-child(6),.divSectionNotifications:nth-child(6){
+	width:30%;
+}.menuNotification li:nth-child(7),.divSectionNotifications:nth-child(7){
+	width:30%;
+}.divSectionNotifications{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+}
+
+
+

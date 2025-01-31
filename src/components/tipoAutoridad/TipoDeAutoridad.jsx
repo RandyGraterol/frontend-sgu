@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./TipoDeAutoridad.css";
-import { toast,Toaster } from "sonner";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {faArrowsDownToPeople } from "@fortawesome/free-solid-svg-icons";
+
+import Submit from "../../particulas/SubmitButtons/Submit";
+import Style from "../../../public/estilosGenerales/formularios.module.css";
 
 const RegistroTipoAutoridad = () => {
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css"
-  />;
 
   const [autoridadRegistro, setAutoridad] = useState("");
 
@@ -18,36 +19,32 @@ const RegistroTipoAutoridad = () => {
   };
 
   return (
-    <center>
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css"
-      />
+    <section className={Style.ScreenContainer}>
 
-      <div className="nice-form-group">
-        <h2>Registro de autoridad</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="nice-form-group">
-            <label htmlFor="anoRegistro" className="form-label">
+        <form onSubmit={handleSubmit} className={Style.form}>
+        <h2 className={Style.h2} >Registro de autoridad</h2>
+
+            <label htmlFor="anoRegistro" >
               Tipo de autoridad
             </label>
+
+            <label htmlFor="anoRegistro" className={Style.label}>
+<FontAwesomeIcon icon={faArrowsDownToPeople} style={{color: "#5271ff"}} size='lg' />
             <input
               type="text"
-              className="input1"
+              className={Style.input}
               id="AutoRegistro"
               placeholder="Ingrese el tipo de autoridad"
               value={autoridadRegistro}
               onChange={(e) => setAutoridad(e.target.value)}
               required
             />
-          </div>
-          <button type="submit" className="button1">
-            Registrar
-          </button>
+            </label>
+
+            <Submit />
+
         </form>
-      </div>
-      <Toaster richColors />
-    </center>
+    </section>
   );
 };
 

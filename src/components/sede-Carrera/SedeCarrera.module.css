@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.th{
+    background-color: #5271ff;
+    color: white;
+}
+
+.ScreenContainer{    
+    margin: auto auto;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+
+.th, .td{
+    border: #5271ff solid 2px;
+    text-align: center;
+    padding: 4px;
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+
+.a{
+    border: none;
+    background-color: transparent;
+}
+
+
+.input{
+    height: 100%;
+    border: none;
+    width:  calc(100% - 50px);
+    display: flex;
+    align-items: center;
+}
+
+
+.label{
+    padding: .5rem;
+    width: 100%;
+    min-width: 270px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 40px;
+    position: relative;
+    border-radius: 4px;
+    border: #5271ff 2px solid;
+}
+
+.form{
+    height: auto;
+    min-height: 550px;
+    min-width: 300px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw ;
+    gap: 2.5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.h1{
+    text-align: center;
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h2{
+    text-align: center;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strong{
+    margin-left: 4px;
+    width: auto;
+    font-size: clamp(15px,1.5vw,20px);
+    color: #5271ff;
+}
+
+.p{
+    margin-left: auto;
+    margin-right: auto;
+}

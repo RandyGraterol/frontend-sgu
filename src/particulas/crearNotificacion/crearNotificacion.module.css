@@ -1,0 +1,20 @@
+.formulario{
+	display:flex;
+	width:500px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    gap:1rem;
+}/*.formulario input{
+	font-size:1rem;
+	width:100%;
+	padding:.7rem 0;
+	border-radius:10px;
+    border: 1px solid #ccc; Borde normal 
+    transition: border-color 0.3s; Transición suave para el borde 
+}*/.formulario label{
+	width:100%;
+	font-size:1.1rem;
+	font-weight: bold;
+}
+

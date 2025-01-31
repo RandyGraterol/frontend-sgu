@@ -1,0 +1,32 @@
+.BoxSelect{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% - 30%);
+	height: 30px;
+	gap: 10px;
+}
+.BoxSelect .SelectMateria{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 300px;
+	width: 100%;
+	max-width: 600px;
+	height: 30px;
+}
+.BoxSelect .SelectMateria option{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.BoxSelect .buscar{
+	padding: 10px;
+	background: rgb(82, 119, 255 , .5);
+	border-radius: 10px;
+	transition: .1s;
+}
+.BoxSelect .buscar:active{
+	background: rgb(82, 119, 255 , .8);
+	scale: .9;
+}

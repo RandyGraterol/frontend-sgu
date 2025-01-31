@@ -1,6 +1,9 @@
-import './input.css'
-export const Input = ({type,placeholderr}) =>{
+
+import Style from "../../../../../public/estilosGenerales/formularios.module.css";
+
+
+export const Input = ({id,type,placeholder}) =>{
 	return (
-		<input className="InputCarreras" type={type} placeholder={placeholderr} required/>
+		<input id={id} className={Style.input} type={type} placeholder={placeholder} required/>
 	);
 }

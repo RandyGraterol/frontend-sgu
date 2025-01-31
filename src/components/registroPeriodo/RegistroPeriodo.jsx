@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import './TipoDeAutoridad.css';
+//import './TipoDeAutoridad.css';
 import { toast, Toaster } from "sonner";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCalendarDays,fa1 , faSquarePollHorizontal} from '@fortawesome/free-solid-svg-icons';
+
+import Style from '../../../public/estilosGenerales/formularios.module.css'
+
+import Submit from '../../particulas/SubmitButtons/Submit';
 const RegistroAcademico = () => {
-  <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+  //<link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
 
   const [anoRegistro, setAnoRegistro] = useState("");
   const [modalidad, setModalidad] = useState("");
@@ -23,16 +29,17 @@ const RegistroAcademico = () => {
     <center>
               <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
 
-    <div className="nice-form-group" id="nice">
-      <form onSubmit={handleSubmit}>
-    <h2>Registro de Periodo Académico</h2>
-      <div className="nice-form-group">
-      <label htmlFor="anoRegistro" className="form-label">
-            Año del Periodo
+    <div className={Style.ScreenContainer} id="nice">
+      <form onSubmit={handleSubmit} className={Style.form} >
+    <h2 className={Style.h1} >Registro de Perido Académico</h2>
+      <label htmlFor="anoRegistro" >
+             <strong className={Style.strong} > Año del Periodo</strong>
           </label>
+      <label className={Style.label}>
+        <FontAwesomeIcon icon={faCalendarDays} style={{color: "#5271ff"}} size='lg' />
           <input
             type="number"
-            className="select1"
+            className={Style.input}
             id="anoRegistro"
             min="1990"
             max="2100"
@@ -41,30 +48,43 @@ const RegistroAcademico = () => {
             onChange={(e) => setAnoRegistro(e.target.value)}
             required
           />
-        </div>
-        <div className="nice-form-group" id="nice-2">
-        <label htmlFor="modalidad" className="form-label">
-            Seleccionar Numero
+        </label>
+
+        <label htmlFor="modalidad">
+             <strong className={Style.strong} > Seleccionar Número</strong>
           </label>
+        <label className={Style.label} id="nice-2">
+          <FontAwesomeIcon icon={fa1} style={{color: "#5271ff"}} size='lg' />
           <select
-            className="select1"
+            className={Style.input}
             id="modalidad"
             value={modalidad}
             onChange={(e) => setModalidad(e.target.value)}
             required
           >
             <option value="" disabled>
-              Numero
+              Número
             </option>
             <option value="I">I</option>
             <option value="II">II</option>
             <option value="III">III</option>
           </select>
-        </div>
-        <button type="submit" className="button1">
-          <i className="bi bi-plus-circle-fill p-1"></i>
-          Registrar
-        </button>
+        </label>
+
+        <label htmlFor="modalidad">
+          <strong className={Style.strong} >Modalidad</strong>
+        </label>
+        <label className={Style.label} htmlFor="modalidad">
+          <FontAwesomeIcon icon={faSquarePollHorizontal} style={{color: "#5271ff"}} size='lg' />
+          <select name="" id="modalidad" className={Style.input}>
+            <option value="">Anual</option>
+            <option value="">Semestral</option>
+            <option value="">Trimestral</option>
+          </select>
+        </label>
+      
+      <Submit/>
+
       </form>
       </div>
       <Toaster richColors/>

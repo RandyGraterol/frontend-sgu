@@ -1,0 +1,284 @@
+.contains{
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 97%;
+    background: linear-gradient(45deg, #BEBEBE99, #fff);
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    gap: 15px;
+    box-shadow: 1px 1px 90px 1px #afafaf;
+    transition: .4s all;
+}
+.header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    height: 200px;
+    background: linear-gradient(90deg, #BEBEBE, #fff);
+/*    background: linear-gradient(170deg, rgb(0, 25, 62) 20%,rgb(0, 25, 192));*/
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 30px;
+    box-shadow: 1px 1px 15px 9px #afafaf;
+}
+.boxImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    transform: translateY(100px);
+    background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(0, 25, 69 ));
+    border-radius: 50%;
+    padding: 10px;
+
+}
+.boxImg img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 50%;
+}
+.tituloPerfil{
+    display: flex;  
+    flex-direction: column;
+    align-items: end;
+    width: auto;
+    color: rgb(0,24, 63 );
+}
+.tituloPerfil .h1{
+    font-size: 4.1em;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.tituloPerfil .span{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 97%;
+    height: 100%;
+    padding: 10px;
+    gap: 2%;
+}
+.main .aside1,
+.main .aside{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #afafaf;
+    background: #BEBEBE10;
+    color: rgb(0, 25, 109);
+    background: linear-gradient(45deg, #BEBEBE30 40%, #fff );
+}
+.main .aside{
+    padding: 0 10%;
+    padding-top: 11%;
+    display: flex;
+    gap: 14px;
+}
+.main .aside1{
+/*    background: white;*/
+    justify-content: start;
+    padding: 5% 10%;
+}
+.main .aside1 .p,
+.main .aside .p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 1000;
+}
+.contactos,
+.informacion{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    gap: 8px;
+    padding: 0 20px;
+    font-weight: 1000;
+    font-family: sans-serif;
+}
+.contactos .h2,
+.informacion .h2,
+.informacionPersonal .h2{
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 7px;
+} 
+.main .aside .p svg{
+    font-size: 1.3em;
+}
+.informacionPersonal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.informacionPersonal .p{
+    padding-left: 10%;
+}
+@media (max-width:1270px){
+    .contactos .h2,
+    .informacion .h2,
+    .informacionPersonal .h2{
+        font-size: 1.5em;
+    }
+    .main .aside1 .p,
+    .main .aside .p{
+        font-size: .9em;
+    }
+    .contactos,
+    .informacion{
+        padding: 0 10px;
+    }
+}
+@media (max-width:1200px){
+    .main .aside{
+        padding: 13% 5%;
+    }
+}
+@media (max-width:1170px){
+    .header{
+        gap: 20px;
+    }
+    .tituloPerfil .h1{
+        font-size: 3.5em;
+    }
+}
+@media (max-width:1130px){
+    .contactos .h2,
+    .informacion .h2,
+    .informacionPersonal .h2{
+        font-size: 1.3em;
+    }
+    .main .aside1 .p,
+    .main .aside .p{
+        font-size: .85em;
+    }
+}
+@media (max-width:1045px){
+    .header{
+        gap: 10px;
+    }
+    .boxImg{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .tituloPerfil .h1{
+        font-size: 3em;
+    }
+        font-size: 2.5em;
+    .main .aside{
+        padding: 15%;
+    }
+    .contactos .h2,
+    .informacion .h2,
+    .informacionPersonal .h2{
+        font-size: 1.2em;
+    }
+    .main .aside1 .p,
+    .main .aside .p{
+        font-size: .75em;
+    }
+}
+@media (max-width:950px){
+    .tituloPerfil .h1{
+        font-size: 2.5em;
+    }
+    .contactos .h2,
+    .informacion .h2,
+    .informacionPersonal .h2{
+        font-size: 1em;
+    }
+    .main .aside1 .p,
+    .main .aside .p{
+        font-size: .70em;
+    }
+}
+@media (max-width:785px){
+    .contains{
+        width: 80%;
+    }
+    .tituloPerfil .h1{
+        font-size: 2em;
+    }
+    .tituloPerfil .span{
+        font-size: 1em;
+    }
+    .contactos .h2,
+    .informacion .h2,
+    .informacionPersonal .h2{
+        font-size: 1em;
+    }
+    .main .aside1 .p,
+    .main .aside .p{
+        font-size: .70em;
+    }
+    .main .aside{
+        padding: 15% 2%;
+    }
+    .main .aside1{
+        padding: 5% 2%;
+    }
+}
+@media (max-width:695px){
+    .contains{
+        width: 90%;
+    }
+    .header{
+        flex-direction: column;
+        gap: 1px;
+    }
+    .boxImg{
+        max-width: 130px;
+        max-height: 130px;
+        transform: translateY(0);
+    }
+    .main .aside1,
+    .main .aside{
+        padding: 5% 2%;
+    }
+}
+@media (max-width:510px){
+    .contains{
+        width: 100%;
+    }
+}
+@media (max-width:460px){
+    .contains{
+        height: 100%;
+        padding: 0px;
+        margin: 0;
+        border-radius: 0px;
+    }
+    .header{
+        min-width: 100px;
+        width: 95%;
+    }
+    .main{
+        width: 97%;
+        padding: 0px;
+    }
+}
+@media (max-width:410px){
+    .main .aside .p{
+        font-size: .6em;
+    }
+}

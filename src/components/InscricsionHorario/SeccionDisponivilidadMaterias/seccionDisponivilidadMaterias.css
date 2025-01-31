@@ -1,0 +1,70 @@
+.SeccionDisponivilidadMaterias{
+	display: flex;
+	padding: 15px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-width: 250px;
+	width: 98%;
+	max-width: 100%;
+	border: 1px solid #acacac;
+	border-radius: 10px;
+	box-shadow: 5px -5px 17px #f1fff1,
+				-5px 5px 17px #acacac;
+	overflow-y: hidden;
+	transition: .3s;
+}
+.SeccionDisponivilidad{
+	display: flex;
+	padding: 15px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 25px;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras{
+	display: flex;
+	flex-direction: column;
+	backdrop-filter: blur(5px);
+	background: white;
+	box-shadow: 3px 3px 10px grey;
+	font-family: sans-serif;
+	justify-content: center;
+	font-size: .8em;
+	align-items: center;
+	padding: 3px;
+	width: 150px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	transition: .2s;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras .Nombre{
+	font-weight: bold;
+	font-size: 1em;
+	text-align: center;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras:hover{
+	scale: 1.1;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras:active{
+	scale: .9;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras p{
+	font-size: .8em;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras .contentHora{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: .8em;
+}
+.SeccionDisponivilidadMaterias .SeccionHoras .contentHora .Horas{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: .8em;
+}

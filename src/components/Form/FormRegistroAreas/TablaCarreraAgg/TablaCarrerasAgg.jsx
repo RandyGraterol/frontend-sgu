@@ -1,30 +1,29 @@
-import "./tablaCarrerasAgg.css";
-import "./cajaTable.css";
 import { faTrashCan, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import style from "./tablaCarrerasAgg.module.css";
 
 export const TablaCarrerasAgg = ({ boton, onBotton }) => {
   if (boton) {
     return (
-      <div className="cajaTable">
-        <table className="table">
-          <thead>
+      <div className={style.cajaTable}>
+        <table className={style.tablassss}>
+          <thead className={style.thead}>
             <tr>
               <th>Carrera</th>
               <th>
                 Accion
                 <FontAwesomeIcon
                   onClick={onBotton}
-                  className="salir"
+                  className={style.salir}
                   icon={faCircleXmark}
                 />
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={style.tbody}>
             <tr>
-              <td className="carreras">Agronomia</td>
-              <td className="action">
+              <td className={style.carreras}>Agronomia</td>
+              <td className={style.action}>
                 <a href="google.com">
                   <FontAwesomeIcon icon={faTrashCan} />
                 </a>
@@ -35,4 +34,5 @@ export const TablaCarrerasAgg = ({ boton, onBotton }) => {
       </div>
     );
   }
+  return null;
 };

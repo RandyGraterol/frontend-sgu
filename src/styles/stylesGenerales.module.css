@@ -108,6 +108,8 @@ tr:nth-child(even){
   transform: scaleY(.9) translateY(3px);
   box-shadow: 1px 1px 0px 1px #3f3f3f;
 }
+.bgActivo1,
+.bgActivo2,
 .bgInactivo,
 .bgActivo{
   padding: 7px;
@@ -118,12 +120,19 @@ tr:nth-child(even){
   font-weight: 1000;
   transition: .4s ;
   margin: 0 auto;
+  transition: .4s;
 }
 .bgActivo{
   background-color: rgba(0, 200, 100, 1);
 }
 .bgInactivo{
   background-color: rgba(250, 50, 50, 1);
+}
+.bgActivo2 {
+  background-color: #5277ff;
+}
+.bgActivo1{ 
+  background-color: red;
 }
 .styledTable thead .tr th, 
 .styledTable .tbody .tr .td {

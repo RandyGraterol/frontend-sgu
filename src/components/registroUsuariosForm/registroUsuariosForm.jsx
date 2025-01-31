@@ -1,14 +1,16 @@
 import DatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faCamera, faIdCardClip, faUser, faEnvelope, faPhone, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faEnvelope, faPhone,faPeopleGroup, faPeopleRoof ,faMobileScreenButton, faWheelchair, faVenusMars , faAddressCard, faIdCard, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import "react-datepicker/dist/react-datepicker.css";
 import { es } from "date-fns/locale/es";
 import { registerLocale } from "react-datepicker";
 import { useState } from 'react';
-import './RegistroUsuarioMediaQuery.css'
-import styles from './RegistroUsuario.module.css'
+import Submit from "../../particulas/SubmitButtons/Submit";
+
+import Style from "../../../public/estilosGenerales/formularios.module.css";
 
 const RegistroUsuario = () => {
+  const [error, setError] = useState(null);
   registerLocale("es", es);
   const [selectedImage, setSelectedImage] = useState(null);
   const [startDate, setStartDate] = useState(new Date());
@@ -20,15 +22,16 @@ const RegistroUsuario = () => {
     segundonombre: '',
     correo: '',
     sexo: '',
-    fechanacimiento: '',
+    fechaNacimiento: new Date(),
     discapacidad: '',
     etnia: '',
     telefonoL: '',
-    status: '',
+    status: false,
     telefonoM: '',
     gu: '',
   });
 
+  //Esta función captura la imagen que ingresa el usuario para poder hacer la previsualización.
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -39,6 +42,7 @@ const RegistroUsuario = () => {
       reader.readAsDataURL(file);
     }
   };
+  //Está función de acá captura la mayoría de los datos del formulario, exceptuando el de fecha
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -46,12 +50,80 @@ const RegistroUsuario = () => {
       [name]: value,
     });
   };
+  //Función para capturar la fecha
+  const handleDateChange = (date) =>{
+    setStartDate(date);
+    setFormData({
+      ...formData,
+      fechaNacimiento: date,
+    })
+  }
+
+  const handleStatusChange = (e) =>{
+    const value = e.target.value === "true";
+    setFormData({
+      ...formData,
+      status: value,
+    })
+  }
+
+  const removeCircularReferences = (obj) => {
+    const seen = new WeakSet();
+    return JSON.parse(JSON.stringify(obj, (key, value) =>{
+      if (typeof value === "object" && value !=null){
+        if (seen.has(value)){
+          return;
+        }
+        seen.add(value)
+      }
+      return
+    }));
+  }
+
+  //Está función maneja la librería de fechas que decidimos usar para el desarrollo, aun no captura la fecha
   const fechaNacimiento = startDate
     ? startDate.toLocaleDateString("es-ES")
     : "No definido";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = {
+    cedula,
+    primerapellido,
+    segundoapellido,
+    primernombre,
+    segundonombre,
+    correo,
+    sexo,
+    fechaNacimiento,
+    discapacidad,
+    etnia,
+    telefonoL,
+    status,
+    telefonoM,
+    gu
+    }
+
+    try{
+      const response = await fetch('https://database-gb6x.onrender.com/',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(removeCircularReferences(user)),
+      });
+
+      const json = await response.json();
+
+      if (!response.ok){
+        throw new Error(json.error || "Error en la solicitud")
+      }
+      setFormData('');
+      console.log("Usuario añadido con éxito", json)
+    } catch(err){
+      setError(err.message);
+    }
+    console.log("Datos enviados con éxito")
     console.log(formData);
   };
 
@@ -60,29 +132,28 @@ const RegistroUsuario = () => {
   };
 
   return (
-<section className={styles.FullSection}> 
-  <div className={`Container ${styles.Container}`}>
-  	<h6 className = {`Title_Text ${styles.Title_Text}`}>Registro de usuario nuevo</h6>
-  <form className={`Form ${styles.Form}`} onSubmit={handleSubmit}>
-    <div className={styles.Form_Group}>
-      <input
-        placeholder = "Segundo apellido"
-        maxLength="20"
-        className={`Form_Input ${styles.Form_Input}`}
-        type="text"
-        id="segundoapellido"
-        name="segundoapellido"
-        value={formData.segundoapellido}
-        onChange={handleChange}
-        required
-      />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div>
+<section className={Style.ScreenContainer}> 
+
+  <form className={Style.form} onSubmit={handleSubmit}>
+
+    <h1 className = {Style.h1 }>Registro de usuario nuevo</h1>
+
+    <div className={Style.dateContainer} >
+
+      <div className={Style.halfContainer} >
+
+      <label htmlFor="primerapellido">
+      <strong className={Style.strong}> Primer Apellido </strong>  
+      </label>
+
+      <label htmlFor="primerapellido" className={Style.label}>
+        
+      <FontAwesomeIcon icon={faAddressCard}  size='lg' style={{ color: "#5271ff" }}  />
+      
       <input
       	placeholder = "Primer apellido"
         maxLength="20"
-        className={`Form_Input ${styles.Form_Input}`}
+        className={Style.input}
         type="text"
         id="primerapellido"
         name="primerapellido"
@@ -90,27 +161,46 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
+      </label>
+      </div>
+
+      <div className={Style.halfContainer}>
+
+  <label htmlFor="segundoapellido">
+      <strong className={Style.strong}>  Segundo Apellido </strong> 
+  </label>
+
+      <label htmlFor="segundoapellido" className={Style.label}>
+      <FontAwesomeIcon icon={faAddressCard}  size='lg' style={{ color: "#5271ff" }}  />
       <input
-        placeholder = "Segundo nombre"
+        placeholder = "Segundo apellido"
         maxLength="20"
-        className={`Form_Input ${styles.Form_Input}`}
+        className={Style.input}
         type="text"
-        id="segundonombre"
-        name="segundonombre"
-        value={formData.segundonombre}
+        id="segundoapellido"
+        name="segundoapellido"
+        value={formData.segundoapellido}
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
-    </div>
-    <div className={styles.Form_Group}>
+      </label>
+      </div>
+      </div>
+
+    <div className={Style.dateContainer} >
+      
+
+    <div className={Style.halfContainer} >
+    <label htmlFor="primernombre">
+       <strong className={Style.strong} > Primer Nombre </strong> 
+    </label>
+    
+    <label htmlFor='primernombre' className ={Style.label}>
+    <FontAwesomeIcon icon={faAddressCard}  size='lg' style={{ color: "#5271ff" }}  />
       <input
       	placeholder = "Primer nombre"
         maxLength="20"
-        className={`Form_Input ${styles.Form_Input}`}
+        className={Style.input}
         type="text"
         id="primernombre"
         name="primernombre"
@@ -118,26 +208,43 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-      <FontAwesomeIcon icon={faUser} className = {styles.Form_Img}/>
+    </label>
     </div>
-    <div className={styles.Form_Group}>
+
+    <div className={Style.halfContainer} >
+    <label htmlFor="segundonombre">
+      <strong className={Style.strong} >Segundo nombre</strong>
+    </label>
+    <label htmlFor="segundonombre" className={Style.label} >
+    <FontAwesomeIcon icon={faAddressCard}  size='lg' style={{ color: "#5271ff" }}  />
       <input
-      	placeholder = "Cedula"
-        maxLength = "8"
-        className={`Form_Input ${styles.Form_Input}`}
-        type="number"
-        id="cedula"
-        name="cedula"
-        value={formData.cedula}
+        placeholder = "Segundo nombre"
+        maxLength="20"
+        className={Style.input}
+        type="text"
+        id="segundonombre"
+        name="segundonombre"
+        value={formData.segundonombre}
         onChange={handleChange}
         required
       />
-     <FontAwesomeIcon icon={faIdCardClip} className={styles.Form_Img} />
+      </label>
+      </div>
     </div>
-    <div className={styles.Form_Group}>
+
+    <div className={Style.dateContainer}>
+
+    <div className={Style.halfContainer}>
+
+
+    <label htmlFor='correo'>
+      <strong className={Style.strong} > Correo</strong>
+    </label>
+      <label className={Style.label}>
+        <FontAwesomeIcon icon={faEnvelope} size='lg' style={{ color: "#5271ff" }}/>      
       <input
       	placeholder = "Correo"
-        className={`Form_Input ${styles.Form_Input}`}
+        className={Style.input}
         type="email"
         id="correo"
         name="correo"
@@ -145,25 +252,72 @@ const RegistroUsuario = () => {
         onChange={handleChange}
         required
       />
-     <FontAwesomeIcon icon = {faEnvelope} className = {styles.Form_Img}/>
+    </label>
+   
+
     </div>
-    <div className={styles.Form_Group}>
+    <div className={Style.halfContainer}>
+
+    
+    <label htmlFor="cedula">
+      <strong className={Style.strong} > Cedula </strong>
+    </label>
+    <label className = {Style.label}>
+    <FontAwesomeIcon icon={faIdCard} size='lg' style={{ color: "#5271ff" }} />
+      <input
+      	placeholder = "Cedula"
+        maxLength = "8"
+        className={Style.input}
+        type="number"
+        id="cedula"
+        name="cedula"
+        value={formData.cedula}
+        onChange={handleChange}
+        required
+      />
+    </label>
+
+
+    </div>
+
+    </div>
+
+    
+    <div className={Style.dateContainer}>
+
+    <div className={Style.halfContainer}>
+
+    <label htmlFor="telefonoL" >
+     <strong className={Style.strong}>Telefono local</strong >
+    </label>
+
+    <label className={Style.label}>
+    <FontAwesomeIcon icon={faPhone} size='lg' style={{ color: "#5271ff" }} />
       <input
       	placeholder = "Telefono Local"
-        className={styles.Form_Input}
+        className={Style.input}
         type="tel"
         id="telefonoL"
         name="telefonoL"
-        maxlength="11"
+        maxLength="11"
         value={formData.telefonoL}
         onChange={handleChange}
       />
-      <FontAwesomeIcon icon={faPhone} className = {styles.Form_Img}/>
+    </label>
+
+
     </div>
-    <div className={styles.Form_Group}>
+    <div className={Style.halfContainer}>
+    <label htmlFor="telefonoM">
+      <strong className={Style.strong} > Teléfono Móvil </strong>
+    </label>
+
+    <label className = {Style.label}>
+      
+      <FontAwesomeIcon icon={faMobileScreenButton} size='lg' style={{ color: "#5271ff" }} />
       <input
       	placeholder = "Teléfono Movil"
-        className={`Form_Input ${styles.Form_Input}`}
+        className={Style.input}
         type="tel"
         id="telefonoM"
         name="telefonoM"
@@ -171,104 +325,180 @@ const RegistroUsuario = () => {
         value={formData.telefonoM}
         onChange={handleChange}
       />
-     	<FontAwesomeIcon icon={faMobileScreenButton} className = {styles.Form_Img}/>
+    </label>
+
     </div>
-    <div className={styles.Date}>
-        <label className = {styles.Date_Label}>
-         Fecha de nacimiento 
+
+    </div>
+
+
+    <div className={Style.dateContainer} >
+
+      <div className={Style.halfContainer} >
+    <label htmlFor='date'>
+      <strong className={Style.strong} >Fecha de nacimiento</strong >
+    </label>
+    <label className={Style.label}>
+
+        <FontAwesomeIcon icon={faCalendarDays} size="lg" style={{ color: "#5271ff" }} />
+
         <DatePicker
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={handleDateChange}
           locale="es"
           dateFormat="dd/MM/yyyy"
           required
-          className={styles.Date_Input}
+          id='date'
+          className={Style.input}
         />
-        </label>
+    </label>
     </div>
-  <div className = {`Radius ${styles.Radius}`}>
-    <label className={`Radius_Label ${styles.Radius_Label}`}>Status</label>
-    <label className = {`Radius_Label ${styles.Radius_Label}`} >Act.
+
+
+  <div className={Style.halfContainer}>
+    <strong className={Style.strong}>Status</strong >
+  <label className = {Style.label}>
+
+    <label htmlFor='status' >
       <input 
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={true}
+       checked={formData.status === true}
+       onChange={handleStatusChange}
       />
+      Activo
      </label>
-     <label className = {`Radius_Label ${styles.Radius_Label}`}>Inact.
+     <label>
       <input
        type = "radio"
        id="status"
        name="status"
-       value={formData.status}
+       value={false}
+       checked={formData.status === false}
+       onChange={handleStatusChange}
       />
+      Inactivo
     </label>
+  </label>
   </div>
-  <div className = {`Select ${styles.Select}`}>
-    <div className={`Select_Group ${styles.Select_Group}`}>
+  </div>
+
+<div className={Style.dateContainer}>
+
+<div className={Style.halfContainer}>
+
+
+<label htmlFor='etnia'>
+    <strong className={Style.strong}>Etnia</strong >
+  </label> 
+
+    <label className={Style.label}>
+    <FontAwesomeIcon icon={faPeopleRoof} size='lg' style={{ color: "#5271ff" }} />
       <select
-        className={`Select_Input ${styles.Select_Input}`}
+        className={Style.input}
         id="etnia"
         name="etnia"
         value={formData.etnia}
         onChange={handleChange}
         required
       >
-        <option value="">Etnía</option>
+        <option value="ninguna">ninguna</option>
         <option value="Wayuu">Wayuu</option>
         <option value="Afroamericano">Afroamericano</option>
         <option value="Otro">Otro</option>
       </select>
-    </div>
-    <div className={styles.Select_Group}>
+    </label>
+
+</div>
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="discapacidad">
+      <strong className={Style.strong} > Discapacidad  </strong>
+    </label>
+
+    <label className={Style.label}>
+    <FontAwesomeIcon icon={faWheelchair}  size='lg' style={{ color: "#5271ff" }} />
       <select
-        className={`Select_Input ${styles.Select_Input}`}
+        className={Style.input}
         id="discapacidad"
         name="discapacidad"
         value={formData.discapacidad}
         onChange={handleChange}
         required
       >
-        <option value="">Discapacidad</option>
-        <option value="Sí">No</option>
-        <option value="No">Sí</option>
+        <option value="No">No</option>
+        <option value="Sí">Sí</option>
       </select>
-    </div>
-    <div className = {styles.Select_Group}>
+    </label>
+</div>
+</div>
+
+
+<div className={Style.dateContainer}>
+
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="sexo">
+      <strong className={Style.strong} > sexo </strong>
+    </label>
+    <label htmlFor='sexo' className = {Style.label}>
+    <FontAwesomeIcon icon={faVenusMars} size='lg' style={{ color: "#5271ff" }} />
       <select
-        className={`Select_Input ${styles.Select_Input}`}
+        className={Style.input}
         id="sexo"
         name="sexo"
         value={formData.sexo}
         onChange={handleChange}
         required
       >
-        <option value="">Sexo</option>
-        <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
+        <option value="masculino">Masculino</option>
       </select>
-  </div>
-  <div className = {styles.Select_Group}>
+  </label>
+
+
+</div>
+<div className={Style.halfContainer}>
+
+
+<label htmlFor="gu">
+      <strong className={Style.strong} > Grupo de Usuario </strong>
+    </label>
+
+  <label htmlFor="gu" className = {Style.label}>
+  <FontAwesomeIcon icon={faPeopleGroup} size='lg' style={{ color: "#5271ff" }} />
       <select
-       className={`Select_Input ${styles.Select_Input}`}
+        className={Style.input}
         id="gu"
         name="gu"
         value={formData.gu}
         onChange={handleChange}
         required
       >
-        <option value="">Grupo de usuarios</option>
+        <option value="estudiante">Estudiante</option>
         <option value="admin<">Admin</option>
         <option value="superadmin">SuperAdmin</option>
         <option value="operador">Operador</option>
-        <option value="estudiante">Estudiante</option>
       </select>
-  </div>
-    <div className={styles.PreBox} >
-      <label>
+  </label>
+
+
+
+</div>
+</div>
+
+      <label htmlFor="img">
+        <strong className={Style.strong} > Foto </strong>
+      </label>
+
+      <label className={Style.label} >
+      <FontAwesomeIcon icon={faCamera} size='lg' style={{ color: "#5271ff" }} />
       <input 
-        className = {`File_Input ${styles.File_Input}`}
+        className = {Style.input}
         type = "file"
         id = "img"
         name = "img"
@@ -276,26 +506,19 @@ const RegistroUsuario = () => {
         onChange = {handleImageChange}
         required
       />
-    <div className = {`File ${styles.File}`}>
-      <FontAwesomeIcon icon={faCamera} className={styles.File_Logo}/>
-    </div>
       </label>
-    </div>
       {selectedImage && (
-        <div className={styles.Preview}>
-          <img src={selectedImage} alt="Vista previa" className={styles.Preview_Img}  />
+        <div className={Style.Preview}>
+          <img src={selectedImage} alt="Vista previa" className={Style.Preview_Img}  />
         </div>
       )}
-    <div className = {`Button_Group ${styles.Button_Group}`}>
-      <button className = {`Button ${styles.Button}`} type="submit">Enviar</button>
-      <button className = {`Button ${styles.Button}`} type="button" onClick={handleBack}>Volver</button>
-    </div>
-  </div>
+
+      
+<Submit />
+
   </form>
-</div>
 </section>
   );
 };
 
 export default RegistroUsuario;
-

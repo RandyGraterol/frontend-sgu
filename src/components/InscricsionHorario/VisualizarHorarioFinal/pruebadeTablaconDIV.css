@@ -1,0 +1,52 @@
+.ContenedorHorario{
+    width: 95%;
+    box-shadow: -7px 7px 15px #acacac;
+    font-family: sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.horario-container{
+    display: grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+
+}
+.ContenedorHorario .tbody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.ContenedorHorario .tbody .semana{
+    display:grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    width: 100%;
+    margin: auto;;
+}
+.hora{
+    text-align: center;
+    font-weight: bold;
+    border-bottom:1px solid ;
+}
+.dia{
+    text-align: center;
+    font-weight: bold;
+}
+.hora,.dia{
+    background-color: var(--ais);
+    padding: 10px 0;
+    border-right: 1px solid;
+}
+.celda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    min-height: 50px;
+    transition: 1.5s;
+    padding: 3px;
+}
