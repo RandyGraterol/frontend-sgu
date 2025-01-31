@@ -211,7 +211,7 @@ nav ul.active {
   background-size: cover;
   background-position: center;
   padding: 5px;
-  background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(240, 45, 242 ));
+  background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(0, 25, 62 ));
   border-radius: 50%;
 }
 .profile-menu .descriptionUser{
