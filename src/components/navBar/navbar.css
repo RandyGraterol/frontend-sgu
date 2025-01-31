@@ -221,6 +221,9 @@ nav ul.active {
   height: 45px;
   background-size: cover;
   background-position: center;
+  background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(0, 25, 69 ));
+  border-radius: 50%;
+  padding: 4px;
 }
 .profile-menu .descriptionUser{
   display: flex;
@@ -250,6 +253,8 @@ nav ul.active {
 .profile-menu a{
   text-decoration: none;
   transition: .5s;
+  color: #5377ff;
+  font-weight: 1000;
 }
 .profile-menu a:hover{
   filter: drop-shadow(1px 1px 10px #5277ff);

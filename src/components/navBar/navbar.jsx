@@ -202,7 +202,7 @@ const handleSubMenuClick = (section) => {
             {isProfileMenuOpen && (
               <div className={`profile-menu ${isProfileMenuOpen ? 'isactive' : ''}`}>
                 <h4 className="carrera">rafaeloliveros@gmail.com</h4>
-                <img src="https://i.ebayimg.com/images/g/O4YAAOSwVr9kJVb3/s-l1200.jpg" alt=""/>
+                <img src="/userPerfil.jpg" alt=""/>
                 <div className="descriptionUser">
                   <h3 >Hola, Rafael Oliveros</h3>
                   <h4 className="carrera">Carrera activa: "Ingenieria informatica"</h4>
