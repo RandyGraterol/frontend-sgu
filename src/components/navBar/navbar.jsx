@@ -189,7 +189,7 @@ useEffect(() => {
             {isProfileMenuOpen && (
               <div className={`profile-menu ${isProfileMenuOpen ? 'isactive' : ''}`}>
                 <h4 className="carrera">rafaeloliveros@gmail.com</h4>
-                <img src="https://www.4x4.ec/overlandecuador/wp-content/uploads/2017/06/default-user-icon-8.jpg" alt=""/>
+                <img src="/userPerfil.jpg" alt=""/>
                 <div className="descriptionUser">
                   <h3 >Hola, Rafael Oliveros</h3>
                   <h4 className="carrera">Carrera activa: "Ingenieria informatica"</h4>

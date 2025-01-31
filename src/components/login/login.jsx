@@ -13,7 +13,6 @@ const images = [
   "/fotos/login1.jpg",
   "/fotos/login2.jpg",
   "/fotos/login3.jpg",
-  "/fotos/llogin4.webp",
 ];
 
 const Login = () => {

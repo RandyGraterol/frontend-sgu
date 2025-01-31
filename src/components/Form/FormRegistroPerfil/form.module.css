@@ -38,7 +38,7 @@
     max-width: 250px;
     max-height: 250px;
     transform: translateY(100px);
-    background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(240, 45, 242 ));
+    background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(0, 25, 69 ));
     border-radius: 50%;
     padding: 10px;
 

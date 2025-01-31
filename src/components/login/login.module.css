@@ -89,6 +89,7 @@
   left:0;
   border-right: none;
   box-shadow: 3px 3px 15px rgb(0, 0, 0);
+  transition: 1s all;
 }
 .imagen {
   width: 100%;
@@ -96,7 +97,7 @@
   background-position: center;
   background-size: cover;
   object-fit: cover;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out all;
 }
 .formulario {
   display: flex;
