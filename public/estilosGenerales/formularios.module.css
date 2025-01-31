@@ -49,6 +49,10 @@
 
     }
 
+    .trmig{
+        background-color:#0053a0 !important ;
+    }
+
     .h2{
         font-size: clamp(1rem, 3.5vw, 1.5rem);
         margin-left: auto;

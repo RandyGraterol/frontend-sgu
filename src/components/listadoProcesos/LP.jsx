@@ -58,9 +58,16 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                 
 
                 <select name="" id="" className={styles.containerSelect}>
-                    <option  >Carrera - Institucion </option>
-                    <option value=""> Ing Informatica / San juan de los Morros</option>
-                    <option value="">Medicina / Calabozo</option>
+                    <option  >Carrera </option>
+                    <option value=""> Ing Informatica </option>
+                    <option value="">Medicina </option>
+                    <option value="">etc</option>
+                </select>
+
+                <select name="" id="" className={styles.containerSelect}>
+                    <option  > Institucion </option>
+                    <option value="">  San juan de los Morros</option>
+                    <option value=""> Calabozo</option>
                     <option value="">etc</option>
                 </select>
 
@@ -77,7 +84,8 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                     <tr className={styles.tr}>
                     <th>Periodo</th>
                     <th>Modalidad</th>
-                    <th>Carrera - Institucion</th>
+                    <th>Carrera </th>
+                    <th> Institucion</th>
                     <th>Nombre del proceso</th>
                     <th>Fecha de Inicio</th>
                     <th>Fecha de Cierre</th>
@@ -90,7 +98,8 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                     {!mig && <tr className={styles.tr}>
                         <td data-titulo="Periodo" className={styles.td}>2025-I</td>
                         <td data-titulo="Modalidad" className={styles.td}>Semestral</td>
-                        <td data-titulo="Carrera" className={styles.td}>Ing Informatica - UNERG</td>
+                        <td data-titulo="Carrera" className={styles.td}>Ing Informatica </td>
+                        <td data-titulo="Carrera" className={styles.td}> UNERG</td>
                         <td data-titulo="Nombre del Proceso" className={styles.td}>Inscripciones</td>
                         <td data-titulo="Fecha de Inicio" className={styles.td}>01-05-2005</td>
                         <td data-titulo="Fecha de Cierre" className={styles.td}>05-05-2005</td>
@@ -104,7 +113,8 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
                     {!gest && <tr className={styles.tr}>
                         <td data-titulo="Periodo"  className={styles.td}>2025-I</td>
                         <td data-titulo="Modalidad" className={styles.td}>Semestral</td>
-                        <td data-titulo="Carrera"  className={styles.td}>Ing Informatica - Calabozo</td>
+                        <td data-titulo="Carrera"  className={styles.td}>Ing Informatica </td>
+                        <td data-titulo="Carrera"  className={styles.td}> Calabozo</td>
                         <td data-titulo="Nombre" className={styles.td}>Migracion de horario</td>
                         <td data-titulo="Fecha de Inicio"className={styles.td}>10-06-2004</td>
                         <td data-titulo="Fecha de Cierre" className={styles.td}>015-06-2004</td>
@@ -121,10 +131,9 @@ const LP = ({onHandleEditProcess,onHandleRegistrarProcesos})=>{
             {gest ? (
               
             <table className={styles.styledTable}>
-                <thead>
-                    <tr className={styles.tr}>
-                        <th colSpan={7}>Carrera: Ing Sistemas</th>
-                        <th colSpan={2}>Ocultar <FontAwesomeIcon icon={faMinus} onClick={tiggerGest}  size="lg" style={{color:"#FFC300"}} /></th>
+                <thead >
+                    <tr className={`${styles.tr} ${Style.trmig} `} >
+                        <th colSpan={9}>Ocultar <FontAwesomeIcon icon={faMinus} onClick={tiggerGest}  size="lg" style={{color:"#FFC300"}} /></th>
                     </tr>
                     <tr className={styles.tr}>
                         <th colSpan={2}>Fecha</th>
