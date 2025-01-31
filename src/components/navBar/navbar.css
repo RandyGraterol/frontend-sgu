@@ -24,6 +24,13 @@
   align-self: center;
   font-family: 'titulos';
 }
+.titulo2{
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-self: center;
+  color: white;
+}
 /* Estilo para el input (código de barras) */
 .CB {
   width: 350px; /* Define un ancho fijo */
@@ -136,7 +143,7 @@ nav{
   width: 100%;
   height:6.2vh;
   padding:1rem;
-  background-color:rgb(0, 25, 61) ;
+  background-color:rgb(0, 25, 61);
 }nav ul a {
   color: #ffffff;
   font-weight: 600;
@@ -155,7 +162,11 @@ section#home {
   
 }
 nav ul.active {
-  right: 0;
+  top: 0;
+  padding-top: 40vh;
+  padding-bottom: 50vh;
+  z-index: 999999;
+
 }
 #profile-button {
   display: flex;
@@ -193,7 +204,7 @@ nav ul.active {
   flex-direction: column;
   position: absolute;
   right: 80px;
-  top: 55px;
+  top: 50px;
   background: white;
   border-radius: 20px;
   padding: 0.8rem;
@@ -206,13 +217,10 @@ nav ul.active {
   opacity: 0;
 }
 .profile-menu img{
-  width: 50px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   background-size: cover;
   background-position: center;
-  padding: 5px;
-  background: linear-gradient(170deg, rgb(200, 225, 242 ), rgb(0, 25, 62 ));
-  border-radius: 50%;
 }
 .profile-menu .descriptionUser{
   display: flex;
@@ -254,12 +262,24 @@ nav ul.active {
 }
 .social-media_ {
   display: flex;
-  gap: 12px;
+  gap: 6px;
+  align-self: center;
 }
 
 .social-media_ a img {
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
+}
+
+.social-media_2 {
+  display: none;
+  gap: 6px;
+  align-self: center;
+}
+
+.social-media_2 a img {
+  width: 15px;
+  height: 15px;
 }
 
 .ig{
@@ -331,29 +351,48 @@ nav ul.active {
 
 @media only screen and (max-width: 767px) {
 
+
+  .social-media_2 {
+    display: flex;
+  }
+
+  .titulo{
+    display: none;
+  }
+
+  .titulo2{
+    display: flex;
+  }
+
   .titulo{
     font-size: small;
     padding-right: 2.5rem;
     padding-left: 1.5rem;
   }
-  nav{
-    width: 0;
-    height: 0;
-    padding: 0 !important;
-    margin: 0;
-  }
+    /* nav{
+      width: 0;
+      height: 0;
+      padding: 0 !important;
+      margin: 0;
+    }
 
-  nav{
-    position:absolute;
-    display: flex;
-    justify-content:space-between;
-    align-items: start;
-    gap:1rem;
-    top: 0;
-    width: 0;
-    height:0;
-    padding:2rem;
-  }
+    nav{
+      position:absolute;
+      display: flex;
+      justify-content:space-between;
+      align-items: start;
+      gap:1rem;
+      top: 0;
+      width: 0;
+      height:0;
+      padding:2rem;
+    } */
+
+    nav{
+      justify-content: space-between;  
+    }
+
+
 
   #profile-container{
     display: flex;
@@ -365,21 +404,10 @@ nav ul.active {
 }
  
 
-  nav ul li ul {
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    width: 100%; 
-    background-color: #57a1e7;
-    border-radius: 0;
-    padding: 0.3rem 0; /* Reduce el padding superior e inferior */
-    line-height: 0.9; /* Compacta la altura de las líneas */
-  }
-  nav ul li ul li {
-  flex: 0 0 0; /* Ocupa el 50% del ancho del contenedor, es decir, dos columnas */
-  }
+
   .titulo{
     font-size: xx-small;
+    
   }
   .containerLogo{
     margin: 0;
@@ -391,7 +419,7 @@ nav ul.active {
   }
   #ham-menu {
     display: block;
-    color: #000;
+    color: white;
     font-size: 1.7rem;
     position: relative;
     z-index: 99999999999;
@@ -411,20 +439,18 @@ nav ul.active {
 }
 nav ul {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
   justify-content: space-around;
-  right: -100vw;
   top: 0;
-  width: 50vw !important;
   height: 100vh;
-  padding-top: 50vh;
-  padding-bottom: 50vh;
-  background-color:rgb(0, 25, 61) ;  
+  width: 100vw;
+  left: 0;
+  width: 100vw !important;
+  overflow: hidden;
+  background-color:rgb(0, 25, 61);  
   transition: 1s ease;
-  gap: 0.1rem;
-  z-index: 999999;
-
+  z-index: -1;
 }
 
 
@@ -438,22 +464,26 @@ nav ul {
 }
     nav ul li > a {
       display: flex;
-      justify-content: space-between;
-      align-items: start;
-      padding: 1.2rem 5.1rem;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.rem 10rem;
       color: white;
       font-size: 2rem;
-
+      margin-top: -1vh;
+      line-height: 1;
     }
+
     nav ul li ul {
       display: flex;
-      flex-direction: column;
+      position: relative;
+      width: 100%; 
+      background-color: #57a1e7;
       align-items: flex-start;
-      width: 100%;
-      height: 100%;
-      margin-top: -1vh;
-      gap: 0.4rem;
+      gap: 0.1rem;
     }
+
+
+    
     nav ul li ul li {
     padding: 0.8rem 4rem; /* Espaciado interno */
     width: 100%; /* Ancho completo del contenedor */
@@ -477,7 +507,7 @@ nav ul {
       top: 0;
       box-shadow: none;
       height: fit-content;
-      background: rgb(0, 25, 89);
+      background: rgba(155, 200, 235, 0.153);
     }
     nav ul li.active > ul li:hover{
       background-color:rgb(250, 250, 250, .1) ;  
@@ -501,17 +531,29 @@ nav ul {
 
 @media only screen and (max-width: 430px) {
 
-  .titulo{
-    display: none;
+  .profile-menu.isactive{
+    opacity: 1;
+    right: 0;
   }
+
+
+
+  .titulo{
+    font-size: 50%;
+
+    padding-left: 4rem;
+  }
+
+  .titulo2{
+    font-size: small;
+    }
+
 
   .image{
     height: 40px;
     margin-top: -1.3vh;
     }
-  .profile-menu{
-    right: 5px;
-  }
+
     .containerLogo{
       margin: 0;
       justify-content: start;
@@ -521,6 +563,8 @@ nav ul {
      width: 100vw !important;
     }
 
+
+
 }
 
 @media only screen and (max-width: 411px) {
@@ -528,6 +572,7 @@ nav ul {
   .nombre{
     font-size: 16px;
   }
+
 
   .profile-menu {
     padding: 0.6rem;
@@ -550,6 +595,13 @@ nav ul {
 
 }
 
+@media only screen and (max-width: 355px) {
+
+.titulo2{
+  font-size: xx-small;
+}
+
+}
 @media only screen and (max-width: 320px) {
 
   .image{

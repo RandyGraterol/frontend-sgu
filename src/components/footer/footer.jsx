@@ -3,17 +3,9 @@ import './footer.css';
 
 const Footer = () => (
   <footer className="footer">
+    
     <div className="column">
-      <h3>Facultades</h3>
-    </div>
-    <div className="column">
-      <h3>Pregrado</h3>
-    </div>
-    <div className="column">
-      <h3>Webmail</h3>
-    </div>
-    <div className="column">
-      <h3>WorldMUN UCV</h3>
+      <h3>© Copyright 2025. Sistema De Gestion Universitaria</h3>
     </div>
     <div className="social-media">
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">

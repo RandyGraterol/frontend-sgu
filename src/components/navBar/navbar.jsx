@@ -39,11 +39,19 @@ useEffect(() => {
   };
   const style2 = {
     display: login ? 'flex' : 'none',
+    fontFamily : ''
   };
   const style3 = {
     ...(isMobile && { display: login ? 'none' : 'block' }), // Si es móvil, aplica el estilo
   };
+  const style4 = {
+    ...(isMobile && { display: login ? 'flex' : 'none' }), // Si es móvil, aplica el estilo
+  };
 
+  const style5 = {
+    ...(isMobile && { display: login ? 'none' : 'flex' }), // Si es móvil, aplica el estilo
+  };
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [openMenus, setOpenMenus] = useState({});
@@ -116,7 +124,6 @@ useEffect(() => {
     ) {
       setIsMenuOpen(false);
       setOpenMenus({}); // Cierra todos los submenús
-
     }
     if (
       profileButtonRef.current &&
@@ -154,15 +161,21 @@ useEffect(() => {
     fontStyle: 'normal'
 };
 
+// Nueva función para cerrar todos los submenús cuando se hace clic en una opción
+const handleSubMenuClick = (section) => {
+  setOpenMenus({}); // Cierra todos los submenús
+  onNavClick(section); // Llama a la función original de navegación
+};
+
   return (
     <header id='cabecera'>
       <div className='app'>
         <div className='nombre'>
       <div className='containerLogo'>
-            <img className="image" src="/icon/logo.png" alt="Logo" />
+           <a href=""><img className="image" src="/icon/logo.png" alt="Logo" /></a>
           </div>
-          <div className='titulo'>
-            <h1 >Sistema de Gestión Universitaria</h1>
+          <div className='titulo' style={style4} >
+            <h1>Sistema de Gestión Universitaria</h1>
             </div>     
                             {/* Perfil del Usuario */}
                             <div id="profile-container" ref={profileButtonRef}>
@@ -173,13 +186,13 @@ useEffect(() => {
               </div>
               <div className="social-media_" style={style2}>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-                <img className='fb' src="fbblue.png" alt="Facebook logo" />
+                <img className='fb' src="icon/fb.png" alt="Facebook logo" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
-                <img className='tt' src="xblue.png" alt="Twitter logo" />
+                <img className='tt' src="icon/x.png" alt="Twitter logo" />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-                <img className='ig' src="igblue.png" alt="Instagram logo" />
+                <img className='ig' src="icon/ig.png" alt="Instagram logo" />
               </a>
               </div>
             <div id="profile-button" onClick={toggleProfileMenu} style={style}>
@@ -189,7 +202,7 @@ useEffect(() => {
             {isProfileMenuOpen && (
               <div className={`profile-menu ${isProfileMenuOpen ? 'isactive' : ''}`}>
                 <h4 className="carrera">rafaeloliveros@gmail.com</h4>
-                <img src="/userPerfil.jpg" alt=""/>
+                <img src="https://i.ebayimg.com/images/g/O4YAAOSwVr9kJVb3/s-l1200.jpg" alt=""/>
                 <div className="descriptionUser">
                   <h3 >Hola, Rafael Oliveros</h3>
                   <h4 className="carrera">Carrera activa: "Ingenieria informatica"</h4>
@@ -204,22 +217,39 @@ useEffect(() => {
                   <option value="Admin">Admin</option>
                   <option value="Operador">Operador</option>
               </select>
+              <a onClick={() => handleSubMenuClick('Perfil')} href="#ChangePasword"><h4 className="carrera">Perfil</h4></a> 
 
               <a href="#ChangePasword"><h4 className="carrera">Cambiar contraseña</h4></a> 
               </div>
             )}
-            <FontAwesomeIcon
+
+          </div>
+          
+          </div>
+
+          <nav>
+          <FontAwesomeIcon
             style={style3}
             icon={isMenuOpen ? faTimes : faBars}
             className={isMenuOpen ? 'fa-bara' : ''}
             id="ham-menu"
             onClick={toggleMenu}
           />
-          </div>
-          
-          </div>
+          <div className='titulo2' style={style5}>
+          <h4>Sistema de Gestión Universitaria</h4>
+          </div>     
 
-          <nav>        
+          <div className="social-media_2" style={style5}>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <img className='fb' src="fbblue.png" alt="Facebook logo" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
+                <img className='tt' src="xblue.png" alt="Twitter logo" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img className='ig' src="igblue.png" alt="Instagram logo" />
+              </a>
+              </div>
           <ul style={style} id="nav-bar" className={isMenuOpen ? 'active' : ''} ref={navBarRef}>
           {userRole === 'Superuser' && (
               <>
@@ -248,14 +278,13 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Registro Instituto')} href="#registro-instituto">Registro instituto</a></li>
-                      <li><a onClick={() => onNavClick('Registrar carreras')} href="#registrar-carreras">Registrar carreras</a></li>
-                      <li><a onClick={() => onNavClick('Pensum')} href="#pensum">Pensum</a></li>
-                      
-                      <li><a onClick={() => onNavClick('Registrar áreas')} href="#registrar-areas">Registrar áreas</a></li>
-                      <li><a onClick={() => onNavClick('Asignar sede-carrera')} href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
-                      <li><a onClick={() => onNavClick('Registrar autoridades')} href="#registrar-autoridades">Registrar autoridades</a></li>
-                      <li><a onClick={() => onNavClick('Registro Tipo de Autoridad')} href="#tipo-autoridad">Tipo de autoridad</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Registro Instituto')} href="#registro-instituto">Registro instituto</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Registrar carreras')} href="#registrar-carreras">Registrar carreras</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Pensum')} href="#pensum">Pensum</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Registrar áreas')} href="#registrar-areas">Registrar áreas</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Asignar sede-carrera')} href="#asignar-sede-carrera">Asignar sede-carrera</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Registrar autoridades')} href="#registrar-autoridades">Registrar autoridades</a></li>
+                  <li><a onClick={() => handleSubMenuClick('Registro Tipo de Autoridad')} href="#tipo-autoridad">Tipo de autoridad</a></li>
                     </ul>
                   )}
                 </li>
@@ -282,9 +311,9 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Registrar Usuario')} href="#registrar-usuario">Registrar usuario</a></li>
-                      <li><a onClick={() => onNavClick('Grupos de usuarios')} href="#grupos-usuarios">Grupos de usuarios</a></li>
-                      <li><a onClick={() => onNavClick('Control de Acceso')} href="#control-acceso">Control de acceso</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Registrar Usuario')} href="#registrar-usuario">Registrar usuario</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Grupos de usuarios')} href="#grupos-usuarios">Grupos de usuarios</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Control de Acceso')} href="#control-acceso">Control de acceso</a></li>
                     </ul>
                   )}
                 </li>
@@ -311,8 +340,8 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Periodo Academico')} href="#registro-periodo">Periodo Académico</a></li>
-                      <li><a onClick={() => onNavClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de Incripción</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Periodo Academico')} href="#registro-periodo">Periodo Académico</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Administrar procesos')} href="#proceso-inscripcion">Proceso de Inscripción</a></li>
                     </ul>
                   )}
                 </li>
@@ -339,7 +368,7 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                      <li><a onClick={() => onNavClick('Reporte inscripciones')} href="#reporte-inscripciones">Reporte de inscripciones</a></li>
+                      <li><a onClick={() => handleSubMenuClick('Reporte inscripciones')} href="#reporte-inscripciones">Reporte de inscripciones</a></li>
                       {/* <li><a href="#listado-estudiantes">Listado de estudiantes por secciones</a></li> */}
                       </ul>
                   )}
@@ -388,7 +417,7 @@ useEffect(() => {
                       handleMenuItemClick('Procesos');
                     }}
                   >
-                    <FontAwesomeIcon icon={faTasks} />Procesos
+                     <span className="arrow">▶</span>Procesos
                   </a>
                   {openMenus['Procesos'] && (
                   <ul    
@@ -403,7 +432,7 @@ useEffect(() => {
                       transition: 'height 0.4s ease-in-out',
                     }}
                   >
-                    <li><a onClick={() => onNavClick('Inscripcion')}>Inscripción</a></li>
+                    <li><a onClick={() => handleSubMenuClick('Inscripcion')}>Inscripción</a></li>
                   </ul>
                 )}
                 

@@ -1,23 +1,24 @@
   .footer {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 11px;
-    background-color: #0053a0;
+    background-color: rgb(0, 25, 61);
     bottom: 0;
     width: 100%;
   }
 
   .column {
+    display: flex;
     flex: 1 1 200px;
-    margin: 5px;
-    /* border-style:solid; */
+    font-size: 13px;
+    color: aliceblue;
+    margin-left: 3vw;
+    margin-top: 0.5vh;
   }
 
   .column h3 {
-    font-size: 13px;
-    color: aliceblue;
+    margin: 0 auto;
   }
 
   .column a {
@@ -34,9 +35,23 @@
   .social-media {
     display: flex;
     gap: 10px;
+    align-items: center;
   }
 
   .social-media a img {
     width: 20px;
     height: 20px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    .social-media {
+      gap: 6px;
+    }
+
+    .column {
+
+      font-size: 12px;
+
+    }
+
   }
