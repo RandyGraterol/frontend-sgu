@@ -4,16 +4,16 @@ import { Toaster, toast } from "sonner";
 
 const Periodos = ({navegacion,onhandleRegistrarPeriodo}) => {
   const [periodos, setPeriodos] = useState([
-    { numero: "2025-1",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2024-2",modalidad:"Anuel", estado: "Inactivo" },
-    { numero: "2024-3",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2025-2",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2024-1",modalidad:"Anuel", estado: "Inactivo" },
-    { numero: "2025-3",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2026-1",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2026-2",modalidad:"Anuel", estado: "Inactivo" },
-    { numero: "2026-3",modalidad:"Anuel", estado: "Activo" },
-    { numero: "2027-1",modalidad:"Anuel", estado: "Activo" }
+    { numero: "2025-1",modalidad:"Anual", estado: "Activo" },
+    { numero: "2024-2",modalidad:"Anual", estado: "Inactivo" },
+    { numero: "2024-3",modalidad:"Anual", estado: "Activo" },
+    { numero: "2025-2",modalidad:"Anual", estado: "Activo" },
+    { numero: "2024-1",modalidad:"Anual", estado: "Inactivo" },
+    { numero: "2025-3",modalidad:"Anual", estado: "Activo" },
+    { numero: "2026-1",modalidad:"Anual", estado: "Activo" },
+    { numero: "2026-2",modalidad:"Anual", estado: "Inactivo" },
+    { numero: "2026-3",modalidad:"Anual", estado: "Activo" },
+    { numero: "2027-1",modalidad:"Anual", estado: "Activo" }
   ]);
 
   const [numeroBuscado, setNumeroBuscado] = useState("");

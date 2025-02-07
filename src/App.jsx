@@ -37,6 +37,7 @@ import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
 import ReporteI from './components/Reporteinscripcion/ReporteInscripcion.jsx';
+import Horario from './components/verHorario/verHorario.jsx';
 
 //importar modulo de notificaciones
 import NotificationsAdmin from './components/notifications/notifications.jsx';
@@ -58,6 +59,7 @@ function App(){
    const [selectedComponent, setSelectedComponent] = useState(null);
 
    const handleNavClick = (componentName) => {
+    console.log(componentName);
     setSelectedComponent(componentName);
 };
 const handleRegisterClick = () => { setSelectedComponent('Registrar Grupo de Usuario'); };
@@ -124,10 +126,12 @@ const renderComponent = () => {
             return <RegistroAreas/>
         case 'Inscripcion':
             return <Inscripcion />
-            case 'Perfil':
-                return < FormRegistroPerfil/>// 
-            case 'Reporte inscripciones':
-                return <ReporteI /> 
+        case 'Perfil':
+            return < FormRegistroPerfil/>// 
+        case 'Reporte inscripciones':
+            return <ReporteI />
+        case 'Ver horario':
+            return <Horario /> 
         default:
             return null;
 }//fin de caso multiple

@@ -450,12 +450,25 @@ const handleSubMenuClick = (section) => {
                 </li>
                 <li className={'liButton'}>
                   <a
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleMenuItemClick('Descargar horario');
-                    }}
+
+                    href='Horario_JRAO.pdf'
+
+                    download="Horario_JRAO.pdf"
+
                   >
                     <FontAwesomeIcon icon={faFileAlt} />D.Horario 
+                  </a>
+
+                </li>                
+                <li className={'liButton'}>
+                  <a
+                    href='#VerHorario'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSubMenuClick('Ver horario');
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faFileAlt} />Ver Horario 
                   </a>
 
                 </li>                
