@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 import { faUser,
   faChevronDown,
   faBars,
@@ -15,10 +16,14 @@ import { faUser,
   } from '@fortawesome/free-solid-svg-icons';
 
 
-
 const Navbar = ({ onNavClick, login }) => {
+  
+   const navegar = useNavigate();
 
-
+  const handleLogout = () => {
+    localStorage.removeItem('access_token'); // Elimina el token
+    navegar('/login'); // Redirige al login
+  };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
@@ -220,6 +225,7 @@ const handleSubMenuClick = (section) => {
               <a onClick={() => handleSubMenuClick('Perfil')} href="#ChangePasword"><h4 className="carrera">Perfil</h4></a> 
 
               <a href="#ChangePasword"><h4 className="carrera">Cambiar contraseña</h4></a> 
+              <a href='#' onClick={handleLogout}>Cerrar Sesión</a>
               </div>
             )}
 
@@ -450,25 +456,12 @@ const handleSubMenuClick = (section) => {
                 </li>
                 <li className={'liButton'}>
                   <a
-
-                    href='Horario_JRAO.pdf'
-
-                    download="Horario_JRAO.pdf"
-
-                  >
-                    <FontAwesomeIcon icon={faFileAlt} />D.Horario 
-                  </a>
-
-                </li>                
-                <li className={'liButton'}>
-                  <a
-                    href='#VerHorario'
                     onClick={(e) => {
                       e.preventDefault();
-                      handleSubMenuClick('Ver horario');
+                      handleMenuItemClick('Descargar horario');
                     }}
                   >
-                    <FontAwesomeIcon icon={faFileAlt} />Ver Horario 
+                    <FontAwesomeIcon icon={faFileAlt} />D.Horario 
                   </a>
 
                 </li>                
