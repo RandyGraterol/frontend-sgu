@@ -1,7 +1,7 @@
 import React from 'react';
 import Style from '../../../public/estilosGenerales/formularios.module.css'
-import '../InscricsionHorario/Inscripcion.css'
-import Styles from './verHorario.module.css'
+import '../InscricsionHorario/inscripcion.css'
+import Styles from './verhorario.module.css'
 const Horario =()=>{
 
 
