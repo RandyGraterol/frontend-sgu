@@ -17,7 +17,7 @@ import { faUser,
 
 
 const Navbar = ({ onNavClick, login }) => {
-  
+
    const navegar = useNavigate();
 
   const handleLogout = () => {
@@ -92,7 +92,7 @@ useEffect(() => {
             `;
 
             try {
-              const response = await fetch('http://154.56.0.218:8000/graphql', {
+              const response = await fetch('https://sgu.casacam.net/graphql', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
