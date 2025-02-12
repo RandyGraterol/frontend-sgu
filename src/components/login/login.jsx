@@ -43,7 +43,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://154.56.0.218:8000/api/v1/login', 
+      const response = await axios.post(' https://sgu.casacam.net/api/v1/login', 
         new URLSearchParams({
           grant_type: '',
           username: email,
@@ -58,7 +58,7 @@ const Login = () => {
           }
         }
       );
-      console.log(response.data.status,'RESPUESTA DE LA API');
+      console.log(response,'RESPUESTA DE LA API');
 
       if (response.data.access_token) {
         localStorage.setItem('access_token', response.data.access_token); // Almacena el token
