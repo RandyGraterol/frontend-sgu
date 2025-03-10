@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import Nav from './components/navBar/navbar.jsx';
 //import Table from './components/table/table.jsx';
 import Footer from './components/footer/footer.jsx';
@@ -37,7 +37,6 @@ import EditAut from './screens/EditAut.jsx';
 import EditProcess from './screens/EditP.jsx';
 import LPro from './screens/ListadoProcess.jsx';
 import ReporteI from './components/Reporteinscripcion/ReporteInscripcion.jsx';
-import Horario from './components/verHorario/verHorario.jsx';
 
 //importar modulo de notificaciones
 import NotificationsAdmin from './components/notifications/notifications.jsx';
@@ -48,35 +47,56 @@ import ControlAcceso from './screens/controlA.jsx';
 
 //import componente de jesus velazques
 import Dashboar from './components/dashboar/dashboar.jsx';
-
+//importar token
+import useAuthToken from '@hooks/useAuthToken.jsx';
+//importar helper usuario
+import fetchStudentData from '@helper/obtenerDatosEstudiante.js';
 
 //iconos awesome font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync,faUser,faUserTimes,faArrowCircleRight,faUserCheck,faUserSecret,faUserShield,faUserCog,faUserTie,faUserGraduate,faClipboardList,faBook,faEllipsisH,faUserLock} from '@fortawesome/free-solid-svg-icons';
 
+export const userContext = React.createContext();
+
 function App(){
+    let infoUser,verify;
+    const token = useAuthToken();
 
-   const [selectedComponent, setSelectedComponent] = useState(null);
+    const [user,setUser] = useState(null);
+    const [selectedComponent,setSelectedComponent] = useState(null);
+    useEffect(()=>{
+    const dataUser = async()=>{
+    try{
+    infoUser = await fetchStudentData(token);
+    setUser(infoUser);
+    }catch(error){
+     console.error(error);
+    }
+    }
+    if(token){
+    dataUser();
+    }
+    },[]);
 
-   const handleNavClick = (componentName) => {
-    console.log(componentName);
-    setSelectedComponent(componentName);
-};
-const handleRegisterClick = () => { setSelectedComponent('Registrar Grupo de Usuario'); };
-const handdleRegisterClick = () => {setSelectedComponent('Crear Grupo de Usuarios'); };
-const asignarGrupoUsuario = ()=> {setSelectedComponent('Asignar grupo de usuario');};
-const handleClick = (identificador)=>{setSelectedComponent(identificador)}
+    const handleNavClick = (componentName) => {
+        setSelectedComponent(componentName);
+    };
+
+    const handleRegisterClick = () => { setSelectedComponent('Registrar Grupo de Usuario'); };
+    const handdleRegisterClick = () => {setSelectedComponent('Crear Grupo de Usuarios'); };
+    const asignarGrupoUsuario = ()=> {setSelectedComponent('Asignar grupo de usuario');};
+    const handleClick = (identificador)=>{setSelectedComponent(identificador)}
 // julian functions
-const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
-const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
-const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
-const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
-const HandleRegistrarProcesos = ()=>{setSelectedComponent('Registrar Procesos')}
-const handleRegistrarPeriodo = ()=>{setSelectedComponent('Registro periodo')}
+    const handleEditProcess = ()=>{ setSelectedComponent('Editar Proceso')};
+    const handleAddType = ()=>{setSelectedComponent('Registro Tipo de Autoridad')};
+    const handleGetAutList =()=>{setSelectedComponent('Listado de Autoridades')};
+    const handleEditAut = ()=>{setSelectedComponent('Editar Autoridad')}
+    const HandleRegistrarProcesos = ()=>{setSelectedComponent('Registrar Procesos')}
+    const handleRegistrarPeriodo = ()=>{setSelectedComponent('Registro periodo')}
 
-const renderComponent = () => {
+    const renderComponent = () => {
 
-   if (!selectedComponent) {
+     if (!selectedComponent) {
             return < FormRegistroPerfil/>// 
         }
         switch (selectedComponent) {
@@ -127,26 +147,26 @@ const renderComponent = () => {
         case 'Inscripcion':
             return <Inscripcion />
         case 'Perfil':
-            return < FormRegistroPerfil/>// 
-        case 'Reporte inscripciones':
-            return <ReporteI />
-        case 'Ver horario':
-            return <Horario /> 
-        default:
-            return null;
+                return < FormRegistroPerfil/>// 
+            case 'Reporte inscripciones':
+                return <ReporteI /> 
+            default:
+                return null;
 }//fin de caso multiple
 
     };//fin de funcion renderComponent
 
     return (
+        <userContext.Provider value={user}>
         <div className='containerComponentPrincipal'>
-            <Nav onNavClick={handleNavClick}/>
+        <Nav onNavClick={handleNavClick}/>
 
-            <div className="content">
-                {renderComponent()}
-            </div>
-            <Footer />
+        <div className="content">
+        {renderComponent()}
         </div>
+        <Footer />
+        </div>
+        </userContext.Provider>
         )
 }
 

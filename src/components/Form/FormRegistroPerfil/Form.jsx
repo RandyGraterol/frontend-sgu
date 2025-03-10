@@ -1,7 +1,10 @@
+import React,{useState,useEffect,useContext} from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Submit from "../../../particulas/SubmitButtons/Submit";
 import Style from "/public/estilosGenerales/formularios.module.css";
 import styles from "./form.module.css";
+//importar context
+import {userContext} from '@components/../App.jsx';
 
 import {
   faUser,
@@ -15,7 +18,8 @@ import {
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const Form = ({ action, method }) => {
+export const Form = ({action, method}) => {
+  const user = useContext(userContext);
   return (
     <>
       <section className={styles.contains}>
@@ -24,7 +28,7 @@ export const Form = ({ action, method }) => {
             <img src="/userPerfil.jpg" alt=""/>
           </div>
           <div className={styles.tituloPerfil}>
-            <h1 className={styles.h1}>Rafael Oliveros</h1>
+            <h1 className={styles.h1}>{user && `${user.data.usuario.primerNombre} ${user.data.usuario.primerApellido}`}</h1>
             <span className={styles.span}>Estudiante - Operador</span>
           </div>
         </div>
@@ -34,18 +38,17 @@ export const Form = ({ action, method }) => {
 
             <div className={styles.contactos}>
               <h2 className={styles.h2}>Contactos</h2>
-              <p className={styles.p}><FontAwesomeIcon icon={faPhone} />58- 426-1425358</p>
-              <p className={styles.p}><FontAwesomeIcon icon={faEnvelope } />rafaeloliveros@gmail.com</p>
-              <p className={styles.p}><FontAwesomeIcon icon={faLocationDot} />Pueblo Nuevo/Calle Uruguay</p>
+              <p className={styles.p}><FontAwesomeIcon icon={faPhone} />{user && user?.data?.usuario?.telf?.length === 0 ? 'Sin telefono' : user?.data?.usuario?.telf}</p>
+              <p className={styles.p}><FontAwesomeIcon icon={faEnvelope } />{user && user.data.usuario.email}</p>
+              <p className={styles.p}><FontAwesomeIcon icon={faLocationDot} />{user && user.data.usuario.direccion}</p>
             </div>
 
             <div className={styles.informacion}>
               <h2 className={styles.h2}>Informacion</h2>
-              <p className={styles.p}>Nombre:<span>Rafael Ernesto</span></p>
-              <p className={styles.p}>Apellido:<span>Oliveros Aguilera</span></p>
-              <p className={styles.p}>Edad:<span>39 Años</span></p>
-              <p className={styles.p}>Cedula:<span>28.888.111</span></p>
-              <p className={styles.p}>Nacimiento:<span>28/11/1999</span></p>
+              <p className={styles.p}>Segundo Nombre:<span>{user && user.data.usuario.segundoNombre}</span></p>
+              <p className={styles.p}>Segundo Apellido:<span>{user && user.data.usuario.segundoApellido}</span></p>
+              <p className={styles.p}>Cedula:<span>{user && user.data.usuario.numIdentificacion}</span></p>
+              <p className={styles.p}>Nacimiento:<span>{user && user.data.usuario.fechaNacimiento.split('T')[0]}</span></p>
             </div>
 
           </aside>

@@ -7,6 +7,8 @@ import Footer from '../footer/footer.jsx';
 import axios from 'axios';
 import useWindowSize from '../../hooks/windowSize.jsx';
 
+import setLocalStorageItem from '@helper/setLocalStorageItem.js';
+
 const images = [
   "/fotos/login1.jpg",
   "/fotos/login2.jpg",
@@ -38,12 +40,12 @@ const Login = () => {
       navigate('/home'); // Redirige si ya está autenticado
     }
   }, [navigate]);
-
+//////////////////////////////////////////////////////////////////////////////
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(' https://sgu.casacam.net/api/v1/login', 
+      const response = await axios.post('https://sgu.casacam.net/api/v1/login', 
         new URLSearchParams({
           grant_type: '',
           username: email,
@@ -61,15 +63,16 @@ const Login = () => {
       console.log(response,'RESPUESTA DE LA API');
 
       if (response.data.access_token) {
-        localStorage.setItem('access_token', response.data.access_token); // Almacena el token
+        setLocalStorageItem('access_token',response.data.access_token);//Almacena el token
+        console.log(`RESPONSE AL HACER LOGIN : ${JSON.stringify(response)}`);
         navigate('/home'); // Redirige a la página de inicio
       }
-    }catch(error) {
+    }catch(error){
       console.error('Error en el login:', error);
-      openModal('Correo o contraseña incorrecto, vuelve a intentarlo.');
+      openModal('Correo o contraseña incorrecto, vuelve a intentarlo.','error');
     }
   };
-
+/////////////////////////////////////////////////////////////////////////////////
   const toggle = () => {
     setIsRightPanelActive(!isRightPanelActive);
   };
